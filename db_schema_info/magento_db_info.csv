@@ -1,0 +1,2700 @@
+adminnotification_inbox,notification_id,int(10) unsigned,\N,PRI
+adminnotification_inbox,severity,smallint(5) unsigned,0,MUL
+adminnotification_inbox,date_added,timestamp,CURRENT_TIMESTAMP,
+adminnotification_inbox,title,varchar(255),\N,
+adminnotification_inbox,description,text,\N,
+adminnotification_inbox,url,varchar(255),\N,
+adminnotification_inbox,is_read,smallint(5) unsigned,0,MUL
+adminnotification_inbox,is_remove,smallint(5) unsigned,0,MUL
+admin_passwords,password_id,int(10) unsigned,\N,PRI
+admin_passwords,user_id,int(10) unsigned,0,MUL
+admin_passwords,password_hash,varchar(100),\N,
+admin_passwords,expires,int(10) unsigned,0,
+admin_passwords,last_updated,int(10) unsigned,0,
+admin_system_messages,identity,varchar(100),\N,PRI
+admin_system_messages,severity,smallint(5) unsigned,0,
+admin_system_messages,created_at,timestamp,CURRENT_TIMESTAMP,
+admin_user,user_id,int(10) unsigned,\N,PRI
+admin_user,firstname,varchar(32),\N,
+admin_user,lastname,varchar(32),\N,
+admin_user,email,varchar(128),\N,
+admin_user,username,varchar(40),\N,UNI
+admin_user,password,varchar(255),\N,
+admin_user,created,timestamp,CURRENT_TIMESTAMP,
+admin_user,modified,timestamp,CURRENT_TIMESTAMP,
+admin_user,logdate,timestamp,\N,
+admin_user,lognum,smallint(5) unsigned,0,
+admin_user,reload_acl_flag,smallint(6),0,
+admin_user,is_active,smallint(6),1,
+admin_user,extra,text,\N,
+admin_user,rp_token,text,\N,
+admin_user,rp_token_created_at,timestamp,\N,
+admin_user,interface_locale,varchar(16),en_US,
+admin_user,failures_num,smallint(6),0,
+admin_user,first_failure,timestamp,\N,
+admin_user,lock_expires,timestamp,\N,
+admin_user_session,id,int(10) unsigned,\N,PRI
+admin_user_session,session_id,varchar(128),\N,MUL
+admin_user_session,user_id,int(10) unsigned,\N,MUL
+admin_user_session,status,smallint(5) unsigned,1,
+admin_user_session,created_at,timestamp,CURRENT_TIMESTAMP,
+admin_user_session,updated_at,timestamp,CURRENT_TIMESTAMP,
+admin_user_session,ip,varchar(15),\N,
+authorization_role,role_id,int(10) unsigned,\N,PRI
+authorization_role,parent_id,int(10) unsigned,0,MUL
+authorization_role,tree_level,smallint(5) unsigned,0,MUL
+authorization_role,sort_order,smallint(5) unsigned,0,
+authorization_role,role_type,varchar(1),0,
+authorization_role,user_id,int(10) unsigned,0,
+authorization_role,user_type,varchar(16),\N,
+authorization_role,role_name,varchar(50),\N,
+authorization_rule,rule_id,int(10) unsigned,\N,PRI
+authorization_rule,role_id,int(10) unsigned,0,MUL
+authorization_rule,resource_id,varchar(255),\N,MUL
+authorization_rule,privileges,varchar(20),\N,
+authorization_rule,permission,varchar(10),\N,
+cache,id,varchar(200),\N,PRI
+cache,data,mediumblob,\N,
+cache,create_time,int(11),\N,
+cache,update_time,int(11),\N,
+cache,expire_time,int(11),\N,MUL
+cache_tag,tag,varchar(100),\N,PRI
+cache_tag,cache_id,varchar(200),\N,PRI
+captcha_log,type,varchar(32),\N,PRI
+captcha_log,value,varchar(32),\N,PRI
+captcha_log,count,int(10) unsigned,0,
+captcha_log,updated_at,timestamp,\N,
+cataloginventory_stock,stock_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock,website_id,smallint(5) unsigned,\N,MUL
+cataloginventory_stock,stock_name,varchar(255),\N,
+cataloginventory_stock_item,item_id,int(10) unsigned,\N,PRI
+cataloginventory_stock_item,product_id,int(10) unsigned,0,MUL
+cataloginventory_stock_item,stock_id,smallint(5) unsigned,0,MUL
+cataloginventory_stock_item,qty,decimal(12\,4),\N,
+cataloginventory_stock_item,min_qty,decimal(12\,4),0.0000,
+cataloginventory_stock_item,use_config_min_qty,smallint(5) unsigned,1,
+cataloginventory_stock_item,is_qty_decimal,smallint(5) unsigned,0,
+cataloginventory_stock_item,backorders,smallint(5) unsigned,0,
+cataloginventory_stock_item,use_config_backorders,smallint(5) unsigned,1,
+cataloginventory_stock_item,min_sale_qty,decimal(12\,4),1.0000,
+cataloginventory_stock_item,use_config_min_sale_qty,smallint(5) unsigned,1,
+cataloginventory_stock_item,max_sale_qty,decimal(12\,4),0.0000,
+cataloginventory_stock_item,use_config_max_sale_qty,smallint(5) unsigned,1,
+cataloginventory_stock_item,is_in_stock,smallint(5) unsigned,0,
+cataloginventory_stock_item,low_stock_date,timestamp,\N,
+cataloginventory_stock_item,notify_stock_qty,decimal(12\,4),\N,
+cataloginventory_stock_item,use_config_notify_stock_qty,smallint(5) unsigned,1,
+cataloginventory_stock_item,manage_stock,smallint(5) unsigned,0,
+cataloginventory_stock_item,use_config_manage_stock,smallint(5) unsigned,1,
+cataloginventory_stock_item,stock_status_changed_auto,smallint(5) unsigned,0,
+cataloginventory_stock_item,use_config_qty_increments,smallint(5) unsigned,1,
+cataloginventory_stock_item,qty_increments,decimal(12\,4),0.0000,
+cataloginventory_stock_item,use_config_enable_qty_inc,smallint(5) unsigned,1,
+cataloginventory_stock_item,enable_qty_increments,smallint(5) unsigned,0,
+cataloginventory_stock_item,is_decimal_divided,smallint(5) unsigned,0,
+cataloginventory_stock_item,website_id,smallint(5) unsigned,0,MUL
+cataloginventory_stock_status,product_id,int(10) unsigned,\N,PRI
+cataloginventory_stock_status,website_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status,stock_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status,qty,decimal(12\,4),0.0000,
+cataloginventory_stock_status,stock_status,smallint(5) unsigned,\N,
+cataloginventory_stock_status_idx,product_id,int(10) unsigned,\N,PRI
+cataloginventory_stock_status_idx,website_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status_idx,stock_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status_idx,qty,decimal(12\,4),0.0000,
+cataloginventory_stock_status_idx,stock_status,smallint(5) unsigned,\N,
+cataloginventory_stock_status_tmp,product_id,int(10) unsigned,\N,PRI
+cataloginventory_stock_status_tmp,website_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status_tmp,stock_id,smallint(5) unsigned,\N,PRI
+cataloginventory_stock_status_tmp,qty,decimal(12\,4),0.0000,
+cataloginventory_stock_status_tmp,stock_status,smallint(5) unsigned,\N,
+catalogrule,rule_id,int(10) unsigned,\N,PRI
+catalogrule,name,varchar(255),\N,
+catalogrule,description,text,\N,
+catalogrule,from_date,date,\N,
+catalogrule,to_date,date,\N,
+catalogrule,is_active,smallint(6),0,MUL
+catalogrule,conditions_serialized,mediumtext,\N,
+catalogrule,actions_serialized,mediumtext,\N,
+catalogrule,stop_rules_processing,smallint(6),1,
+catalogrule,sort_order,int(10) unsigned,0,
+catalogrule,simple_action,varchar(32),\N,
+catalogrule,discount_amount,decimal(12\,4),0.0000,
+catalogrule_customer_group,rule_id,int(10) unsigned,\N,PRI
+catalogrule_customer_group,customer_group_id,smallint(5) unsigned,\N,PRI
+catalogrule_group_website,rule_id,int(10) unsigned,0,PRI
+catalogrule_group_website,customer_group_id,smallint(5) unsigned,0,PRI
+catalogrule_group_website,website_id,smallint(5) unsigned,0,PRI
+catalogrule_product,rule_product_id,int(10) unsigned,\N,PRI
+catalogrule_product,rule_id,int(10) unsigned,0,MUL
+catalogrule_product,from_time,int(10) unsigned,0,MUL
+catalogrule_product,to_time,int(10) unsigned,0,MUL
+catalogrule_product,customer_group_id,smallint(5) unsigned,0,MUL
+catalogrule_product,product_id,int(10) unsigned,0,MUL
+catalogrule_product,action_operator,varchar(10),to_fixed,
+catalogrule_product,action_amount,decimal(12\,4),0.0000,
+catalogrule_product,action_stop,smallint(6),0,
+catalogrule_product,sort_order,int(10) unsigned,0,
+catalogrule_product,website_id,smallint(5) unsigned,\N,MUL
+catalogrule_product_price,rule_product_price_id,int(10) unsigned,\N,PRI
+catalogrule_product_price,rule_date,date,\N,MUL
+catalogrule_product_price,customer_group_id,smallint(5) unsigned,0,MUL
+catalogrule_product_price,product_id,int(10) unsigned,0,MUL
+catalogrule_product_price,rule_price,decimal(12\,4),0.0000,
+catalogrule_product_price,website_id,smallint(5) unsigned,\N,MUL
+catalogrule_product_price,latest_start_date,date,\N,
+catalogrule_product_price,earliest_end_date,date,\N,
+catalogrule_website,rule_id,int(10) unsigned,\N,PRI
+catalogrule_website,website_id,smallint(5) unsigned,\N,PRI
+catalogsearch_fulltext_scope1,entity_id,int(10) unsigned,\N,PRI
+catalogsearch_fulltext_scope1,attribute_id,int(10) unsigned,\N,PRI
+catalogsearch_fulltext_scope1,data_index,longtext,\N,MUL
+catalog_category_entity,entity_id,int(10) unsigned,\N,PRI
+catalog_category_entity,attribute_set_id,smallint(5) unsigned,0,
+catalog_category_entity,parent_id,int(10) unsigned,0,
+catalog_category_entity,created_at,timestamp,CURRENT_TIMESTAMP,
+catalog_category_entity,updated_at,timestamp,CURRENT_TIMESTAMP,
+catalog_category_entity,path,varchar(255),\N,
+catalog_category_entity,position,int(11),\N,
+catalog_category_entity,level,int(11),0,MUL
+catalog_category_entity,children_count,int(11),\N,
+catalog_category_entity_datetime,value_id,int(11),\N,PRI
+catalog_category_entity_datetime,attribute_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_datetime,store_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_datetime,entity_id,int(10) unsigned,0,MUL
+catalog_category_entity_datetime,value,datetime,\N,
+catalog_category_entity_decimal,value_id,int(11),\N,PRI
+catalog_category_entity_decimal,attribute_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_decimal,store_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_decimal,entity_id,int(10) unsigned,0,MUL
+catalog_category_entity_decimal,value,decimal(12\,4),\N,
+catalog_category_entity_int,value_id,int(11),\N,PRI
+catalog_category_entity_int,attribute_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_int,store_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_int,entity_id,int(10) unsigned,0,MUL
+catalog_category_entity_int,value,int(11),\N,
+catalog_category_entity_text,value_id,int(11),\N,PRI
+catalog_category_entity_text,attribute_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_text,store_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_text,entity_id,int(10) unsigned,0,MUL
+catalog_category_entity_text,value,text,\N,
+catalog_category_entity_varchar,value_id,int(11),\N,PRI
+catalog_category_entity_varchar,attribute_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_varchar,store_id,smallint(5) unsigned,0,MUL
+catalog_category_entity_varchar,entity_id,int(10) unsigned,0,MUL
+catalog_category_entity_varchar,value,varchar(255),\N,
+catalog_category_product,entity_id,int(11),\N,PRI
+catalog_category_product,category_id,int(10) unsigned,0,PRI
+catalog_category_product,product_id,int(10) unsigned,0,PRI
+catalog_category_product,position,int(11),0,
+catalog_category_product_index,category_id,int(10) unsigned,0,PRI
+catalog_category_product_index,product_id,int(10) unsigned,0,PRI
+catalog_category_product_index,position,int(11),\N,
+catalog_category_product_index,is_parent,smallint(5) unsigned,0,
+catalog_category_product_index,store_id,smallint(5) unsigned,0,PRI
+catalog_category_product_index,visibility,smallint(5) unsigned,\N,
+catalog_category_product_index_tmp,category_id,int(10) unsigned,0,
+catalog_category_product_index_tmp,product_id,int(10) unsigned,0,MUL
+catalog_category_product_index_tmp,position,int(11),0,
+catalog_category_product_index_tmp,is_parent,smallint(5) unsigned,0,
+catalog_category_product_index_tmp,store_id,smallint(5) unsigned,0,
+catalog_category_product_index_tmp,visibility,smallint(5) unsigned,\N,
+catalog_compare_item,catalog_compare_item_id,int(10) unsigned,\N,PRI
+catalog_compare_item,visitor_id,int(10) unsigned,0,MUL
+catalog_compare_item,customer_id,int(10) unsigned,\N,MUL
+catalog_compare_item,product_id,int(10) unsigned,0,MUL
+catalog_compare_item,store_id,smallint(5) unsigned,\N,MUL
+catalog_eav_attribute,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_eav_attribute,frontend_input_renderer,varchar(255),\N,
+catalog_eav_attribute,is_global,smallint(5) unsigned,1,
+catalog_eav_attribute,is_visible,smallint(5) unsigned,1,
+catalog_eav_attribute,is_searchable,smallint(5) unsigned,0,
+catalog_eav_attribute,is_filterable,smallint(5) unsigned,0,
+catalog_eav_attribute,is_comparable,smallint(5) unsigned,0,
+catalog_eav_attribute,is_visible_on_front,smallint(5) unsigned,0,
+catalog_eav_attribute,is_html_allowed_on_front,smallint(5) unsigned,0,
+catalog_eav_attribute,is_used_for_price_rules,smallint(5) unsigned,0,
+catalog_eav_attribute,is_filterable_in_search,smallint(5) unsigned,0,
+catalog_eav_attribute,used_in_product_listing,smallint(5) unsigned,0,MUL
+catalog_eav_attribute,used_for_sort_by,smallint(5) unsigned,0,MUL
+catalog_eav_attribute,apply_to,varchar(255),\N,
+catalog_eav_attribute,is_visible_in_advanced_search,smallint(5) unsigned,0,
+catalog_eav_attribute,position,int(11),0,
+catalog_eav_attribute,is_wysiwyg_enabled,smallint(5) unsigned,0,
+catalog_eav_attribute,is_used_for_promo_rules,smallint(5) unsigned,0,
+catalog_eav_attribute,is_required_in_admin_store,smallint(5) unsigned,0,
+catalog_eav_attribute,is_used_in_grid,smallint(5) unsigned,0,
+catalog_eav_attribute,is_visible_in_grid,smallint(5) unsigned,0,
+catalog_eav_attribute,is_filterable_in_grid,smallint(5) unsigned,0,
+catalog_eav_attribute,search_weight,float,1,
+catalog_eav_attribute,additional_data,text,\N,
+catalog_product_bundle_option,option_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_option,parent_id,int(10) unsigned,\N,MUL
+catalog_product_bundle_option,required,smallint(5) unsigned,0,
+catalog_product_bundle_option,position,int(10) unsigned,0,
+catalog_product_bundle_option,type,varchar(255),\N,
+catalog_product_bundle_option_value,value_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_option_value,option_id,int(10) unsigned,\N,MUL
+catalog_product_bundle_option_value,store_id,smallint(5) unsigned,\N,
+catalog_product_bundle_option_value,title,varchar(255),\N,
+catalog_product_bundle_price_index,entity_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_price_index,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_bundle_price_index,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_bundle_price_index,min_price,decimal(12\,4),\N,
+catalog_product_bundle_price_index,max_price,decimal(12\,4),\N,
+catalog_product_bundle_selection,selection_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_selection,option_id,int(10) unsigned,\N,MUL
+catalog_product_bundle_selection,parent_product_id,int(10) unsigned,\N,
+catalog_product_bundle_selection,product_id,int(10) unsigned,\N,MUL
+catalog_product_bundle_selection,position,int(10) unsigned,0,
+catalog_product_bundle_selection,is_default,smallint(5) unsigned,0,
+catalog_product_bundle_selection,selection_price_type,smallint(5) unsigned,0,
+catalog_product_bundle_selection,selection_price_value,decimal(12\,4),0.0000,
+catalog_product_bundle_selection,selection_qty,decimal(12\,4),\N,
+catalog_product_bundle_selection,selection_can_change_qty,smallint(6),0,
+catalog_product_bundle_selection_price,selection_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_selection_price,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_bundle_selection_price,selection_price_type,smallint(5) unsigned,0,
+catalog_product_bundle_selection_price,selection_price_value,decimal(12\,4),0.0000,
+catalog_product_bundle_stock_index,entity_id,int(10) unsigned,\N,PRI
+catalog_product_bundle_stock_index,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_bundle_stock_index,stock_id,smallint(5) unsigned,\N,PRI
+catalog_product_bundle_stock_index,option_id,int(10) unsigned,0,PRI
+catalog_product_bundle_stock_index,stock_status,smallint(6),0,
+catalog_product_entity,entity_id,int(10) unsigned,\N,PRI
+catalog_product_entity,attribute_set_id,smallint(5) unsigned,0,MUL
+catalog_product_entity,type_id,varchar(32),simple,
+catalog_product_entity,sku,varchar(64),\N,MUL
+catalog_product_entity,has_options,smallint(6),0,
+catalog_product_entity,required_options,smallint(5) unsigned,0,
+catalog_product_entity,created_at,timestamp,CURRENT_TIMESTAMP,
+catalog_product_entity,updated_at,timestamp,CURRENT_TIMESTAMP,
+catalog_product_entity_datetime,value_id,int(11),\N,PRI
+catalog_product_entity_datetime,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_datetime,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_datetime,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_datetime,value,datetime,\N,
+catalog_product_entity_decimal,value_id,int(11),\N,PRI
+catalog_product_entity_decimal,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_decimal,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_decimal,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_decimal,value,decimal(12\,4),\N,
+catalog_product_entity_gallery,value_id,int(11),\N,PRI
+catalog_product_entity_gallery,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_gallery,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_gallery,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_gallery,position,int(11),0,
+catalog_product_entity_gallery,value,varchar(255),\N,
+catalog_product_entity_int,value_id,int(11),\N,PRI
+catalog_product_entity_int,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_int,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_int,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_int,value,int(11),\N,
+catalog_product_entity_media_gallery,value_id,int(10) unsigned,\N,PRI
+catalog_product_entity_media_gallery,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_media_gallery,value,varchar(255),\N,
+catalog_product_entity_media_gallery,media_type,varchar(32),image,
+catalog_product_entity_media_gallery,disabled,smallint(5) unsigned,0,
+catalog_product_entity_media_gallery_value,value_id,int(10) unsigned,0,MUL
+catalog_product_entity_media_gallery_value,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_media_gallery_value,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_media_gallery_value,label,varchar(255),\N,
+catalog_product_entity_media_gallery_value,position,int(10) unsigned,\N,
+catalog_product_entity_media_gallery_value,disabled,smallint(5) unsigned,0,
+catalog_product_entity_media_gallery_value,record_id,int(10) unsigned,\N,PRI
+catalog_product_entity_media_gallery_value_to_entity,value_id,int(10) unsigned,\N,PRI
+catalog_product_entity_media_gallery_value_to_entity,entity_id,int(10) unsigned,\N,PRI
+catalog_product_entity_media_gallery_value_video,value_id,int(10) unsigned,\N,PRI
+catalog_product_entity_media_gallery_value_video,store_id,smallint(5) unsigned,0,PRI
+catalog_product_entity_media_gallery_value_video,provider,varchar(32),\N,
+catalog_product_entity_media_gallery_value_video,url,text,\N,
+catalog_product_entity_media_gallery_value_video,title,varchar(255),\N,
+catalog_product_entity_media_gallery_value_video,description,text,\N,
+catalog_product_entity_media_gallery_value_video,metadata,text,\N,
+catalog_product_entity_text,value_id,int(11),\N,PRI
+catalog_product_entity_text,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_text,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_text,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_text,value,text,\N,
+catalog_product_entity_tier_price,value_id,int(11),\N,PRI
+catalog_product_entity_tier_price,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_tier_price,all_groups,smallint(5) unsigned,1,
+catalog_product_entity_tier_price,customer_group_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_tier_price,qty,decimal(12\,4),1.0000,
+catalog_product_entity_tier_price,value,decimal(12\,4),0.0000,
+catalog_product_entity_tier_price,website_id,smallint(5) unsigned,\N,MUL
+catalog_product_entity_varchar,value_id,int(11),\N,PRI
+catalog_product_entity_varchar,attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_varchar,store_id,smallint(5) unsigned,0,MUL
+catalog_product_entity_varchar,entity_id,int(10) unsigned,0,MUL
+catalog_product_entity_varchar,value,varchar(255),\N,
+catalog_product_index_eav,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav,value,int(10) unsigned,\N,PRI
+catalog_product_index_eav_decimal,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav_decimal,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal,value,decimal(12\,4),\N,MUL
+catalog_product_index_eav_decimal_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav_decimal_idx,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal_idx,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal_idx,value,decimal(12\,4),\N,PRI
+catalog_product_index_eav_decimal_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav_decimal_tmp,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal_tmp,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_decimal_tmp,value,decimal(12\,4),\N,MUL
+catalog_product_index_eav_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav_idx,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_idx,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_idx,value,int(10) unsigned,\N,PRI
+catalog_product_index_eav_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_eav_tmp,attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_tmp,store_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_eav_tmp,value,int(10) unsigned,\N,PRI
+catalog_product_index_price,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price,price,decimal(12\,4),\N,
+catalog_product_index_price,final_price,decimal(12\,4),\N,
+catalog_product_index_price,min_price,decimal(12\,4),\N,MUL
+catalog_product_index_price,max_price,decimal(12\,4),\N,
+catalog_product_index_price,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_idx,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_idx,price_type,smallint(5) unsigned,\N,
+catalog_product_index_price_bundle_idx,special_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,tier_percent,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,orig_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_idx,base_tier,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_idx,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_opt_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_idx,alt_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_idx,alt_tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_opt_tmp,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_opt_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_tmp,alt_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_opt_tmp,alt_tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_sel_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_idx,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_sel_idx,selection_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_sel_idx,group_type,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_sel_idx,is_required,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_sel_idx,price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_sel_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_sel_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_sel_tmp,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_sel_tmp,selection_id,int(10) unsigned,0,PRI
+catalog_product_index_price_bundle_sel_tmp,group_type,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_sel_tmp,is_required,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_sel_tmp,price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_sel_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_bundle_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_bundle_tmp,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_bundle_tmp,price_type,smallint(5) unsigned,\N,
+catalog_product_index_price_bundle_tmp,special_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,tier_percent,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,orig_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_bundle_tmp,base_tier,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_agr_idx,parent_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_idx,child_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_idx,price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_agr_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_agr_tmp,parent_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_tmp,child_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_agr_tmp,price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_agr_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_cfg_opt_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_cfg_opt_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_downlod_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_downlod_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_downlod_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_downlod_idx,min_price,decimal(12\,4),0.0000,
+catalog_product_index_price_downlod_idx,max_price,decimal(12\,4),0.0000,
+catalog_product_index_price_downlod_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_downlod_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_downlod_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_downlod_tmp,min_price,decimal(12\,4),0.0000,
+catalog_product_index_price_downlod_tmp,max_price,decimal(12\,4),0.0000,
+catalog_product_index_price_final_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_final_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_final_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_final_idx,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_final_idx,orig_price,decimal(12\,4),\N,
+catalog_product_index_price_final_idx,price,decimal(12\,4),\N,
+catalog_product_index_price_final_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_final_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_final_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_final_idx,base_tier,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_final_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_final_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_final_tmp,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_final_tmp,orig_price,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,price,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_final_tmp,base_tier,decimal(12\,4),\N,
+catalog_product_index_price_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_idx,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_idx,price,decimal(12\,4),\N,
+catalog_product_index_price_idx,final_price,decimal(12\,4),\N,
+catalog_product_index_price_idx,min_price,decimal(12\,4),\N,MUL
+catalog_product_index_price_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_idx,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_opt_agr_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_agr_tmp,option_id,int(10) unsigned,0,PRI
+catalog_product_index_price_opt_agr_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_agr_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_idx,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_opt_idx,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_idx,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_idx,min_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_idx,max_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_idx,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_opt_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_opt_tmp,min_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_opt_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_price_tmp,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_price_tmp,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_tmp,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_price_tmp,tax_class_id,smallint(5) unsigned,0,
+catalog_product_index_price_tmp,price,decimal(12\,4),\N,
+catalog_product_index_price_tmp,final_price,decimal(12\,4),\N,
+catalog_product_index_price_tmp,min_price,decimal(12\,4),\N,MUL
+catalog_product_index_price_tmp,max_price,decimal(12\,4),\N,
+catalog_product_index_price_tmp,tier_price,decimal(12\,4),\N,
+catalog_product_index_tier_price,entity_id,int(10) unsigned,\N,PRI
+catalog_product_index_tier_price,customer_group_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_tier_price,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_tier_price,min_price,decimal(12\,4),\N,
+catalog_product_index_website,website_id,smallint(5) unsigned,\N,PRI
+catalog_product_index_website,website_date,date,\N,MUL
+catalog_product_index_website,rate,float,1,
+catalog_product_link,link_id,int(10) unsigned,\N,PRI
+catalog_product_link,product_id,int(10) unsigned,0,MUL
+catalog_product_link,linked_product_id,int(10) unsigned,0,MUL
+catalog_product_link,link_type_id,smallint(5) unsigned,0,MUL
+catalog_product_link_attribute,product_link_attribute_id,smallint(5) unsigned,\N,PRI
+catalog_product_link_attribute,link_type_id,smallint(5) unsigned,0,MUL
+catalog_product_link_attribute,product_link_attribute_code,varchar(32),\N,
+catalog_product_link_attribute,data_type,varchar(32),\N,
+catalog_product_link_attribute_decimal,value_id,int(10) unsigned,\N,PRI
+catalog_product_link_attribute_decimal,product_link_attribute_id,smallint(5) unsigned,\N,MUL
+catalog_product_link_attribute_decimal,link_id,int(10) unsigned,\N,MUL
+catalog_product_link_attribute_decimal,value,decimal(12\,4),0.0000,
+catalog_product_link_attribute_int,value_id,int(10) unsigned,\N,PRI
+catalog_product_link_attribute_int,product_link_attribute_id,smallint(5) unsigned,\N,MUL
+catalog_product_link_attribute_int,link_id,int(10) unsigned,\N,MUL
+catalog_product_link_attribute_int,value,int(11),0,
+catalog_product_link_attribute_varchar,value_id,int(10) unsigned,\N,PRI
+catalog_product_link_attribute_varchar,product_link_attribute_id,smallint(5) unsigned,0,MUL
+catalog_product_link_attribute_varchar,link_id,int(10) unsigned,\N,MUL
+catalog_product_link_attribute_varchar,value,varchar(255),\N,
+catalog_product_link_type,link_type_id,smallint(5) unsigned,\N,PRI
+catalog_product_link_type,code,varchar(32),\N,
+catalog_product_option,option_id,int(10) unsigned,\N,PRI
+catalog_product_option,product_id,int(10) unsigned,0,MUL
+catalog_product_option,type,varchar(50),\N,
+catalog_product_option,is_require,smallint(6),1,
+catalog_product_option,sku,varchar(64),\N,
+catalog_product_option,max_characters,int(10) unsigned,\N,
+catalog_product_option,file_extension,varchar(50),\N,
+catalog_product_option,image_size_x,smallint(5) unsigned,\N,
+catalog_product_option,image_size_y,smallint(5) unsigned,\N,
+catalog_product_option,sort_order,int(10) unsigned,0,
+catalog_product_option_price,option_price_id,int(10) unsigned,\N,PRI
+catalog_product_option_price,option_id,int(10) unsigned,0,MUL
+catalog_product_option_price,store_id,smallint(5) unsigned,0,MUL
+catalog_product_option_price,price,decimal(12\,4),0.0000,
+catalog_product_option_price,price_type,varchar(7),fixed,
+catalog_product_option_title,option_title_id,int(10) unsigned,\N,PRI
+catalog_product_option_title,option_id,int(10) unsigned,0,MUL
+catalog_product_option_title,store_id,smallint(5) unsigned,0,MUL
+catalog_product_option_title,title,varchar(255),\N,
+catalog_product_option_type_price,option_type_price_id,int(10) unsigned,\N,PRI
+catalog_product_option_type_price,option_type_id,int(10) unsigned,0,MUL
+catalog_product_option_type_price,store_id,smallint(5) unsigned,0,MUL
+catalog_product_option_type_price,price,decimal(12\,4),0.0000,
+catalog_product_option_type_price,price_type,varchar(7),fixed,
+catalog_product_option_type_title,option_type_title_id,int(10) unsigned,\N,PRI
+catalog_product_option_type_title,option_type_id,int(10) unsigned,0,MUL
+catalog_product_option_type_title,store_id,smallint(5) unsigned,0,MUL
+catalog_product_option_type_title,title,varchar(255),\N,
+catalog_product_option_type_value,option_type_id,int(10) unsigned,\N,PRI
+catalog_product_option_type_value,option_id,int(10) unsigned,0,MUL
+catalog_product_option_type_value,sku,varchar(64),\N,
+catalog_product_option_type_value,sort_order,int(10) unsigned,0,
+catalog_product_relation,parent_id,int(10) unsigned,\N,PRI
+catalog_product_relation,child_id,int(10) unsigned,\N,PRI
+catalog_product_super_attribute,product_super_attribute_id,int(10) unsigned,\N,PRI
+catalog_product_super_attribute,product_id,int(10) unsigned,0,MUL
+catalog_product_super_attribute,attribute_id,smallint(5) unsigned,0,
+catalog_product_super_attribute,position,smallint(5) unsigned,0,
+catalog_product_super_attribute_label,value_id,int(10) unsigned,\N,PRI
+catalog_product_super_attribute_label,product_super_attribute_id,int(10) unsigned,0,MUL
+catalog_product_super_attribute_label,store_id,smallint(5) unsigned,0,MUL
+catalog_product_super_attribute_label,use_default,smallint(5) unsigned,0,
+catalog_product_super_attribute_label,value,varchar(255),\N,
+catalog_product_super_link,link_id,int(10) unsigned,\N,PRI
+catalog_product_super_link,product_id,int(10) unsigned,0,MUL
+catalog_product_super_link,parent_id,int(10) unsigned,0,MUL
+catalog_product_website,product_id,int(10) unsigned,\N,PRI
+catalog_product_website,website_id,smallint(5) unsigned,\N,PRI
+catalog_url_rewrite_product_category,url_rewrite_id,int(10) unsigned,\N,MUL
+catalog_url_rewrite_product_category,category_id,int(10) unsigned,\N,MUL
+catalog_url_rewrite_product_category,product_id,int(10) unsigned,\N,MUL
+checkout_agreement,agreement_id,int(10) unsigned,\N,PRI
+checkout_agreement,name,varchar(255),\N,
+checkout_agreement,content,text,\N,
+checkout_agreement,content_height,varchar(25),\N,
+checkout_agreement,checkbox_text,text,\N,
+checkout_agreement,is_active,smallint(6),0,
+checkout_agreement,is_html,smallint(6),0,
+checkout_agreement,mode,smallint(6),0,
+checkout_agreement_store,agreement_id,int(10) unsigned,\N,PRI
+checkout_agreement_store,store_id,smallint(5) unsigned,\N,PRI
+cms_block,block_id,smallint(6),\N,PRI
+cms_block,title,varchar(255),\N,MUL
+cms_block,identifier,varchar(255),\N,
+cms_block,content,mediumtext,\N,
+cms_block,creation_time,timestamp,CURRENT_TIMESTAMP,
+cms_block,update_time,timestamp,CURRENT_TIMESTAMP,
+cms_block,is_active,smallint(6),1,
+cms_block_store,block_id,smallint(6),\N,PRI
+cms_block_store,store_id,smallint(5) unsigned,\N,PRI
+cms_page,page_id,smallint(6),\N,PRI
+cms_page,title,varchar(255),\N,MUL
+cms_page,page_layout,varchar(255),\N,
+cms_page,meta_keywords,text,\N,
+cms_page,meta_description,text,\N,
+cms_page,identifier,varchar(100),\N,MUL
+cms_page,content_heading,varchar(255),\N,
+cms_page,content,mediumtext,\N,
+cms_page,creation_time,timestamp,CURRENT_TIMESTAMP,
+cms_page,update_time,timestamp,CURRENT_TIMESTAMP,
+cms_page,is_active,smallint(6),1,
+cms_page,sort_order,smallint(6),0,
+cms_page,layout_update_xml,text,\N,
+cms_page,custom_theme,varchar(100),\N,
+cms_page,custom_root_template,varchar(255),\N,
+cms_page,custom_layout_update_xml,text,\N,
+cms_page,custom_theme_from,date,\N,
+cms_page,custom_theme_to,date,\N,
+cms_page,meta_title,varchar(255),\N,
+cms_page_store,page_id,smallint(6),\N,PRI
+cms_page_store,store_id,smallint(5) unsigned,\N,PRI
+core_config_data,config_id,int(10) unsigned,\N,PRI
+core_config_data,scope,varchar(8),default,MUL
+core_config_data,scope_id,int(11),0,
+core_config_data,path,varchar(255),general,
+core_config_data,value,text,\N,
+cron_schedule,schedule_id,int(10) unsigned,\N,PRI
+cron_schedule,job_code,varchar(255),0,MUL
+cron_schedule,status,varchar(7),pending,
+cron_schedule,messages,text,\N,
+cron_schedule,created_at,timestamp,CURRENT_TIMESTAMP,
+cron_schedule,scheduled_at,timestamp,\N,MUL
+cron_schedule,executed_at,timestamp,\N,
+cron_schedule,finished_at,timestamp,\N,
+customer_address_entity,entity_id,int(10) unsigned,\N,PRI
+customer_address_entity,increment_id,varchar(50),\N,
+customer_address_entity,parent_id,int(10) unsigned,\N,MUL
+customer_address_entity,created_at,timestamp,CURRENT_TIMESTAMP,
+customer_address_entity,updated_at,timestamp,CURRENT_TIMESTAMP,
+customer_address_entity,is_active,smallint(5) unsigned,1,
+customer_address_entity,city,varchar(255),\N,
+customer_address_entity,company,varchar(255),\N,
+customer_address_entity,country_id,varchar(255),\N,
+customer_address_entity,fax,varchar(255),\N,
+customer_address_entity,firstname,varchar(255),\N,
+customer_address_entity,lastname,varchar(255),\N,
+customer_address_entity,middlename,varchar(255),\N,
+customer_address_entity,postcode,varchar(255),\N,
+customer_address_entity,prefix,varchar(40),\N,
+customer_address_entity,region,varchar(255),\N,
+customer_address_entity,region_id,int(10) unsigned,\N,
+customer_address_entity,street,text,\N,
+customer_address_entity,suffix,varchar(40),\N,
+customer_address_entity,telephone,varchar(255),\N,
+customer_address_entity,vat_id,varchar(255),\N,
+customer_address_entity,vat_is_valid,int(10) unsigned,\N,
+customer_address_entity,vat_request_date,varchar(255),\N,
+customer_address_entity,vat_request_id,varchar(255),\N,
+customer_address_entity,vat_request_success,int(10) unsigned,\N,
+customer_address_entity_datetime,value_id,int(11),\N,PRI
+customer_address_entity_datetime,attribute_id,smallint(5) unsigned,0,MUL
+customer_address_entity_datetime,entity_id,int(10) unsigned,0,MUL
+customer_address_entity_datetime,value,datetime,\N,
+customer_address_entity_decimal,value_id,int(11),\N,PRI
+customer_address_entity_decimal,attribute_id,smallint(5) unsigned,0,MUL
+customer_address_entity_decimal,entity_id,int(10) unsigned,0,MUL
+customer_address_entity_decimal,value,decimal(12\,4),0.0000,
+customer_address_entity_int,value_id,int(11),\N,PRI
+customer_address_entity_int,attribute_id,smallint(5) unsigned,0,MUL
+customer_address_entity_int,entity_id,int(10) unsigned,0,MUL
+customer_address_entity_int,value,int(11),0,
+customer_address_entity_text,value_id,int(11),\N,PRI
+customer_address_entity_text,attribute_id,smallint(5) unsigned,0,MUL
+customer_address_entity_text,entity_id,int(10) unsigned,0,MUL
+customer_address_entity_text,value,text,\N,
+customer_address_entity_varchar,value_id,int(11),\N,PRI
+customer_address_entity_varchar,attribute_id,smallint(5) unsigned,0,MUL
+customer_address_entity_varchar,entity_id,int(10) unsigned,0,MUL
+customer_address_entity_varchar,value,varchar(255),\N,
+customer_eav_attribute,attribute_id,smallint(5) unsigned,\N,PRI
+customer_eav_attribute,is_visible,smallint(5) unsigned,1,
+customer_eav_attribute,input_filter,varchar(255),\N,
+customer_eav_attribute,multiline_count,smallint(5) unsigned,1,
+customer_eav_attribute,validate_rules,text,\N,
+customer_eav_attribute,is_system,smallint(5) unsigned,0,
+customer_eav_attribute,sort_order,int(10) unsigned,0,
+customer_eav_attribute,data_model,varchar(255),\N,
+customer_eav_attribute,is_used_in_grid,smallint(5) unsigned,0,
+customer_eav_attribute,is_visible_in_grid,smallint(5) unsigned,0,
+customer_eav_attribute,is_filterable_in_grid,smallint(5) unsigned,0,
+customer_eav_attribute,is_searchable_in_grid,smallint(5) unsigned,0,
+customer_eav_attribute_website,attribute_id,smallint(5) unsigned,\N,PRI
+customer_eav_attribute_website,website_id,smallint(5) unsigned,\N,PRI
+customer_eav_attribute_website,is_visible,smallint(5) unsigned,\N,
+customer_eav_attribute_website,is_required,smallint(5) unsigned,\N,
+customer_eav_attribute_website,default_value,text,\N,
+customer_eav_attribute_website,multiline_count,smallint(5) unsigned,\N,
+customer_entity,entity_id,int(10) unsigned,\N,PRI
+customer_entity,website_id,smallint(5) unsigned,\N,MUL
+customer_entity,email,varchar(255),\N,MUL
+customer_entity,group_id,smallint(5) unsigned,0,
+customer_entity,increment_id,varchar(50),\N,
+customer_entity,store_id,smallint(5) unsigned,0,MUL
+customer_entity,created_at,timestamp,CURRENT_TIMESTAMP,
+customer_entity,updated_at,timestamp,CURRENT_TIMESTAMP,
+customer_entity,is_active,smallint(5) unsigned,1,
+customer_entity,disable_auto_group_change,smallint(5) unsigned,0,
+customer_entity,created_in,varchar(255),\N,
+customer_entity,prefix,varchar(40),\N,
+customer_entity,firstname,varchar(255),\N,MUL
+customer_entity,middlename,varchar(255),\N,
+customer_entity,lastname,varchar(255),\N,MUL
+customer_entity,suffix,varchar(40),\N,
+customer_entity,dob,date,\N,
+customer_entity,password_hash,varchar(128),\N,
+customer_entity,rp_token,varchar(128),\N,
+customer_entity,rp_token_created_at,datetime,\N,
+customer_entity,default_billing,int(10) unsigned,\N,
+customer_entity,default_shipping,int(10) unsigned,\N,
+customer_entity,taxvat,varchar(50),\N,
+customer_entity,confirmation,varchar(64),\N,
+customer_entity,gender,smallint(5) unsigned,\N,
+customer_entity,failures_num,smallint(6),0,
+customer_entity,first_failure,timestamp,\N,
+customer_entity,lock_expires,timestamp,\N,
+customer_entity_datetime,value_id,int(11),\N,PRI
+customer_entity_datetime,attribute_id,smallint(5) unsigned,0,MUL
+customer_entity_datetime,entity_id,int(10) unsigned,0,MUL
+customer_entity_datetime,value,datetime,\N,
+customer_entity_decimal,value_id,int(11),\N,PRI
+customer_entity_decimal,attribute_id,smallint(5) unsigned,0,MUL
+customer_entity_decimal,entity_id,int(10) unsigned,0,MUL
+customer_entity_decimal,value,decimal(12\,4),0.0000,
+customer_entity_int,value_id,int(11),\N,PRI
+customer_entity_int,attribute_id,smallint(5) unsigned,0,MUL
+customer_entity_int,entity_id,int(10) unsigned,0,MUL
+customer_entity_int,value,int(11),0,
+customer_entity_text,value_id,int(11),\N,PRI
+customer_entity_text,attribute_id,smallint(5) unsigned,0,MUL
+customer_entity_text,entity_id,int(10) unsigned,0,MUL
+customer_entity_text,value,text,\N,
+customer_entity_varchar,value_id,int(11),\N,PRI
+customer_entity_varchar,attribute_id,smallint(5) unsigned,0,MUL
+customer_entity_varchar,entity_id,int(10) unsigned,0,MUL
+customer_entity_varchar,value,varchar(255),\N,
+customer_form_attribute,form_code,varchar(32),\N,PRI
+customer_form_attribute,attribute_id,smallint(5) unsigned,\N,PRI
+customer_grid_flat,entity_id,int(10) unsigned,\N,PRI
+customer_grid_flat,name,text,\N,MUL
+customer_grid_flat,email,varchar(255),\N,
+customer_grid_flat,group_id,int(11),\N,MUL
+customer_grid_flat,created_at,timestamp,\N,MUL
+customer_grid_flat,website_id,int(11),\N,MUL
+customer_grid_flat,confirmation,varchar(255),\N,MUL
+customer_grid_flat,created_in,text,\N,
+customer_grid_flat,dob,date,\N,MUL
+customer_grid_flat,gender,int(11),\N,MUL
+customer_grid_flat,taxvat,varchar(255),\N,
+customer_grid_flat,lock_expires,timestamp,\N,
+customer_grid_flat,billing_full,text,\N,
+customer_grid_flat,billing_firstname,varchar(255),\N,
+customer_grid_flat,billing_lastname,varchar(255),\N,
+customer_grid_flat,billing_telephone,varchar(255),\N,
+customer_grid_flat,billing_postcode,varchar(255),\N,
+customer_grid_flat,billing_country_id,varchar(255),\N,MUL
+customer_grid_flat,billing_region,varchar(255),\N,
+customer_grid_flat,billing_street,varchar(255),\N,
+customer_grid_flat,billing_city,varchar(255),\N,
+customer_grid_flat,billing_fax,varchar(255),\N,
+customer_grid_flat,billing_vat_id,varchar(255),\N,
+customer_grid_flat,billing_company,varchar(255),\N,
+customer_grid_flat,shipping_full,text,\N,
+customer_group,customer_group_id,smallint(5) unsigned,\N,PRI
+customer_group,customer_group_code,varchar(32),\N,
+customer_group,tax_class_id,int(10) unsigned,0,
+customer_log,log_id,int(11),\N,PRI
+customer_log,customer_id,int(11),\N,UNI
+customer_log,last_login_at,timestamp,\N,
+customer_log,last_logout_at,timestamp,\N,
+customer_visitor,visitor_id,bigint(20) unsigned,\N,PRI
+customer_visitor,customer_id,int(11),\N,MUL
+customer_visitor,session_id,varchar(64),\N,
+customer_visitor,last_visit_at,timestamp,CURRENT_TIMESTAMP,MUL
+design_change,design_change_id,int(11),\N,PRI
+design_change,store_id,smallint(5) unsigned,0,MUL
+design_change,design,varchar(255),\N,
+design_change,date_from,date,\N,
+design_change,date_to,date,\N,
+design_config_grid_flat,entity_id,int(10) unsigned,\N,PRI
+design_config_grid_flat,store_website_id,int(11),\N,MUL
+design_config_grid_flat,store_group_id,int(11),\N,MUL
+design_config_grid_flat,store_id,int(11),\N,MUL
+design_config_grid_flat,theme_theme_id,varchar(255),\N,MUL
+directory_country,country_id,varchar(2),\N,PRI
+directory_country,iso2_code,varchar(2),\N,
+directory_country,iso3_code,varchar(3),\N,
+directory_country_format,country_format_id,int(10) unsigned,\N,PRI
+directory_country_format,country_id,varchar(2),\N,MUL
+directory_country_format,type,varchar(30),\N,
+directory_country_format,format,text,\N,
+directory_country_region,region_id,int(10) unsigned,\N,PRI
+directory_country_region,country_id,varchar(4),0,MUL
+directory_country_region,code,varchar(32),\N,
+directory_country_region,default_name,varchar(255),\N,
+directory_country_region_name,locale,varchar(8),\N,PRI
+directory_country_region_name,region_id,int(10) unsigned,0,PRI
+directory_country_region_name,name,varchar(255),\N,
+directory_currency_rate,currency_from,varchar(3),\N,PRI
+directory_currency_rate,currency_to,varchar(3),\N,PRI
+directory_currency_rate,rate,decimal(24\,12),0.000000000000,
+downloadable_link,link_id,int(10) unsigned,\N,PRI
+downloadable_link,product_id,int(10) unsigned,0,MUL
+downloadable_link,sort_order,int(10) unsigned,0,
+downloadable_link,number_of_downloads,int(11),\N,
+downloadable_link,is_shareable,smallint(5) unsigned,0,
+downloadable_link,link_url,varchar(255),\N,
+downloadable_link,link_file,varchar(255),\N,
+downloadable_link,link_type,varchar(20),\N,
+downloadable_link,sample_url,varchar(255),\N,
+downloadable_link,sample_file,varchar(255),\N,
+downloadable_link,sample_type,varchar(20),\N,
+downloadable_link_price,price_id,int(10) unsigned,\N,PRI
+downloadable_link_price,link_id,int(10) unsigned,0,MUL
+downloadable_link_price,website_id,smallint(5) unsigned,0,MUL
+downloadable_link_price,price,decimal(12\,4),0.0000,
+downloadable_link_purchased,purchased_id,int(10) unsigned,\N,PRI
+downloadable_link_purchased,order_id,int(10) unsigned,0,MUL
+downloadable_link_purchased,order_increment_id,varchar(50),\N,
+downloadable_link_purchased,order_item_id,int(10) unsigned,0,MUL
+downloadable_link_purchased,created_at,timestamp,CURRENT_TIMESTAMP,
+downloadable_link_purchased,updated_at,timestamp,CURRENT_TIMESTAMP,
+downloadable_link_purchased,customer_id,int(10) unsigned,0,MUL
+downloadable_link_purchased,product_name,varchar(255),\N,
+downloadable_link_purchased,product_sku,varchar(255),\N,
+downloadable_link_purchased,link_section_title,varchar(255),\N,
+downloadable_link_purchased_item,item_id,int(10) unsigned,\N,PRI
+downloadable_link_purchased_item,purchased_id,int(10) unsigned,0,MUL
+downloadable_link_purchased_item,order_item_id,int(10) unsigned,0,MUL
+downloadable_link_purchased_item,product_id,int(10) unsigned,0,
+downloadable_link_purchased_item,link_hash,varchar(255),\N,MUL
+downloadable_link_purchased_item,number_of_downloads_bought,int(10) unsigned,0,
+downloadable_link_purchased_item,number_of_downloads_used,int(10) unsigned,0,
+downloadable_link_purchased_item,link_id,int(10) unsigned,0,
+downloadable_link_purchased_item,link_title,varchar(255),\N,
+downloadable_link_purchased_item,is_shareable,smallint(5) unsigned,0,
+downloadable_link_purchased_item,link_url,varchar(255),\N,
+downloadable_link_purchased_item,link_file,varchar(255),\N,
+downloadable_link_purchased_item,link_type,varchar(255),\N,
+downloadable_link_purchased_item,status,varchar(50),\N,
+downloadable_link_purchased_item,created_at,timestamp,CURRENT_TIMESTAMP,
+downloadable_link_purchased_item,updated_at,timestamp,CURRENT_TIMESTAMP,
+downloadable_link_title,title_id,int(10) unsigned,\N,PRI
+downloadable_link_title,link_id,int(10) unsigned,0,MUL
+downloadable_link_title,store_id,smallint(5) unsigned,0,MUL
+downloadable_link_title,title,varchar(255),\N,
+downloadable_sample,sample_id,int(10) unsigned,\N,PRI
+downloadable_sample,product_id,int(10) unsigned,0,MUL
+downloadable_sample,sample_url,varchar(255),\N,
+downloadable_sample,sample_file,varchar(255),\N,
+downloadable_sample,sample_type,varchar(20),\N,
+downloadable_sample,sort_order,int(10) unsigned,0,
+downloadable_sample_title,title_id,int(10) unsigned,\N,PRI
+downloadable_sample_title,sample_id,int(10) unsigned,0,MUL
+downloadable_sample_title,store_id,smallint(5) unsigned,0,MUL
+downloadable_sample_title,title,varchar(255),\N,
+eav_attribute,attribute_id,smallint(5) unsigned,\N,PRI
+eav_attribute,entity_type_id,smallint(5) unsigned,0,MUL
+eav_attribute,attribute_code,varchar(255),\N,
+eav_attribute,attribute_model,varchar(255),\N,
+eav_attribute,backend_model,varchar(255),\N,
+eav_attribute,backend_type,varchar(8),static,
+eav_attribute,backend_table,varchar(255),\N,
+eav_attribute,frontend_model,varchar(255),\N,
+eav_attribute,frontend_input,varchar(50),\N,
+eav_attribute,frontend_label,varchar(255),\N,
+eav_attribute,frontend_class,varchar(255),\N,
+eav_attribute,source_model,varchar(255),\N,
+eav_attribute,is_required,smallint(5) unsigned,0,
+eav_attribute,is_user_defined,smallint(5) unsigned,0,
+eav_attribute,default_value,text,\N,
+eav_attribute,is_unique,smallint(5) unsigned,0,
+eav_attribute,note,varchar(255),\N,
+eav_attribute_group,attribute_group_id,smallint(5) unsigned,\N,PRI
+eav_attribute_group,attribute_set_id,smallint(5) unsigned,0,MUL
+eav_attribute_group,attribute_group_name,varchar(255),\N,
+eav_attribute_group,sort_order,smallint(6),0,
+eav_attribute_group,default_id,smallint(5) unsigned,0,
+eav_attribute_group,attribute_group_code,varchar(255),\N,
+eav_attribute_group,tab_group_code,varchar(255),\N,
+eav_attribute_label,attribute_label_id,int(10) unsigned,\N,PRI
+eav_attribute_label,attribute_id,smallint(5) unsigned,0,MUL
+eav_attribute_label,store_id,smallint(5) unsigned,0,MUL
+eav_attribute_label,value,varchar(255),\N,
+eav_attribute_option,option_id,int(10) unsigned,\N,PRI
+eav_attribute_option,attribute_id,smallint(5) unsigned,0,MUL
+eav_attribute_option,sort_order,smallint(5) unsigned,0,
+eav_attribute_option_swatch,swatch_id,int(10) unsigned,\N,PRI
+eav_attribute_option_swatch,option_id,int(10) unsigned,\N,MUL
+eav_attribute_option_swatch,store_id,smallint(5) unsigned,\N,MUL
+eav_attribute_option_swatch,type,smallint(5) unsigned,\N,
+eav_attribute_option_swatch,value,varchar(255),\N,
+eav_attribute_option_value,value_id,int(10) unsigned,\N,PRI
+eav_attribute_option_value,option_id,int(10) unsigned,0,MUL
+eav_attribute_option_value,store_id,smallint(5) unsigned,0,MUL
+eav_attribute_option_value,value,varchar(255),\N,
+eav_attribute_set,attribute_set_id,smallint(5) unsigned,\N,PRI
+eav_attribute_set,entity_type_id,smallint(5) unsigned,0,MUL
+eav_attribute_set,attribute_set_name,varchar(255),\N,
+eav_attribute_set,sort_order,smallint(6),0,
+eav_entity,entity_id,int(10) unsigned,\N,PRI
+eav_entity,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity,attribute_set_id,smallint(5) unsigned,0,
+eav_entity,increment_id,varchar(50),\N,
+eav_entity,parent_id,int(10) unsigned,0,
+eav_entity,store_id,smallint(5) unsigned,0,MUL
+eav_entity,created_at,timestamp,CURRENT_TIMESTAMP,
+eav_entity,updated_at,timestamp,CURRENT_TIMESTAMP,
+eav_entity,is_active,smallint(5) unsigned,1,
+eav_entity_attribute,entity_attribute_id,int(10) unsigned,\N,PRI
+eav_entity_attribute,entity_type_id,smallint(5) unsigned,0,
+eav_entity_attribute,attribute_set_id,smallint(5) unsigned,0,MUL
+eav_entity_attribute,attribute_group_id,smallint(5) unsigned,0,MUL
+eav_entity_attribute,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_attribute,sort_order,smallint(6),0,
+eav_entity_datetime,value_id,int(11),\N,PRI
+eav_entity_datetime,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_datetime,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_datetime,store_id,smallint(5) unsigned,0,MUL
+eav_entity_datetime,entity_id,int(10) unsigned,0,MUL
+eav_entity_datetime,value,datetime,\N,
+eav_entity_decimal,value_id,int(11),\N,PRI
+eav_entity_decimal,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_decimal,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_decimal,store_id,smallint(5) unsigned,0,MUL
+eav_entity_decimal,entity_id,int(10) unsigned,0,MUL
+eav_entity_decimal,value,decimal(12\,4),0.0000,
+eav_entity_int,value_id,int(11),\N,PRI
+eav_entity_int,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_int,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_int,store_id,smallint(5) unsigned,0,MUL
+eav_entity_int,entity_id,int(10) unsigned,0,MUL
+eav_entity_int,value,int(11),0,
+eav_entity_store,entity_store_id,int(10) unsigned,\N,PRI
+eav_entity_store,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_store,store_id,smallint(5) unsigned,0,MUL
+eav_entity_store,increment_prefix,varchar(20),\N,
+eav_entity_store,increment_last_id,varchar(50),\N,
+eav_entity_text,value_id,int(11),\N,PRI
+eav_entity_text,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_text,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_text,store_id,smallint(5) unsigned,0,MUL
+eav_entity_text,entity_id,int(10) unsigned,0,MUL
+eav_entity_text,value,text,\N,
+eav_entity_type,entity_type_id,smallint(5) unsigned,\N,PRI
+eav_entity_type,entity_type_code,varchar(50),\N,MUL
+eav_entity_type,entity_model,varchar(255),\N,
+eav_entity_type,attribute_model,varchar(255),\N,
+eav_entity_type,entity_table,varchar(255),\N,
+eav_entity_type,value_table_prefix,varchar(255),\N,
+eav_entity_type,entity_id_field,varchar(255),\N,
+eav_entity_type,is_data_sharing,smallint(5) unsigned,1,
+eav_entity_type,data_sharing_key,varchar(100),default,
+eav_entity_type,default_attribute_set_id,smallint(5) unsigned,0,
+eav_entity_type,increment_model,varchar(255),\N,
+eav_entity_type,increment_per_store,smallint(5) unsigned,0,
+eav_entity_type,increment_pad_length,smallint(5) unsigned,8,
+eav_entity_type,increment_pad_char,varchar(1),0,
+eav_entity_type,additional_attribute_table,varchar(255),\N,
+eav_entity_type,entity_attribute_collection,varchar(255),\N,
+eav_entity_varchar,value_id,int(11),\N,PRI
+eav_entity_varchar,entity_type_id,smallint(5) unsigned,0,MUL
+eav_entity_varchar,attribute_id,smallint(5) unsigned,0,MUL
+eav_entity_varchar,store_id,smallint(5) unsigned,0,MUL
+eav_entity_varchar,entity_id,int(10) unsigned,0,MUL
+eav_entity_varchar,value,varchar(255),\N,
+eav_form_element,element_id,int(10) unsigned,\N,PRI
+eav_form_element,type_id,smallint(5) unsigned,\N,MUL
+eav_form_element,fieldset_id,smallint(5) unsigned,\N,MUL
+eav_form_element,attribute_id,smallint(5) unsigned,\N,MUL
+eav_form_element,sort_order,int(11),0,
+eav_form_fieldset,fieldset_id,smallint(5) unsigned,\N,PRI
+eav_form_fieldset,type_id,smallint(5) unsigned,\N,MUL
+eav_form_fieldset,code,varchar(64),\N,
+eav_form_fieldset,sort_order,int(11),0,
+eav_form_fieldset_label,fieldset_id,smallint(5) unsigned,\N,PRI
+eav_form_fieldset_label,store_id,smallint(5) unsigned,\N,PRI
+eav_form_fieldset_label,label,varchar(255),\N,
+eav_form_type,type_id,smallint(5) unsigned,\N,PRI
+eav_form_type,code,varchar(64),\N,MUL
+eav_form_type,label,varchar(255),\N,
+eav_form_type,is_system,smallint(5) unsigned,0,
+eav_form_type,theme,varchar(64),\N,
+eav_form_type,store_id,smallint(5) unsigned,\N,MUL
+eav_form_type_entity,type_id,smallint(5) unsigned,\N,PRI
+eav_form_type_entity,entity_type_id,smallint(5) unsigned,\N,PRI
+email_template,template_id,int(10) unsigned,\N,PRI
+email_template,template_code,varchar(150),\N,UNI
+email_template,template_text,text,\N,
+email_template,template_styles,text,\N,
+email_template,template_type,int(10) unsigned,\N,
+email_template,template_subject,varchar(200),\N,
+email_template,template_sender_name,varchar(200),\N,
+email_template,template_sender_email,varchar(200),\N,
+email_template,added_at,timestamp,CURRENT_TIMESTAMP,MUL
+email_template,modified_at,timestamp,CURRENT_TIMESTAMP,MUL
+email_template,orig_template_code,varchar(200),\N,
+email_template,orig_template_variables,text,\N,
+flag,flag_id,int(10) unsigned,\N,PRI
+flag,flag_code,varchar(255),\N,
+flag,state,smallint(5) unsigned,0,
+flag,flag_data,text,\N,
+flag,last_update,timestamp,CURRENT_TIMESTAMP,MUL
+gift_message,gift_message_id,int(10) unsigned,\N,PRI
+gift_message,customer_id,int(10) unsigned,0,
+gift_message,sender,varchar(255),\N,
+gift_message,recipient,varchar(255),\N,
+gift_message,message,text,\N,
+googleoptimizer_code,code_id,int(10) unsigned,\N,PRI
+googleoptimizer_code,entity_id,int(10) unsigned,\N,
+googleoptimizer_code,entity_type,varchar(50),\N,
+googleoptimizer_code,store_id,smallint(5) unsigned,\N,MUL
+googleoptimizer_code,experiment_script,text,\N,
+importexport_importdata,id,int(10) unsigned,\N,PRI
+importexport_importdata,entity,varchar(50),\N,
+importexport_importdata,behavior,varchar(10),append,
+importexport_importdata,data,longtext,\N,
+import_history,history_id,int(10) unsigned,\N,PRI
+import_history,started_at,timestamp,CURRENT_TIMESTAMP,
+import_history,user_id,int(10) unsigned,0,
+import_history,imported_file,varchar(255),\N,
+import_history,execution_time,varchar(255),\N,
+import_history,summary,varchar(255),\N,
+import_history,error_file,varchar(255),\N,
+indexer_state,state_id,int(10) unsigned,\N,PRI
+indexer_state,indexer_id,varchar(255),\N,MUL
+indexer_state,status,varchar(16),invalid,
+indexer_state,updated,datetime,\N,
+indexer_state,hash_config,varchar(32),\N,
+integration,integration_id,int(10) unsigned,\N,PRI
+integration,name,varchar(255),\N,UNI
+integration,email,varchar(255),\N,
+integration,endpoint,varchar(255),\N,
+integration,status,smallint(5) unsigned,\N,
+integration,consumer_id,int(10) unsigned,\N,UNI
+integration,created_at,timestamp,CURRENT_TIMESTAMP,
+integration,updated_at,timestamp,0000-00-00 00:00:00,
+integration,setup_type,smallint(5) unsigned,0,
+integration,identity_link_url,varchar(255),\N,
+layout_link,layout_link_id,int(10) unsigned,\N,PRI
+layout_link,store_id,smallint(5) unsigned,0,MUL
+layout_link,theme_id,int(10) unsigned,\N,MUL
+layout_link,layout_update_id,int(10) unsigned,0,MUL
+layout_link,is_temporary,tinyint(1),0,
+layout_update,layout_update_id,int(10) unsigned,\N,PRI
+layout_update,handle,varchar(255),\N,MUL
+layout_update,xml,text,\N,
+layout_update,sort_order,smallint(6),0,
+layout_update,updated_at,timestamp,0000-00-00 00:00:00,
+mview_state,state_id,int(10) unsigned,\N,PRI
+mview_state,view_id,varchar(255),\N,MUL
+mview_state,mode,varchar(16),disabled,MUL
+mview_state,status,varchar(16),idle,
+mview_state,updated,datetime,\N,
+mview_state,version_id,int(10) unsigned,\N,
+newsletter_problem,problem_id,int(10) unsigned,\N,PRI
+newsletter_problem,subscriber_id,int(10) unsigned,\N,MUL
+newsletter_problem,queue_id,int(10) unsigned,0,MUL
+newsletter_problem,problem_error_code,int(10) unsigned,0,
+newsletter_problem,problem_error_text,varchar(200),\N,
+newsletter_queue,queue_id,int(10) unsigned,\N,PRI
+newsletter_queue,template_id,int(10) unsigned,0,MUL
+newsletter_queue,newsletter_type,int(11),\N,
+newsletter_queue,newsletter_text,text,\N,
+newsletter_queue,newsletter_styles,text,\N,
+newsletter_queue,newsletter_subject,varchar(200),\N,
+newsletter_queue,newsletter_sender_name,varchar(200),\N,
+newsletter_queue,newsletter_sender_email,varchar(200),\N,
+newsletter_queue,queue_status,int(10) unsigned,0,
+newsletter_queue,queue_start_at,timestamp,\N,
+newsletter_queue,queue_finish_at,timestamp,\N,
+newsletter_queue_link,queue_link_id,int(10) unsigned,\N,PRI
+newsletter_queue_link,queue_id,int(10) unsigned,0,MUL
+newsletter_queue_link,subscriber_id,int(10) unsigned,0,MUL
+newsletter_queue_link,letter_sent_at,timestamp,\N,
+newsletter_queue_store_link,queue_id,int(10) unsigned,0,PRI
+newsletter_queue_store_link,store_id,smallint(5) unsigned,0,PRI
+newsletter_subscriber,subscriber_id,int(10) unsigned,\N,PRI
+newsletter_subscriber,store_id,smallint(5) unsigned,0,MUL
+newsletter_subscriber,change_status_at,timestamp,\N,
+newsletter_subscriber,customer_id,int(10) unsigned,0,MUL
+newsletter_subscriber,subscriber_email,varchar(150),\N,
+newsletter_subscriber,subscriber_status,int(11),0,
+newsletter_subscriber,subscriber_confirm_code,varchar(32),NULL,
+newsletter_template,template_id,int(10) unsigned,\N,PRI
+newsletter_template,template_code,varchar(150),\N,
+newsletter_template,template_text,text,\N,
+newsletter_template,template_styles,text,\N,
+newsletter_template,template_type,int(10) unsigned,\N,
+newsletter_template,template_subject,varchar(200),\N,
+newsletter_template,template_sender_name,varchar(200),\N,
+newsletter_template,template_sender_email,varchar(200),\N,
+newsletter_template,template_actual,smallint(5) unsigned,1,MUL
+newsletter_template,added_at,timestamp,\N,MUL
+newsletter_template,modified_at,timestamp,\N,MUL
+oauth_consumer,entity_id,int(10) unsigned,\N,PRI
+oauth_consumer,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+oauth_consumer,updated_at,timestamp,0000-00-00 00:00:00,MUL
+oauth_consumer,name,varchar(255),\N,
+oauth_consumer,key,varchar(32),\N,UNI
+oauth_consumer,secret,varchar(32),\N,UNI
+oauth_consumer,callback_url,text,\N,
+oauth_consumer,rejected_callback_url,text,\N,
+oauth_nonce,nonce,varchar(32),\N,PRI
+oauth_nonce,timestamp,int(10) unsigned,\N,
+oauth_nonce,consumer_id,int(10) unsigned,\N,PRI
+oauth_token,entity_id,int(10) unsigned,\N,PRI
+oauth_token,consumer_id,int(10) unsigned,\N,MUL
+oauth_token,admin_id,int(10) unsigned,\N,MUL
+oauth_token,customer_id,int(10) unsigned,\N,MUL
+oauth_token,type,varchar(16),\N,
+oauth_token,token,varchar(32),\N,UNI
+oauth_token,secret,varchar(32),\N,
+oauth_token,verifier,varchar(32),\N,
+oauth_token,callback_url,text,\N,
+oauth_token,revoked,smallint(5) unsigned,0,
+oauth_token,authorized,smallint(5) unsigned,0,
+oauth_token,user_type,int(11),\N,
+oauth_token,created_at,timestamp,CURRENT_TIMESTAMP,
+oauth_token_request_log,log_id,int(10) unsigned,\N,PRI
+oauth_token_request_log,user_name,varchar(255),\N,MUL
+oauth_token_request_log,user_type,smallint(5) unsigned,\N,
+oauth_token_request_log,failures_count,smallint(5) unsigned,0,
+oauth_token_request_log,lock_expires_at,timestamp,CURRENT_TIMESTAMP,
+password_reset_request_event,id,int(10) unsigned,\N,PRI
+password_reset_request_event,request_type,smallint(5) unsigned,\N,
+password_reset_request_event,account_reference,varchar(255),\N,MUL
+password_reset_request_event,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+password_reset_request_event,ip,varchar(15),\N,
+paypal_billing_agreement,agreement_id,int(10) unsigned,\N,PRI
+paypal_billing_agreement,customer_id,int(10) unsigned,\N,MUL
+paypal_billing_agreement,method_code,varchar(32),\N,
+paypal_billing_agreement,reference_id,varchar(32),\N,
+paypal_billing_agreement,status,varchar(20),\N,
+paypal_billing_agreement,created_at,timestamp,CURRENT_TIMESTAMP,
+paypal_billing_agreement,updated_at,timestamp,\N,
+paypal_billing_agreement,store_id,smallint(5) unsigned,\N,MUL
+paypal_billing_agreement,agreement_label,varchar(255),\N,
+paypal_billing_agreement_order,agreement_id,int(10) unsigned,\N,PRI
+paypal_billing_agreement_order,order_id,int(10) unsigned,\N,PRI
+paypal_cert,cert_id,smallint(5) unsigned,\N,PRI
+paypal_cert,website_id,smallint(5) unsigned,0,MUL
+paypal_cert,content,text,\N,
+paypal_cert,updated_at,timestamp,\N,
+paypal_payment_transaction,transaction_id,int(10) unsigned,\N,PRI
+paypal_payment_transaction,txn_id,varchar(100),\N,UNI
+paypal_payment_transaction,additional_information,blob,\N,
+paypal_payment_transaction,created_at,timestamp,\N,
+paypal_settlement_report,report_id,int(10) unsigned,\N,PRI
+paypal_settlement_report,report_date,timestamp,\N,MUL
+paypal_settlement_report,account_id,varchar(64),\N,
+paypal_settlement_report,filename,varchar(24),\N,
+paypal_settlement_report,last_modified,timestamp,\N,
+paypal_settlement_report_row,row_id,int(10) unsigned,\N,PRI
+paypal_settlement_report_row,report_id,int(10) unsigned,\N,MUL
+paypal_settlement_report_row,transaction_id,varchar(19),\N,
+paypal_settlement_report_row,invoice_id,varchar(127),\N,
+paypal_settlement_report_row,paypal_reference_id,varchar(19),\N,
+paypal_settlement_report_row,paypal_reference_id_type,varchar(3),\N,
+paypal_settlement_report_row,transaction_event_code,varchar(5),\N,
+paypal_settlement_report_row,transaction_initiation_date,timestamp,\N,
+paypal_settlement_report_row,transaction_completion_date,timestamp,\N,
+paypal_settlement_report_row,transaction_debit_or_credit,varchar(2),CR,
+paypal_settlement_report_row,gross_transaction_amount,decimal(20\,6),0.000000,
+paypal_settlement_report_row,gross_transaction_currency,varchar(3),\N,
+paypal_settlement_report_row,fee_debit_or_credit,varchar(2),\N,
+paypal_settlement_report_row,fee_amount,decimal(20\,6),0.000000,
+paypal_settlement_report_row,fee_currency,varchar(3),\N,
+paypal_settlement_report_row,custom_field,varchar(255),\N,
+paypal_settlement_report_row,consumer_id,varchar(127),\N,
+paypal_settlement_report_row,payment_tracking_id,varchar(255),\N,
+paypal_settlement_report_row,store_id,varchar(50),\N,
+persistent_session,persistent_id,int(10) unsigned,\N,PRI
+persistent_session,key,varchar(50),\N,UNI
+persistent_session,customer_id,int(10) unsigned,\N,UNI
+persistent_session,website_id,smallint(5) unsigned,0,MUL
+persistent_session,info,text,\N,
+persistent_session,updated_at,timestamp,CURRENT_TIMESTAMP,MUL
+product_alert_price,alert_price_id,int(10) unsigned,\N,PRI
+product_alert_price,customer_id,int(10) unsigned,0,MUL
+product_alert_price,product_id,int(10) unsigned,0,MUL
+product_alert_price,price,decimal(12\,4),0.0000,
+product_alert_price,website_id,smallint(5) unsigned,0,MUL
+product_alert_price,add_date,timestamp,CURRENT_TIMESTAMP,
+product_alert_price,last_send_date,timestamp,\N,
+product_alert_price,send_count,smallint(5) unsigned,0,
+product_alert_price,status,smallint(5) unsigned,0,
+product_alert_stock,alert_stock_id,int(10) unsigned,\N,PRI
+product_alert_stock,customer_id,int(10) unsigned,0,MUL
+product_alert_stock,product_id,int(10) unsigned,0,MUL
+product_alert_stock,website_id,smallint(5) unsigned,0,MUL
+product_alert_stock,add_date,timestamp,CURRENT_TIMESTAMP,
+product_alert_stock,send_date,timestamp,\N,
+product_alert_stock,send_count,smallint(5) unsigned,0,
+product_alert_stock,status,smallint(5) unsigned,0,
+quote,entity_id,int(10) unsigned,\N,PRI
+quote,store_id,smallint(5) unsigned,0,MUL
+quote,created_at,timestamp,CURRENT_TIMESTAMP,
+quote,updated_at,timestamp,0000-00-00 00:00:00,
+quote,converted_at,timestamp,\N,
+quote,is_active,smallint(5) unsigned,1,
+quote,is_virtual,smallint(5) unsigned,0,
+quote,is_multi_shipping,smallint(5) unsigned,0,
+quote,items_count,int(10) unsigned,0,
+quote,items_qty,decimal(12\,4),0.0000,
+quote,orig_order_id,int(10) unsigned,0,
+quote,store_to_base_rate,decimal(12\,4),0.0000,
+quote,store_to_quote_rate,decimal(12\,4),0.0000,
+quote,base_currency_code,varchar(255),\N,
+quote,store_currency_code,varchar(255),\N,
+quote,quote_currency_code,varchar(255),\N,
+quote,grand_total,decimal(12\,4),0.0000,
+quote,base_grand_total,decimal(12\,4),0.0000,
+quote,checkout_method,varchar(255),\N,
+quote,customer_id,int(10) unsigned,\N,MUL
+quote,customer_tax_class_id,int(10) unsigned,\N,
+quote,customer_group_id,int(10) unsigned,0,
+quote,customer_email,varchar(255),\N,
+quote,customer_prefix,varchar(40),\N,
+quote,customer_firstname,varchar(255),\N,
+quote,customer_middlename,varchar(40),\N,
+quote,customer_lastname,varchar(255),\N,
+quote,customer_suffix,varchar(40),\N,
+quote,customer_dob,datetime,\N,
+quote,customer_note,varchar(255),\N,
+quote,customer_note_notify,smallint(5) unsigned,1,
+quote,customer_is_guest,smallint(5) unsigned,0,
+quote,remote_ip,varchar(32),\N,
+quote,applied_rule_ids,varchar(255),\N,
+quote,reserved_order_id,varchar(64),\N,
+quote,password_hash,varchar(255),\N,
+quote,coupon_code,varchar(255),\N,
+quote,global_currency_code,varchar(255),\N,
+quote,base_to_global_rate,decimal(12\,4),\N,
+quote,base_to_quote_rate,decimal(12\,4),\N,
+quote,customer_taxvat,varchar(255),\N,
+quote,customer_gender,varchar(255),\N,
+quote,subtotal,decimal(12\,4),\N,
+quote,base_subtotal,decimal(12\,4),\N,
+quote,subtotal_with_discount,decimal(12\,4),\N,
+quote,base_subtotal_with_discount,decimal(12\,4),\N,
+quote,is_changed,int(10) unsigned,\N,
+quote,trigger_recollect,smallint(6),0,
+quote,ext_shipping_info,text,\N,
+quote,is_persistent,smallint(5) unsigned,0,
+quote,gift_message_id,int(11),\N,
+quote_address,address_id,int(10) unsigned,\N,PRI
+quote_address,quote_id,int(10) unsigned,0,MUL
+quote_address,created_at,timestamp,CURRENT_TIMESTAMP,
+quote_address,updated_at,timestamp,0000-00-00 00:00:00,
+quote_address,customer_id,int(10) unsigned,\N,
+quote_address,save_in_address_book,smallint(6),0,
+quote_address,customer_address_id,int(10) unsigned,\N,
+quote_address,address_type,varchar(10),\N,
+quote_address,email,varchar(255),\N,
+quote_address,prefix,varchar(40),\N,
+quote_address,firstname,varchar(20),\N,
+quote_address,middlename,varchar(20),\N,
+quote_address,lastname,varchar(20),\N,
+quote_address,suffix,varchar(40),\N,
+quote_address,company,varchar(255),\N,
+quote_address,street,varchar(255),\N,
+quote_address,city,varchar(40),\N,
+quote_address,region,varchar(40),\N,
+quote_address,region_id,int(10) unsigned,\N,
+quote_address,postcode,varchar(20),\N,
+quote_address,country_id,varchar(30),\N,
+quote_address,telephone,varchar(20),\N,
+quote_address,fax,varchar(20),\N,
+quote_address,same_as_billing,smallint(5) unsigned,0,
+quote_address,collect_shipping_rates,smallint(5) unsigned,0,
+quote_address,shipping_method,varchar(40),\N,
+quote_address,shipping_description,varchar(255),\N,
+quote_address,weight,decimal(12\,4),0.0000,
+quote_address,subtotal,decimal(12\,4),0.0000,
+quote_address,base_subtotal,decimal(12\,4),0.0000,
+quote_address,subtotal_with_discount,decimal(12\,4),0.0000,
+quote_address,base_subtotal_with_discount,decimal(12\,4),0.0000,
+quote_address,tax_amount,decimal(12\,4),0.0000,
+quote_address,base_tax_amount,decimal(12\,4),0.0000,
+quote_address,shipping_amount,decimal(12\,4),0.0000,
+quote_address,base_shipping_amount,decimal(12\,4),0.0000,
+quote_address,shipping_tax_amount,decimal(12\,4),\N,
+quote_address,base_shipping_tax_amount,decimal(12\,4),\N,
+quote_address,discount_amount,decimal(12\,4),0.0000,
+quote_address,base_discount_amount,decimal(12\,4),0.0000,
+quote_address,grand_total,decimal(12\,4),0.0000,
+quote_address,base_grand_total,decimal(12\,4),0.0000,
+quote_address,customer_notes,text,\N,
+quote_address,applied_taxes,text,\N,
+quote_address,discount_description,varchar(255),\N,
+quote_address,shipping_discount_amount,decimal(12\,4),\N,
+quote_address,base_shipping_discount_amount,decimal(12\,4),\N,
+quote_address,subtotal_incl_tax,decimal(12\,4),\N,
+quote_address,base_subtotal_total_incl_tax,decimal(12\,4),\N,
+quote_address,discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_address,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_address,shipping_discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_address,base_shipping_discount_tax_compensation_amnt,decimal(12\,4),\N,
+quote_address,shipping_incl_tax,decimal(12\,4),\N,
+quote_address,base_shipping_incl_tax,decimal(12\,4),\N,
+quote_address,free_shipping,smallint(6),\N,
+quote_address,vat_id,text,\N,
+quote_address,vat_is_valid,smallint(6),\N,
+quote_address,vat_request_id,text,\N,
+quote_address,vat_request_date,text,\N,
+quote_address,vat_request_success,smallint(6),\N,
+quote_address,gift_message_id,int(11),\N,
+quote_address_item,address_item_id,int(10) unsigned,\N,PRI
+quote_address_item,parent_item_id,int(10) unsigned,\N,MUL
+quote_address_item,quote_address_id,int(10) unsigned,0,MUL
+quote_address_item,quote_item_id,int(10) unsigned,0,MUL
+quote_address_item,created_at,timestamp,CURRENT_TIMESTAMP,
+quote_address_item,updated_at,timestamp,0000-00-00 00:00:00,
+quote_address_item,applied_rule_ids,text,\N,
+quote_address_item,additional_data,text,\N,
+quote_address_item,weight,decimal(12\,4),0.0000,
+quote_address_item,qty,decimal(12\,4),0.0000,
+quote_address_item,discount_amount,decimal(12\,4),0.0000,
+quote_address_item,tax_amount,decimal(12\,4),0.0000,
+quote_address_item,row_total,decimal(12\,4),0.0000,
+quote_address_item,base_row_total,decimal(12\,4),0.0000,
+quote_address_item,row_total_with_discount,decimal(12\,4),0.0000,
+quote_address_item,base_discount_amount,decimal(12\,4),0.0000,
+quote_address_item,base_tax_amount,decimal(12\,4),0.0000,
+quote_address_item,row_weight,decimal(12\,4),0.0000,
+quote_address_item,product_id,int(10) unsigned,\N,
+quote_address_item,super_product_id,int(10) unsigned,\N,
+quote_address_item,parent_product_id,int(10) unsigned,\N,
+quote_address_item,sku,varchar(255),\N,
+quote_address_item,image,varchar(255),\N,
+quote_address_item,name,varchar(255),\N,
+quote_address_item,description,text,\N,
+quote_address_item,is_qty_decimal,int(10) unsigned,\N,
+quote_address_item,price,decimal(12\,4),\N,
+quote_address_item,discount_percent,decimal(12\,4),\N,
+quote_address_item,no_discount,int(10) unsigned,\N,
+quote_address_item,tax_percent,decimal(12\,4),\N,
+quote_address_item,base_price,decimal(12\,4),\N,
+quote_address_item,base_cost,decimal(12\,4),\N,
+quote_address_item,price_incl_tax,decimal(12\,4),\N,
+quote_address_item,base_price_incl_tax,decimal(12\,4),\N,
+quote_address_item,row_total_incl_tax,decimal(12\,4),\N,
+quote_address_item,base_row_total_incl_tax,decimal(12\,4),\N,
+quote_address_item,discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_address_item,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_address_item,free_shipping,int(11),\N,
+quote_address_item,gift_message_id,int(11),\N,
+quote_id_mask,entity_id,int(10) unsigned,\N,PRI
+quote_id_mask,quote_id,int(10) unsigned,\N,PRI
+quote_id_mask,masked_id,varchar(32),\N,MUL
+quote_item,item_id,int(10) unsigned,\N,PRI
+quote_item,quote_id,int(10) unsigned,0,MUL
+quote_item,created_at,timestamp,CURRENT_TIMESTAMP,
+quote_item,updated_at,timestamp,0000-00-00 00:00:00,
+quote_item,product_id,int(10) unsigned,\N,MUL
+quote_item,store_id,smallint(5) unsigned,\N,MUL
+quote_item,parent_item_id,int(10) unsigned,\N,MUL
+quote_item,is_virtual,smallint(5) unsigned,\N,
+quote_item,sku,varchar(255),\N,
+quote_item,name,varchar(255),\N,
+quote_item,description,text,\N,
+quote_item,applied_rule_ids,text,\N,
+quote_item,additional_data,text,\N,
+quote_item,is_qty_decimal,smallint(5) unsigned,\N,
+quote_item,no_discount,smallint(5) unsigned,0,
+quote_item,weight,decimal(12\,4),0.0000,
+quote_item,qty,decimal(12\,4),0.0000,
+quote_item,price,decimal(12\,4),0.0000,
+quote_item,base_price,decimal(12\,4),0.0000,
+quote_item,custom_price,decimal(12\,4),\N,
+quote_item,discount_percent,decimal(12\,4),0.0000,
+quote_item,discount_amount,decimal(12\,4),0.0000,
+quote_item,base_discount_amount,decimal(12\,4),0.0000,
+quote_item,tax_percent,decimal(12\,4),0.0000,
+quote_item,tax_amount,decimal(12\,4),0.0000,
+quote_item,base_tax_amount,decimal(12\,4),0.0000,
+quote_item,row_total,decimal(12\,4),0.0000,
+quote_item,base_row_total,decimal(12\,4),0.0000,
+quote_item,row_total_with_discount,decimal(12\,4),0.0000,
+quote_item,row_weight,decimal(12\,4),0.0000,
+quote_item,product_type,varchar(255),\N,
+quote_item,base_tax_before_discount,decimal(12\,4),\N,
+quote_item,tax_before_discount,decimal(12\,4),\N,
+quote_item,original_custom_price,decimal(12\,4),\N,
+quote_item,redirect_url,varchar(255),\N,
+quote_item,base_cost,decimal(12\,4),\N,
+quote_item,price_incl_tax,decimal(12\,4),\N,
+quote_item,base_price_incl_tax,decimal(12\,4),\N,
+quote_item,row_total_incl_tax,decimal(12\,4),\N,
+quote_item,base_row_total_incl_tax,decimal(12\,4),\N,
+quote_item,discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_item,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+quote_item,free_shipping,smallint(6),\N,
+quote_item,gift_message_id,int(11),\N,
+quote_item,weee_tax_applied,text,\N,
+quote_item,weee_tax_applied_amount,decimal(12\,4),\N,
+quote_item,weee_tax_applied_row_amount,decimal(12\,4),\N,
+quote_item,weee_tax_disposition,decimal(12\,4),\N,
+quote_item,weee_tax_row_disposition,decimal(12\,4),\N,
+quote_item,base_weee_tax_applied_amount,decimal(12\,4),\N,
+quote_item,base_weee_tax_applied_row_amnt,decimal(12\,4),\N,
+quote_item,base_weee_tax_disposition,decimal(12\,4),\N,
+quote_item,base_weee_tax_row_disposition,decimal(12\,4),\N,
+quote_item_option,option_id,int(10) unsigned,\N,PRI
+quote_item_option,item_id,int(10) unsigned,\N,MUL
+quote_item_option,product_id,int(10) unsigned,\N,
+quote_item_option,code,varchar(255),\N,
+quote_item_option,value,text,\N,
+quote_payment,payment_id,int(10) unsigned,\N,PRI
+quote_payment,quote_id,int(10) unsigned,0,MUL
+quote_payment,created_at,timestamp,CURRENT_TIMESTAMP,
+quote_payment,updated_at,timestamp,0000-00-00 00:00:00,
+quote_payment,method,varchar(255),\N,
+quote_payment,cc_type,varchar(255),\N,
+quote_payment,cc_number_enc,varchar(255),\N,
+quote_payment,cc_last_4,varchar(255),\N,
+quote_payment,cc_cid_enc,varchar(255),\N,
+quote_payment,cc_owner,varchar(255),\N,
+quote_payment,cc_exp_month,varchar(255),\N,
+quote_payment,cc_exp_year,smallint(5) unsigned,0,
+quote_payment,cc_ss_owner,varchar(255),\N,
+quote_payment,cc_ss_start_month,smallint(5) unsigned,0,
+quote_payment,cc_ss_start_year,smallint(5) unsigned,0,
+quote_payment,po_number,varchar(255),\N,
+quote_payment,additional_data,text,\N,
+quote_payment,cc_ss_issue,varchar(255),\N,
+quote_payment,additional_information,text,\N,
+quote_payment,paypal_payer_id,varchar(255),\N,
+quote_payment,paypal_payer_status,varchar(255),\N,
+quote_payment,paypal_correlation_id,varchar(255),\N,
+quote_shipping_rate,rate_id,int(10) unsigned,\N,PRI
+quote_shipping_rate,address_id,int(10) unsigned,0,MUL
+quote_shipping_rate,created_at,timestamp,CURRENT_TIMESTAMP,
+quote_shipping_rate,updated_at,timestamp,0000-00-00 00:00:00,
+quote_shipping_rate,carrier,varchar(255),\N,
+quote_shipping_rate,carrier_title,varchar(255),\N,
+quote_shipping_rate,code,varchar(255),\N,
+quote_shipping_rate,method,varchar(255),\N,
+quote_shipping_rate,method_description,text,\N,
+quote_shipping_rate,price,decimal(12\,4),0.0000,
+quote_shipping_rate,error_message,text,\N,
+quote_shipping_rate,method_title,text,\N,
+rating,rating_id,smallint(5) unsigned,\N,PRI
+rating,entity_id,smallint(5) unsigned,0,MUL
+rating,rating_code,varchar(64),\N,UNI
+rating,position,smallint(5) unsigned,0,
+rating,is_active,smallint(6),1,
+rating_entity,entity_id,smallint(5) unsigned,\N,PRI
+rating_entity,entity_code,varchar(64),\N,UNI
+rating_option,option_id,int(10) unsigned,\N,PRI
+rating_option,rating_id,smallint(5) unsigned,0,MUL
+rating_option,code,varchar(32),\N,
+rating_option,value,smallint(5) unsigned,0,
+rating_option,position,smallint(5) unsigned,0,
+rating_option_vote,vote_id,bigint(20) unsigned,\N,PRI
+rating_option_vote,option_id,int(10) unsigned,0,MUL
+rating_option_vote,remote_ip,varchar(16),\N,
+rating_option_vote,remote_ip_long,bigint(20),0,
+rating_option_vote,customer_id,int(10) unsigned,0,
+rating_option_vote,entity_pk_value,bigint(20) unsigned,0,
+rating_option_vote,rating_id,smallint(5) unsigned,0,
+rating_option_vote,review_id,bigint(20) unsigned,\N,MUL
+rating_option_vote,percent,smallint(6),0,
+rating_option_vote,value,smallint(6),0,
+rating_option_vote_aggregated,primary_id,int(11),\N,PRI
+rating_option_vote_aggregated,rating_id,smallint(5) unsigned,0,MUL
+rating_option_vote_aggregated,entity_pk_value,bigint(20) unsigned,0,
+rating_option_vote_aggregated,vote_count,int(10) unsigned,0,
+rating_option_vote_aggregated,vote_value_sum,int(10) unsigned,0,
+rating_option_vote_aggregated,percent,smallint(6),0,
+rating_option_vote_aggregated,percent_approved,smallint(6),0,
+rating_option_vote_aggregated,store_id,smallint(5) unsigned,0,MUL
+rating_store,rating_id,smallint(5) unsigned,0,PRI
+rating_store,store_id,smallint(5) unsigned,0,PRI
+rating_title,rating_id,smallint(5) unsigned,0,PRI
+rating_title,store_id,smallint(5) unsigned,0,PRI
+rating_title,value,varchar(255),\N,
+reporting_counts,entity_id,int(10) unsigned,\N,PRI
+reporting_counts,type,varchar(255),\N,
+reporting_counts,count,int(10) unsigned,\N,
+reporting_counts,updated_at,timestamp,CURRENT_TIMESTAMP,
+reporting_module_status,entity_id,int(10) unsigned,\N,PRI
+reporting_module_status,name,varchar(255),\N,
+reporting_module_status,active,varchar(255),\N,
+reporting_module_status,setup_version,varchar(255),\N,
+reporting_module_status,state,varchar(255),\N,
+reporting_module_status,updated_at,timestamp,CURRENT_TIMESTAMP,
+reporting_orders,entity_id,int(10) unsigned,\N,PRI
+reporting_orders,customer_id,int(10) unsigned,\N,
+reporting_orders,total,decimal(20\,2),\N,
+reporting_orders,total_base,decimal(20\,2),\N,
+reporting_orders,item_count,int(10) unsigned,\N,
+reporting_orders,updated_at,timestamp,CURRENT_TIMESTAMP,
+reporting_system_updates,entity_id,int(10) unsigned,\N,PRI
+reporting_system_updates,type,varchar(255),\N,
+reporting_system_updates,action,varchar(255),\N,
+reporting_system_updates,updated_at,timestamp,CURRENT_TIMESTAMP,
+reporting_users,entity_id,int(10) unsigned,\N,PRI
+reporting_users,type,varchar(255),\N,
+reporting_users,action,varchar(255),\N,
+reporting_users,updated_at,timestamp,CURRENT_TIMESTAMP,
+report_compared_product_index,index_id,bigint(20) unsigned,\N,PRI
+report_compared_product_index,visitor_id,int(10) unsigned,\N,MUL
+report_compared_product_index,customer_id,int(10) unsigned,\N,MUL
+report_compared_product_index,product_id,int(10) unsigned,\N,MUL
+report_compared_product_index,store_id,smallint(5) unsigned,\N,MUL
+report_compared_product_index,added_at,timestamp,CURRENT_TIMESTAMP,MUL
+report_event,event_id,bigint(20) unsigned,\N,PRI
+report_event,logged_at,timestamp,CURRENT_TIMESTAMP,
+report_event,event_type_id,smallint(5) unsigned,0,MUL
+report_event,object_id,int(10) unsigned,0,MUL
+report_event,subject_id,int(10) unsigned,0,MUL
+report_event,subtype,smallint(5) unsigned,0,MUL
+report_event,store_id,smallint(5) unsigned,\N,MUL
+report_event_types,event_type_id,smallint(5) unsigned,\N,PRI
+report_event_types,event_name,varchar(64),\N,
+report_event_types,customer_login,smallint(5) unsigned,0,
+report_viewed_product_aggregated_daily,id,int(10) unsigned,\N,PRI
+report_viewed_product_aggregated_daily,period,date,\N,MUL
+report_viewed_product_aggregated_daily,store_id,smallint(5) unsigned,\N,MUL
+report_viewed_product_aggregated_daily,product_id,int(10) unsigned,\N,MUL
+report_viewed_product_aggregated_daily,product_name,varchar(255),\N,
+report_viewed_product_aggregated_daily,product_price,decimal(12\,4),0.0000,
+report_viewed_product_aggregated_daily,views_num,int(11),0,
+report_viewed_product_aggregated_daily,rating_pos,smallint(5) unsigned,0,
+report_viewed_product_aggregated_monthly,id,int(10) unsigned,\N,PRI
+report_viewed_product_aggregated_monthly,period,date,\N,MUL
+report_viewed_product_aggregated_monthly,store_id,smallint(5) unsigned,\N,MUL
+report_viewed_product_aggregated_monthly,product_id,int(10) unsigned,\N,MUL
+report_viewed_product_aggregated_monthly,product_name,varchar(255),\N,
+report_viewed_product_aggregated_monthly,product_price,decimal(12\,4),0.0000,
+report_viewed_product_aggregated_monthly,views_num,int(11),0,
+report_viewed_product_aggregated_monthly,rating_pos,smallint(5) unsigned,0,
+report_viewed_product_aggregated_yearly,id,int(10) unsigned,\N,PRI
+report_viewed_product_aggregated_yearly,period,date,\N,MUL
+report_viewed_product_aggregated_yearly,store_id,smallint(5) unsigned,\N,MUL
+report_viewed_product_aggregated_yearly,product_id,int(10) unsigned,\N,MUL
+report_viewed_product_aggregated_yearly,product_name,varchar(255),\N,
+report_viewed_product_aggregated_yearly,product_price,decimal(12\,4),0.0000,
+report_viewed_product_aggregated_yearly,views_num,int(11),0,
+report_viewed_product_aggregated_yearly,rating_pos,smallint(5) unsigned,0,
+report_viewed_product_index,index_id,bigint(20) unsigned,\N,PRI
+report_viewed_product_index,visitor_id,int(10) unsigned,\N,MUL
+report_viewed_product_index,customer_id,int(10) unsigned,\N,MUL
+report_viewed_product_index,product_id,int(10) unsigned,\N,MUL
+report_viewed_product_index,store_id,smallint(5) unsigned,\N,MUL
+report_viewed_product_index,added_at,timestamp,CURRENT_TIMESTAMP,MUL
+review,review_id,bigint(20) unsigned,\N,PRI
+review,created_at,timestamp,CURRENT_TIMESTAMP,
+review,entity_id,smallint(5) unsigned,0,MUL
+review,entity_pk_value,int(10) unsigned,0,MUL
+review,status_id,smallint(5) unsigned,0,MUL
+review_detail,detail_id,bigint(20) unsigned,\N,PRI
+review_detail,review_id,bigint(20) unsigned,0,MUL
+review_detail,store_id,smallint(5) unsigned,0,MUL
+review_detail,title,varchar(255),\N,
+review_detail,detail,text,\N,
+review_detail,nickname,varchar(128),\N,
+review_detail,customer_id,int(10) unsigned,\N,MUL
+review_entity,entity_id,smallint(5) unsigned,\N,PRI
+review_entity,entity_code,varchar(32),\N,
+review_entity_summary,primary_id,bigint(20),\N,PRI
+review_entity_summary,entity_pk_value,bigint(20),0,
+review_entity_summary,entity_type,smallint(6),0,
+review_entity_summary,reviews_count,smallint(6),0,
+review_entity_summary,rating_summary,smallint(6),0,
+review_entity_summary,store_id,smallint(5) unsigned,0,MUL
+review_status,status_id,smallint(5) unsigned,\N,PRI
+review_status,status_code,varchar(32),\N,
+review_store,review_id,bigint(20) unsigned,\N,PRI
+review_store,store_id,smallint(5) unsigned,\N,PRI
+salesrule,rule_id,int(10) unsigned,\N,PRI
+salesrule,name,varchar(255),\N,
+salesrule,description,text,\N,
+salesrule,from_date,date,\N,
+salesrule,to_date,date,\N,
+salesrule,uses_per_customer,int(11),0,
+salesrule,is_active,smallint(6),0,MUL
+salesrule,conditions_serialized,mediumtext,\N,
+salesrule,actions_serialized,mediumtext,\N,
+salesrule,stop_rules_processing,smallint(6),1,
+salesrule,is_advanced,smallint(5) unsigned,1,
+salesrule,product_ids,text,\N,
+salesrule,sort_order,int(10) unsigned,0,
+salesrule,simple_action,varchar(32),\N,
+salesrule,discount_amount,decimal(12\,4),0.0000,
+salesrule,discount_qty,decimal(12\,4),\N,
+salesrule,discount_step,int(10) unsigned,0,
+salesrule,apply_to_shipping,smallint(5) unsigned,0,
+salesrule,times_used,int(10) unsigned,0,
+salesrule,is_rss,smallint(6),0,
+salesrule,coupon_type,smallint(5) unsigned,1,
+salesrule,use_auto_generation,smallint(6),0,
+salesrule,uses_per_coupon,int(11),0,
+salesrule,simple_free_shipping,smallint(6),\N,
+salesrule_coupon,coupon_id,int(10) unsigned,\N,PRI
+salesrule_coupon,rule_id,int(10) unsigned,\N,MUL
+salesrule_coupon,code,varchar(255),\N,UNI
+salesrule_coupon,usage_limit,int(10) unsigned,\N,
+salesrule_coupon,usage_per_customer,int(10) unsigned,\N,
+salesrule_coupon,times_used,int(10) unsigned,0,
+salesrule_coupon,expiration_date,timestamp,\N,
+salesrule_coupon,is_primary,smallint(5) unsigned,\N,
+salesrule_coupon,created_at,timestamp,\N,
+salesrule_coupon,type,smallint(6),0,
+salesrule_coupon_aggregated,id,int(10) unsigned,\N,PRI
+salesrule_coupon_aggregated,period,date,\N,MUL
+salesrule_coupon_aggregated,store_id,smallint(5) unsigned,\N,MUL
+salesrule_coupon_aggregated,order_status,varchar(50),\N,
+salesrule_coupon_aggregated,coupon_code,varchar(50),\N,
+salesrule_coupon_aggregated,coupon_uses,int(11),0,
+salesrule_coupon_aggregated,subtotal_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,discount_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,total_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,subtotal_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,discount_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,total_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated,rule_name,varchar(255),\N,MUL
+salesrule_coupon_aggregated_order,id,int(10) unsigned,\N,PRI
+salesrule_coupon_aggregated_order,period,date,\N,MUL
+salesrule_coupon_aggregated_order,store_id,smallint(5) unsigned,\N,MUL
+salesrule_coupon_aggregated_order,order_status,varchar(50),\N,
+salesrule_coupon_aggregated_order,coupon_code,varchar(50),\N,
+salesrule_coupon_aggregated_order,coupon_uses,int(11),0,
+salesrule_coupon_aggregated_order,subtotal_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_order,discount_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_order,total_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_order,rule_name,varchar(255),\N,MUL
+salesrule_coupon_aggregated_updated,id,int(10) unsigned,\N,PRI
+salesrule_coupon_aggregated_updated,period,date,\N,MUL
+salesrule_coupon_aggregated_updated,store_id,smallint(5) unsigned,\N,MUL
+salesrule_coupon_aggregated_updated,order_status,varchar(50),\N,
+salesrule_coupon_aggregated_updated,coupon_code,varchar(50),\N,
+salesrule_coupon_aggregated_updated,coupon_uses,int(11),0,
+salesrule_coupon_aggregated_updated,subtotal_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,discount_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,total_amount,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,subtotal_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,discount_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,total_amount_actual,decimal(12\,4),0.0000,
+salesrule_coupon_aggregated_updated,rule_name,varchar(255),\N,MUL
+salesrule_coupon_usage,coupon_id,int(10) unsigned,\N,PRI
+salesrule_coupon_usage,customer_id,int(10) unsigned,\N,PRI
+salesrule_coupon_usage,times_used,int(10) unsigned,0,
+salesrule_customer,rule_customer_id,int(10) unsigned,\N,PRI
+salesrule_customer,rule_id,int(10) unsigned,0,MUL
+salesrule_customer,customer_id,int(10) unsigned,0,MUL
+salesrule_customer,times_used,smallint(5) unsigned,0,
+salesrule_customer_group,rule_id,int(10) unsigned,\N,PRI
+salesrule_customer_group,customer_group_id,smallint(5) unsigned,\N,PRI
+salesrule_label,label_id,int(10) unsigned,\N,PRI
+salesrule_label,rule_id,int(10) unsigned,\N,MUL
+salesrule_label,store_id,smallint(5) unsigned,\N,MUL
+salesrule_label,label,varchar(255),\N,
+salesrule_product_attribute,rule_id,int(10) unsigned,\N,PRI
+salesrule_product_attribute,website_id,smallint(5) unsigned,\N,PRI
+salesrule_product_attribute,customer_group_id,smallint(5) unsigned,\N,PRI
+salesrule_product_attribute,attribute_id,smallint(5) unsigned,\N,PRI
+salesrule_website,rule_id,int(10) unsigned,\N,PRI
+salesrule_website,website_id,smallint(5) unsigned,\N,PRI
+sales_bestsellers_aggregated_daily,id,int(10) unsigned,\N,PRI
+sales_bestsellers_aggregated_daily,period,date,\N,MUL
+sales_bestsellers_aggregated_daily,store_id,smallint(5) unsigned,\N,MUL
+sales_bestsellers_aggregated_daily,product_id,int(10) unsigned,\N,MUL
+sales_bestsellers_aggregated_daily,product_name,varchar(255),\N,
+sales_bestsellers_aggregated_daily,product_price,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_daily,qty_ordered,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_daily,rating_pos,smallint(5) unsigned,0,
+sales_bestsellers_aggregated_monthly,id,int(10) unsigned,\N,PRI
+sales_bestsellers_aggregated_monthly,period,date,\N,MUL
+sales_bestsellers_aggregated_monthly,store_id,smallint(5) unsigned,\N,MUL
+sales_bestsellers_aggregated_monthly,product_id,int(10) unsigned,\N,MUL
+sales_bestsellers_aggregated_monthly,product_name,varchar(255),\N,
+sales_bestsellers_aggregated_monthly,product_price,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_monthly,qty_ordered,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_monthly,rating_pos,smallint(5) unsigned,0,
+sales_bestsellers_aggregated_yearly,id,int(10) unsigned,\N,PRI
+sales_bestsellers_aggregated_yearly,period,date,\N,MUL
+sales_bestsellers_aggregated_yearly,store_id,smallint(5) unsigned,\N,MUL
+sales_bestsellers_aggregated_yearly,product_id,int(10) unsigned,\N,MUL
+sales_bestsellers_aggregated_yearly,product_name,varchar(255),\N,
+sales_bestsellers_aggregated_yearly,product_price,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_yearly,qty_ordered,decimal(12\,4),0.0000,
+sales_bestsellers_aggregated_yearly,rating_pos,smallint(5) unsigned,0,
+sales_creditmemo,entity_id,int(10) unsigned,\N,PRI
+sales_creditmemo,store_id,smallint(5) unsigned,\N,MUL
+sales_creditmemo,adjustment_positive,decimal(12\,4),\N,
+sales_creditmemo,base_shipping_tax_amount,decimal(12\,4),\N,
+sales_creditmemo,store_to_order_rate,decimal(12\,4),\N,
+sales_creditmemo,base_discount_amount,decimal(12\,4),\N,
+sales_creditmemo,base_to_order_rate,decimal(12\,4),\N,
+sales_creditmemo,grand_total,decimal(12\,4),\N,
+sales_creditmemo,base_adjustment_negative,decimal(12\,4),\N,
+sales_creditmemo,base_subtotal_incl_tax,decimal(12\,4),\N,
+sales_creditmemo,shipping_amount,decimal(12\,4),\N,
+sales_creditmemo,subtotal_incl_tax,decimal(12\,4),\N,
+sales_creditmemo,adjustment_negative,decimal(12\,4),\N,
+sales_creditmemo,base_shipping_amount,decimal(12\,4),\N,
+sales_creditmemo,store_to_base_rate,decimal(12\,4),\N,
+sales_creditmemo,base_to_global_rate,decimal(12\,4),\N,
+sales_creditmemo,base_adjustment,decimal(12\,4),\N,
+sales_creditmemo,base_subtotal,decimal(12\,4),\N,
+sales_creditmemo,discount_amount,decimal(12\,4),\N,
+sales_creditmemo,subtotal,decimal(12\,4),\N,
+sales_creditmemo,adjustment,decimal(12\,4),\N,
+sales_creditmemo,base_grand_total,decimal(12\,4),\N,
+sales_creditmemo,base_adjustment_positive,decimal(12\,4),\N,
+sales_creditmemo,base_tax_amount,decimal(12\,4),\N,
+sales_creditmemo,shipping_tax_amount,decimal(12\,4),\N,
+sales_creditmemo,tax_amount,decimal(12\,4),\N,
+sales_creditmemo,order_id,int(10) unsigned,\N,MUL
+sales_creditmemo,email_sent,smallint(5) unsigned,\N,MUL
+sales_creditmemo,send_email,smallint(5) unsigned,\N,MUL
+sales_creditmemo,creditmemo_status,int(11),\N,MUL
+sales_creditmemo,state,int(11),\N,MUL
+sales_creditmemo,shipping_address_id,int(11),\N,
+sales_creditmemo,billing_address_id,int(11),\N,
+sales_creditmemo,invoice_id,int(11),\N,
+sales_creditmemo,store_currency_code,varchar(3),\N,
+sales_creditmemo,order_currency_code,varchar(3),\N,
+sales_creditmemo,base_currency_code,varchar(3),\N,
+sales_creditmemo,global_currency_code,varchar(3),\N,
+sales_creditmemo,transaction_id,varchar(255),\N,
+sales_creditmemo,increment_id,varchar(50),\N,MUL
+sales_creditmemo,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_creditmemo,updated_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_creditmemo,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_creditmemo,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_creditmemo,shipping_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_creditmemo,base_shipping_discount_tax_compensation_amnt,decimal(12\,4),\N,
+sales_creditmemo,shipping_incl_tax,decimal(12\,4),\N,
+sales_creditmemo,base_shipping_incl_tax,decimal(12\,4),\N,
+sales_creditmemo,discount_description,varchar(255),\N,
+sales_creditmemo,customer_note,text,\N,
+sales_creditmemo,customer_note_notify,smallint(5) unsigned,\N,
+sales_creditmemo_comment,entity_id,int(10) unsigned,\N,PRI
+sales_creditmemo_comment,parent_id,int(10) unsigned,\N,MUL
+sales_creditmemo_comment,is_customer_notified,int(11),\N,
+sales_creditmemo_comment,is_visible_on_front,smallint(5) unsigned,0,
+sales_creditmemo_comment,comment,text,\N,
+sales_creditmemo_comment,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_creditmemo_grid,entity_id,int(10) unsigned,\N,PRI
+sales_creditmemo_grid,increment_id,varchar(50),\N,MUL
+sales_creditmemo_grid,created_at,timestamp,\N,MUL
+sales_creditmemo_grid,updated_at,timestamp,\N,MUL
+sales_creditmemo_grid,order_id,int(10) unsigned,\N,MUL
+sales_creditmemo_grid,order_increment_id,varchar(50),\N,MUL
+sales_creditmemo_grid,order_created_at,timestamp,\N,MUL
+sales_creditmemo_grid,billing_name,varchar(255),\N,MUL
+sales_creditmemo_grid,state,int(11),\N,MUL
+sales_creditmemo_grid,base_grand_total,decimal(12\,4),\N,MUL
+sales_creditmemo_grid,order_status,varchar(32),\N,MUL
+sales_creditmemo_grid,store_id,smallint(5) unsigned,\N,MUL
+sales_creditmemo_grid,billing_address,varchar(255),\N,
+sales_creditmemo_grid,shipping_address,varchar(255),\N,
+sales_creditmemo_grid,customer_name,varchar(128),\N,
+sales_creditmemo_grid,customer_email,varchar(128),\N,
+sales_creditmemo_grid,customer_group_id,smallint(6),\N,
+sales_creditmemo_grid,payment_method,varchar(32),\N,
+sales_creditmemo_grid,shipping_information,varchar(255),\N,
+sales_creditmemo_grid,subtotal,decimal(12\,4),\N,
+sales_creditmemo_grid,shipping_and_handling,decimal(12\,4),\N,
+sales_creditmemo_grid,adjustment_positive,decimal(12\,4),\N,
+sales_creditmemo_grid,adjustment_negative,decimal(12\,4),\N,
+sales_creditmemo_grid,order_base_grand_total,decimal(12\,4),\N,MUL
+sales_creditmemo_item,entity_id,int(10) unsigned,\N,PRI
+sales_creditmemo_item,parent_id,int(10) unsigned,\N,MUL
+sales_creditmemo_item,base_price,decimal(12\,4),\N,
+sales_creditmemo_item,tax_amount,decimal(12\,4),\N,
+sales_creditmemo_item,base_row_total,decimal(12\,4),\N,
+sales_creditmemo_item,discount_amount,decimal(12\,4),\N,
+sales_creditmemo_item,row_total,decimal(12\,4),\N,
+sales_creditmemo_item,base_discount_amount,decimal(12\,4),\N,
+sales_creditmemo_item,price_incl_tax,decimal(12\,4),\N,
+sales_creditmemo_item,base_tax_amount,decimal(12\,4),\N,
+sales_creditmemo_item,base_price_incl_tax,decimal(12\,4),\N,
+sales_creditmemo_item,qty,decimal(12\,4),\N,
+sales_creditmemo_item,base_cost,decimal(12\,4),\N,
+sales_creditmemo_item,price,decimal(12\,4),\N,
+sales_creditmemo_item,base_row_total_incl_tax,decimal(12\,4),\N,
+sales_creditmemo_item,row_total_incl_tax,decimal(12\,4),\N,
+sales_creditmemo_item,product_id,int(11),\N,
+sales_creditmemo_item,order_item_id,int(11),\N,
+sales_creditmemo_item,additional_data,text,\N,
+sales_creditmemo_item,description,text,\N,
+sales_creditmemo_item,sku,varchar(255),\N,
+sales_creditmemo_item,name,varchar(255),\N,
+sales_creditmemo_item,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_creditmemo_item,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_creditmemo_item,tax_ratio,text,\N,
+sales_creditmemo_item,weee_tax_applied,text,\N,
+sales_creditmemo_item,weee_tax_applied_amount,decimal(12\,4),\N,
+sales_creditmemo_item,weee_tax_applied_row_amount,decimal(12\,4),\N,
+sales_creditmemo_item,weee_tax_disposition,decimal(12\,4),\N,
+sales_creditmemo_item,weee_tax_row_disposition,decimal(12\,4),\N,
+sales_creditmemo_item,base_weee_tax_applied_amount,decimal(12\,4),\N,
+sales_creditmemo_item,base_weee_tax_applied_row_amnt,decimal(12\,4),\N,
+sales_creditmemo_item,base_weee_tax_disposition,decimal(12\,4),\N,
+sales_creditmemo_item,base_weee_tax_row_disposition,decimal(12\,4),\N,
+sales_invoice,entity_id,int(10) unsigned,\N,PRI
+sales_invoice,store_id,smallint(5) unsigned,\N,MUL
+sales_invoice,base_grand_total,decimal(12\,4),\N,
+sales_invoice,shipping_tax_amount,decimal(12\,4),\N,
+sales_invoice,tax_amount,decimal(12\,4),\N,
+sales_invoice,base_tax_amount,decimal(12\,4),\N,
+sales_invoice,store_to_order_rate,decimal(12\,4),\N,
+sales_invoice,base_shipping_tax_amount,decimal(12\,4),\N,
+sales_invoice,base_discount_amount,decimal(12\,4),\N,
+sales_invoice,base_to_order_rate,decimal(12\,4),\N,
+sales_invoice,grand_total,decimal(12\,4),\N,MUL
+sales_invoice,shipping_amount,decimal(12\,4),\N,
+sales_invoice,subtotal_incl_tax,decimal(12\,4),\N,
+sales_invoice,base_subtotal_incl_tax,decimal(12\,4),\N,
+sales_invoice,store_to_base_rate,decimal(12\,4),\N,
+sales_invoice,base_shipping_amount,decimal(12\,4),\N,
+sales_invoice,total_qty,decimal(12\,4),\N,
+sales_invoice,base_to_global_rate,decimal(12\,4),\N,
+sales_invoice,subtotal,decimal(12\,4),\N,
+sales_invoice,base_subtotal,decimal(12\,4),\N,
+sales_invoice,discount_amount,decimal(12\,4),\N,
+sales_invoice,billing_address_id,int(11),\N,
+sales_invoice,is_used_for_refund,smallint(5) unsigned,\N,
+sales_invoice,order_id,int(10) unsigned,\N,MUL
+sales_invoice,email_sent,smallint(5) unsigned,\N,MUL
+sales_invoice,send_email,smallint(5) unsigned,\N,MUL
+sales_invoice,can_void_flag,smallint(5) unsigned,\N,
+sales_invoice,state,int(11),\N,MUL
+sales_invoice,shipping_address_id,int(11),\N,
+sales_invoice,store_currency_code,varchar(3),\N,
+sales_invoice,transaction_id,varchar(255),\N,
+sales_invoice,order_currency_code,varchar(3),\N,
+sales_invoice,base_currency_code,varchar(3),\N,
+sales_invoice,global_currency_code,varchar(3),\N,
+sales_invoice,increment_id,varchar(50),\N,MUL
+sales_invoice,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_invoice,updated_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_invoice,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_invoice,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_invoice,shipping_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_invoice,base_shipping_discount_tax_compensation_amnt,decimal(12\,4),\N,
+sales_invoice,shipping_incl_tax,decimal(12\,4),\N,
+sales_invoice,base_shipping_incl_tax,decimal(12\,4),\N,
+sales_invoice,base_total_refunded,decimal(12\,4),\N,
+sales_invoice,discount_description,varchar(255),\N,
+sales_invoice,customer_note,text,\N,
+sales_invoice,customer_note_notify,smallint(5) unsigned,\N,
+sales_invoiced_aggregated,id,int(10) unsigned,\N,PRI
+sales_invoiced_aggregated,period,date,\N,MUL
+sales_invoiced_aggregated,store_id,smallint(5) unsigned,\N,MUL
+sales_invoiced_aggregated,order_status,varchar(50),\N,
+sales_invoiced_aggregated,orders_count,int(11),0,
+sales_invoiced_aggregated,orders_invoiced,decimal(12\,4),\N,
+sales_invoiced_aggregated,invoiced,decimal(12\,4),\N,
+sales_invoiced_aggregated,invoiced_captured,decimal(12\,4),\N,
+sales_invoiced_aggregated,invoiced_not_captured,decimal(12\,4),\N,
+sales_invoiced_aggregated_order,id,int(10) unsigned,\N,PRI
+sales_invoiced_aggregated_order,period,date,\N,MUL
+sales_invoiced_aggregated_order,store_id,smallint(5) unsigned,\N,MUL
+sales_invoiced_aggregated_order,order_status,varchar(50),\N,
+sales_invoiced_aggregated_order,orders_count,int(11),0,
+sales_invoiced_aggregated_order,orders_invoiced,decimal(12\,4),\N,
+sales_invoiced_aggregated_order,invoiced,decimal(12\,4),\N,
+sales_invoiced_aggregated_order,invoiced_captured,decimal(12\,4),\N,
+sales_invoiced_aggregated_order,invoiced_not_captured,decimal(12\,4),\N,
+sales_invoice_comment,entity_id,int(10) unsigned,\N,PRI
+sales_invoice_comment,parent_id,int(10) unsigned,\N,MUL
+sales_invoice_comment,is_customer_notified,smallint(5) unsigned,\N,
+sales_invoice_comment,is_visible_on_front,smallint(5) unsigned,0,
+sales_invoice_comment,comment,text,\N,
+sales_invoice_comment,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_invoice_grid,entity_id,int(10) unsigned,\N,PRI
+sales_invoice_grid,increment_id,varchar(50),\N,MUL
+sales_invoice_grid,state,int(11),\N,MUL
+sales_invoice_grid,store_id,smallint(5) unsigned,\N,MUL
+sales_invoice_grid,store_name,varchar(255),\N,
+sales_invoice_grid,order_id,int(10) unsigned,\N,MUL
+sales_invoice_grid,order_increment_id,varchar(50),\N,MUL
+sales_invoice_grid,order_created_at,timestamp,\N,MUL
+sales_invoice_grid,customer_name,varchar(255),\N,
+sales_invoice_grid,customer_email,varchar(255),\N,
+sales_invoice_grid,customer_group_id,smallint(6),\N,
+sales_invoice_grid,payment_method,varchar(128),\N,
+sales_invoice_grid,store_currency_code,varchar(3),\N,
+sales_invoice_grid,order_currency_code,varchar(3),\N,
+sales_invoice_grid,base_currency_code,varchar(3),\N,
+sales_invoice_grid,global_currency_code,varchar(3),\N,
+sales_invoice_grid,billing_name,varchar(255),\N,MUL
+sales_invoice_grid,billing_address,varchar(255),\N,
+sales_invoice_grid,shipping_address,varchar(255),\N,
+sales_invoice_grid,shipping_information,varchar(255),\N,
+sales_invoice_grid,subtotal,decimal(12\,4),\N,
+sales_invoice_grid,shipping_and_handling,decimal(12\,4),\N,
+sales_invoice_grid,grand_total,decimal(12\,4),\N,MUL
+sales_invoice_grid,base_grand_total,decimal(12\,4),\N,MUL
+sales_invoice_grid,created_at,timestamp,\N,MUL
+sales_invoice_grid,updated_at,timestamp,\N,MUL
+sales_invoice_item,entity_id,int(10) unsigned,\N,PRI
+sales_invoice_item,parent_id,int(10) unsigned,\N,MUL
+sales_invoice_item,base_price,decimal(12\,4),\N,
+sales_invoice_item,tax_amount,decimal(12\,4),\N,
+sales_invoice_item,base_row_total,decimal(12\,4),\N,
+sales_invoice_item,discount_amount,decimal(12\,4),\N,
+sales_invoice_item,row_total,decimal(12\,4),\N,
+sales_invoice_item,base_discount_amount,decimal(12\,4),\N,
+sales_invoice_item,price_incl_tax,decimal(12\,4),\N,
+sales_invoice_item,base_tax_amount,decimal(12\,4),\N,
+sales_invoice_item,base_price_incl_tax,decimal(12\,4),\N,
+sales_invoice_item,qty,decimal(12\,4),\N,
+sales_invoice_item,base_cost,decimal(12\,4),\N,
+sales_invoice_item,price,decimal(12\,4),\N,
+sales_invoice_item,base_row_total_incl_tax,decimal(12\,4),\N,
+sales_invoice_item,row_total_incl_tax,decimal(12\,4),\N,
+sales_invoice_item,product_id,int(11),\N,
+sales_invoice_item,order_item_id,int(11),\N,
+sales_invoice_item,additional_data,text,\N,
+sales_invoice_item,description,text,\N,
+sales_invoice_item,sku,varchar(255),\N,
+sales_invoice_item,name,varchar(255),\N,
+sales_invoice_item,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_invoice_item,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_invoice_item,tax_ratio,text,\N,
+sales_invoice_item,weee_tax_applied,text,\N,
+sales_invoice_item,weee_tax_applied_amount,decimal(12\,4),\N,
+sales_invoice_item,weee_tax_applied_row_amount,decimal(12\,4),\N,
+sales_invoice_item,weee_tax_disposition,decimal(12\,4),\N,
+sales_invoice_item,weee_tax_row_disposition,decimal(12\,4),\N,
+sales_invoice_item,base_weee_tax_applied_amount,decimal(12\,4),\N,
+sales_invoice_item,base_weee_tax_applied_row_amnt,decimal(12\,4),\N,
+sales_invoice_item,base_weee_tax_disposition,decimal(12\,4),\N,
+sales_invoice_item,base_weee_tax_row_disposition,decimal(12\,4),\N,
+sales_order,entity_id,int(10) unsigned,\N,PRI
+sales_order,state,varchar(32),\N,MUL
+sales_order,status,varchar(32),\N,MUL
+sales_order,coupon_code,varchar(255),\N,
+sales_order,protect_code,varchar(255),\N,
+sales_order,shipping_description,varchar(255),\N,
+sales_order,is_virtual,smallint(5) unsigned,\N,
+sales_order,store_id,smallint(5) unsigned,\N,MUL
+sales_order,customer_id,int(10) unsigned,\N,MUL
+sales_order,base_discount_amount,decimal(12\,4),\N,
+sales_order,base_discount_canceled,decimal(12\,4),\N,
+sales_order,base_discount_invoiced,decimal(12\,4),\N,
+sales_order,base_discount_refunded,decimal(12\,4),\N,
+sales_order,base_grand_total,decimal(12\,4),\N,
+sales_order,base_shipping_amount,decimal(12\,4),\N,
+sales_order,base_shipping_canceled,decimal(12\,4),\N,
+sales_order,base_shipping_invoiced,decimal(12\,4),\N,
+sales_order,base_shipping_refunded,decimal(12\,4),\N,
+sales_order,base_shipping_tax_amount,decimal(12\,4),\N,
+sales_order,base_shipping_tax_refunded,decimal(12\,4),\N,
+sales_order,base_subtotal,decimal(12\,4),\N,
+sales_order,base_subtotal_canceled,decimal(12\,4),\N,
+sales_order,base_subtotal_invoiced,decimal(12\,4),\N,
+sales_order,base_subtotal_refunded,decimal(12\,4),\N,
+sales_order,base_tax_amount,decimal(12\,4),\N,
+sales_order,base_tax_canceled,decimal(12\,4),\N,
+sales_order,base_tax_invoiced,decimal(12\,4),\N,
+sales_order,base_tax_refunded,decimal(12\,4),\N,
+sales_order,base_to_global_rate,decimal(12\,4),\N,
+sales_order,base_to_order_rate,decimal(12\,4),\N,
+sales_order,base_total_canceled,decimal(12\,4),\N,
+sales_order,base_total_invoiced,decimal(12\,4),\N,
+sales_order,base_total_invoiced_cost,decimal(12\,4),\N,
+sales_order,base_total_offline_refunded,decimal(12\,4),\N,
+sales_order,base_total_online_refunded,decimal(12\,4),\N,
+sales_order,base_total_paid,decimal(12\,4),\N,
+sales_order,base_total_qty_ordered,decimal(12\,4),\N,
+sales_order,base_total_refunded,decimal(12\,4),\N,
+sales_order,discount_amount,decimal(12\,4),\N,
+sales_order,discount_canceled,decimal(12\,4),\N,
+sales_order,discount_invoiced,decimal(12\,4),\N,
+sales_order,discount_refunded,decimal(12\,4),\N,
+sales_order,grand_total,decimal(12\,4),\N,
+sales_order,shipping_amount,decimal(12\,4),\N,
+sales_order,shipping_canceled,decimal(12\,4),\N,
+sales_order,shipping_invoiced,decimal(12\,4),\N,
+sales_order,shipping_refunded,decimal(12\,4),\N,
+sales_order,shipping_tax_amount,decimal(12\,4),\N,
+sales_order,shipping_tax_refunded,decimal(12\,4),\N,
+sales_order,store_to_base_rate,decimal(12\,4),\N,
+sales_order,store_to_order_rate,decimal(12\,4),\N,
+sales_order,subtotal,decimal(12\,4),\N,
+sales_order,subtotal_canceled,decimal(12\,4),\N,
+sales_order,subtotal_invoiced,decimal(12\,4),\N,
+sales_order,subtotal_refunded,decimal(12\,4),\N,
+sales_order,tax_amount,decimal(12\,4),\N,
+sales_order,tax_canceled,decimal(12\,4),\N,
+sales_order,tax_invoiced,decimal(12\,4),\N,
+sales_order,tax_refunded,decimal(12\,4),\N,
+sales_order,total_canceled,decimal(12\,4),\N,
+sales_order,total_invoiced,decimal(12\,4),\N,
+sales_order,total_offline_refunded,decimal(12\,4),\N,
+sales_order,total_online_refunded,decimal(12\,4),\N,
+sales_order,total_paid,decimal(12\,4),\N,
+sales_order,total_qty_ordered,decimal(12\,4),\N,
+sales_order,total_refunded,decimal(12\,4),\N,
+sales_order,can_ship_partially,smallint(5) unsigned,\N,
+sales_order,can_ship_partially_item,smallint(5) unsigned,\N,
+sales_order,customer_is_guest,smallint(5) unsigned,\N,
+sales_order,customer_note_notify,smallint(5) unsigned,\N,
+sales_order,billing_address_id,int(11),\N,
+sales_order,customer_group_id,smallint(6),\N,
+sales_order,edit_increment,int(11),\N,
+sales_order,email_sent,smallint(5) unsigned,\N,MUL
+sales_order,send_email,smallint(5) unsigned,\N,MUL
+sales_order,forced_shipment_with_invoice,smallint(5) unsigned,\N,
+sales_order,payment_auth_expiration,int(11),\N,
+sales_order,quote_address_id,int(11),\N,
+sales_order,quote_id,int(11),\N,MUL
+sales_order,shipping_address_id,int(11),\N,
+sales_order,adjustment_negative,decimal(12\,4),\N,
+sales_order,adjustment_positive,decimal(12\,4),\N,
+sales_order,base_adjustment_negative,decimal(12\,4),\N,
+sales_order,base_adjustment_positive,decimal(12\,4),\N,
+sales_order,base_shipping_discount_amount,decimal(12\,4),\N,
+sales_order,base_subtotal_incl_tax,decimal(12\,4),\N,
+sales_order,base_total_due,decimal(12\,4),\N,
+sales_order,payment_authorization_amount,decimal(12\,4),\N,
+sales_order,shipping_discount_amount,decimal(12\,4),\N,
+sales_order,subtotal_incl_tax,decimal(12\,4),\N,
+sales_order,total_due,decimal(12\,4),\N,
+sales_order,weight,decimal(12\,4),\N,
+sales_order,customer_dob,datetime,\N,
+sales_order,increment_id,varchar(32),\N,MUL
+sales_order,applied_rule_ids,varchar(128),\N,
+sales_order,base_currency_code,varchar(3),\N,
+sales_order,customer_email,varchar(128),\N,
+sales_order,customer_firstname,varchar(128),\N,
+sales_order,customer_lastname,varchar(128),\N,
+sales_order,customer_middlename,varchar(128),\N,
+sales_order,customer_prefix,varchar(32),\N,
+sales_order,customer_suffix,varchar(32),\N,
+sales_order,customer_taxvat,varchar(32),\N,
+sales_order,discount_description,varchar(255),\N,
+sales_order,ext_customer_id,varchar(32),\N,
+sales_order,ext_order_id,varchar(32),\N,MUL
+sales_order,global_currency_code,varchar(3),\N,
+sales_order,hold_before_state,varchar(32),\N,
+sales_order,hold_before_status,varchar(32),\N,
+sales_order,order_currency_code,varchar(3),\N,
+sales_order,original_increment_id,varchar(32),\N,
+sales_order,relation_child_id,varchar(32),\N,
+sales_order,relation_child_real_id,varchar(32),\N,
+sales_order,relation_parent_id,varchar(32),\N,
+sales_order,relation_parent_real_id,varchar(32),\N,
+sales_order,remote_ip,varchar(32),\N,
+sales_order,shipping_method,varchar(32),\N,
+sales_order,store_currency_code,varchar(3),\N,
+sales_order,store_name,varchar(32),\N,
+sales_order,x_forwarded_for,varchar(32),\N,
+sales_order,customer_note,text,\N,
+sales_order,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_order,updated_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_order,total_item_count,smallint(5) unsigned,0,
+sales_order,customer_gender,int(11),\N,
+sales_order,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_order,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_order,shipping_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_order,base_shipping_discount_tax_compensation_amnt,decimal(12\,4),\N,
+sales_order,discount_tax_compensation_invoiced,decimal(12\,4),\N,
+sales_order,base_discount_tax_compensation_invoiced,decimal(12\,4),\N,
+sales_order,discount_tax_compensation_refunded,decimal(12\,4),\N,
+sales_order,base_discount_tax_compensation_refunded,decimal(12\,4),\N,
+sales_order,shipping_incl_tax,decimal(12\,4),\N,
+sales_order,base_shipping_incl_tax,decimal(12\,4),\N,
+sales_order,coupon_rule_name,varchar(255),\N,
+sales_order,gift_message_id,int(11),\N,
+sales_order,paypal_ipn_customer_notified,int(11),0,
+sales_order_address,entity_id,int(10) unsigned,\N,PRI
+sales_order_address,parent_id,int(10) unsigned,\N,MUL
+sales_order_address,customer_address_id,int(11),\N,
+sales_order_address,quote_address_id,int(11),\N,
+sales_order_address,region_id,int(11),\N,
+sales_order_address,customer_id,int(11),\N,
+sales_order_address,fax,varchar(255),\N,
+sales_order_address,region,varchar(255),\N,
+sales_order_address,postcode,varchar(255),\N,
+sales_order_address,lastname,varchar(255),\N,
+sales_order_address,street,varchar(255),\N,
+sales_order_address,city,varchar(255),\N,
+sales_order_address,email,varchar(255),\N,
+sales_order_address,telephone,varchar(255),\N,
+sales_order_address,country_id,varchar(2),\N,
+sales_order_address,firstname,varchar(255),\N,
+sales_order_address,address_type,varchar(255),\N,
+sales_order_address,prefix,varchar(255),\N,
+sales_order_address,middlename,varchar(255),\N,
+sales_order_address,suffix,varchar(255),\N,
+sales_order_address,company,varchar(255),\N,
+sales_order_address,vat_id,text,\N,
+sales_order_address,vat_is_valid,smallint(6),\N,
+sales_order_address,vat_request_id,text,\N,
+sales_order_address,vat_request_date,text,\N,
+sales_order_address,vat_request_success,smallint(6),\N,
+sales_order_aggregated_created,id,int(10) unsigned,\N,PRI
+sales_order_aggregated_created,period,date,\N,MUL
+sales_order_aggregated_created,store_id,smallint(5) unsigned,\N,MUL
+sales_order_aggregated_created,order_status,varchar(50),\N,
+sales_order_aggregated_created,orders_count,int(11),0,
+sales_order_aggregated_created,total_qty_ordered,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_qty_invoiced,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_income_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_revenue_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_profit_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_invoiced_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_canceled_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_paid_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_refunded_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_tax_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_tax_amount_actual,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_shipping_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_shipping_amount_actual,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_discount_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_created,total_discount_amount_actual,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,id,int(10) unsigned,\N,PRI
+sales_order_aggregated_updated,period,date,\N,MUL
+sales_order_aggregated_updated,store_id,smallint(5) unsigned,\N,MUL
+sales_order_aggregated_updated,order_status,varchar(50),\N,
+sales_order_aggregated_updated,orders_count,int(11),0,
+sales_order_aggregated_updated,total_qty_ordered,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_qty_invoiced,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_income_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_revenue_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_profit_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_invoiced_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_canceled_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_paid_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_refunded_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_tax_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_tax_amount_actual,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_shipping_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_shipping_amount_actual,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_discount_amount,decimal(12\,4),0.0000,
+sales_order_aggregated_updated,total_discount_amount_actual,decimal(12\,4),0.0000,
+sales_order_grid,entity_id,int(10) unsigned,\N,PRI
+sales_order_grid,status,varchar(32),\N,MUL
+sales_order_grid,store_id,smallint(5) unsigned,\N,MUL
+sales_order_grid,store_name,varchar(255),\N,
+sales_order_grid,customer_id,int(10) unsigned,\N,MUL
+sales_order_grid,base_grand_total,decimal(12\,4),\N,MUL
+sales_order_grid,base_total_paid,decimal(12\,4),\N,MUL
+sales_order_grid,grand_total,decimal(12\,4),\N,MUL
+sales_order_grid,total_paid,decimal(12\,4),\N,MUL
+sales_order_grid,increment_id,varchar(50),\N,MUL
+sales_order_grid,base_currency_code,varchar(3),\N,
+sales_order_grid,order_currency_code,varchar(255),\N,
+sales_order_grid,shipping_name,varchar(255),\N,MUL
+sales_order_grid,billing_name,varchar(255),\N,MUL
+sales_order_grid,created_at,timestamp,\N,MUL
+sales_order_grid,updated_at,timestamp,\N,MUL
+sales_order_grid,billing_address,varchar(255),\N,
+sales_order_grid,shipping_address,varchar(255),\N,
+sales_order_grid,shipping_information,varchar(255),\N,
+sales_order_grid,customer_email,varchar(255),\N,
+sales_order_grid,customer_group,varchar(255),\N,
+sales_order_grid,subtotal,decimal(12\,4),\N,
+sales_order_grid,shipping_and_handling,decimal(12\,4),\N,
+sales_order_grid,customer_name,varchar(255),\N,
+sales_order_grid,payment_method,varchar(255),\N,
+sales_order_grid,total_refunded,decimal(12\,4),\N,
+sales_order_item,item_id,int(10) unsigned,\N,PRI
+sales_order_item,order_id,int(10) unsigned,0,MUL
+sales_order_item,parent_item_id,int(10) unsigned,\N,
+sales_order_item,quote_item_id,int(10) unsigned,\N,
+sales_order_item,store_id,smallint(5) unsigned,\N,MUL
+sales_order_item,created_at,timestamp,CURRENT_TIMESTAMP,
+sales_order_item,updated_at,timestamp,CURRENT_TIMESTAMP,
+sales_order_item,product_id,int(10) unsigned,\N,
+sales_order_item,product_type,varchar(255),\N,
+sales_order_item,product_options,text,\N,
+sales_order_item,weight,decimal(12\,4),0.0000,
+sales_order_item,is_virtual,smallint(5) unsigned,\N,
+sales_order_item,sku,varchar(255),\N,
+sales_order_item,name,varchar(255),\N,
+sales_order_item,description,text,\N,
+sales_order_item,applied_rule_ids,text,\N,
+sales_order_item,additional_data,text,\N,
+sales_order_item,is_qty_decimal,smallint(5) unsigned,\N,
+sales_order_item,no_discount,smallint(5) unsigned,0,
+sales_order_item,qty_backordered,decimal(12\,4),0.0000,
+sales_order_item,qty_canceled,decimal(12\,4),0.0000,
+sales_order_item,qty_invoiced,decimal(12\,4),0.0000,
+sales_order_item,qty_ordered,decimal(12\,4),0.0000,
+sales_order_item,qty_refunded,decimal(12\,4),0.0000,
+sales_order_item,qty_shipped,decimal(12\,4),0.0000,
+sales_order_item,base_cost,decimal(12\,4),0.0000,
+sales_order_item,price,decimal(12\,4),0.0000,
+sales_order_item,base_price,decimal(12\,4),0.0000,
+sales_order_item,original_price,decimal(12\,4),\N,
+sales_order_item,base_original_price,decimal(12\,4),\N,
+sales_order_item,tax_percent,decimal(12\,4),0.0000,
+sales_order_item,tax_amount,decimal(12\,4),0.0000,
+sales_order_item,base_tax_amount,decimal(12\,4),0.0000,
+sales_order_item,tax_invoiced,decimal(12\,4),0.0000,
+sales_order_item,base_tax_invoiced,decimal(12\,4),0.0000,
+sales_order_item,discount_percent,decimal(12\,4),0.0000,
+sales_order_item,discount_amount,decimal(12\,4),0.0000,
+sales_order_item,base_discount_amount,decimal(12\,4),0.0000,
+sales_order_item,discount_invoiced,decimal(12\,4),0.0000,
+sales_order_item,base_discount_invoiced,decimal(12\,4),0.0000,
+sales_order_item,amount_refunded,decimal(12\,4),0.0000,
+sales_order_item,base_amount_refunded,decimal(12\,4),0.0000,
+sales_order_item,row_total,decimal(12\,4),0.0000,
+sales_order_item,base_row_total,decimal(12\,4),0.0000,
+sales_order_item,row_invoiced,decimal(12\,4),0.0000,
+sales_order_item,base_row_invoiced,decimal(12\,4),0.0000,
+sales_order_item,row_weight,decimal(12\,4),0.0000,
+sales_order_item,base_tax_before_discount,decimal(12\,4),\N,
+sales_order_item,tax_before_discount,decimal(12\,4),\N,
+sales_order_item,ext_order_item_id,varchar(255),\N,
+sales_order_item,locked_do_invoice,smallint(5) unsigned,\N,
+sales_order_item,locked_do_ship,smallint(5) unsigned,\N,
+sales_order_item,price_incl_tax,decimal(12\,4),\N,
+sales_order_item,base_price_incl_tax,decimal(12\,4),\N,
+sales_order_item,row_total_incl_tax,decimal(12\,4),\N,
+sales_order_item,base_row_total_incl_tax,decimal(12\,4),\N,
+sales_order_item,discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_order_item,base_discount_tax_compensation_amount,decimal(12\,4),\N,
+sales_order_item,discount_tax_compensation_invoiced,decimal(12\,4),\N,
+sales_order_item,base_discount_tax_compensation_invoiced,decimal(12\,4),\N,
+sales_order_item,discount_tax_compensation_refunded,decimal(12\,4),\N,
+sales_order_item,base_discount_tax_compensation_refunded,decimal(12\,4),\N,
+sales_order_item,tax_canceled,decimal(12\,4),\N,
+sales_order_item,discount_tax_compensation_canceled,decimal(12\,4),\N,
+sales_order_item,tax_refunded,decimal(12\,4),\N,
+sales_order_item,base_tax_refunded,decimal(12\,4),\N,
+sales_order_item,discount_refunded,decimal(12\,4),\N,
+sales_order_item,base_discount_refunded,decimal(12\,4),\N,
+sales_order_item,free_shipping,smallint(6),\N,
+sales_order_item,gift_message_id,int(11),\N,
+sales_order_item,gift_message_available,int(11),\N,
+sales_order_item,weee_tax_applied,text,\N,
+sales_order_item,weee_tax_applied_amount,decimal(12\,4),\N,
+sales_order_item,weee_tax_applied_row_amount,decimal(12\,4),\N,
+sales_order_item,weee_tax_disposition,decimal(12\,4),\N,
+sales_order_item,weee_tax_row_disposition,decimal(12\,4),\N,
+sales_order_item,base_weee_tax_applied_amount,decimal(12\,4),\N,
+sales_order_item,base_weee_tax_applied_row_amnt,decimal(12\,4),\N,
+sales_order_item,base_weee_tax_disposition,decimal(12\,4),\N,
+sales_order_item,base_weee_tax_row_disposition,decimal(12\,4),\N,
+sales_order_payment,entity_id,int(10) unsigned,\N,PRI
+sales_order_payment,parent_id,int(10) unsigned,\N,MUL
+sales_order_payment,base_shipping_captured,decimal(12\,4),\N,
+sales_order_payment,shipping_captured,decimal(12\,4),\N,
+sales_order_payment,amount_refunded,decimal(12\,4),\N,
+sales_order_payment,base_amount_paid,decimal(12\,4),\N,
+sales_order_payment,amount_canceled,decimal(12\,4),\N,
+sales_order_payment,base_amount_authorized,decimal(12\,4),\N,
+sales_order_payment,base_amount_paid_online,decimal(12\,4),\N,
+sales_order_payment,base_amount_refunded_online,decimal(12\,4),\N,
+sales_order_payment,base_shipping_amount,decimal(12\,4),\N,
+sales_order_payment,shipping_amount,decimal(12\,4),\N,
+sales_order_payment,amount_paid,decimal(12\,4),\N,
+sales_order_payment,amount_authorized,decimal(12\,4),\N,
+sales_order_payment,base_amount_ordered,decimal(12\,4),\N,
+sales_order_payment,base_shipping_refunded,decimal(12\,4),\N,
+sales_order_payment,shipping_refunded,decimal(12\,4),\N,
+sales_order_payment,base_amount_refunded,decimal(12\,4),\N,
+sales_order_payment,amount_ordered,decimal(12\,4),\N,
+sales_order_payment,base_amount_canceled,decimal(12\,4),\N,
+sales_order_payment,quote_payment_id,int(11),\N,
+sales_order_payment,additional_data,text,\N,
+sales_order_payment,cc_exp_month,varchar(12),\N,
+sales_order_payment,cc_ss_start_year,varchar(12),\N,
+sales_order_payment,echeck_bank_name,varchar(128),\N,
+sales_order_payment,method,varchar(128),\N,
+sales_order_payment,cc_debug_request_body,varchar(32),\N,
+sales_order_payment,cc_secure_verify,varchar(32),\N,
+sales_order_payment,protection_eligibility,varchar(32),\N,
+sales_order_payment,cc_approval,varchar(32),\N,
+sales_order_payment,cc_last_4,varchar(100),\N,
+sales_order_payment,cc_status_description,varchar(32),\N,
+sales_order_payment,echeck_type,varchar(32),\N,
+sales_order_payment,cc_debug_response_serialized,varchar(32),\N,
+sales_order_payment,cc_ss_start_month,varchar(128),\N,
+sales_order_payment,echeck_account_type,varchar(255),\N,
+sales_order_payment,last_trans_id,varchar(32),\N,
+sales_order_payment,cc_cid_status,varchar(32),\N,
+sales_order_payment,cc_owner,varchar(128),\N,
+sales_order_payment,cc_type,varchar(32),\N,
+sales_order_payment,po_number,varchar(32),\N,
+sales_order_payment,cc_exp_year,varchar(4),\N,
+sales_order_payment,cc_status,varchar(4),\N,
+sales_order_payment,echeck_routing_number,varchar(32),\N,
+sales_order_payment,account_status,varchar(32),\N,
+sales_order_payment,anet_trans_method,varchar(32),\N,
+sales_order_payment,cc_debug_response_body,varchar(32),\N,
+sales_order_payment,cc_ss_issue,varchar(32),\N,
+sales_order_payment,echeck_account_name,varchar(32),\N,
+sales_order_payment,cc_avs_status,varchar(32),\N,
+sales_order_payment,cc_number_enc,varchar(32),\N,
+sales_order_payment,cc_trans_id,varchar(32),\N,
+sales_order_payment,address_status,varchar(32),\N,
+sales_order_payment,additional_information,text,\N,
+sales_order_status,status,varchar(32),\N,PRI
+sales_order_status,label,varchar(128),\N,
+sales_order_status_history,entity_id,int(10) unsigned,\N,PRI
+sales_order_status_history,parent_id,int(10) unsigned,\N,MUL
+sales_order_status_history,is_customer_notified,int(11),\N,
+sales_order_status_history,is_visible_on_front,smallint(5) unsigned,0,
+sales_order_status_history,comment,text,\N,
+sales_order_status_history,status,varchar(32),\N,
+sales_order_status_history,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_order_status_history,entity_name,varchar(32),\N,
+sales_order_status_label,status,varchar(32),\N,PRI
+sales_order_status_label,store_id,smallint(5) unsigned,\N,PRI
+sales_order_status_label,label,varchar(128),\N,
+sales_order_status_state,status,varchar(32),\N,PRI
+sales_order_status_state,state,varchar(32),\N,PRI
+sales_order_status_state,is_default,smallint(5) unsigned,0,
+sales_order_status_state,visible_on_front,smallint(5) unsigned,0,
+sales_order_tax,tax_id,int(10) unsigned,\N,PRI
+sales_order_tax,order_id,int(10) unsigned,\N,MUL
+sales_order_tax,code,varchar(255),\N,
+sales_order_tax,title,varchar(255),\N,
+sales_order_tax,percent,decimal(12\,4),\N,
+sales_order_tax,amount,decimal(12\,4),\N,
+sales_order_tax,priority,int(11),\N,
+sales_order_tax,position,int(11),\N,
+sales_order_tax,base_amount,decimal(12\,4),\N,
+sales_order_tax,process,smallint(6),\N,
+sales_order_tax,base_real_amount,decimal(12\,4),\N,
+sales_order_tax_item,tax_item_id,int(10) unsigned,\N,PRI
+sales_order_tax_item,tax_id,int(10) unsigned,\N,MUL
+sales_order_tax_item,item_id,int(10) unsigned,\N,MUL
+sales_order_tax_item,tax_percent,decimal(12\,4),\N,
+sales_order_tax_item,amount,decimal(12\,4),\N,
+sales_order_tax_item,base_amount,decimal(12\,4),\N,
+sales_order_tax_item,real_amount,decimal(12\,4),\N,
+sales_order_tax_item,real_base_amount,decimal(12\,4),\N,
+sales_order_tax_item,associated_item_id,int(10) unsigned,\N,MUL
+sales_order_tax_item,taxable_item_type,varchar(32),\N,
+sales_payment_transaction,transaction_id,int(10) unsigned,\N,PRI
+sales_payment_transaction,parent_id,int(10) unsigned,\N,MUL
+sales_payment_transaction,order_id,int(10) unsigned,0,MUL
+sales_payment_transaction,payment_id,int(10) unsigned,0,MUL
+sales_payment_transaction,txn_id,varchar(100),\N,
+sales_payment_transaction,parent_txn_id,varchar(100),\N,
+sales_payment_transaction,txn_type,varchar(15),\N,
+sales_payment_transaction,is_closed,smallint(5) unsigned,1,
+sales_payment_transaction,additional_information,blob,\N,
+sales_payment_transaction,created_at,timestamp,CURRENT_TIMESTAMP,
+sales_refunded_aggregated,id,int(10) unsigned,\N,PRI
+sales_refunded_aggregated,period,date,\N,MUL
+sales_refunded_aggregated,store_id,smallint(5) unsigned,\N,MUL
+sales_refunded_aggregated,order_status,varchar(50),\N,
+sales_refunded_aggregated,orders_count,int(11),0,
+sales_refunded_aggregated,refunded,decimal(12\,4),\N,
+sales_refunded_aggregated,online_refunded,decimal(12\,4),\N,
+sales_refunded_aggregated,offline_refunded,decimal(12\,4),\N,
+sales_refunded_aggregated_order,id,int(10) unsigned,\N,PRI
+sales_refunded_aggregated_order,period,date,\N,MUL
+sales_refunded_aggregated_order,store_id,smallint(5) unsigned,\N,MUL
+sales_refunded_aggregated_order,order_status,varchar(50),\N,
+sales_refunded_aggregated_order,orders_count,int(11),0,
+sales_refunded_aggregated_order,refunded,decimal(12\,4),\N,
+sales_refunded_aggregated_order,online_refunded,decimal(12\,4),\N,
+sales_refunded_aggregated_order,offline_refunded,decimal(12\,4),\N,
+sales_sequence_meta,meta_id,int(10) unsigned,\N,PRI
+sales_sequence_meta,entity_type,varchar(32),\N,MUL
+sales_sequence_meta,store_id,smallint(5) unsigned,\N,
+sales_sequence_meta,sequence_table,varchar(32),\N,
+sales_sequence_profile,profile_id,int(10) unsigned,\N,PRI
+sales_sequence_profile,meta_id,int(10) unsigned,\N,MUL
+sales_sequence_profile,prefix,varchar(32),\N,
+sales_sequence_profile,suffix,varchar(32),\N,
+sales_sequence_profile,start_value,int(10) unsigned,1,
+sales_sequence_profile,step,int(10) unsigned,1,
+sales_sequence_profile,max_value,int(10) unsigned,\N,
+sales_sequence_profile,warning_value,int(10) unsigned,\N,
+sales_sequence_profile,is_active,tinyint(1),0,
+sales_shipment,entity_id,int(10) unsigned,\N,PRI
+sales_shipment,store_id,smallint(5) unsigned,\N,MUL
+sales_shipment,total_weight,decimal(12\,4),\N,
+sales_shipment,total_qty,decimal(12\,4),\N,MUL
+sales_shipment,email_sent,smallint(5) unsigned,\N,MUL
+sales_shipment,send_email,smallint(5) unsigned,\N,MUL
+sales_shipment,order_id,int(10) unsigned,\N,MUL
+sales_shipment,customer_id,int(11),\N,
+sales_shipment,shipping_address_id,int(11),\N,
+sales_shipment,billing_address_id,int(11),\N,
+sales_shipment,shipment_status,int(11),\N,
+sales_shipment,increment_id,varchar(50),\N,MUL
+sales_shipment,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_shipment,updated_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_shipment,packages,text,\N,
+sales_shipment,shipping_label,mediumblob,\N,
+sales_shipment,customer_note,text,\N,
+sales_shipment,customer_note_notify,smallint(5) unsigned,\N,
+sales_shipment_comment,entity_id,int(10) unsigned,\N,PRI
+sales_shipment_comment,parent_id,int(10) unsigned,\N,MUL
+sales_shipment_comment,is_customer_notified,int(11),\N,
+sales_shipment_comment,is_visible_on_front,smallint(5) unsigned,0,
+sales_shipment_comment,comment,text,\N,
+sales_shipment_comment,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_shipment_grid,entity_id,int(10) unsigned,\N,PRI
+sales_shipment_grid,increment_id,varchar(50),\N,MUL
+sales_shipment_grid,store_id,smallint(5) unsigned,\N,MUL
+sales_shipment_grid,order_increment_id,varchar(32),\N,MUL
+sales_shipment_grid,order_id,int(10) unsigned,\N,
+sales_shipment_grid,order_created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_shipment_grid,customer_name,varchar(128),\N,
+sales_shipment_grid,total_qty,decimal(12\,4),\N,MUL
+sales_shipment_grid,shipment_status,int(11),\N,MUL
+sales_shipment_grid,order_status,varchar(32),\N,MUL
+sales_shipment_grid,billing_address,varchar(255),\N,
+sales_shipment_grid,shipping_address,varchar(255),\N,
+sales_shipment_grid,billing_name,varchar(128),\N,MUL
+sales_shipment_grid,shipping_name,varchar(128),\N,MUL
+sales_shipment_grid,customer_email,varchar(128),\N,
+sales_shipment_grid,customer_group_id,smallint(6),\N,
+sales_shipment_grid,payment_method,varchar(32),\N,
+sales_shipment_grid,shipping_information,varchar(255),\N,
+sales_shipment_grid,created_at,timestamp,\N,MUL
+sales_shipment_grid,updated_at,timestamp,\N,MUL
+sales_shipment_item,entity_id,int(10) unsigned,\N,PRI
+sales_shipment_item,parent_id,int(10) unsigned,\N,MUL
+sales_shipment_item,row_total,decimal(12\,4),\N,
+sales_shipment_item,price,decimal(12\,4),\N,
+sales_shipment_item,weight,decimal(12\,4),\N,
+sales_shipment_item,qty,decimal(12\,4),\N,
+sales_shipment_item,product_id,int(11),\N,
+sales_shipment_item,order_item_id,int(11),\N,
+sales_shipment_item,additional_data,text,\N,
+sales_shipment_item,description,text,\N,
+sales_shipment_item,name,varchar(255),\N,
+sales_shipment_item,sku,varchar(255),\N,
+sales_shipment_track,entity_id,int(10) unsigned,\N,PRI
+sales_shipment_track,parent_id,int(10) unsigned,\N,MUL
+sales_shipment_track,weight,decimal(12\,4),\N,
+sales_shipment_track,qty,decimal(12\,4),\N,
+sales_shipment_track,order_id,int(10) unsigned,\N,MUL
+sales_shipment_track,track_number,text,\N,
+sales_shipment_track,description,text,\N,
+sales_shipment_track,title,varchar(255),\N,
+sales_shipment_track,carrier_code,varchar(32),\N,
+sales_shipment_track,created_at,timestamp,CURRENT_TIMESTAMP,MUL
+sales_shipment_track,updated_at,timestamp,CURRENT_TIMESTAMP,
+sales_shipping_aggregated,id,int(10) unsigned,\N,PRI
+sales_shipping_aggregated,period,date,\N,MUL
+sales_shipping_aggregated,store_id,smallint(5) unsigned,\N,MUL
+sales_shipping_aggregated,order_status,varchar(50),\N,
+sales_shipping_aggregated,shipping_description,varchar(255),\N,
+sales_shipping_aggregated,orders_count,int(11),0,
+sales_shipping_aggregated,total_shipping,decimal(12\,4),\N,
+sales_shipping_aggregated,total_shipping_actual,decimal(12\,4),\N,
+sales_shipping_aggregated_order,id,int(10) unsigned,\N,PRI
+sales_shipping_aggregated_order,period,date,\N,MUL
+sales_shipping_aggregated_order,store_id,smallint(5) unsigned,\N,MUL
+sales_shipping_aggregated_order,order_status,varchar(50),\N,
+sales_shipping_aggregated_order,shipping_description,varchar(255),\N,
+sales_shipping_aggregated_order,orders_count,int(11),0,
+sales_shipping_aggregated_order,total_shipping,decimal(12\,4),\N,
+sales_shipping_aggregated_order,total_shipping_actual,decimal(12\,4),\N,
+search_query,query_id,int(10) unsigned,\N,PRI
+search_query,query_text,varchar(255),\N,MUL
+search_query,num_results,int(10) unsigned,0,
+search_query,popularity,int(10) unsigned,0,
+search_query,redirect,varchar(255),\N,
+search_query,store_id,smallint(5) unsigned,0,MUL
+search_query,display_in_terms,smallint(6),1,
+search_query,is_active,smallint(6),1,
+search_query,is_processed,smallint(6),0,MUL
+search_query,updated_at,timestamp,CURRENT_TIMESTAMP,
+search_synonyms,group_id,bigint(20) unsigned,\N,PRI
+search_synonyms,synonyms,text,\N,MUL
+search_synonyms,store_id,smallint(5) unsigned,0,MUL
+search_synonyms,website_id,smallint(5) unsigned,0,MUL
+sendfriend_log,log_id,int(10) unsigned,\N,PRI
+sendfriend_log,ip,bigint(20) unsigned,0,MUL
+sendfriend_log,time,int(10) unsigned,0,MUL
+sendfriend_log,website_id,smallint(5) unsigned,0,
+sequence_creditmemo_0,sequence_value,int(10) unsigned,\N,PRI
+sequence_creditmemo_1,sequence_value,int(10) unsigned,\N,PRI
+sequence_invoice_0,sequence_value,int(10) unsigned,\N,PRI
+sequence_invoice_1,sequence_value,int(10) unsigned,\N,PRI
+sequence_order_0,sequence_value,int(10) unsigned,\N,PRI
+sequence_order_1,sequence_value,int(10) unsigned,\N,PRI
+sequence_shipment_0,sequence_value,int(10) unsigned,\N,PRI
+sequence_shipment_1,sequence_value,int(10) unsigned,\N,PRI
+session,session_id,varchar(255),\N,PRI
+session,session_expires,int(10) unsigned,0,
+session,session_data,mediumblob,\N,
+setup_module,module,varchar(50),\N,PRI
+setup_module,schema_version,varchar(50),\N,
+setup_module,data_version,varchar(50),\N,
+shipping_tablerate,pk,int(10) unsigned,\N,PRI
+shipping_tablerate,website_id,int(11),0,MUL
+shipping_tablerate,dest_country_id,varchar(4),0,
+shipping_tablerate,dest_region_id,int(11),0,
+shipping_tablerate,dest_zip,varchar(10),*,
+shipping_tablerate,condition_name,varchar(20),\N,
+shipping_tablerate,condition_value,decimal(12\,4),0.0000,
+shipping_tablerate,price,decimal(12\,4),0.0000,
+shipping_tablerate,cost,decimal(12\,4),0.0000,
+sitemap,sitemap_id,int(10) unsigned,\N,PRI
+sitemap,sitemap_type,varchar(32),\N,
+sitemap,sitemap_filename,varchar(32),\N,
+sitemap,sitemap_path,varchar(255),\N,
+sitemap,sitemap_time,timestamp,\N,
+sitemap,store_id,smallint(5) unsigned,0,MUL
+store,store_id,smallint(5) unsigned,\N,PRI
+store,code,varchar(32),\N,UNI
+store,website_id,smallint(5) unsigned,0,MUL
+store,group_id,smallint(5) unsigned,0,MUL
+store,name,varchar(255),\N,
+store,sort_order,smallint(5) unsigned,0,
+store,is_active,smallint(5) unsigned,0,MUL
+store_group,group_id,smallint(5) unsigned,\N,PRI
+store_group,website_id,smallint(5) unsigned,0,MUL
+store_group,name,varchar(255),\N,
+store_group,root_category_id,int(10) unsigned,0,
+store_group,default_store_id,smallint(5) unsigned,0,MUL
+store_website,website_id,smallint(5) unsigned,\N,PRI
+store_website,code,varchar(32),\N,UNI
+store_website,name,varchar(64),\N,
+store_website,sort_order,smallint(5) unsigned,0,MUL
+store_website,default_group_id,smallint(5) unsigned,0,MUL
+store_website,is_default,smallint(5) unsigned,0,
+tax_calculation,tax_calculation_id,int(11),\N,PRI
+tax_calculation,tax_calculation_rate_id,int(11),\N,MUL
+tax_calculation,tax_calculation_rule_id,int(11),\N,MUL
+tax_calculation,customer_tax_class_id,smallint(6),\N,MUL
+tax_calculation,product_tax_class_id,smallint(6),\N,MUL
+tax_calculation_rate,tax_calculation_rate_id,int(11),\N,PRI
+tax_calculation_rate,tax_country_id,varchar(2),\N,MUL
+tax_calculation_rate,tax_region_id,int(11),\N,
+tax_calculation_rate,tax_postcode,varchar(21),\N,
+tax_calculation_rate,code,varchar(255),\N,MUL
+tax_calculation_rate,rate,decimal(12\,4),\N,
+tax_calculation_rate,zip_is_range,smallint(6),\N,
+tax_calculation_rate,zip_from,int(10) unsigned,\N,
+tax_calculation_rate,zip_to,int(10) unsigned,\N,
+tax_calculation_rate_title,tax_calculation_rate_title_id,int(11),\N,PRI
+tax_calculation_rate_title,tax_calculation_rate_id,int(11),\N,MUL
+tax_calculation_rate_title,store_id,smallint(5) unsigned,\N,MUL
+tax_calculation_rate_title,value,varchar(255),\N,
+tax_calculation_rule,tax_calculation_rule_id,int(11),\N,PRI
+tax_calculation_rule,code,varchar(255),\N,MUL
+tax_calculation_rule,priority,int(11),\N,MUL
+tax_calculation_rule,position,int(11),\N,
+tax_calculation_rule,calculate_subtotal,int(11),\N,
+tax_class,class_id,smallint(6),\N,PRI
+tax_class,class_name,varchar(255),\N,
+tax_class,class_type,varchar(8),CUSTOMER,
+tax_order_aggregated_created,id,int(10) unsigned,\N,PRI
+tax_order_aggregated_created,period,date,\N,MUL
+tax_order_aggregated_created,store_id,smallint(5) unsigned,\N,MUL
+tax_order_aggregated_created,code,varchar(255),\N,
+tax_order_aggregated_created,order_status,varchar(50),\N,
+tax_order_aggregated_created,percent,float,\N,
+tax_order_aggregated_created,orders_count,int(10) unsigned,0,
+tax_order_aggregated_created,tax_base_amount_sum,float,\N,
+tax_order_aggregated_updated,id,int(10) unsigned,\N,PRI
+tax_order_aggregated_updated,period,date,\N,MUL
+tax_order_aggregated_updated,store_id,smallint(5) unsigned,\N,MUL
+tax_order_aggregated_updated,code,varchar(255),\N,
+tax_order_aggregated_updated,order_status,varchar(50),\N,
+tax_order_aggregated_updated,percent,float,\N,
+tax_order_aggregated_updated,orders_count,int(10) unsigned,0,
+tax_order_aggregated_updated,tax_base_amount_sum,float,\N,
+theme,theme_id,int(10) unsigned,\N,PRI
+theme,parent_id,int(11),\N,
+theme,theme_path,varchar(255),\N,
+theme,theme_title,varchar(255),\N,
+theme,preview_image,varchar(255),\N,
+theme,is_featured,tinyint(1),0,
+theme,area,varchar(255),\N,
+theme,type,smallint(6),\N,
+theme,code,text,\N,
+theme_file,theme_files_id,int(10) unsigned,\N,PRI
+theme_file,theme_id,int(10) unsigned,\N,MUL
+theme_file,file_path,varchar(255),\N,
+theme_file,file_type,varchar(32),\N,
+theme_file,content,longtext,\N,
+theme_file,sort_order,smallint(6),0,
+theme_file,is_temporary,tinyint(1),0,
+translation,key_id,int(10) unsigned,\N,PRI
+translation,string,varchar(255),Translate String,
+translation,store_id,smallint(5) unsigned,0,MUL
+translation,translate,varchar(255),\N,
+translation,locale,varchar(20),en_US,
+translation,crc_string,bigint(20),1591228201,
+ui_bookmark,bookmark_id,int(10) unsigned,\N,PRI
+ui_bookmark,user_id,int(10) unsigned,\N,MUL
+ui_bookmark,namespace,varchar(255),\N,
+ui_bookmark,identifier,varchar(255),\N,
+ui_bookmark,current,smallint(6),\N,
+ui_bookmark,title,varchar(255),\N,
+ui_bookmark,config,longtext,\N,
+ui_bookmark,created_at,datetime,\N,
+ui_bookmark,updated_at,datetime,\N,
+url_rewrite,url_rewrite_id,int(10) unsigned,\N,PRI
+url_rewrite,entity_type,varchar(32),\N,
+url_rewrite,entity_id,int(10) unsigned,\N,
+url_rewrite,request_path,varchar(255),\N,MUL
+url_rewrite,target_path,varchar(255),\N,MUL
+url_rewrite,redirect_type,smallint(5) unsigned,0,
+url_rewrite,store_id,smallint(5) unsigned,\N,MUL
+url_rewrite,description,varchar(255),\N,
+url_rewrite,is_autogenerated,smallint(5) unsigned,0,
+url_rewrite,metadata,varchar(255),\N,
+variable,variable_id,int(10) unsigned,\N,PRI
+variable,code,varchar(255),\N,UNI
+variable,name,varchar(255),\N,
+variable_value,value_id,int(10) unsigned,\N,PRI
+variable_value,variable_id,int(10) unsigned,0,MUL
+variable_value,store_id,smallint(5) unsigned,0,MUL
+variable_value,plain_value,text,\N,
+variable_value,html_value,text,\N,
+vault_payment_token,entity_id,int(10) unsigned,\N,PRI
+vault_payment_token,customer_id,int(10) unsigned,\N,MUL
+vault_payment_token,public_hash,varchar(128),\N,UNI
+vault_payment_token,payment_method_code,varchar(128),\N,MUL
+vault_payment_token,type,varchar(128),\N,
+vault_payment_token,created_at,timestamp,CURRENT_TIMESTAMP,
+vault_payment_token,expires_at,timestamp,\N,
+vault_payment_token,gateway_token,varchar(255),\N,
+vault_payment_token,details,text,\N,
+vault_payment_token,is_active,tinyint(1),\N,
+vault_payment_token,is_visible,tinyint(1),\N,
+vault_payment_token_order_payment_link,order_payment_id,int(10) unsigned,\N,PRI
+vault_payment_token_order_payment_link,payment_token_id,int(10) unsigned,\N,PRI
+weee_tax,value_id,int(11),\N,PRI
+weee_tax,website_id,smallint(5) unsigned,0,MUL
+weee_tax,entity_id,int(10) unsigned,0,MUL
+weee_tax,country,varchar(2),\N,MUL
+weee_tax,value,decimal(12\,4),0.0000,
+weee_tax,state,int(11),0,
+weee_tax,attribute_id,smallint(5) unsigned,\N,MUL
+widget,widget_id,int(10) unsigned,\N,PRI
+widget,widget_code,varchar(255),\N,MUL
+widget,widget_type,varchar(255),\N,
+widget,parameters,text,\N,
+widget_instance,instance_id,int(10) unsigned,\N,PRI
+widget_instance,instance_type,varchar(255),\N,
+widget_instance,theme_id,int(10) unsigned,\N,MUL
+widget_instance,title,varchar(255),\N,
+widget_instance,store_ids,varchar(255),0,
+widget_instance,widget_parameters,text,\N,
+widget_instance,sort_order,smallint(5) unsigned,0,
+widget_instance_page,page_id,int(10) unsigned,\N,PRI
+widget_instance_page,instance_id,int(10) unsigned,0,MUL
+widget_instance_page,page_group,varchar(25),\N,
+widget_instance_page,layout_handle,varchar(255),\N,
+widget_instance_page,block_reference,varchar(255),\N,
+widget_instance_page,page_for,varchar(25),\N,
+widget_instance_page,entities,text,\N,
+widget_instance_page,page_template,varchar(255),\N,
+widget_instance_page_layout,page_id,int(10) unsigned,0,PRI
+widget_instance_page_layout,layout_update_id,int(10) unsigned,0,PRI
+wishlist,wishlist_id,int(10) unsigned,\N,PRI
+wishlist,customer_id,int(10) unsigned,0,UNI
+wishlist,shared,smallint(5) unsigned,0,MUL
+wishlist,sharing_code,varchar(32),\N,
+wishlist,updated_at,timestamp,\N,
+wishlist_item,wishlist_item_id,int(10) unsigned,\N,PRI
+wishlist_item,wishlist_id,int(10) unsigned,0,MUL
+wishlist_item,product_id,int(10) unsigned,0,MUL
+wishlist_item,store_id,smallint(5) unsigned,\N,MUL
+wishlist_item,added_at,timestamp,\N,
+wishlist_item,description,text,\N,
+wishlist_item,qty,decimal(12\,4),\N,
+wishlist_item_option,option_id,int(10) unsigned,\N,PRI
+wishlist_item_option,wishlist_item_id,int(10) unsigned,\N,MUL
+wishlist_item_option,product_id,int(10) unsigned,\N,
+wishlist_item_option,code,varchar(255),\N,
+wishlist_item_option,value,text,\N,

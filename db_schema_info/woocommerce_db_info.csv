@@ -1,0 +1,168 @@
+wp_commentmeta,meta_id,bigint(20) unsigned,\N,PRI
+wp_commentmeta,comment_id,bigint(20) unsigned,0,MUL
+wp_commentmeta,meta_key,varchar(255),\N,MUL
+wp_commentmeta,meta_value,longtext,\N,
+wp_comments,comment_ID,bigint(20) unsigned,\N,PRI
+wp_comments,comment_post_ID,bigint(20) unsigned,0,MUL
+wp_comments,comment_author,tinytext,\N,
+wp_comments,comment_author_email,varchar(100),,MUL
+wp_comments,comment_author_url,varchar(200),,
+wp_comments,comment_author_IP,varchar(100),,
+wp_comments,comment_date,datetime,0000-00-00 00:00:00,
+wp_comments,comment_date_gmt,datetime,0000-00-00 00:00:00,MUL
+wp_comments,comment_content,text,\N,
+wp_comments,comment_karma,int(11),0,
+wp_comments,comment_approved,varchar(20),1,MUL
+wp_comments,comment_agent,varchar(255),,
+wp_comments,comment_type,varchar(20),,
+wp_comments,comment_parent,bigint(20) unsigned,0,MUL
+wp_comments,user_id,bigint(20) unsigned,0,
+wp_links,link_id,bigint(20) unsigned,\N,PRI
+wp_links,link_url,varchar(255),,
+wp_links,link_name,varchar(255),,
+wp_links,link_image,varchar(255),,
+wp_links,link_target,varchar(25),,
+wp_links,link_description,varchar(255),,
+wp_links,link_visible,varchar(20),Y,MUL
+wp_links,link_owner,bigint(20) unsigned,1,
+wp_links,link_rating,int(11),0,
+wp_links,link_updated,datetime,0000-00-00 00:00:00,
+wp_links,link_rel,varchar(255),,
+wp_links,link_notes,mediumtext,\N,
+wp_links,link_rss,varchar(255),,
+wp_options,option_id,bigint(20) unsigned,\N,PRI
+wp_options,option_name,varchar(191),,UNI
+wp_options,option_value,longtext,\N,
+wp_options,autoload,varchar(20),yes,
+wp_postmeta,meta_id,bigint(20) unsigned,\N,PRI
+wp_postmeta,post_id,bigint(20) unsigned,0,MUL
+wp_postmeta,meta_key,varchar(255),\N,MUL
+wp_postmeta,meta_value,longtext,\N,
+wp_posts,ID,bigint(20) unsigned,\N,PRI
+wp_posts,post_author,bigint(20) unsigned,0,MUL
+wp_posts,post_date,datetime,0000-00-00 00:00:00,
+wp_posts,post_date_gmt,datetime,0000-00-00 00:00:00,
+wp_posts,post_content,longtext,\N,
+wp_posts,post_title,text,\N,
+wp_posts,post_excerpt,text,\N,
+wp_posts,post_status,varchar(20),publish,
+wp_posts,comment_status,varchar(20),open,
+wp_posts,ping_status,varchar(20),open,
+wp_posts,post_password,varchar(20),,
+wp_posts,post_name,varchar(200),,MUL
+wp_posts,to_ping,text,\N,
+wp_posts,pinged,text,\N,
+wp_posts,post_modified,datetime,0000-00-00 00:00:00,
+wp_posts,post_modified_gmt,datetime,0000-00-00 00:00:00,
+wp_posts,post_content_filtered,longtext,\N,
+wp_posts,post_parent,bigint(20) unsigned,0,MUL
+wp_posts,guid,varchar(255),,
+wp_posts,menu_order,int(11),0,
+wp_posts,post_type,varchar(20),post,MUL
+wp_posts,post_mime_type,varchar(100),,
+wp_posts,comment_count,bigint(20),0,
+wp_termmeta,meta_id,bigint(20) unsigned,\N,PRI
+wp_termmeta,term_id,bigint(20) unsigned,0,MUL
+wp_termmeta,meta_key,varchar(255),\N,MUL
+wp_termmeta,meta_value,longtext,\N,
+wp_terms,term_id,bigint(20) unsigned,\N,PRI
+wp_terms,name,varchar(200),,MUL
+wp_terms,slug,varchar(200),,MUL
+wp_terms,term_group,bigint(10),0,
+wp_term_relationships,object_id,bigint(20) unsigned,0,PRI
+wp_term_relationships,term_taxonomy_id,bigint(20) unsigned,0,PRI
+wp_term_relationships,term_order,int(11),0,
+wp_term_taxonomy,term_taxonomy_id,bigint(20) unsigned,\N,PRI
+wp_term_taxonomy,term_id,bigint(20) unsigned,0,MUL
+wp_term_taxonomy,taxonomy,varchar(32),,MUL
+wp_term_taxonomy,description,longtext,\N,
+wp_term_taxonomy,parent,bigint(20) unsigned,0,
+wp_term_taxonomy,count,bigint(20),0,
+wp_usermeta,umeta_id,bigint(20) unsigned,\N,PRI
+wp_usermeta,user_id,bigint(20) unsigned,0,MUL
+wp_usermeta,meta_key,varchar(255),\N,MUL
+wp_usermeta,meta_value,longtext,\N,
+wp_users,ID,bigint(20) unsigned,\N,PRI
+wp_users,user_login,varchar(60),,MUL
+wp_users,user_pass,varchar(255),,
+wp_users,user_nicename,varchar(50),,MUL
+wp_users,user_email,varchar(100),,MUL
+wp_users,user_url,varchar(100),,
+wp_users,user_registered,datetime,0000-00-00 00:00:00,
+wp_users,user_activation_key,varchar(255),,
+wp_users,user_status,int(11),0,
+wp_users,display_name,varchar(250),,
+wp_woocommerce_api_keys,key_id,bigint(20),\N,PRI
+wp_woocommerce_api_keys,user_id,bigint(20),\N,
+wp_woocommerce_api_keys,description,longtext,\N,
+wp_woocommerce_api_keys,permissions,varchar(10),\N,
+wp_woocommerce_api_keys,consumer_key,char(64),\N,MUL
+wp_woocommerce_api_keys,consumer_secret,char(43),\N,MUL
+wp_woocommerce_api_keys,nonces,longtext,\N,
+wp_woocommerce_api_keys,truncated_key,char(7),\N,
+wp_woocommerce_api_keys,last_access,datetime,\N,
+wp_woocommerce_attribute_taxonomies,attribute_id,bigint(20),\N,PRI
+wp_woocommerce_attribute_taxonomies,attribute_name,varchar(200),\N,MUL
+wp_woocommerce_attribute_taxonomies,attribute_label,longtext,\N,
+wp_woocommerce_attribute_taxonomies,attribute_type,varchar(200),\N,
+wp_woocommerce_attribute_taxonomies,attribute_orderby,varchar(200),\N,
+wp_woocommerce_attribute_taxonomies,attribute_public,int(1),1,
+wp_woocommerce_downloadable_product_permissions,permission_id,bigint(20),\N,PRI
+wp_woocommerce_downloadable_product_permissions,download_id,varchar(32),\N,MUL
+wp_woocommerce_downloadable_product_permissions,product_id,bigint(20),\N,MUL
+wp_woocommerce_downloadable_product_permissions,order_id,bigint(20),0,
+wp_woocommerce_downloadable_product_permissions,order_key,varchar(200),\N,
+wp_woocommerce_downloadable_product_permissions,user_email,varchar(200),\N,
+wp_woocommerce_downloadable_product_permissions,user_id,bigint(20),\N,
+wp_woocommerce_downloadable_product_permissions,downloads_remaining,varchar(9),\N,
+wp_woocommerce_downloadable_product_permissions,access_granted,datetime,0000-00-00 00:00:00,
+wp_woocommerce_downloadable_product_permissions,access_expires,datetime,\N,
+wp_woocommerce_downloadable_product_permissions,download_count,bigint(20),0,
+wp_woocommerce_order_itemmeta,meta_id,bigint(20),\N,PRI
+wp_woocommerce_order_itemmeta,order_item_id,bigint(20),\N,MUL
+wp_woocommerce_order_itemmeta,meta_key,varchar(255),\N,MUL
+wp_woocommerce_order_itemmeta,meta_value,longtext,\N,
+wp_woocommerce_order_items,order_item_id,bigint(20),\N,PRI
+wp_woocommerce_order_items,order_item_name,longtext,\N,
+wp_woocommerce_order_items,order_item_type,varchar(200),,
+wp_woocommerce_order_items,order_id,bigint(20),\N,MUL
+wp_woocommerce_payment_tokenmeta,meta_id,bigint(20),\N,PRI
+wp_woocommerce_payment_tokenmeta,payment_token_id,bigint(20),\N,MUL
+wp_woocommerce_payment_tokenmeta,meta_key,varchar(255),\N,MUL
+wp_woocommerce_payment_tokenmeta,meta_value,longtext,\N,
+wp_woocommerce_payment_tokens,token_id,bigint(20),\N,PRI
+wp_woocommerce_payment_tokens,gateway_id,varchar(255),\N,
+wp_woocommerce_payment_tokens,token,text,\N,
+wp_woocommerce_payment_tokens,user_id,bigint(20),0,MUL
+wp_woocommerce_payment_tokens,type,varchar(255),\N,
+wp_woocommerce_payment_tokens,is_default,tinyint(1),0,
+wp_woocommerce_sessions,session_id,bigint(20),\N,UNI
+wp_woocommerce_sessions,session_key,char(32),\N,PRI
+wp_woocommerce_sessions,session_value,longtext,\N,
+wp_woocommerce_sessions,session_expiry,bigint(20),\N,
+wp_woocommerce_shipping_zones,zone_id,bigint(20),\N,PRI
+wp_woocommerce_shipping_zones,zone_name,varchar(255),\N,
+wp_woocommerce_shipping_zones,zone_order,bigint(20),\N,
+wp_woocommerce_shipping_zone_locations,location_id,bigint(20),\N,PRI
+wp_woocommerce_shipping_zone_locations,zone_id,bigint(20),\N,
+wp_woocommerce_shipping_zone_locations,location_code,varchar(255),\N,
+wp_woocommerce_shipping_zone_locations,location_type,varchar(40),\N,MUL
+wp_woocommerce_shipping_zone_methods,zone_id,bigint(20),\N,
+wp_woocommerce_shipping_zone_methods,instance_id,bigint(20),\N,PRI
+wp_woocommerce_shipping_zone_methods,method_id,varchar(255),\N,
+wp_woocommerce_shipping_zone_methods,method_order,bigint(20),\N,
+wp_woocommerce_shipping_zone_methods,is_enabled,tinyint(1),1,
+wp_woocommerce_tax_rates,tax_rate_id,bigint(20),\N,PRI
+wp_woocommerce_tax_rates,tax_rate_country,varchar(200),,MUL
+wp_woocommerce_tax_rates,tax_rate_state,varchar(200),,MUL
+wp_woocommerce_tax_rates,tax_rate,varchar(200),,
+wp_woocommerce_tax_rates,tax_rate_name,varchar(200),,
+wp_woocommerce_tax_rates,tax_rate_priority,bigint(20),\N,MUL
+wp_woocommerce_tax_rates,tax_rate_compound,int(1),0,
+wp_woocommerce_tax_rates,tax_rate_shipping,int(1),1,
+wp_woocommerce_tax_rates,tax_rate_order,bigint(20),\N,
+wp_woocommerce_tax_rates,tax_rate_class,varchar(200),,MUL
+wp_woocommerce_tax_rate_locations,location_id,bigint(20),\N,PRI
+wp_woocommerce_tax_rate_locations,location_code,varchar(255),\N,
+wp_woocommerce_tax_rate_locations,tax_rate_id,bigint(20),\N,MUL
+wp_woocommerce_tax_rate_locations,location_type,varchar(40),\N,MUL

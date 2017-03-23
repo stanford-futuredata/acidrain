@@ -1,0 +1,271 @@
+161104 21:01:03	    3 Query	SELECT  `products`.* FROM `products` WHERE (products.deleted_at IS NULL OR products.deleted_at > '2016-11-05 04:01:03.934256') AND `products`.`permalink` = 'tp1'  ORDER BY `products`.`id` ASC LIMIT 1
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`product_id` = 1 AND `variants`.`deleted_at` IS NULL  ORDER BY `variants`.`id` ASC LIMIT 1
+		    3 Query	SELECT  1 AS one FROM `variants` WHERE `variants`.`product_id` = 1 AND `variants`.`deleted_at` IS NULL LIMIT 1
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`product_id` = 1 AND `variants`.`deleted_at` IS NULL
+		    3 Query	SELECT  `inventories`.* FROM `inventories` WHERE `inventories`.`id` = 2 LIMIT 1
+		    3 Query	SELECT COUNT(*) FROM `images` WHERE `images`.`imageable_id` = 1 AND `images`.`imageable_type` = 'Product'
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_id` = 1 AND `images`.`imageable_type` = 'Product'  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT COUNT(*) FROM `variants` WHERE `variants`.`product_id` = 1 AND `variants`.`deleted_at` IS NULL
+		    3 Query	SELECT `variant_properties`.* FROM `variant_properties` WHERE `variant_properties`.`variant_id` = 2
+		    3 Query	SELECT  `properties`.* FROM `properties` WHERE `properties`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2
+161104 21:01:24	    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`cart_id` = 45 AND `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`variant_id` = 2
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2  ORDER BY `variants`.`id` ASC LIMIT 1
+		    3 Query	SELECT  `inventories`.* FROM `inventories` WHERE `inventories`.`id` = 2 LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	INSERT INTO `cart_items` (`variant_id`, `user_id`, `item_type_id`, `cart_id`, `created_at`, `updated_at`) VALUES (2, 2, 1, 45, '2016-11-05 04:01:24', '2016-11-05 04:01:24')
+		    3 Query	COMMIT
+161104 21:01:25	    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+		    3 Query	SELECT  `inventories`.* FROM `inventories` WHERE `inventories`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  1 AS one FROM `cart_items` WHERE `cart_items`.`cart_id` = 45 AND `cart_items`.`item_type_id` = 2 AND `cart_items`.`active` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2
+161104 21:01:45	    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	BEGIN
+		    3 Query	COMMIT
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 43 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (43)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2, 3)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1, 3)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1, 3)  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`addressable_id` = 2 AND `addresses`.`addressable_type` = 'User' AND `addresses`.`billing_default` = 1 AND `addresses`.`active` = 1 LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	INSERT INTO `orders` (`number`, `ip_address`, `bill_address_id`, `user_id`, `state`, `email`, `created_at`, `updated_at`) VALUES ('h4k7836', '127.0.0.1', 2, 2, 'in_progress', 'dbtestfds@gmail.com', '2016-11-05 04:01:45', '2016-11-05 04:01:45')
+		    3 Query	UPDATE `orders` SET `number` = '159g60acg9', `ip_address` = '127.0.0.1', `bill_address_id` = 2, `user_id` = 2, `state` = 'in_progress', `email` = 'dbtestfds@gmail.com', `created_at` = '2016-11-05 04:01:45', `updated_at` = '2016-11-05 04:01:45', `id` = 44 WHERE `orders`.`id` = 44
+		    3 Query	COMMIT
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	INSERT INTO `order_items` (`order_id`, `variant_id`, `price`, `state`, `created_at`, `updated_at`) VALUES (44, 2, 100.0, 'unpaid', '2016-11-05 04:01:45', '2016-11-05 04:01:45')
+		    3 Query	COMMIT
+		    3 Query	BEGIN
+		    3 Query	COMMIT
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 44
+		    3 Query	BEGIN
+		    3 Query	DELETE FROM `order_items` WHERE `order_items`.`id` = 264
+		    3 Query	COMMIT
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 44
+		    3 Query	BEGIN
+		    3 Query	INSERT INTO `order_items` (`order_id`, `variant_id`, `price`, `state`, `created_at`, `updated_at`) VALUES (44, 2, 100.0, 'unpaid', '2016-11-05 04:01:45', '2016-11-05 04:01:45')
+		    3 Query	COMMIT
+		    3 Query	BEGIN
+		    3 Query	COMMIT
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `states`.* FROM `states`  ORDER BY country_id DESC, abbreviation ASC
+		    3 Query	SELECT  1 AS one FROM `addresses` WHERE `addresses`.`addressable_id` = 2 AND `addresses`.`addressable_type` = 'User' AND `addresses`.`active` = 1 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`addressable_id` = 2 AND `addresses`.`addressable_type` = 'User' AND `addresses`.`active` = 1
+		    3 Query	SELECT  `states`.* FROM `states` WHERE `states`.`id` = 6 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1)  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2
+161104 21:02:05	    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`addressable_id` = 2 AND `addresses`.`addressable_type` = 'User' AND `addresses`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1)  ORDER BY position, `images`.`position` ASC
+		    3 Query	BEGIN
+		    3 Query	SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `tax_rates`.`id` FROM `tax_rates` WHERE (state_id = 6) AND (tax_rates.start_date <= '2016-11-05' AND
+             (end_date > '2016-11-05' OR end_date IS NULL))
+		    3 Query	SELECT  `tax_rates`.* FROM `tax_rates` WHERE (state_id = 6) AND `tax_rates`.`id` = 1 AND (tax_rates.active = 1)  ORDER BY start_date DESC LIMIT 1
+		    3 Query	UPDATE `order_items` SET `tax_rate_id` = 1, `updated_at` = '2016-11-05 04:02:05' WHERE `order_items`.`id` = 265
+		    3 Query	UPDATE `orders` SET `ship_address_id` = 2, `updated_at` = '2016-11-05 04:02:05' WHERE `orders`.`id` = 44
+		    3 Query	COMMIT
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1)  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT  `shipping_zones`.* FROM `shipping_zones` WHERE `shipping_zones`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `shipping_methods`.id FROM `shipping_methods` WHERE `shipping_methods`.`shipping_zone_id` = 1
+		    3 Query	SELECT order_items.id, order_items.order_id, order_items.shipping_rate_id, order_items.state, order_items.tax_rate_id, order_items.price, order_items.total, order_items.variant_id,
+                           products.shipping_category_id,
+                                          count(*) as quantity,
+                                          products.shipping_category_id as shipping_category_id,
+                                          SUM(order_items.price) as sum_price,
+                                          SUM(order_items.total) as sum_total FROM `order_items` INNER JOIN `variants` ON `variants`.`id` = `order_items`.`variant_id` INNER JOIN `products` ON `products`.`id` = `variants`.`product_id` WHERE `order_items`.`order_id` = 44 GROUP BY order_items.id,
+                products.shipping_category_id,
+                order_items.order_id,
+                order_items.shipping_rate_id,
+                order_items.state,
+                order_items.tax_rate_id,
+                order_items.price,
+                order_items.total, order_items.variant_id
+		    3 Query	SELECT `shipping_categories`.* FROM `shipping_categories` WHERE `shipping_categories`.`id` IN (1)
+		    3 Query	SELECT `shipping_rates`.id FROM `shipping_rates` WHERE `shipping_rates`.`shipping_category_id` = 1
+		    3 Query	SELECT `variant_properties`.* FROM `variant_properties` WHERE `variant_properties`.`variant_id` = 2
+		    3 Query	SELECT  `properties`.* FROM `properties` WHERE `properties`.`id` = 1 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT  `addresses`.* FROM `addresses` WHERE `addresses`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `states`.* FROM `states` WHERE `states`.`id` = 6 LIMIT 1
+		    3 Query	SELECT `shipping_rates`.* FROM `shipping_rates` INNER JOIN `shipping_methods` ON `shipping_methods`.`id` = `shipping_rates`.`shipping_method_id` WHERE (shipping_rates.shipping_category_id = 1
+                        AND shipping_methods.shipping_zone_id = 1
+                        AND shipping_rates.minimum_charge <= 100.0)
+		    3 Query	SELECT  `shipping_methods`.* FROM `shipping_methods` WHERE `shipping_methods`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2
+161104 21:02:25	    3 Query	SELECT `order_items`.`id` AS t0_r0, `order_items`.`price` AS t0_r1, `order_items`.`total` AS t0_r2, `order_items`.`order_id` AS t0_r3, `order_items`.`variant_id` AS t0_r4, `order_items`.`state` AS t0_r5, `order_items`.`tax_rate_id` AS t0_r6, `order_items`.`shipping_rate_id` AS t0_r7, `order_items`.`shipment_id` AS t0_r8, `order_items`.`created_at` AS t0_r9, `order_items`.`updated_at` AS t0_r10, `variants`.`id` AS t1_r0, `variants`.`product_id` AS t1_r1, `variants`.`sku` AS t1_r2, `variants`.`name` AS t1_r3, `variants`.`price` AS t1_r4, `variants`.`cost` AS t1_r5, `variants`.`deleted_at` AS t1_r6, `variants`.`master` AS t1_r7, `variants`.`created_at` AS t1_r8, `variants`.`updated_at` AS t1_r9, `variants`.`inventory_id` AS t1_r10, `variants`.`image_group_id` AS t1_r11, `products`.`id` AS t2_r0, `products`.`name` AS t2_r1, `products`.`description` AS t2_r2, `products`.`product_keywords` AS t2_r3, `products`.`product_type_id` AS t2_r4, `products`.`prototype_id` AS t2_r5, `products`.`shipping_category_id` AS t2_r6, `products`.`permalink` AS t2_r7, `products`.`available_at` AS t2_r8, `products`.`deleted_at` AS t2_r9, `products`.`meta_keywords` AS t2_r10, `products`.`meta_description` AS t2_r11, `products`.`featured` AS t2_r12, `products`.`created_at` AS t2_r13, `products`.`updated_at` AS t2_r14, `products`.`description_markup` AS t2_r15, `products`.`brand_id` AS t2_r16 FROM `order_items` LEFT OUTER JOIN `variants` ON `variants`.`id` = `order_items`.`variant_id` LEFT OUTER JOIN `products` ON `products`.`id` = `variants`.`product_id` WHERE (order_items.order_id = 44 AND
+                                  products.shipping_category_id = '1')
+		    3 Query	UPDATE `order_items` SET shipping_rate_id = 1 WHERE `order_items`.`id` = 265
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1)  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT `tax_rates`.`id` FROM `tax_rates` WHERE (state_id = 6) AND (tax_rates.start_date <= '2016-11-05' AND
+             (end_date > '2016-11-05' OR end_date IS NULL))
+		    3 Query	SELECT  `tax_rates`.* FROM `tax_rates` WHERE (state_id = 6) AND `tax_rates`.`id` = 1 AND (tax_rates.active = 1)  ORDER BY start_date DESC LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	UPDATE `order_items` SET `total` = 100.0, `updated_at` = '2016-11-05 04:02:25' WHERE `order_items`.`id` = 265
+		    3 Query	COMMIT
+		    3 Query	SELECT order_items.id, order_items.order_id, order_items.shipping_rate_id, order_items.state, order_items.tax_rate_id, order_items.price, order_items.total, order_items.variant_id,
+                           products.shipping_category_id,
+                                          count(*) as quantity,
+                                          products.shipping_category_id as shipping_category_id,
+                                          SUM(order_items.price) as sum_price,
+                                          SUM(order_items.total) as sum_total FROM `order_items` INNER JOIN `variants` ON `variants`.`id` = `order_items`.`variant_id` INNER JOIN `products` ON `products`.`id` = `variants`.`product_id` WHERE `order_items`.`order_id` = 44 GROUP BY order_items.id,
+                products.shipping_category_id,
+                order_items.order_id,
+                order_items.shipping_rate_id,
+                order_items.state,
+                order_items.tax_rate_id,
+                order_items.price,
+                order_items.total, order_items.variant_id
+		    3 Query	SELECT  `shipping_rates`.* FROM `shipping_rates` WHERE `shipping_rates`.`id` = 1 LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	UPDATE `orders` SET `calculated_at` = '2016-11-05 04:02:25', `updated_at` = '2016-11-05 04:02:25' WHERE `orders`.`id` = 44
+		    3 Query	COMMIT
+		    3 Query	SELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE (`product_types`.`lft` <= 1) AND (`product_types`.`rgt` >= 2)  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `deals`.* FROM `deals` WHERE (deals.buy_quantity <= 1) AND (deals.product_type_id IN (1)) AND (deals.created_at <= '2016-11-05 04:02:25.731512') AND (deals.deleted_at >= '2016-11-05 04:02:25.731512' OR deals.deleted_at IS NULL)  ORDER BY deals.get_percentage DESC LIMIT 1
+		    3 Query	SELECT  `store_credits`.* FROM `store_credits` WHERE `store_credits`.`user_id` = 2 LIMIT 1
+		    3 Query	SELECT `variant_properties`.* FROM `variant_properties` WHERE `variant_properties`.`variant_id` = 2
+		    3 Query	SELECT  `properties`.* FROM `properties` WHERE `properties`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2
+161104 21:02:45	    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`user_id` = 2 AND `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `addresses`.* FROM `addresses` WHERE `addresses`.`id` IN (2)
+		    3 Query	SELECT `states`.* FROM `states` WHERE `states`.`id` IN (6)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT `products`.* FROM `products` WHERE `products`.`id` IN (1)
+		    3 Query	SELECT `images`.* FROM `images` WHERE `images`.`imageable_type` = 'Product' AND `images`.`imageable_id` IN (1)  ORDER BY position, `images`.`position` ASC
+		    3 Query	SELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE (`product_types`.`lft` <= 1) AND (`product_types`.`rgt` >= 2)  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `deals`.* FROM `deals` WHERE (deals.buy_quantity <= 1) AND (deals.product_type_id IN (1)) AND (deals.created_at <= '2016-11-05 04:02:45.722667') AND (deals.deleted_at >= '2016-11-05 04:02:45.722667' OR deals.deleted_at IS NULL)  ORDER BY deals.get_percentage DESC LIMIT 1
+		    3 Query	SELECT  `tax_rates`.* FROM `tax_rates` WHERE `tax_rates`.`id` = 1 LIMIT 1
+		    3 Query	SELECT order_items.id, order_items.order_id, order_items.shipping_rate_id, order_items.state, order_items.tax_rate_id, order_items.price, order_items.total, order_items.variant_id,
+                           products.shipping_category_id,
+                                          count(*) as quantity,
+                                          products.shipping_category_id as shipping_category_id,
+                                          SUM(order_items.price) as sum_price,
+                                          SUM(order_items.total) as sum_total FROM `order_items` INNER JOIN `variants` ON `variants`.`id` = `order_items`.`variant_id` INNER JOIN `products` ON `products`.`id` = `variants`.`product_id` WHERE `order_items`.`order_id` = 44 GROUP BY order_items.id,
+                products.shipping_category_id,
+                order_items.order_id,
+                order_items.shipping_rate_id,
+                order_items.state,
+                order_items.tax_rate_id,
+                order_items.price,
+                order_items.total, order_items.variant_id
+		    3 Query	SELECT  `shipping_rates`.* FROM `shipping_rates` WHERE `shipping_rates`.`id` = 1 LIMIT 1
+		    3 Query	SELECT  `store_credits`.* FROM `store_credits` WHERE `store_credits`.`user_id` = 2 LIMIT 1
+		    3 Query	BEGIN
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 44 LIMIT 1
+		    3 Query	INSERT INTO `invoices` (`order_id`, `amount`, `state`, `created_at`, `updated_at`) VALUES (44, 100.0, 'pending', '2016-11-05 04:02:45', '2016-11-05 04:02:45')
+		    3 Query	INSERT INTO `payments` (`amount`, `action`, `success`, `confirmation_id`, `message`, `params`, `test`, `invoice_id`, `created_at`, `updated_at`) VALUES (10000, 'authorization', 1, '53433', 'Bogus Gateway: Forced success', '---\nauthorized_amount: \'100.00\'\n', 1, 61, '2016-11-05 04:02:45', '2016-11-05 04:02:45')
+		    3 Query	SAVEPOINT active_record_1
+		    3 Query	UPDATE `invoices` SET `state` = 'authorized', `updated_at` = '2016-11-05 04:02:45' WHERE `invoices`.`id` = 61
+		    3 Query	RELEASE SAVEPOINT active_record_1
+		    3 Query	SAVEPOINT active_record_1
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	UPDATE `orders` SET `state` = 'complete', `updated_at` = '2016-11-05 04:02:45' WHERE `orders`.`id` = 44
+		    3 Query	RELEASE SAVEPOINT active_record_1
+		    3 Query	SELECT  1 AS one FROM `batches` WHERE `batches`.`batchable_id` = 61 AND `batches`.`batchable_type` = 'Invoice' LIMIT 1
+		    3 Query	INSERT INTO `batches` (`batchable_id`, `batchable_type`, `created_at`, `updated_at`) VALUES (61, 'Invoice', '2016-11-05 04:02:45', '2016-11-05 04:02:45')
+		    3 Query	INSERT INTO `transactions` (`type`, `batch_id`, `created_at`, `updated_at`) VALUES ('CreditCardPayment', 42, '2016-11-05 04:02:45', '2016-11-05 04:02:45')
+161104 21:02:46	    3 Query	INSERT INTO `transaction_ledgers` (`transaction_account_id`, `debit`, `credit`, `period`, `accountable_id`, `accountable_type`, `transaction_id`, `created_at`, `updated_at`) VALUES (1, 0.0, 100.0, '11-2016', 2, 'User', 42, '2016-11-05 04:02:46', '2016-11-05 04:02:46')
+		    3 Query	INSERT INTO `transaction_ledgers` (`transaction_account_id`, `debit`, `credit`, `period`, `accountable_id`, `accountable_type`, `transaction_id`, `created_at`, `updated_at`) VALUES (2, 100.0, 0.0, '11-2016', 2, 'User', 42, '2016-11-05 04:02:46', '2016-11-05 04:02:46')
+		    3 Query	SELECT  `inventories`.* FROM `inventories` WHERE `inventories`.`id` = 2 LIMIT 1
+		    3 Query	UPDATE inventories SET count_pending_to_customer = (1 + count_pending_to_customer) WHERE id = 2
+		    3 Query	UPDATE `orders` SET `state` = 'complete', `completed_at` = '2016-11-05 04:02:46', `updated_at` = '2016-11-05 04:02:46' WHERE `orders`.`id` = 44
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE (`product_types`.`lft` <= 1) AND (`product_types`.`rgt` >= 2)  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `deals`.* FROM `deals` WHERE (deals.buy_quantity <= 1) AND (deals.product_type_id IN (1)) AND (deals.created_at <= '2016-11-05 04:02:46.059979') AND (deals.deleted_at >= '2016-11-05 04:02:46.059979' OR deals.deleted_at IS NULL)  ORDER BY deals.get_percentage DESC LIMIT 1
+		    3 Query	SELECT  `invoices`.* FROM `invoices` WHERE `invoices`.`id` = 61 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`id` = 44 LIMIT 1
+		    3 Query	SELECT `users`.* FROM `users` WHERE `users`.`id` IN (2)
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` = 44
+		    3 Query	SELECT  `variants`.* FROM `variants` WHERE `variants`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+		    3 Query	SELECT  `product_types`.* FROM `product_types` WHERE `product_types`.`id` = 1 LIMIT 1
+		    3 Query	SELECT  `deals`.* FROM `deals` WHERE (deals.buy_quantity <= 1) AND (deals.product_type_id IN (1)) AND (deals.created_at <= '2016-11-05 04:02:46.000000') AND (deals.deleted_at >= '2016-11-05 04:02:46.000000' OR deals.deleted_at IS NULL)  ORDER BY deals.get_percentage DESC LIMIT 1
+		    3 Query	SELECT  `tax_rates`.* FROM `tax_rates` WHERE `tax_rates`.`id` = 1 LIMIT 1
+		    3 Query	SELECT order_items.id, order_items.order_id, order_items.shipping_rate_id, order_items.state, order_items.tax_rate_id, order_items.price, order_items.total, order_items.variant_id,
+                           products.shipping_category_id,
+                                          count(*) as quantity,
+                                          products.shipping_category_id as shipping_category_id,
+                                          SUM(order_items.price) as sum_price,
+                                          SUM(order_items.total) as sum_total FROM `order_items` INNER JOIN `variants` ON `variants`.`id` = `order_items`.`variant_id` INNER JOIN `products` ON `products`.`id` = `variants`.`product_id` WHERE `order_items`.`order_id` = 44 GROUP BY order_items.id,
+                products.shipping_category_id,
+                order_items.order_id,
+                order_items.shipping_rate_id,
+                order_items.state,
+                order_items.tax_rate_id,
+                order_items.price,
+                order_items.total, order_items.variant_id
+		    3 Query	SELECT  `shipping_rates`.* FROM `shipping_rates` WHERE `shipping_rates`.`id` = 1 LIMIT 1
+		    3 Query	COMMIT
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT `cart_items`.id FROM `cart_items` WHERE `cart_items`.`cart_id` = 45
+		    3 Query	UPDATE `cart_items` SET item_type_id = 4 WHERE `cart_items`.`id` IN (72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82) AND `cart_items`.`variant_id` = 2
+		    3 Query	SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+		    3 Query	SELECT  `orders`.* FROM `orders` WHERE `orders`.`number` = '159g60acg9'  ORDER BY `orders`.`id` ASC LIMIT 1
+		    3 Query	SELECT `order_items`.* FROM `order_items` WHERE `order_items`.`order_id` IN (44)
+		    3 Query	SELECT `variants`.* FROM `variants` WHERE `variants`.`id` IN (2)
+		    3 Query	SELECT  `products`.* FROM `products` WHERE `products`.`id` = 1 LIMIT 1
+		    3 Query	SELECT `product_types`.* FROM `product_types` WHERE `product_types`.`parent_id` IS NULL  ORDER BY `product_types`.`lft`
+		    3 Query	SELECT  `carts`.* FROM `carts` WHERE `carts`.`id` = 45 LIMIT 1
+		    3 Query	SELECT `cart_items`.* FROM `cart_items` WHERE `cart_items`.`item_type_id` = 1 AND `cart_items`.`active` = 1 AND `cart_items`.`cart_id` IN (45)
+		    3 Query	SELECT `roles`.* FROM `roles` INNER JOIN `user_roles` ON `roles`.`id` = `user_roles`.`role_id` WHERE `user_roles`.`user_id` = 2

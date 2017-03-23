@@ -1,0 +1,1622 @@
+ps_access,id_profile,int(10) unsigned,\N,PRI
+ps_access,id_tab,int(10) unsigned,\N,PRI
+ps_access,view,int(11),\N,
+ps_access,add,int(11),\N,
+ps_access,edit,int(11),\N,
+ps_access,delete,int(11),\N,
+ps_accessory,id_product_1,int(10) unsigned,\N,MUL
+ps_accessory,id_product_2,int(10) unsigned,\N,
+ps_address,id_address,int(10) unsigned,\N,PRI
+ps_address,id_country,int(10) unsigned,\N,MUL
+ps_address,id_state,int(10) unsigned,\N,MUL
+ps_address,id_customer,int(10) unsigned,0,MUL
+ps_address,id_manufacturer,int(10) unsigned,0,MUL
+ps_address,id_supplier,int(10) unsigned,0,MUL
+ps_address,id_warehouse,int(10) unsigned,0,MUL
+ps_address,alias,varchar(32),\N,
+ps_address,company,varchar(64),\N,
+ps_address,lastname,varchar(32),\N,
+ps_address,firstname,varchar(32),\N,
+ps_address,address1,varchar(128),\N,
+ps_address,address2,varchar(128),\N,
+ps_address,postcode,varchar(12),\N,
+ps_address,city,varchar(64),\N,
+ps_address,other,text,\N,
+ps_address,phone,varchar(32),\N,
+ps_address,phone_mobile,varchar(32),\N,
+ps_address,vat_number,varchar(32),\N,
+ps_address,dni,varchar(16),\N,
+ps_address,date_add,datetime,\N,
+ps_address,date_upd,datetime,\N,
+ps_address,active,tinyint(1) unsigned,1,
+ps_address,deleted,tinyint(1) unsigned,0,
+ps_address_format,id_country,int(10) unsigned,\N,PRI
+ps_address_format,format,varchar(255),,
+ps_advice,id_advice,int(11),\N,PRI
+ps_advice,id_ps_advice,int(11),\N,
+ps_advice,id_tab,int(11),\N,
+ps_advice,ids_tab,text,\N,
+ps_advice,validated,tinyint(1) unsigned,0,
+ps_advice,hide,tinyint(1),0,
+ps_advice,location,enum('after'\,'before'),\N,
+ps_advice,selector,varchar(255),\N,
+ps_advice,start_day,int(11),0,
+ps_advice,stop_day,int(11),0,
+ps_advice,weight,int(11),1,
+ps_advice_lang,id_advice,int(11),\N,PRI
+ps_advice_lang,id_lang,int(11),\N,PRI
+ps_advice_lang,html,text,\N,
+ps_alias,id_alias,int(10) unsigned,\N,PRI
+ps_alias,alias,varchar(255),\N,UNI
+ps_alias,search,varchar(255),\N,
+ps_alias,active,tinyint(1),1,
+ps_attachment,id_attachment,int(10) unsigned,\N,PRI
+ps_attachment,file,varchar(40),\N,
+ps_attachment,file_name,varchar(128),\N,
+ps_attachment,file_size,bigint(10) unsigned,0,
+ps_attachment,mime,varchar(128),\N,
+ps_attachment_lang,id_attachment,int(10) unsigned,\N,PRI
+ps_attachment_lang,id_lang,int(10) unsigned,\N,PRI
+ps_attachment_lang,name,varchar(32),\N,
+ps_attachment_lang,description,text,\N,
+ps_attribute,id_attribute,int(10) unsigned,\N,PRI
+ps_attribute,id_attribute_group,int(10) unsigned,\N,MUL
+ps_attribute,color,varchar(32),\N,
+ps_attribute,position,int(10) unsigned,0,
+ps_attribute_group,id_attribute_group,int(10) unsigned,\N,PRI
+ps_attribute_group,is_color_group,tinyint(1),0,
+ps_attribute_group,group_type,enum('select'\,'radio'\,'color'),select,
+ps_attribute_group,position,int(10) unsigned,0,
+ps_attribute_group_lang,id_attribute_group,int(10) unsigned,\N,PRI
+ps_attribute_group_lang,id_lang,int(10) unsigned,\N,PRI
+ps_attribute_group_lang,name,varchar(128),\N,
+ps_attribute_group_lang,public_name,varchar(64),\N,
+ps_attribute_group_shop,id_attribute_group,int(11) unsigned,\N,PRI
+ps_attribute_group_shop,id_shop,int(11) unsigned,\N,PRI
+ps_attribute_impact,id_attribute_impact,int(10) unsigned,\N,PRI
+ps_attribute_impact,id_product,int(11) unsigned,\N,MUL
+ps_attribute_impact,id_attribute,int(11) unsigned,\N,
+ps_attribute_impact,weight,decimal(20\,6),\N,
+ps_attribute_impact,price,decimal(17\,2),\N,
+ps_attribute_lang,id_attribute,int(10) unsigned,\N,PRI
+ps_attribute_lang,id_lang,int(10) unsigned,\N,PRI
+ps_attribute_lang,name,varchar(128),\N,
+ps_attribute_shop,id_attribute,int(11) unsigned,\N,PRI
+ps_attribute_shop,id_shop,int(11) unsigned,\N,PRI
+ps_badge,id_badge,int(11),\N,PRI
+ps_badge,id_ps_badge,int(11),\N,
+ps_badge,type,varchar(32),\N,
+ps_badge,id_group,int(11),\N,
+ps_badge,group_position,int(11),\N,
+ps_badge,scoring,int(11),\N,
+ps_badge,awb,int(11),0,
+ps_badge,validated,tinyint(1) unsigned,0,
+ps_badge_lang,id_badge,int(11),\N,PRI
+ps_badge_lang,id_lang,int(11),\N,PRI
+ps_badge_lang,name,varchar(64),\N,
+ps_badge_lang,description,varchar(255),\N,
+ps_badge_lang,group_name,varchar(255),\N,
+ps_carrier,id_carrier,int(10) unsigned,\N,PRI
+ps_carrier,id_reference,int(10) unsigned,\N,MUL
+ps_carrier,id_tax_rules_group,int(10) unsigned,0,MUL
+ps_carrier,name,varchar(64),\N,
+ps_carrier,url,varchar(255),\N,
+ps_carrier,active,tinyint(1) unsigned,0,
+ps_carrier,deleted,tinyint(1) unsigned,0,MUL
+ps_carrier,shipping_handling,tinyint(1) unsigned,1,
+ps_carrier,range_behavior,tinyint(1) unsigned,0,
+ps_carrier,is_module,tinyint(1) unsigned,0,
+ps_carrier,is_free,tinyint(1) unsigned,0,
+ps_carrier,shipping_external,tinyint(1) unsigned,0,
+ps_carrier,need_range,tinyint(1) unsigned,0,
+ps_carrier,external_module_name,varchar(64),\N,
+ps_carrier,shipping_method,int(2),0,
+ps_carrier,position,int(10) unsigned,0,
+ps_carrier,max_width,int(10),0,
+ps_carrier,max_height,int(10),0,
+ps_carrier,max_depth,int(10),0,
+ps_carrier,max_weight,decimal(20\,6),0.000000,
+ps_carrier,grade,int(10),0,
+ps_carrier_group,id_carrier,int(10) unsigned,\N,PRI
+ps_carrier_group,id_group,int(10) unsigned,\N,PRI
+ps_carrier_lang,id_carrier,int(10) unsigned,\N,PRI
+ps_carrier_lang,id_shop,int(11) unsigned,1,PRI
+ps_carrier_lang,id_lang,int(10) unsigned,\N,PRI
+ps_carrier_lang,delay,varchar(128),\N,
+ps_carrier_shop,id_carrier,int(11) unsigned,\N,PRI
+ps_carrier_shop,id_shop,int(11) unsigned,\N,PRI
+ps_carrier_tax_rules_group_shop,id_carrier,int(11) unsigned,\N,PRI
+ps_carrier_tax_rules_group_shop,id_tax_rules_group,int(11) unsigned,\N,PRI
+ps_carrier_tax_rules_group_shop,id_shop,int(11) unsigned,\N,PRI
+ps_carrier_zone,id_carrier,int(10) unsigned,\N,PRI
+ps_carrier_zone,id_zone,int(10) unsigned,\N,PRI
+ps_cart,id_cart,int(10) unsigned,\N,PRI
+ps_cart,id_shop_group,int(11) unsigned,1,MUL
+ps_cart,id_shop,int(11) unsigned,1,MUL
+ps_cart,id_carrier,int(10) unsigned,\N,MUL
+ps_cart,delivery_option,text,\N,
+ps_cart,id_lang,int(10) unsigned,\N,MUL
+ps_cart,id_address_delivery,int(10) unsigned,\N,MUL
+ps_cart,id_address_invoice,int(10) unsigned,\N,MUL
+ps_cart,id_currency,int(10) unsigned,\N,MUL
+ps_cart,id_customer,int(10) unsigned,\N,MUL
+ps_cart,id_guest,int(10) unsigned,\N,MUL
+ps_cart,secure_key,varchar(32),-1,
+ps_cart,recyclable,tinyint(1) unsigned,1,
+ps_cart,gift,tinyint(1) unsigned,0,
+ps_cart,gift_message,text,\N,
+ps_cart,mobile_theme,tinyint(1),0,
+ps_cart,allow_seperated_package,tinyint(1) unsigned,0,
+ps_cart,date_add,datetime,\N,
+ps_cart,date_upd,datetime,\N,
+ps_cart_cart_rule,id_cart,int(10) unsigned,\N,PRI
+ps_cart_cart_rule,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_product,id_cart,int(10) unsigned,\N,PRI
+ps_cart_product,id_product,int(10) unsigned,\N,PRI
+ps_cart_product,id_address_delivery,int(10) unsigned,0,PRI
+ps_cart_product,id_shop,int(10) unsigned,1,
+ps_cart_product,id_product_attribute,int(10) unsigned,0,PRI
+ps_cart_product,quantity,int(10) unsigned,0,
+ps_cart_product,date_add,datetime,\N,
+ps_cart_rule,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule,id_customer,int(10) unsigned,0,MUL
+ps_cart_rule,date_from,datetime,\N,
+ps_cart_rule,date_to,datetime,\N,
+ps_cart_rule,description,text,\N,
+ps_cart_rule,quantity,int(10) unsigned,0,
+ps_cart_rule,quantity_per_user,int(10) unsigned,0,
+ps_cart_rule,priority,int(10) unsigned,1,
+ps_cart_rule,partial_use,tinyint(1) unsigned,0,
+ps_cart_rule,code,varchar(254),\N,
+ps_cart_rule,minimum_amount,decimal(17\,2),0.00,
+ps_cart_rule,minimum_amount_tax,tinyint(1),0,
+ps_cart_rule,minimum_amount_currency,int(10) unsigned,0,
+ps_cart_rule,minimum_amount_shipping,tinyint(1),0,
+ps_cart_rule,country_restriction,tinyint(1) unsigned,0,
+ps_cart_rule,carrier_restriction,tinyint(1) unsigned,0,
+ps_cart_rule,group_restriction,tinyint(1) unsigned,0,MUL
+ps_cart_rule,cart_rule_restriction,tinyint(1) unsigned,0,
+ps_cart_rule,product_restriction,tinyint(1) unsigned,0,
+ps_cart_rule,shop_restriction,tinyint(1) unsigned,0,
+ps_cart_rule,free_shipping,tinyint(1),0,
+ps_cart_rule,reduction_percent,decimal(5\,2),0.00,
+ps_cart_rule,reduction_amount,decimal(17\,2),0.00,
+ps_cart_rule,reduction_tax,tinyint(1) unsigned,0,
+ps_cart_rule,reduction_currency,int(10) unsigned,0,
+ps_cart_rule,reduction_product,int(10),0,
+ps_cart_rule,gift_product,int(10) unsigned,0,
+ps_cart_rule,gift_product_attribute,int(10) unsigned,0,
+ps_cart_rule,highlight,tinyint(1) unsigned,0,
+ps_cart_rule,active,tinyint(1) unsigned,0,
+ps_cart_rule,date_add,datetime,\N,
+ps_cart_rule,date_upd,datetime,\N,
+ps_cart_rule_carrier,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_carrier,id_carrier,int(10) unsigned,\N,PRI
+ps_cart_rule_combination,id_cart_rule_1,int(10) unsigned,\N,PRI
+ps_cart_rule_combination,id_cart_rule_2,int(10) unsigned,\N,PRI
+ps_cart_rule_country,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_country,id_country,int(10) unsigned,\N,PRI
+ps_cart_rule_group,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_group,id_group,int(10) unsigned,\N,PRI
+ps_cart_rule_lang,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_lang,id_lang,int(10) unsigned,\N,PRI
+ps_cart_rule_lang,name,varchar(254),\N,
+ps_cart_rule_product_rule,id_product_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_product_rule,id_product_rule_group,int(10) unsigned,\N,
+ps_cart_rule_product_rule,type,enum('products'\,'categories'\,'attributes'\,'manufacturers'\,'suppliers'),\N,
+ps_cart_rule_product_rule_group,id_product_rule_group,int(10) unsigned,\N,PRI
+ps_cart_rule_product_rule_group,id_cart_rule,int(10) unsigned,\N,
+ps_cart_rule_product_rule_group,quantity,int(10) unsigned,1,
+ps_cart_rule_product_rule_value,id_product_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_product_rule_value,id_item,int(10) unsigned,\N,PRI
+ps_cart_rule_shop,id_cart_rule,int(10) unsigned,\N,PRI
+ps_cart_rule_shop,id_shop,int(10) unsigned,\N,PRI
+ps_category,id_category,int(10) unsigned,\N,PRI
+ps_category,id_parent,int(10) unsigned,\N,MUL
+ps_category,id_shop_default,int(10) unsigned,1,
+ps_category,level_depth,tinyint(3) unsigned,0,MUL
+ps_category,nleft,int(10) unsigned,0,MUL
+ps_category,nright,int(10) unsigned,0,MUL
+ps_category,active,tinyint(1) unsigned,0,MUL
+ps_category,date_add,datetime,\N,
+ps_category,date_upd,datetime,\N,
+ps_category,position,int(10) unsigned,0,
+ps_category,is_root_category,tinyint(1),0,
+ps_category_group,id_category,int(10) unsigned,\N,PRI
+ps_category_group,id_group,int(10) unsigned,\N,PRI
+ps_category_lang,id_category,int(10) unsigned,\N,PRI
+ps_category_lang,id_shop,int(11) unsigned,1,PRI
+ps_category_lang,id_lang,int(10) unsigned,\N,PRI
+ps_category_lang,name,varchar(128),\N,MUL
+ps_category_lang,description,text,\N,
+ps_category_lang,link_rewrite,varchar(128),\N,
+ps_category_lang,meta_title,varchar(128),\N,
+ps_category_lang,meta_keywords,varchar(255),\N,
+ps_category_lang,meta_description,varchar(255),\N,
+ps_category_product,id_category,int(10) unsigned,\N,PRI
+ps_category_product,id_product,int(10) unsigned,\N,PRI
+ps_category_product,position,int(10) unsigned,0,
+ps_category_shop,id_category,int(11),\N,PRI
+ps_category_shop,id_shop,int(11),\N,PRI
+ps_category_shop,position,int(10) unsigned,0,
+ps_cms,id_cms,int(10) unsigned,\N,PRI
+ps_cms,id_cms_category,int(10) unsigned,\N,
+ps_cms,position,int(10) unsigned,0,
+ps_cms,active,tinyint(1) unsigned,0,
+ps_cms,indexation,tinyint(1) unsigned,1,
+ps_cms_block,id_cms_block,int(10) unsigned,\N,PRI
+ps_cms_block,id_cms_category,int(10) unsigned,\N,
+ps_cms_block,location,tinyint(1) unsigned,\N,
+ps_cms_block,position,int(10) unsigned,0,
+ps_cms_block,display_store,tinyint(1) unsigned,1,
+ps_cms_block_lang,id_cms_block,int(10) unsigned,\N,PRI
+ps_cms_block_lang,id_lang,int(10) unsigned,\N,PRI
+ps_cms_block_lang,name,varchar(40),,
+ps_cms_block_page,id_cms_block_page,int(10) unsigned,\N,PRI
+ps_cms_block_page,id_cms_block,int(10) unsigned,\N,
+ps_cms_block_page,id_cms,int(10) unsigned,\N,
+ps_cms_block_page,is_category,tinyint(1) unsigned,\N,
+ps_cms_block_shop,id_cms_block,int(10) unsigned,\N,PRI
+ps_cms_block_shop,id_shop,int(10) unsigned,\N,PRI
+ps_cms_category,id_cms_category,int(10) unsigned,\N,PRI
+ps_cms_category,id_parent,int(10) unsigned,\N,MUL
+ps_cms_category,level_depth,tinyint(3) unsigned,0,
+ps_cms_category,active,tinyint(1) unsigned,0,
+ps_cms_category,date_add,datetime,\N,
+ps_cms_category,date_upd,datetime,\N,
+ps_cms_category,position,int(10) unsigned,0,
+ps_cms_category_lang,id_cms_category,int(10) unsigned,\N,PRI
+ps_cms_category_lang,id_lang,int(10) unsigned,\N,PRI
+ps_cms_category_lang,id_shop,int(10) unsigned,1,PRI
+ps_cms_category_lang,name,varchar(128),\N,MUL
+ps_cms_category_lang,description,text,\N,
+ps_cms_category_lang,link_rewrite,varchar(128),\N,
+ps_cms_category_lang,meta_title,varchar(128),\N,
+ps_cms_category_lang,meta_keywords,varchar(255),\N,
+ps_cms_category_lang,meta_description,varchar(255),\N,
+ps_cms_category_shop,id_cms_category,int(10) unsigned,\N,PRI
+ps_cms_category_shop,id_shop,int(11) unsigned,\N,PRI
+ps_cms_lang,id_cms,int(10) unsigned,\N,PRI
+ps_cms_lang,id_lang,int(10) unsigned,\N,PRI
+ps_cms_lang,id_shop,int(10) unsigned,1,PRI
+ps_cms_lang,meta_title,varchar(128),\N,
+ps_cms_lang,meta_description,varchar(255),\N,
+ps_cms_lang,meta_keywords,varchar(255),\N,
+ps_cms_lang,content,longtext,\N,
+ps_cms_lang,link_rewrite,varchar(128),\N,
+ps_cms_role,id_cms_role,int(11) unsigned,\N,PRI
+ps_cms_role,name,varchar(50),\N,UNI
+ps_cms_role,id_cms,int(11) unsigned,\N,PRI
+ps_cms_role_lang,id_cms_role,int(11) unsigned,\N,PRI
+ps_cms_role_lang,id_lang,int(11) unsigned,\N,PRI
+ps_cms_role_lang,id_shop,int(11) unsigned,\N,PRI
+ps_cms_role_lang,name,varchar(128),\N,
+ps_cms_shop,id_cms,int(11) unsigned,\N,PRI
+ps_cms_shop,id_shop,int(11) unsigned,\N,PRI
+ps_compare,id_compare,int(10) unsigned,\N,PRI
+ps_compare,id_customer,int(10) unsigned,\N,
+ps_compare_product,id_compare,int(10) unsigned,\N,PRI
+ps_compare_product,id_product,int(10) unsigned,\N,PRI
+ps_compare_product,date_add,datetime,\N,
+ps_compare_product,date_upd,datetime,\N,
+ps_condition,id_condition,int(11),\N,PRI
+ps_condition,id_ps_condition,int(11),\N,PRI
+ps_condition,type,enum('configuration'\,'install'\,'sql'),\N,
+ps_condition,request,text,\N,
+ps_condition,operator,varchar(32),\N,
+ps_condition,value,varchar(64),\N,
+ps_condition,result,varchar(64),\N,
+ps_condition,calculation_type,enum('hook'\,'time'),\N,
+ps_condition,calculation_detail,varchar(64),\N,
+ps_condition,validated,tinyint(1) unsigned,0,
+ps_condition,date_add,datetime,\N,
+ps_condition,date_upd,datetime,\N,
+ps_condition_advice,id_condition,int(11),\N,PRI
+ps_condition_advice,id_advice,int(11),\N,PRI
+ps_condition_advice,display,tinyint(1) unsigned,0,
+ps_condition_badge,id_condition,int(11),\N,PRI
+ps_condition_badge,id_badge,int(11),\N,PRI
+ps_configuration,id_configuration,int(10) unsigned,\N,PRI
+ps_configuration,id_shop_group,int(11) unsigned,\N,MUL
+ps_configuration,id_shop,int(11) unsigned,\N,MUL
+ps_configuration,name,varchar(254),\N,MUL
+ps_configuration,value,text,\N,
+ps_configuration,date_add,datetime,\N,
+ps_configuration,date_upd,datetime,\N,
+ps_configuration_kpi,id_configuration_kpi,int(10) unsigned,\N,PRI
+ps_configuration_kpi,id_shop_group,int(11) unsigned,\N,MUL
+ps_configuration_kpi,id_shop,int(11) unsigned,\N,MUL
+ps_configuration_kpi,name,varchar(64),\N,MUL
+ps_configuration_kpi,value,text,\N,
+ps_configuration_kpi,date_add,datetime,\N,
+ps_configuration_kpi,date_upd,datetime,\N,
+ps_configuration_kpi_lang,id_configuration_kpi,int(10) unsigned,\N,PRI
+ps_configuration_kpi_lang,id_lang,int(10) unsigned,\N,PRI
+ps_configuration_kpi_lang,value,text,\N,
+ps_configuration_kpi_lang,date_upd,datetime,\N,
+ps_configuration_lang,id_configuration,int(10) unsigned,\N,PRI
+ps_configuration_lang,id_lang,int(10) unsigned,\N,PRI
+ps_configuration_lang,value,text,\N,
+ps_configuration_lang,date_upd,datetime,\N,
+ps_connections,id_connections,int(10) unsigned,\N,PRI
+ps_connections,id_shop_group,int(11) unsigned,1,
+ps_connections,id_shop,int(11) unsigned,1,
+ps_connections,id_guest,int(10) unsigned,\N,MUL
+ps_connections,id_page,int(10) unsigned,\N,MUL
+ps_connections,ip_address,bigint(20),\N,
+ps_connections,date_add,datetime,\N,MUL
+ps_connections,http_referer,varchar(255),\N,
+ps_connections_page,id_connections,int(10) unsigned,\N,PRI
+ps_connections_page,id_page,int(10) unsigned,\N,PRI
+ps_connections_page,time_start,datetime,\N,PRI
+ps_connections_page,time_end,datetime,\N,
+ps_connections_source,id_connections_source,int(10) unsigned,\N,PRI
+ps_connections_source,id_connections,int(10) unsigned,\N,MUL
+ps_connections_source,http_referer,varchar(255),\N,MUL
+ps_connections_source,request_uri,varchar(255),\N,MUL
+ps_connections_source,keywords,varchar(255),\N,
+ps_connections_source,date_add,datetime,\N,MUL
+ps_contact,id_contact,int(10) unsigned,\N,PRI
+ps_contact,email,varchar(128),\N,
+ps_contact,customer_service,tinyint(1),0,
+ps_contact,position,tinyint(2) unsigned,0,
+ps_contact_lang,id_contact,int(10) unsigned,\N,PRI
+ps_contact_lang,id_lang,int(10) unsigned,\N,PRI
+ps_contact_lang,name,varchar(32),\N,
+ps_contact_lang,description,text,\N,
+ps_contact_shop,id_contact,int(11) unsigned,\N,PRI
+ps_contact_shop,id_shop,int(11) unsigned,\N,PRI
+ps_country,id_country,int(10) unsigned,\N,PRI
+ps_country,id_zone,int(10) unsigned,\N,MUL
+ps_country,id_currency,int(10) unsigned,0,
+ps_country,iso_code,varchar(3),\N,MUL
+ps_country,call_prefix,int(10),0,
+ps_country,active,tinyint(1) unsigned,0,
+ps_country,contains_states,tinyint(1),0,
+ps_country,need_identification_number,tinyint(1),0,
+ps_country,need_zip_code,tinyint(1),1,
+ps_country,zip_code_format,varchar(12),,
+ps_country,display_tax_label,tinyint(1),\N,
+ps_country_lang,id_country,int(10) unsigned,\N,PRI
+ps_country_lang,id_lang,int(10) unsigned,\N,PRI
+ps_country_lang,name,varchar(64),\N,
+ps_country_shop,id_country,int(11) unsigned,\N,PRI
+ps_country_shop,id_shop,int(11) unsigned,\N,PRI
+ps_currency,id_currency,int(10) unsigned,\N,PRI
+ps_currency,name,varchar(32),\N,
+ps_currency,iso_code,varchar(3),0,
+ps_currency,iso_code_num,varchar(3),0,
+ps_currency,sign,varchar(8),\N,
+ps_currency,blank,tinyint(1) unsigned,0,
+ps_currency,format,tinyint(1) unsigned,0,
+ps_currency,decimals,tinyint(1) unsigned,1,
+ps_currency,conversion_rate,decimal(13\,6),\N,
+ps_currency,deleted,tinyint(1) unsigned,0,
+ps_currency,active,tinyint(1) unsigned,1,
+ps_currency_shop,id_currency,int(11) unsigned,\N,PRI
+ps_currency_shop,id_shop,int(11) unsigned,\N,PRI
+ps_currency_shop,conversion_rate,decimal(13\,6),\N,
+ps_customer,id_customer,int(10) unsigned,\N,PRI
+ps_customer,id_shop_group,int(11) unsigned,1,MUL
+ps_customer,id_shop,int(11) unsigned,1,MUL
+ps_customer,id_gender,int(10) unsigned,\N,MUL
+ps_customer,id_default_group,int(10) unsigned,1,
+ps_customer,id_lang,int(10) unsigned,\N,
+ps_customer,id_risk,int(10) unsigned,1,
+ps_customer,company,varchar(64),\N,
+ps_customer,siret,varchar(14),\N,
+ps_customer,ape,varchar(5),\N,
+ps_customer,firstname,varchar(32),\N,
+ps_customer,lastname,varchar(32),\N,
+ps_customer,email,varchar(128),\N,MUL
+ps_customer,passwd,varchar(32),\N,
+ps_customer,last_passwd_gen,timestamp,CURRENT_TIMESTAMP,
+ps_customer,birthday,date,\N,
+ps_customer,newsletter,tinyint(1) unsigned,0,
+ps_customer,ip_registration_newsletter,varchar(15),\N,
+ps_customer,newsletter_date_add,datetime,\N,
+ps_customer,optin,tinyint(1) unsigned,0,
+ps_customer,website,varchar(128),\N,
+ps_customer,outstanding_allow_amount,decimal(20\,6),0.000000,
+ps_customer,show_public_prices,tinyint(1) unsigned,0,
+ps_customer,max_payment_days,int(10) unsigned,60,
+ps_customer,secure_key,varchar(32),-1,
+ps_customer,note,text,\N,
+ps_customer,active,tinyint(1) unsigned,0,
+ps_customer,is_guest,tinyint(1),0,
+ps_customer,deleted,tinyint(1),0,
+ps_customer,date_add,datetime,\N,
+ps_customer,date_upd,datetime,\N,
+ps_customer_group,id_customer,int(10) unsigned,\N,PRI
+ps_customer_group,id_group,int(10) unsigned,\N,PRI
+ps_customer_message,id_customer_message,int(10) unsigned,\N,PRI
+ps_customer_message,id_customer_thread,int(11),\N,MUL
+ps_customer_message,id_employee,int(10) unsigned,\N,MUL
+ps_customer_message,message,mediumtext,\N,
+ps_customer_message,file_name,varchar(18),\N,
+ps_customer_message,ip_address,varchar(16),\N,
+ps_customer_message,user_agent,varchar(128),\N,
+ps_customer_message,date_add,datetime,\N,
+ps_customer_message,date_upd,datetime,\N,
+ps_customer_message,private,tinyint(4),0,
+ps_customer_message,read,tinyint(1),0,
+ps_customer_message_sync_imap,md5_header,varbinary(32),\N,MUL
+ps_customer_thread,id_customer_thread,int(11) unsigned,\N,PRI
+ps_customer_thread,id_shop,int(11) unsigned,1,MUL
+ps_customer_thread,id_lang,int(10) unsigned,\N,MUL
+ps_customer_thread,id_contact,int(10) unsigned,\N,MUL
+ps_customer_thread,id_customer,int(10) unsigned,\N,MUL
+ps_customer_thread,id_order,int(10) unsigned,\N,MUL
+ps_customer_thread,id_product,int(10) unsigned,\N,MUL
+ps_customer_thread,status,enum('open'\,'closed'\,'pending1'\,'pending2'),open,
+ps_customer_thread,email,varchar(128),\N,
+ps_customer_thread,token,varchar(12),\N,
+ps_customer_thread,date_add,datetime,\N,
+ps_customer_thread,date_upd,datetime,\N,
+ps_customization,id_customization,int(10) unsigned,\N,PRI
+ps_customization,id_product_attribute,int(10) unsigned,0,MUL
+ps_customization,id_address_delivery,int(10) unsigned,0,PRI
+ps_customization,id_cart,int(10) unsigned,\N,PRI
+ps_customization,id_product,int(10),\N,PRI
+ps_customization,quantity,int(10),\N,
+ps_customization,quantity_refunded,int(11),0,
+ps_customization,quantity_returned,int(11),0,
+ps_customization,in_cart,tinyint(1) unsigned,0,
+ps_customization_field,id_customization_field,int(10) unsigned,\N,PRI
+ps_customization_field,id_product,int(10) unsigned,\N,MUL
+ps_customization_field,type,tinyint(1),\N,
+ps_customization_field,required,tinyint(1),\N,
+ps_customization_field_lang,id_customization_field,int(10) unsigned,\N,PRI
+ps_customization_field_lang,id_lang,int(10) unsigned,\N,PRI
+ps_customization_field_lang,id_shop,int(10) unsigned,1,PRI
+ps_customization_field_lang,name,varchar(255),\N,
+ps_customized_data,id_customization,int(10) unsigned,\N,PRI
+ps_customized_data,type,tinyint(1),\N,PRI
+ps_customized_data,index,int(3),\N,PRI
+ps_customized_data,value,varchar(255),\N,
+ps_date_range,id_date_range,int(10) unsigned,\N,PRI
+ps_date_range,time_start,datetime,\N,
+ps_date_range,time_end,datetime,\N,
+ps_delivery,id_delivery,int(10) unsigned,\N,PRI
+ps_delivery,id_shop,int(10) unsigned,\N,
+ps_delivery,id_shop_group,int(10) unsigned,\N,
+ps_delivery,id_carrier,int(10) unsigned,\N,MUL
+ps_delivery,id_range_price,int(10) unsigned,\N,MUL
+ps_delivery,id_range_weight,int(10) unsigned,\N,MUL
+ps_delivery,id_zone,int(10) unsigned,\N,MUL
+ps_delivery,price,decimal(20\,6),\N,
+ps_employee,id_employee,int(10) unsigned,\N,PRI
+ps_employee,id_profile,int(10) unsigned,\N,MUL
+ps_employee,id_lang,int(10) unsigned,0,
+ps_employee,lastname,varchar(32),\N,
+ps_employee,firstname,varchar(32),\N,
+ps_employee,email,varchar(128),\N,MUL
+ps_employee,passwd,varchar(32),\N,
+ps_employee,last_passwd_gen,timestamp,CURRENT_TIMESTAMP,
+ps_employee,stats_date_from,date,\N,
+ps_employee,stats_date_to,date,\N,
+ps_employee,stats_compare_from,date,\N,
+ps_employee,stats_compare_to,date,\N,
+ps_employee,stats_compare_option,int(1) unsigned,1,
+ps_employee,preselect_date_range,varchar(32),\N,
+ps_employee,bo_color,varchar(32),\N,
+ps_employee,bo_theme,varchar(32),\N,
+ps_employee,bo_css,varchar(64),\N,
+ps_employee,default_tab,int(10) unsigned,0,
+ps_employee,bo_width,int(10) unsigned,0,
+ps_employee,bo_menu,tinyint(1),1,
+ps_employee,active,tinyint(1) unsigned,0,
+ps_employee,optin,tinyint(1) unsigned,1,
+ps_employee,id_last_order,int(10) unsigned,0,
+ps_employee,id_last_customer_message,int(10) unsigned,0,
+ps_employee,id_last_customer,int(10) unsigned,0,
+ps_employee,last_connection_date,date,0000-00-00,
+ps_employee_shop,id_employee,int(11) unsigned,\N,PRI
+ps_employee_shop,id_shop,int(11) unsigned,\N,PRI
+ps_feature,id_feature,int(10) unsigned,\N,PRI
+ps_feature,position,int(10) unsigned,0,
+ps_feature_lang,id_feature,int(10) unsigned,\N,PRI
+ps_feature_lang,id_lang,int(10) unsigned,\N,PRI
+ps_feature_lang,name,varchar(128),\N,
+ps_feature_product,id_feature,int(10) unsigned,\N,PRI
+ps_feature_product,id_product,int(10) unsigned,\N,PRI
+ps_feature_product,id_feature_value,int(10) unsigned,\N,MUL
+ps_feature_shop,id_feature,int(11) unsigned,\N,PRI
+ps_feature_shop,id_shop,int(11) unsigned,\N,PRI
+ps_feature_value,id_feature_value,int(10) unsigned,\N,PRI
+ps_feature_value,id_feature,int(10) unsigned,\N,MUL
+ps_feature_value,custom,tinyint(3) unsigned,\N,
+ps_feature_value_lang,id_feature_value,int(10) unsigned,\N,PRI
+ps_feature_value_lang,id_lang,int(10) unsigned,\N,PRI
+ps_feature_value_lang,value,varchar(255),\N,
+ps_gender,id_gender,int(11),\N,PRI
+ps_gender,type,tinyint(1),\N,
+ps_gender_lang,id_gender,int(10) unsigned,\N,PRI
+ps_gender_lang,id_lang,int(10) unsigned,\N,PRI
+ps_gender_lang,name,varchar(20),\N,
+ps_group,id_group,int(10) unsigned,\N,PRI
+ps_group,reduction,decimal(17\,2),0.00,
+ps_group,price_display_method,tinyint(4),0,
+ps_group,show_prices,tinyint(1) unsigned,1,
+ps_group,date_add,datetime,\N,
+ps_group,date_upd,datetime,\N,
+ps_group_lang,id_group,int(10) unsigned,\N,PRI
+ps_group_lang,id_lang,int(10) unsigned,\N,PRI
+ps_group_lang,name,varchar(32),\N,
+ps_group_reduction,id_group_reduction,mediumint(8) unsigned,\N,PRI
+ps_group_reduction,id_group,int(10) unsigned,\N,MUL
+ps_group_reduction,id_category,int(10) unsigned,\N,
+ps_group_reduction,reduction,decimal(4\,3),\N,
+ps_group_shop,id_group,int(11) unsigned,\N,PRI
+ps_group_shop,id_shop,int(11) unsigned,\N,PRI
+ps_guest,id_guest,int(10) unsigned,\N,PRI
+ps_guest,id_operating_system,int(10) unsigned,\N,MUL
+ps_guest,id_web_browser,int(10) unsigned,\N,MUL
+ps_guest,id_customer,int(10) unsigned,\N,MUL
+ps_guest,javascript,tinyint(1),0,
+ps_guest,screen_resolution_x,smallint(5) unsigned,\N,
+ps_guest,screen_resolution_y,smallint(5) unsigned,\N,
+ps_guest,screen_color,tinyint(3) unsigned,\N,
+ps_guest,sun_java,tinyint(1),\N,
+ps_guest,adobe_flash,tinyint(1),\N,
+ps_guest,adobe_director,tinyint(1),\N,
+ps_guest,apple_quicktime,tinyint(1),\N,
+ps_guest,real_player,tinyint(1),\N,
+ps_guest,windows_media,tinyint(1),\N,
+ps_guest,accept_language,varchar(8),\N,
+ps_guest,mobile_theme,tinyint(1),0,
+ps_homeslider,id_homeslider_slides,int(10) unsigned,\N,PRI
+ps_homeslider,id_shop,int(10) unsigned,\N,PRI
+ps_homeslider_slides,id_homeslider_slides,int(10) unsigned,\N,PRI
+ps_homeslider_slides,position,int(10) unsigned,0,
+ps_homeslider_slides,active,tinyint(1) unsigned,0,
+ps_homeslider_slides_lang,id_homeslider_slides,int(10) unsigned,\N,PRI
+ps_homeslider_slides_lang,id_lang,int(10) unsigned,\N,PRI
+ps_homeslider_slides_lang,title,varchar(255),\N,
+ps_homeslider_slides_lang,description,text,\N,
+ps_homeslider_slides_lang,legend,varchar(255),\N,
+ps_homeslider_slides_lang,url,varchar(255),\N,
+ps_homeslider_slides_lang,image,varchar(255),\N,
+ps_hook,id_hook,int(10) unsigned,\N,PRI
+ps_hook,name,varchar(64),\N,UNI
+ps_hook,title,varchar(64),\N,
+ps_hook,description,text,\N,
+ps_hook,position,tinyint(1),1,
+ps_hook,live_edit,tinyint(1),0,
+ps_hook_alias,id_hook_alias,int(10) unsigned,\N,PRI
+ps_hook_alias,alias,varchar(64),\N,UNI
+ps_hook_alias,name,varchar(64),\N,
+ps_hook_module,id_module,int(10) unsigned,\N,PRI
+ps_hook_module,id_shop,int(11) unsigned,1,PRI
+ps_hook_module,id_hook,int(10) unsigned,\N,PRI
+ps_hook_module,position,tinyint(2) unsigned,\N,
+ps_hook_module_exceptions,id_hook_module_exceptions,int(10) unsigned,\N,PRI
+ps_hook_module_exceptions,id_shop,int(11) unsigned,1,
+ps_hook_module_exceptions,id_module,int(10) unsigned,\N,MUL
+ps_hook_module_exceptions,id_hook,int(10) unsigned,\N,MUL
+ps_hook_module_exceptions,file_name,varchar(255),\N,
+ps_image,id_image,int(10) unsigned,\N,PRI
+ps_image,id_product,int(10) unsigned,\N,MUL
+ps_image,position,smallint(2) unsigned,0,
+ps_image,cover,tinyint(1) unsigned,\N,
+ps_image_lang,id_image,int(10) unsigned,\N,PRI
+ps_image_lang,id_lang,int(10) unsigned,\N,PRI
+ps_image_lang,legend,varchar(128),\N,
+ps_image_shop,id_product,int(10) unsigned,\N,MUL
+ps_image_shop,id_image,int(11) unsigned,\N,PRI
+ps_image_shop,id_shop,int(11) unsigned,\N,PRI
+ps_image_shop,cover,tinyint(1) unsigned,\N,
+ps_image_type,id_image_type,int(10) unsigned,\N,PRI
+ps_image_type,name,varchar(64),\N,MUL
+ps_image_type,width,int(10) unsigned,\N,
+ps_image_type,height,int(10) unsigned,\N,
+ps_image_type,products,tinyint(1),1,
+ps_image_type,categories,tinyint(1),1,
+ps_image_type,manufacturers,tinyint(1),1,
+ps_image_type,suppliers,tinyint(1),1,
+ps_image_type,scenes,tinyint(1),1,
+ps_image_type,stores,tinyint(1),1,
+ps_import_match,id_import_match,int(10),\N,PRI
+ps_import_match,name,varchar(32),\N,
+ps_import_match,match,text,\N,
+ps_import_match,skip,int(2),\N,
+ps_info,id_info,int(10) unsigned,\N,PRI
+ps_info,id_shop,int(10) unsigned,\N,
+ps_info_lang,id_info,int(10) unsigned,\N,PRI
+ps_info_lang,id_lang,int(10) unsigned,\N,PRI
+ps_info_lang,text,text,\N,
+ps_lang,id_lang,int(10) unsigned,\N,PRI
+ps_lang,name,varchar(32),\N,
+ps_lang,active,tinyint(3) unsigned,0,
+ps_lang,iso_code,char(2),\N,MUL
+ps_lang,language_code,char(5),\N,
+ps_lang,date_format_lite,char(32),Y-m-d,
+ps_lang,date_format_full,char(32),Y-m-d H:i:s,
+ps_lang,is_rtl,tinyint(1),0,
+ps_lang_shop,id_lang,int(11) unsigned,\N,PRI
+ps_lang_shop,id_shop,int(11) unsigned,\N,PRI
+ps_layered_category,id_layered_category,int(10) unsigned,\N,PRI
+ps_layered_category,id_shop,int(11) unsigned,\N,
+ps_layered_category,id_category,int(10) unsigned,\N,MUL
+ps_layered_category,id_value,int(10) unsigned,0,
+ps_layered_category,type,enum('category'\,'id_feature'\,'id_attribute_group'\,'quantity'\,'condition'\,'manufacturer'\,'weight'\,'price'),\N,
+ps_layered_category,position,int(10) unsigned,\N,
+ps_layered_category,filter_type,int(10) unsigned,0,
+ps_layered_category,filter_show_limit,int(10) unsigned,0,
+ps_layered_filter,id_layered_filter,int(10) unsigned,\N,PRI
+ps_layered_filter,name,varchar(64),\N,
+ps_layered_filter,filters,text,\N,
+ps_layered_filter,n_categories,int(10) unsigned,\N,
+ps_layered_filter,date_add,datetime,\N,
+ps_layered_filter_shop,id_layered_filter,int(10) unsigned,\N,PRI
+ps_layered_filter_shop,id_shop,int(11) unsigned,\N,PRI
+ps_layered_friendly_url,id_layered_friendly_url,int(11),\N,PRI
+ps_layered_friendly_url,url_key,varchar(32),\N,MUL
+ps_layered_friendly_url,data,varchar(200),\N,
+ps_layered_friendly_url,id_lang,int(11),\N,MUL
+ps_layered_indexable_attribute_group,id_attribute_group,int(11),\N,PRI
+ps_layered_indexable_attribute_group,indexable,tinyint(1),0,
+ps_layered_indexable_attribute_group_lang_value,id_attribute_group,int(11),\N,PRI
+ps_layered_indexable_attribute_group_lang_value,id_lang,int(11),\N,PRI
+ps_layered_indexable_attribute_group_lang_value,url_name,varchar(128),\N,
+ps_layered_indexable_attribute_group_lang_value,meta_title,varchar(128),\N,
+ps_layered_indexable_attribute_lang_value,id_attribute,int(11),\N,PRI
+ps_layered_indexable_attribute_lang_value,id_lang,int(11),\N,PRI
+ps_layered_indexable_attribute_lang_value,url_name,varchar(128),\N,
+ps_layered_indexable_attribute_lang_value,meta_title,varchar(128),\N,
+ps_layered_indexable_feature,id_feature,int(11),\N,PRI
+ps_layered_indexable_feature,indexable,tinyint(1),0,
+ps_layered_indexable_feature_lang_value,id_feature,int(11),\N,PRI
+ps_layered_indexable_feature_lang_value,id_lang,int(11),\N,PRI
+ps_layered_indexable_feature_lang_value,url_name,varchar(128),\N,
+ps_layered_indexable_feature_lang_value,meta_title,varchar(128),\N,
+ps_layered_indexable_feature_value_lang_value,id_feature_value,int(11),\N,PRI
+ps_layered_indexable_feature_value_lang_value,id_lang,int(11),\N,PRI
+ps_layered_indexable_feature_value_lang_value,url_name,varchar(128),\N,
+ps_layered_indexable_feature_value_lang_value,meta_title,varchar(128),\N,
+ps_layered_price_index,id_product,int(11),\N,PRI
+ps_layered_price_index,id_currency,int(11),\N,PRI
+ps_layered_price_index,id_shop,int(11),\N,PRI
+ps_layered_price_index,price_min,int(11),\N,MUL
+ps_layered_price_index,price_max,int(11),\N,MUL
+ps_layered_product_attribute,id_attribute,int(10) unsigned,\N,PRI
+ps_layered_product_attribute,id_product,int(10) unsigned,\N,PRI
+ps_layered_product_attribute,id_attribute_group,int(10) unsigned,0,MUL
+ps_layered_product_attribute,id_shop,int(10) unsigned,1,PRI
+ps_linksmenutop,id_linksmenutop,int(10) unsigned,\N,PRI
+ps_linksmenutop,id_shop,int(11) unsigned,\N,MUL
+ps_linksmenutop,new_window,tinyint(1),\N,
+ps_linksmenutop_lang,id_linksmenutop,int(11) unsigned,\N,MUL
+ps_linksmenutop_lang,id_lang,int(11) unsigned,\N,
+ps_linksmenutop_lang,id_shop,int(11) unsigned,\N,
+ps_linksmenutop_lang,label,varchar(128),\N,
+ps_linksmenutop_lang,link,varchar(128),\N,
+ps_log,id_log,int(10) unsigned,\N,PRI
+ps_log,severity,tinyint(1),\N,
+ps_log,error_code,int(11),\N,
+ps_log,message,text,\N,
+ps_log,object_type,varchar(32),\N,
+ps_log,object_id,int(10) unsigned,\N,
+ps_log,id_employee,int(10) unsigned,\N,
+ps_log,date_add,datetime,\N,
+ps_log,date_upd,datetime,\N,
+ps_mail,id_mail,int(11) unsigned,\N,PRI
+ps_mail,recipient,varchar(126),\N,MUL
+ps_mail,template,varchar(62),\N,
+ps_mail,subject,varchar(254),\N,
+ps_mail,id_lang,int(11) unsigned,\N,
+ps_mail,date_add,timestamp,CURRENT_TIMESTAMP,
+ps_manufacturer,id_manufacturer,int(10) unsigned,\N,PRI
+ps_manufacturer,name,varchar(64),\N,
+ps_manufacturer,date_add,datetime,\N,
+ps_manufacturer,date_upd,datetime,\N,
+ps_manufacturer,active,tinyint(1),0,
+ps_manufacturer_lang,id_manufacturer,int(10) unsigned,\N,PRI
+ps_manufacturer_lang,id_lang,int(10) unsigned,\N,PRI
+ps_manufacturer_lang,description,text,\N,
+ps_manufacturer_lang,short_description,text,\N,
+ps_manufacturer_lang,meta_title,varchar(128),\N,
+ps_manufacturer_lang,meta_keywords,varchar(255),\N,
+ps_manufacturer_lang,meta_description,varchar(255),\N,
+ps_manufacturer_shop,id_manufacturer,int(11) unsigned,\N,PRI
+ps_manufacturer_shop,id_shop,int(11) unsigned,\N,PRI
+ps_memcached_servers,id_memcached_server,int(11) unsigned,\N,PRI
+ps_memcached_servers,ip,varchar(254),\N,
+ps_memcached_servers,port,int(11) unsigned,\N,
+ps_memcached_servers,weight,int(11) unsigned,\N,
+ps_message,id_message,int(10) unsigned,\N,PRI
+ps_message,id_cart,int(10) unsigned,\N,MUL
+ps_message,id_customer,int(10) unsigned,\N,MUL
+ps_message,id_employee,int(10) unsigned,\N,MUL
+ps_message,id_order,int(10) unsigned,\N,MUL
+ps_message,message,text,\N,
+ps_message,private,tinyint(1) unsigned,1,
+ps_message,date_add,datetime,\N,
+ps_message_readed,id_message,int(10) unsigned,\N,PRI
+ps_message_readed,id_employee,int(10) unsigned,\N,PRI
+ps_message_readed,date_add,datetime,\N,
+ps_meta,id_meta,int(10) unsigned,\N,PRI
+ps_meta,page,varchar(64),\N,UNI
+ps_meta,configurable,tinyint(1) unsigned,1,
+ps_meta_lang,id_meta,int(10) unsigned,\N,PRI
+ps_meta_lang,id_shop,int(11) unsigned,1,PRI
+ps_meta_lang,id_lang,int(10) unsigned,\N,PRI
+ps_meta_lang,title,varchar(128),\N,
+ps_meta_lang,description,varchar(255),\N,
+ps_meta_lang,keywords,varchar(255),\N,
+ps_meta_lang,url_rewrite,varchar(254),\N,
+ps_module,id_module,int(10) unsigned,\N,PRI
+ps_module,name,varchar(64),\N,MUL
+ps_module,active,tinyint(1) unsigned,0,
+ps_module,version,varchar(8),\N,
+ps_modules_perfs,id_modules_perfs,int(11) unsigned,\N,PRI
+ps_modules_perfs,session,int(11) unsigned,\N,MUL
+ps_modules_perfs,module,varchar(62),\N,
+ps_modules_perfs,method,varchar(126),\N,
+ps_modules_perfs,time_start,double unsigned,\N,
+ps_modules_perfs,time_end,double unsigned,\N,
+ps_modules_perfs,memory_start,int(10) unsigned,\N,
+ps_modules_perfs,memory_end,int(10) unsigned,\N,
+ps_module_access,id_profile,int(10) unsigned,\N,PRI
+ps_module_access,id_module,int(10) unsigned,\N,PRI
+ps_module_access,view,tinyint(1),0,
+ps_module_access,configure,tinyint(1),0,
+ps_module_access,uninstall,tinyint(1),0,
+ps_module_country,id_module,int(10) unsigned,\N,PRI
+ps_module_country,id_shop,int(11) unsigned,1,PRI
+ps_module_country,id_country,int(10) unsigned,\N,PRI
+ps_module_currency,id_module,int(10) unsigned,\N,PRI
+ps_module_currency,id_shop,int(11) unsigned,1,PRI
+ps_module_currency,id_currency,int(11),\N,PRI
+ps_module_group,id_module,int(10) unsigned,\N,PRI
+ps_module_group,id_shop,int(11) unsigned,1,PRI
+ps_module_group,id_group,int(11) unsigned,\N,PRI
+ps_module_preference,id_module_preference,int(11),\N,PRI
+ps_module_preference,id_employee,int(11),\N,MUL
+ps_module_preference,module,varchar(255),\N,
+ps_module_preference,interest,tinyint(1),\N,
+ps_module_preference,favorite,tinyint(1),\N,
+ps_module_shop,id_module,int(11) unsigned,\N,PRI
+ps_module_shop,id_shop,int(11) unsigned,\N,PRI
+ps_module_shop,enable_device,tinyint(1),7,
+ps_newsletter,id,int(6),\N,PRI
+ps_newsletter,id_shop,int(10) unsigned,1,
+ps_newsletter,id_shop_group,int(10) unsigned,1,
+ps_newsletter,email,varchar(255),\N,
+ps_newsletter,newsletter_date_add,datetime,\N,
+ps_newsletter,ip_registration_newsletter,varchar(15),\N,
+ps_newsletter,http_referer,varchar(255),\N,
+ps_newsletter,active,tinyint(1),0,
+ps_operating_system,id_operating_system,int(10) unsigned,\N,PRI
+ps_operating_system,name,varchar(64),\N,
+ps_orders,id_order,int(10) unsigned,\N,PRI
+ps_orders,reference,varchar(9),\N,MUL
+ps_orders,id_shop_group,int(11) unsigned,1,MUL
+ps_orders,id_shop,int(11) unsigned,1,MUL
+ps_orders,id_carrier,int(10) unsigned,\N,MUL
+ps_orders,id_lang,int(10) unsigned,\N,MUL
+ps_orders,id_customer,int(10) unsigned,\N,MUL
+ps_orders,id_cart,int(10) unsigned,\N,MUL
+ps_orders,id_currency,int(10) unsigned,\N,MUL
+ps_orders,id_address_delivery,int(10) unsigned,\N,MUL
+ps_orders,id_address_invoice,int(10) unsigned,\N,MUL
+ps_orders,current_state,int(10) unsigned,\N,MUL
+ps_orders,secure_key,varchar(32),-1,
+ps_orders,payment,varchar(255),\N,
+ps_orders,conversion_rate,decimal(13\,6),1.000000,
+ps_orders,module,varchar(255),\N,
+ps_orders,recyclable,tinyint(1) unsigned,0,
+ps_orders,gift,tinyint(1) unsigned,0,
+ps_orders,gift_message,text,\N,
+ps_orders,mobile_theme,tinyint(1),0,
+ps_orders,shipping_number,varchar(64),\N,
+ps_orders,total_discounts,decimal(20\,6),0.000000,
+ps_orders,total_discounts_tax_incl,decimal(20\,6),0.000000,
+ps_orders,total_discounts_tax_excl,decimal(20\,6),0.000000,
+ps_orders,total_paid,decimal(20\,6),0.000000,
+ps_orders,total_paid_tax_incl,decimal(20\,6),0.000000,
+ps_orders,total_paid_tax_excl,decimal(20\,6),0.000000,
+ps_orders,total_paid_real,decimal(20\,6),0.000000,
+ps_orders,total_products,decimal(20\,6),0.000000,
+ps_orders,total_products_wt,decimal(20\,6),0.000000,
+ps_orders,total_shipping,decimal(20\,6),0.000000,
+ps_orders,total_shipping_tax_incl,decimal(20\,6),0.000000,
+ps_orders,total_shipping_tax_excl,decimal(20\,6),0.000000,
+ps_orders,carrier_tax_rate,decimal(10\,3),0.000,
+ps_orders,total_wrapping,decimal(20\,6),0.000000,
+ps_orders,total_wrapping_tax_incl,decimal(20\,6),0.000000,
+ps_orders,total_wrapping_tax_excl,decimal(20\,6),0.000000,
+ps_orders,round_mode,tinyint(1),2,
+ps_orders,round_type,tinyint(1),1,
+ps_orders,invoice_number,int(10) unsigned,0,MUL
+ps_orders,delivery_number,int(10) unsigned,0,
+ps_orders,invoice_date,datetime,\N,
+ps_orders,delivery_date,datetime,\N,
+ps_orders,valid,int(1) unsigned,0,
+ps_orders,date_add,datetime,\N,MUL
+ps_orders,date_upd,datetime,\N,
+ps_order_carrier,id_order_carrier,int(11),\N,PRI
+ps_order_carrier,id_order,int(11) unsigned,\N,MUL
+ps_order_carrier,id_carrier,int(11) unsigned,\N,MUL
+ps_order_carrier,id_order_invoice,int(11) unsigned,\N,MUL
+ps_order_carrier,weight,decimal(20\,6),\N,
+ps_order_carrier,shipping_cost_tax_excl,decimal(20\,6),\N,
+ps_order_carrier,shipping_cost_tax_incl,decimal(20\,6),\N,
+ps_order_carrier,tracking_number,varchar(64),\N,
+ps_order_carrier,date_add,datetime,\N,
+ps_order_cart_rule,id_order_cart_rule,int(10) unsigned,\N,PRI
+ps_order_cart_rule,id_order,int(10) unsigned,\N,MUL
+ps_order_cart_rule,id_cart_rule,int(10) unsigned,\N,MUL
+ps_order_cart_rule,id_order_invoice,int(10) unsigned,0,
+ps_order_cart_rule,name,varchar(254),\N,
+ps_order_cart_rule,value,decimal(17\,2),0.00,
+ps_order_cart_rule,value_tax_excl,decimal(17\,2),0.00,
+ps_order_cart_rule,free_shipping,tinyint(1),0,
+ps_order_detail,id_order_detail,int(10) unsigned,\N,PRI
+ps_order_detail,id_order,int(10) unsigned,\N,MUL
+ps_order_detail,id_order_invoice,int(11),\N,
+ps_order_detail,id_warehouse,int(10) unsigned,0,
+ps_order_detail,id_shop,int(11) unsigned,\N,
+ps_order_detail,product_id,int(10) unsigned,\N,MUL
+ps_order_detail,product_attribute_id,int(10) unsigned,\N,MUL
+ps_order_detail,product_name,varchar(255),\N,
+ps_order_detail,product_quantity,int(10) unsigned,0,
+ps_order_detail,product_quantity_in_stock,int(10),0,
+ps_order_detail,product_quantity_refunded,int(10) unsigned,0,
+ps_order_detail,product_quantity_return,int(10) unsigned,0,
+ps_order_detail,product_quantity_reinjected,int(10) unsigned,0,
+ps_order_detail,product_price,decimal(20\,6),0.000000,
+ps_order_detail,reduction_percent,decimal(10\,2),0.00,
+ps_order_detail,reduction_amount,decimal(20\,6),0.000000,
+ps_order_detail,reduction_amount_tax_incl,decimal(20\,6),0.000000,
+ps_order_detail,reduction_amount_tax_excl,decimal(20\,6),0.000000,
+ps_order_detail,group_reduction,decimal(10\,2),0.00,
+ps_order_detail,product_quantity_discount,decimal(20\,6),0.000000,
+ps_order_detail,product_ean13,varchar(13),\N,
+ps_order_detail,product_upc,varchar(12),\N,
+ps_order_detail,product_reference,varchar(32),\N,
+ps_order_detail,product_supplier_reference,varchar(32),\N,
+ps_order_detail,product_weight,decimal(20\,6),\N,
+ps_order_detail,id_tax_rules_group,int(11) unsigned,0,MUL
+ps_order_detail,tax_computation_method,tinyint(1) unsigned,0,
+ps_order_detail,tax_name,varchar(16),\N,
+ps_order_detail,tax_rate,decimal(10\,3),0.000,
+ps_order_detail,ecotax,decimal(21\,6),0.000000,
+ps_order_detail,ecotax_tax_rate,decimal(5\,3),0.000,
+ps_order_detail,discount_quantity_applied,tinyint(1),0,
+ps_order_detail,download_hash,varchar(255),\N,
+ps_order_detail,download_nb,int(10) unsigned,0,
+ps_order_detail,download_deadline,datetime,\N,
+ps_order_detail,total_price_tax_incl,decimal(20\,6),0.000000,
+ps_order_detail,total_price_tax_excl,decimal(20\,6),0.000000,
+ps_order_detail,unit_price_tax_incl,decimal(20\,6),0.000000,
+ps_order_detail,unit_price_tax_excl,decimal(20\,6),0.000000,
+ps_order_detail,total_shipping_price_tax_incl,decimal(20\,6),0.000000,
+ps_order_detail,total_shipping_price_tax_excl,decimal(20\,6),0.000000,
+ps_order_detail,purchase_supplier_price,decimal(20\,6),0.000000,
+ps_order_detail,original_product_price,decimal(20\,6),0.000000,
+ps_order_detail,original_wholesale_price,decimal(20\,6),0.000000,
+ps_order_detail_tax,id_order_detail,int(11),\N,MUL
+ps_order_detail_tax,id_tax,int(11),\N,MUL
+ps_order_detail_tax,unit_amount,decimal(16\,6),0.000000,
+ps_order_detail_tax,total_amount,decimal(16\,6),0.000000,
+ps_order_history,id_order_history,int(10) unsigned,\N,PRI
+ps_order_history,id_employee,int(10) unsigned,\N,MUL
+ps_order_history,id_order,int(10) unsigned,\N,MUL
+ps_order_history,id_order_state,int(10) unsigned,\N,MUL
+ps_order_history,date_add,datetime,\N,
+ps_order_invoice,id_order_invoice,int(11) unsigned,\N,PRI
+ps_order_invoice,id_order,int(11),\N,MUL
+ps_order_invoice,number,int(11),\N,
+ps_order_invoice,delivery_number,int(11),\N,
+ps_order_invoice,delivery_date,datetime,\N,
+ps_order_invoice,total_discount_tax_excl,decimal(20\,6),0.000000,
+ps_order_invoice,total_discount_tax_incl,decimal(20\,6),0.000000,
+ps_order_invoice,total_paid_tax_excl,decimal(20\,6),0.000000,
+ps_order_invoice,total_paid_tax_incl,decimal(20\,6),0.000000,
+ps_order_invoice,total_products,decimal(20\,6),0.000000,
+ps_order_invoice,total_products_wt,decimal(20\,6),0.000000,
+ps_order_invoice,total_shipping_tax_excl,decimal(20\,6),0.000000,
+ps_order_invoice,total_shipping_tax_incl,decimal(20\,6),0.000000,
+ps_order_invoice,shipping_tax_computation_method,int(10) unsigned,\N,
+ps_order_invoice,total_wrapping_tax_excl,decimal(20\,6),0.000000,
+ps_order_invoice,total_wrapping_tax_incl,decimal(20\,6),0.000000,
+ps_order_invoice,shop_address,text,\N,
+ps_order_invoice,invoice_address,text,\N,
+ps_order_invoice,delivery_address,text,\N,
+ps_order_invoice,note,text,\N,
+ps_order_invoice,date_add,datetime,\N,
+ps_order_invoice_payment,id_order_invoice,int(11) unsigned,\N,PRI
+ps_order_invoice_payment,id_order_payment,int(11) unsigned,\N,PRI
+ps_order_invoice_payment,id_order,int(11) unsigned,\N,MUL
+ps_order_invoice_tax,id_order_invoice,int(11),\N,
+ps_order_invoice_tax,type,varchar(15),\N,
+ps_order_invoice_tax,id_tax,int(11),\N,MUL
+ps_order_invoice_tax,amount,decimal(10\,6),0.000000,
+ps_order_message,id_order_message,int(10) unsigned,\N,PRI
+ps_order_message,date_add,datetime,\N,
+ps_order_message_lang,id_order_message,int(10) unsigned,\N,PRI
+ps_order_message_lang,id_lang,int(10) unsigned,\N,PRI
+ps_order_message_lang,name,varchar(128),\N,
+ps_order_message_lang,message,text,\N,
+ps_order_payment,id_order_payment,int(11),\N,PRI
+ps_order_payment,order_reference,varchar(9),\N,MUL
+ps_order_payment,id_currency,int(10) unsigned,\N,
+ps_order_payment,amount,decimal(10\,2),\N,
+ps_order_payment,payment_method,varchar(255),\N,
+ps_order_payment,conversion_rate,decimal(13\,6),1.000000,
+ps_order_payment,transaction_id,varchar(254),\N,
+ps_order_payment,card_number,varchar(254),\N,
+ps_order_payment,card_brand,varchar(254),\N,
+ps_order_payment,card_expiration,char(7),\N,
+ps_order_payment,card_holder,varchar(254),\N,
+ps_order_payment,date_add,datetime,\N,
+ps_order_return,id_order_return,int(10) unsigned,\N,PRI
+ps_order_return,id_customer,int(10) unsigned,\N,MUL
+ps_order_return,id_order,int(10) unsigned,\N,MUL
+ps_order_return,state,tinyint(1) unsigned,1,
+ps_order_return,question,text,\N,
+ps_order_return,date_add,datetime,\N,
+ps_order_return,date_upd,datetime,\N,
+ps_order_return_detail,id_order_return,int(10) unsigned,\N,PRI
+ps_order_return_detail,id_order_detail,int(10) unsigned,\N,PRI
+ps_order_return_detail,id_customization,int(10) unsigned,0,PRI
+ps_order_return_detail,product_quantity,int(10) unsigned,0,
+ps_order_return_state,id_order_return_state,int(10) unsigned,\N,PRI
+ps_order_return_state,color,varchar(32),\N,
+ps_order_return_state_lang,id_order_return_state,int(10) unsigned,\N,PRI
+ps_order_return_state_lang,id_lang,int(10) unsigned,\N,PRI
+ps_order_return_state_lang,name,varchar(64),\N,
+ps_order_slip,id_order_slip,int(10) unsigned,\N,PRI
+ps_order_slip,conversion_rate,decimal(13\,6),1.000000,
+ps_order_slip,id_customer,int(10) unsigned,\N,MUL
+ps_order_slip,id_order,int(10) unsigned,\N,MUL
+ps_order_slip,total_products_tax_excl,decimal(20\,6),\N,
+ps_order_slip,total_products_tax_incl,decimal(20\,6),\N,
+ps_order_slip,total_shipping_tax_excl,decimal(20\,6),\N,
+ps_order_slip,total_shipping_tax_incl,decimal(20\,6),\N,
+ps_order_slip,shipping_cost,tinyint(3) unsigned,0,
+ps_order_slip,amount,decimal(10\,2),\N,
+ps_order_slip,shipping_cost_amount,decimal(10\,2),\N,
+ps_order_slip,partial,tinyint(1),\N,
+ps_order_slip,order_slip_type,tinyint(1) unsigned,0,
+ps_order_slip,date_add,datetime,\N,
+ps_order_slip,date_upd,datetime,\N,
+ps_order_slip_detail,id_order_slip,int(10) unsigned,\N,PRI
+ps_order_slip_detail,id_order_detail,int(10) unsigned,\N,PRI
+ps_order_slip_detail,product_quantity,int(10) unsigned,0,
+ps_order_slip_detail,unit_price_tax_excl,decimal(20\,6),\N,
+ps_order_slip_detail,unit_price_tax_incl,decimal(20\,6),\N,
+ps_order_slip_detail,total_price_tax_excl,decimal(20\,6),\N,
+ps_order_slip_detail,total_price_tax_incl,decimal(20\,6),\N,
+ps_order_slip_detail,amount_tax_excl,decimal(20\,6),\N,
+ps_order_slip_detail,amount_tax_incl,decimal(20\,6),\N,
+ps_order_slip_detail_tax,id_order_slip_detail,int(11) unsigned,\N,MUL
+ps_order_slip_detail_tax,id_tax,int(11) unsigned,\N,MUL
+ps_order_slip_detail_tax,unit_amount,decimal(16\,6),0.000000,
+ps_order_slip_detail_tax,total_amount,decimal(16\,6),0.000000,
+ps_order_state,id_order_state,int(10) unsigned,\N,PRI
+ps_order_state,invoice,tinyint(1) unsigned,0,
+ps_order_state,send_email,tinyint(1) unsigned,0,
+ps_order_state,module_name,varchar(255),\N,MUL
+ps_order_state,color,varchar(32),\N,
+ps_order_state,unremovable,tinyint(1) unsigned,\N,
+ps_order_state,hidden,tinyint(1) unsigned,0,
+ps_order_state,logable,tinyint(1),0,
+ps_order_state,delivery,tinyint(1) unsigned,0,
+ps_order_state,shipped,tinyint(1) unsigned,0,
+ps_order_state,paid,tinyint(1) unsigned,0,
+ps_order_state,pdf_invoice,tinyint(1) unsigned,0,
+ps_order_state,pdf_delivery,tinyint(1) unsigned,0,
+ps_order_state,deleted,tinyint(1) unsigned,0,
+ps_order_state_lang,id_order_state,int(10) unsigned,\N,PRI
+ps_order_state_lang,id_lang,int(10) unsigned,\N,PRI
+ps_order_state_lang,name,varchar(64),\N,
+ps_order_state_lang,template,varchar(64),\N,
+ps_pack,id_product_pack,int(10) unsigned,\N,PRI
+ps_pack,id_product_item,int(10) unsigned,\N,PRI
+ps_pack,id_product_attribute_item,int(10) unsigned,\N,PRI
+ps_pack,quantity,int(10) unsigned,1,
+ps_page,id_page,int(10) unsigned,\N,PRI
+ps_page,id_page_type,int(10) unsigned,\N,MUL
+ps_page,id_object,int(10) unsigned,\N,MUL
+ps_pagenotfound,id_pagenotfound,int(10) unsigned,\N,PRI
+ps_pagenotfound,id_shop,int(10) unsigned,1,
+ps_pagenotfound,id_shop_group,int(10) unsigned,1,
+ps_pagenotfound,request_uri,varchar(256),\N,
+ps_pagenotfound,http_referer,varchar(256),\N,
+ps_pagenotfound,date_add,datetime,\N,MUL
+ps_page_type,id_page_type,int(10) unsigned,\N,PRI
+ps_page_type,name,varchar(255),\N,MUL
+ps_page_viewed,id_page,int(10) unsigned,\N,PRI
+ps_page_viewed,id_shop_group,int(10) unsigned,1,
+ps_page_viewed,id_shop,int(10) unsigned,1,PRI
+ps_page_viewed,id_date_range,int(10) unsigned,\N,PRI
+ps_page_viewed,counter,int(10) unsigned,\N,
+ps_product,id_product,int(10) unsigned,\N,PRI
+ps_product,id_supplier,int(10) unsigned,\N,MUL
+ps_product,id_manufacturer,int(10) unsigned,\N,MUL
+ps_product,id_category_default,int(10) unsigned,\N,MUL
+ps_product,id_shop_default,int(10) unsigned,1,
+ps_product,id_tax_rules_group,int(11) unsigned,\N,
+ps_product,on_sale,tinyint(1) unsigned,0,
+ps_product,online_only,tinyint(1) unsigned,0,
+ps_product,ean13,varchar(13),\N,
+ps_product,upc,varchar(12),\N,
+ps_product,ecotax,decimal(17\,6),0.000000,
+ps_product,quantity,int(10),0,
+ps_product,minimal_quantity,int(10) unsigned,1,
+ps_product,price,decimal(20\,6),0.000000,
+ps_product,wholesale_price,decimal(20\,6),0.000000,
+ps_product,unity,varchar(255),\N,
+ps_product,unit_price_ratio,decimal(20\,6),0.000000,
+ps_product,additional_shipping_cost,decimal(20\,2),0.00,
+ps_product,reference,varchar(32),\N,
+ps_product,supplier_reference,varchar(32),\N,
+ps_product,location,varchar(64),\N,
+ps_product,width,decimal(20\,6),0.000000,
+ps_product,height,decimal(20\,6),0.000000,
+ps_product,depth,decimal(20\,6),0.000000,
+ps_product,weight,decimal(20\,6),0.000000,
+ps_product,out_of_stock,int(10) unsigned,2,
+ps_product,quantity_discount,tinyint(1),0,
+ps_product,customizable,tinyint(2),0,
+ps_product,uploadable_files,tinyint(4),0,
+ps_product,text_fields,tinyint(4),0,
+ps_product,active,tinyint(1) unsigned,0,
+ps_product,redirect_type,enum(''\,'404'\,'301'\,'302'),,
+ps_product,id_product_redirected,int(10) unsigned,0,
+ps_product,available_for_order,tinyint(1),1,
+ps_product,available_date,date,0000-00-00,
+ps_product,condition,enum('new'\,'used'\,'refurbished'),new,
+ps_product,show_price,tinyint(1),1,
+ps_product,indexed,tinyint(1),0,MUL
+ps_product,visibility,enum('both'\,'catalog'\,'search'\,'none'),both,
+ps_product,cache_is_pack,tinyint(1),0,
+ps_product,cache_has_attachments,tinyint(1),0,
+ps_product,is_virtual,tinyint(1),0,
+ps_product,cache_default_attribute,int(10) unsigned,\N,
+ps_product,date_add,datetime,\N,MUL
+ps_product,date_upd,datetime,\N,
+ps_product,advanced_stock_management,tinyint(1),0,
+ps_product,pack_stock_type,int(11) unsigned,3,
+ps_product_attachment,id_product,int(10) unsigned,\N,PRI
+ps_product_attachment,id_attachment,int(10) unsigned,\N,PRI
+ps_product_attribute,id_product_attribute,int(10) unsigned,\N,PRI
+ps_product_attribute,id_product,int(10) unsigned,\N,MUL
+ps_product_attribute,reference,varchar(32),\N,MUL
+ps_product_attribute,supplier_reference,varchar(32),\N,MUL
+ps_product_attribute,location,varchar(64),\N,
+ps_product_attribute,ean13,varchar(13),\N,
+ps_product_attribute,upc,varchar(12),\N,
+ps_product_attribute,wholesale_price,decimal(20\,6),0.000000,
+ps_product_attribute,price,decimal(20\,6),0.000000,
+ps_product_attribute,ecotax,decimal(17\,6),0.000000,
+ps_product_attribute,quantity,int(10),0,
+ps_product_attribute,weight,decimal(20\,6),0.000000,
+ps_product_attribute,unit_price_impact,decimal(20\,6),0.000000,
+ps_product_attribute,default_on,tinyint(1) unsigned,\N,
+ps_product_attribute,minimal_quantity,int(10) unsigned,1,
+ps_product_attribute,available_date,date,0000-00-00,
+ps_product_attribute_combination,id_attribute,int(10) unsigned,\N,PRI
+ps_product_attribute_combination,id_product_attribute,int(10) unsigned,\N,PRI
+ps_product_attribute_image,id_product_attribute,int(10) unsigned,\N,PRI
+ps_product_attribute_image,id_image,int(10) unsigned,\N,PRI
+ps_product_attribute_shop,id_product,int(10) unsigned,\N,MUL
+ps_product_attribute_shop,id_product_attribute,int(10) unsigned,\N,PRI
+ps_product_attribute_shop,id_shop,int(10) unsigned,\N,PRI
+ps_product_attribute_shop,wholesale_price,decimal(20\,6),0.000000,
+ps_product_attribute_shop,price,decimal(20\,6),0.000000,
+ps_product_attribute_shop,ecotax,decimal(17\,6),0.000000,
+ps_product_attribute_shop,weight,decimal(20\,6),0.000000,
+ps_product_attribute_shop,unit_price_impact,decimal(20\,6),0.000000,
+ps_product_attribute_shop,default_on,tinyint(1) unsigned,\N,
+ps_product_attribute_shop,minimal_quantity,int(10) unsigned,1,
+ps_product_attribute_shop,available_date,date,0000-00-00,
+ps_product_carrier,id_product,int(10) unsigned,\N,PRI
+ps_product_carrier,id_carrier_reference,int(10) unsigned,\N,PRI
+ps_product_carrier,id_shop,int(10) unsigned,\N,PRI
+ps_product_country_tax,id_product,int(11),\N,PRI
+ps_product_country_tax,id_country,int(11),\N,PRI
+ps_product_country_tax,id_tax,int(11),\N,
+ps_product_download,id_product_download,int(10) unsigned,\N,PRI
+ps_product_download,id_product,int(10) unsigned,\N,UNI
+ps_product_download,display_filename,varchar(255),\N,
+ps_product_download,filename,varchar(255),\N,
+ps_product_download,date_add,datetime,\N,
+ps_product_download,date_expiration,datetime,\N,
+ps_product_download,nb_days_accessible,int(10) unsigned,\N,
+ps_product_download,nb_downloadable,int(10) unsigned,1,
+ps_product_download,active,tinyint(1) unsigned,1,
+ps_product_download,is_shareable,tinyint(1) unsigned,0,
+ps_product_group_reduction_cache,id_product,int(10) unsigned,\N,PRI
+ps_product_group_reduction_cache,id_group,int(10) unsigned,\N,PRI
+ps_product_group_reduction_cache,reduction,decimal(4\,3),\N,
+ps_product_lang,id_product,int(10) unsigned,\N,PRI
+ps_product_lang,id_shop,int(11) unsigned,1,PRI
+ps_product_lang,id_lang,int(10) unsigned,\N,PRI
+ps_product_lang,description,text,\N,
+ps_product_lang,description_short,text,\N,
+ps_product_lang,link_rewrite,varchar(128),\N,
+ps_product_lang,meta_description,varchar(255),\N,
+ps_product_lang,meta_keywords,varchar(255),\N,
+ps_product_lang,meta_title,varchar(128),\N,
+ps_product_lang,name,varchar(128),\N,MUL
+ps_product_lang,available_now,varchar(255),\N,
+ps_product_lang,available_later,varchar(255),\N,
+ps_product_sale,id_product,int(10) unsigned,\N,PRI
+ps_product_sale,quantity,int(10) unsigned,0,MUL
+ps_product_sale,sale_nbr,int(10) unsigned,0,
+ps_product_sale,date_upd,date,\N,
+ps_product_shop,id_product,int(10) unsigned,\N,PRI
+ps_product_shop,id_shop,int(10) unsigned,\N,PRI
+ps_product_shop,id_category_default,int(10) unsigned,\N,MUL
+ps_product_shop,id_tax_rules_group,int(11) unsigned,\N,
+ps_product_shop,on_sale,tinyint(1) unsigned,0,
+ps_product_shop,online_only,tinyint(1) unsigned,0,
+ps_product_shop,ecotax,decimal(17\,6),0.000000,
+ps_product_shop,minimal_quantity,int(10) unsigned,1,
+ps_product_shop,price,decimal(20\,6),0.000000,
+ps_product_shop,wholesale_price,decimal(20\,6),0.000000,
+ps_product_shop,unity,varchar(255),\N,
+ps_product_shop,unit_price_ratio,decimal(20\,6),0.000000,
+ps_product_shop,additional_shipping_cost,decimal(20\,2),0.00,
+ps_product_shop,customizable,tinyint(2),0,
+ps_product_shop,uploadable_files,tinyint(4),0,
+ps_product_shop,text_fields,tinyint(4),0,
+ps_product_shop,active,tinyint(1) unsigned,0,
+ps_product_shop,redirect_type,enum(''\,'404'\,'301'\,'302'),,
+ps_product_shop,id_product_redirected,int(10) unsigned,0,
+ps_product_shop,available_for_order,tinyint(1),1,
+ps_product_shop,available_date,date,0000-00-00,
+ps_product_shop,condition,enum('new'\,'used'\,'refurbished'),new,
+ps_product_shop,show_price,tinyint(1),1,
+ps_product_shop,indexed,tinyint(1),0,MUL
+ps_product_shop,visibility,enum('both'\,'catalog'\,'search'\,'none'),both,
+ps_product_shop,cache_default_attribute,int(10) unsigned,\N,
+ps_product_shop,advanced_stock_management,tinyint(1),0,
+ps_product_shop,date_add,datetime,\N,MUL
+ps_product_shop,date_upd,datetime,\N,
+ps_product_shop,pack_stock_type,int(11) unsigned,3,
+ps_product_supplier,id_product_supplier,int(11) unsigned,\N,PRI
+ps_product_supplier,id_product,int(11) unsigned,\N,MUL
+ps_product_supplier,id_product_attribute,int(11) unsigned,0,
+ps_product_supplier,id_supplier,int(11) unsigned,\N,MUL
+ps_product_supplier,product_supplier_reference,varchar(32),\N,
+ps_product_supplier,product_supplier_price_te,decimal(20\,6),0.000000,
+ps_product_supplier,id_currency,int(11) unsigned,\N,
+ps_product_tag,id_product,int(10) unsigned,\N,PRI
+ps_product_tag,id_tag,int(10) unsigned,\N,PRI
+ps_product_tag,id_lang,int(10) unsigned,\N,MUL
+ps_profile,id_profile,int(10) unsigned,\N,PRI
+ps_profile_lang,id_lang,int(10) unsigned,\N,PRI
+ps_profile_lang,id_profile,int(10) unsigned,\N,PRI
+ps_profile_lang,name,varchar(128),\N,
+ps_quick_access,id_quick_access,int(10) unsigned,\N,PRI
+ps_quick_access,new_window,tinyint(1),0,
+ps_quick_access,link,varchar(255),\N,
+ps_quick_access_lang,id_quick_access,int(10) unsigned,\N,PRI
+ps_quick_access_lang,id_lang,int(10) unsigned,\N,PRI
+ps_quick_access_lang,name,varchar(32),\N,
+ps_range_price,id_range_price,int(10) unsigned,\N,PRI
+ps_range_price,id_carrier,int(10) unsigned,\N,MUL
+ps_range_price,delimiter1,decimal(20\,6),\N,
+ps_range_price,delimiter2,decimal(20\,6),\N,
+ps_range_weight,id_range_weight,int(10) unsigned,\N,PRI
+ps_range_weight,id_carrier,int(10) unsigned,\N,MUL
+ps_range_weight,delimiter1,decimal(20\,6),\N,
+ps_range_weight,delimiter2,decimal(20\,6),\N,
+ps_referrer,id_referrer,int(10) unsigned,\N,PRI
+ps_referrer,name,varchar(64),\N,
+ps_referrer,passwd,varchar(32),\N,
+ps_referrer,http_referer_regexp,varchar(64),\N,
+ps_referrer,http_referer_like,varchar(64),\N,
+ps_referrer,request_uri_regexp,varchar(64),\N,
+ps_referrer,request_uri_like,varchar(64),\N,
+ps_referrer,http_referer_regexp_not,varchar(64),\N,
+ps_referrer,http_referer_like_not,varchar(64),\N,
+ps_referrer,request_uri_regexp_not,varchar(64),\N,
+ps_referrer,request_uri_like_not,varchar(64),\N,
+ps_referrer,base_fee,decimal(5\,2),0.00,
+ps_referrer,percent_fee,decimal(5\,2),0.00,
+ps_referrer,click_fee,decimal(5\,2),0.00,
+ps_referrer,date_add,datetime,\N,
+ps_referrer_cache,id_connections_source,int(11) unsigned,\N,PRI
+ps_referrer_cache,id_referrer,int(11) unsigned,\N,PRI
+ps_referrer_shop,id_referrer,int(10) unsigned,\N,PRI
+ps_referrer_shop,id_shop,int(10) unsigned,1,PRI
+ps_referrer_shop,cache_visitors,int(11),\N,
+ps_referrer_shop,cache_visits,int(11),\N,
+ps_referrer_shop,cache_pages,int(11),\N,
+ps_referrer_shop,cache_registrations,int(11),\N,
+ps_referrer_shop,cache_orders,int(11),\N,
+ps_referrer_shop,cache_sales,decimal(17\,2),\N,
+ps_referrer_shop,cache_reg_rate,decimal(5\,4),\N,
+ps_referrer_shop,cache_order_rate,decimal(5\,4),\N,
+ps_request_sql,id_request_sql,int(11),\N,PRI
+ps_request_sql,name,varchar(200),\N,
+ps_request_sql,sql,text,\N,
+ps_required_field,id_required_field,int(11),\N,PRI
+ps_required_field,object_name,varchar(32),\N,MUL
+ps_required_field,field_name,varchar(32),\N,
+ps_risk,id_risk,int(11) unsigned,\N,PRI
+ps_risk,percent,tinyint(3),\N,
+ps_risk,color,varchar(32),\N,
+ps_risk_lang,id_risk,int(10) unsigned,\N,PRI
+ps_risk_lang,id_lang,int(10) unsigned,\N,PRI
+ps_risk_lang,name,varchar(20),\N,
+ps_scene,id_scene,int(10) unsigned,\N,PRI
+ps_scene,active,tinyint(1),1,
+ps_scene_category,id_scene,int(10) unsigned,\N,PRI
+ps_scene_category,id_category,int(10) unsigned,\N,PRI
+ps_scene_lang,id_scene,int(10) unsigned,\N,PRI
+ps_scene_lang,id_lang,int(10) unsigned,\N,PRI
+ps_scene_lang,name,varchar(100),\N,
+ps_scene_products,id_scene,int(10) unsigned,\N,PRI
+ps_scene_products,id_product,int(10) unsigned,\N,PRI
+ps_scene_products,x_axis,int(4),\N,PRI
+ps_scene_products,y_axis,int(4),\N,PRI
+ps_scene_products,zone_width,int(3),\N,
+ps_scene_products,zone_height,int(3),\N,
+ps_scene_shop,id_scene,int(11) unsigned,\N,PRI
+ps_scene_shop,id_shop,int(11) unsigned,\N,PRI
+ps_search_engine,id_search_engine,int(10) unsigned,\N,PRI
+ps_search_engine,server,varchar(64),\N,
+ps_search_engine,getvar,varchar(16),\N,
+ps_search_index,id_product,int(11) unsigned,\N,PRI
+ps_search_index,id_word,int(11) unsigned,\N,PRI
+ps_search_index,weight,smallint(4) unsigned,1,
+ps_search_word,id_word,int(10) unsigned,\N,PRI
+ps_search_word,id_shop,int(11) unsigned,1,
+ps_search_word,id_lang,int(10) unsigned,\N,MUL
+ps_search_word,word,varchar(15),\N,
+ps_sekeyword,id_sekeyword,int(10) unsigned,\N,PRI
+ps_sekeyword,id_shop,int(10) unsigned,1,
+ps_sekeyword,id_shop_group,int(10) unsigned,1,
+ps_sekeyword,keyword,varchar(256),\N,
+ps_sekeyword,date_add,datetime,\N,
+ps_shop,id_shop,int(11) unsigned,\N,PRI
+ps_shop,id_shop_group,int(11) unsigned,\N,MUL
+ps_shop,name,varchar(64),\N,
+ps_shop,id_category,int(11) unsigned,1,MUL
+ps_shop,id_theme,int(1) unsigned,\N,MUL
+ps_shop,active,tinyint(1),1,
+ps_shop,deleted,tinyint(1),0,
+ps_shop_group,id_shop_group,int(11) unsigned,\N,PRI
+ps_shop_group,name,varchar(64),\N,
+ps_shop_group,share_customer,tinyint(1),\N,
+ps_shop_group,share_order,tinyint(1),\N,
+ps_shop_group,share_stock,tinyint(1),\N,
+ps_shop_group,active,tinyint(1),1,
+ps_shop_group,deleted,tinyint(1),0,MUL
+ps_shop_url,id_shop_url,int(11) unsigned,\N,PRI
+ps_shop_url,id_shop,int(11) unsigned,\N,MUL
+ps_shop_url,domain,varchar(150),\N,MUL
+ps_shop_url,domain_ssl,varchar(150),\N,MUL
+ps_shop_url,physical_uri,varchar(64),\N,
+ps_shop_url,virtual_uri,varchar(64),\N,
+ps_shop_url,main,tinyint(1),\N,
+ps_shop_url,active,tinyint(1),\N,
+ps_smarty_cache,id_smarty_cache,char(40),\N,PRI
+ps_smarty_cache,name,char(40),\N,MUL
+ps_smarty_cache,cache_id,varchar(254),\N,MUL
+ps_smarty_cache,modified,timestamp,CURRENT_TIMESTAMP,MUL
+ps_smarty_cache,content,longtext,\N,
+ps_smarty_last_flush,type,enum('compile'\,'template'),\N,PRI
+ps_smarty_last_flush,last_flush,datetime,0000-00-00 00:00:00,
+ps_smarty_lazy_cache,template_hash,varchar(32),,PRI
+ps_smarty_lazy_cache,cache_id,varchar(255),,PRI
+ps_smarty_lazy_cache,compile_id,varchar(32),,PRI
+ps_smarty_lazy_cache,filepath,varchar(255),,
+ps_smarty_lazy_cache,last_update,datetime,0000-00-00 00:00:00,
+ps_specific_price,id_specific_price,int(10) unsigned,\N,PRI
+ps_specific_price,id_specific_price_rule,int(11) unsigned,\N,MUL
+ps_specific_price,id_cart,int(11) unsigned,\N,MUL
+ps_specific_price,id_product,int(10) unsigned,\N,MUL
+ps_specific_price,id_shop,int(11) unsigned,1,MUL
+ps_specific_price,id_shop_group,int(11) unsigned,\N,
+ps_specific_price,id_currency,int(10) unsigned,\N,
+ps_specific_price,id_country,int(10) unsigned,\N,
+ps_specific_price,id_group,int(10) unsigned,\N,
+ps_specific_price,id_customer,int(10) unsigned,\N,MUL
+ps_specific_price,id_product_attribute,int(10) unsigned,\N,MUL
+ps_specific_price,price,decimal(20\,6),\N,
+ps_specific_price,from_quantity,mediumint(8) unsigned,\N,MUL
+ps_specific_price,reduction,decimal(20\,6),\N,
+ps_specific_price,reduction_tax,tinyint(1),1,
+ps_specific_price,reduction_type,enum('amount'\,'percentage'),\N,
+ps_specific_price,from,datetime,\N,MUL
+ps_specific_price,to,datetime,\N,MUL
+ps_specific_price_priority,id_specific_price_priority,int(11),\N,PRI
+ps_specific_price_priority,id_product,int(11),\N,PRI
+ps_specific_price_priority,priority,varchar(80),\N,
+ps_specific_price_rule,id_specific_price_rule,int(10) unsigned,\N,PRI
+ps_specific_price_rule,name,varchar(255),\N,
+ps_specific_price_rule,id_shop,int(11) unsigned,1,MUL
+ps_specific_price_rule,id_currency,int(10) unsigned,\N,
+ps_specific_price_rule,id_country,int(10) unsigned,\N,
+ps_specific_price_rule,id_group,int(10) unsigned,\N,
+ps_specific_price_rule,from_quantity,mediumint(8) unsigned,\N,
+ps_specific_price_rule,price,decimal(20\,6),\N,
+ps_specific_price_rule,reduction,decimal(20\,6),\N,
+ps_specific_price_rule,reduction_tax,tinyint(1),1,
+ps_specific_price_rule,reduction_type,enum('amount'\,'percentage'),\N,
+ps_specific_price_rule,from,datetime,\N,
+ps_specific_price_rule,to,datetime,\N,
+ps_specific_price_rule_condition,id_specific_price_rule_condition,int(11) unsigned,\N,PRI
+ps_specific_price_rule_condition,id_specific_price_rule_condition_group,int(11) unsigned,\N,MUL
+ps_specific_price_rule_condition,type,varchar(255),\N,
+ps_specific_price_rule_condition,value,varchar(255),\N,
+ps_specific_price_rule_condition_group,id_specific_price_rule_condition_group,int(11) unsigned,\N,PRI
+ps_specific_price_rule_condition_group,id_specific_price_rule,int(11) unsigned,\N,PRI
+ps_state,id_state,int(10) unsigned,\N,PRI
+ps_state,id_country,int(11) unsigned,\N,MUL
+ps_state,id_zone,int(11) unsigned,\N,MUL
+ps_state,name,varchar(64),\N,MUL
+ps_state,iso_code,varchar(7),\N,
+ps_state,tax_behavior,smallint(1),0,
+ps_state,active,tinyint(1),0,
+ps_statssearch,id_statssearch,int(10) unsigned,\N,PRI
+ps_statssearch,id_shop,int(10) unsigned,1,
+ps_statssearch,id_shop_group,int(10) unsigned,1,
+ps_statssearch,keywords,varchar(255),\N,
+ps_statssearch,results,int(6),0,
+ps_statssearch,date_add,datetime,\N,
+ps_stock,id_stock,int(11) unsigned,\N,PRI
+ps_stock,id_warehouse,int(11) unsigned,\N,MUL
+ps_stock,id_product,int(11) unsigned,\N,MUL
+ps_stock,id_product_attribute,int(11) unsigned,\N,MUL
+ps_stock,reference,varchar(32),\N,
+ps_stock,ean13,varchar(13),\N,
+ps_stock,upc,varchar(12),\N,
+ps_stock,physical_quantity,int(11) unsigned,\N,
+ps_stock,usable_quantity,int(11) unsigned,\N,
+ps_stock,price_te,decimal(20\,6),0.000000,
+ps_stock_available,id_stock_available,int(11) unsigned,\N,PRI
+ps_stock_available,id_product,int(11) unsigned,\N,MUL
+ps_stock_available,id_product_attribute,int(11) unsigned,\N,MUL
+ps_stock_available,id_shop,int(11) unsigned,\N,MUL
+ps_stock_available,id_shop_group,int(11) unsigned,\N,MUL
+ps_stock_available,quantity,int(10),0,
+ps_stock_available,depends_on_stock,tinyint(1) unsigned,0,
+ps_stock_available,out_of_stock,tinyint(1) unsigned,0,
+ps_stock_mvt,id_stock_mvt,bigint(20) unsigned,\N,PRI
+ps_stock_mvt,id_stock,int(11) unsigned,\N,MUL
+ps_stock_mvt,id_order,int(11) unsigned,\N,
+ps_stock_mvt,id_supply_order,int(11) unsigned,\N,
+ps_stock_mvt,id_stock_mvt_reason,int(11) unsigned,\N,MUL
+ps_stock_mvt,id_employee,int(11) unsigned,\N,
+ps_stock_mvt,employee_lastname,varchar(32),,
+ps_stock_mvt,employee_firstname,varchar(32),,
+ps_stock_mvt,physical_quantity,int(11) unsigned,\N,
+ps_stock_mvt,date_add,datetime,\N,
+ps_stock_mvt,sign,tinyint(1),1,
+ps_stock_mvt,price_te,decimal(20\,6),0.000000,
+ps_stock_mvt,last_wa,decimal(20\,6),0.000000,
+ps_stock_mvt,current_wa,decimal(20\,6),0.000000,
+ps_stock_mvt,referer,bigint(20) unsigned,\N,
+ps_stock_mvt_reason,id_stock_mvt_reason,int(11) unsigned,\N,PRI
+ps_stock_mvt_reason,sign,tinyint(1),1,
+ps_stock_mvt_reason,date_add,datetime,\N,
+ps_stock_mvt_reason,date_upd,datetime,\N,
+ps_stock_mvt_reason,deleted,tinyint(1) unsigned,0,
+ps_stock_mvt_reason_lang,id_stock_mvt_reason,int(11) unsigned,\N,PRI
+ps_stock_mvt_reason_lang,id_lang,int(11) unsigned,\N,PRI
+ps_stock_mvt_reason_lang,name,varchar(255),\N,
+ps_store,id_store,int(10) unsigned,\N,PRI
+ps_store,id_country,int(10) unsigned,\N,
+ps_store,id_state,int(10) unsigned,\N,
+ps_store,name,varchar(128),\N,
+ps_store,address1,varchar(128),\N,
+ps_store,address2,varchar(128),\N,
+ps_store,city,varchar(64),\N,
+ps_store,postcode,varchar(12),\N,
+ps_store,latitude,decimal(13\,8),\N,
+ps_store,longitude,decimal(13\,8),\N,
+ps_store,hours,varchar(254),\N,
+ps_store,phone,varchar(16),\N,
+ps_store,fax,varchar(16),\N,
+ps_store,email,varchar(128),\N,
+ps_store,note,text,\N,
+ps_store,active,tinyint(1) unsigned,0,
+ps_store,date_add,datetime,\N,
+ps_store,date_upd,datetime,\N,
+ps_store_shop,id_store,int(11) unsigned,\N,PRI
+ps_store_shop,id_shop,int(11) unsigned,\N,PRI
+ps_supplier,id_supplier,int(10) unsigned,\N,PRI
+ps_supplier,name,varchar(64),\N,
+ps_supplier,date_add,datetime,\N,
+ps_supplier,date_upd,datetime,\N,
+ps_supplier,active,tinyint(1),0,
+ps_supplier_lang,id_supplier,int(10) unsigned,\N,PRI
+ps_supplier_lang,id_lang,int(10) unsigned,\N,PRI
+ps_supplier_lang,description,text,\N,
+ps_supplier_lang,meta_title,varchar(128),\N,
+ps_supplier_lang,meta_keywords,varchar(255),\N,
+ps_supplier_lang,meta_description,varchar(255),\N,
+ps_supplier_shop,id_supplier,int(11) unsigned,\N,PRI
+ps_supplier_shop,id_shop,int(11) unsigned,\N,PRI
+ps_supply_order,id_supply_order,int(11) unsigned,\N,PRI
+ps_supply_order,id_supplier,int(11) unsigned,\N,MUL
+ps_supply_order,supplier_name,varchar(64),\N,
+ps_supply_order,id_lang,int(11) unsigned,\N,
+ps_supply_order,id_warehouse,int(11) unsigned,\N,MUL
+ps_supply_order,id_supply_order_state,int(11) unsigned,\N,
+ps_supply_order,id_currency,int(11) unsigned,\N,
+ps_supply_order,id_ref_currency,int(11) unsigned,\N,
+ps_supply_order,reference,varchar(64),\N,MUL
+ps_supply_order,date_add,datetime,\N,
+ps_supply_order,date_upd,datetime,\N,
+ps_supply_order,date_delivery_expected,datetime,\N,
+ps_supply_order,total_te,decimal(20\,6),0.000000,
+ps_supply_order,total_with_discount_te,decimal(20\,6),0.000000,
+ps_supply_order,total_tax,decimal(20\,6),0.000000,
+ps_supply_order,total_ti,decimal(20\,6),0.000000,
+ps_supply_order,discount_rate,decimal(20\,6),0.000000,
+ps_supply_order,discount_value_te,decimal(20\,6),0.000000,
+ps_supply_order,is_template,tinyint(1),0,
+ps_supply_order_detail,id_supply_order_detail,int(11) unsigned,\N,PRI
+ps_supply_order_detail,id_supply_order,int(11) unsigned,\N,MUL
+ps_supply_order_detail,id_currency,int(11) unsigned,\N,
+ps_supply_order_detail,id_product,int(11) unsigned,\N,MUL
+ps_supply_order_detail,id_product_attribute,int(11) unsigned,\N,MUL
+ps_supply_order_detail,reference,varchar(32),\N,
+ps_supply_order_detail,supplier_reference,varchar(32),\N,
+ps_supply_order_detail,name,varchar(128),\N,
+ps_supply_order_detail,ean13,varchar(13),\N,
+ps_supply_order_detail,upc,varchar(12),\N,
+ps_supply_order_detail,exchange_rate,decimal(20\,6),0.000000,
+ps_supply_order_detail,unit_price_te,decimal(20\,6),0.000000,
+ps_supply_order_detail,quantity_expected,int(11) unsigned,\N,
+ps_supply_order_detail,quantity_received,int(11) unsigned,\N,
+ps_supply_order_detail,price_te,decimal(20\,6),0.000000,
+ps_supply_order_detail,discount_rate,decimal(20\,6),0.000000,
+ps_supply_order_detail,discount_value_te,decimal(20\,6),0.000000,
+ps_supply_order_detail,price_with_discount_te,decimal(20\,6),0.000000,
+ps_supply_order_detail,tax_rate,decimal(20\,6),0.000000,
+ps_supply_order_detail,tax_value,decimal(20\,6),0.000000,
+ps_supply_order_detail,price_ti,decimal(20\,6),0.000000,
+ps_supply_order_detail,tax_value_with_order_discount,decimal(20\,6),0.000000,
+ps_supply_order_detail,price_with_order_discount_te,decimal(20\,6),0.000000,
+ps_supply_order_history,id_supply_order_history,int(11) unsigned,\N,PRI
+ps_supply_order_history,id_supply_order,int(11) unsigned,\N,MUL
+ps_supply_order_history,id_employee,int(11) unsigned,\N,MUL
+ps_supply_order_history,employee_lastname,varchar(32),,
+ps_supply_order_history,employee_firstname,varchar(32),,
+ps_supply_order_history,id_state,int(11) unsigned,\N,MUL
+ps_supply_order_history,date_add,datetime,\N,
+ps_supply_order_receipt_history,id_supply_order_receipt_history,int(11) unsigned,\N,PRI
+ps_supply_order_receipt_history,id_supply_order_detail,int(11) unsigned,\N,MUL
+ps_supply_order_receipt_history,id_employee,int(11) unsigned,\N,
+ps_supply_order_receipt_history,employee_lastname,varchar(32),,
+ps_supply_order_receipt_history,employee_firstname,varchar(32),,
+ps_supply_order_receipt_history,id_supply_order_state,int(11) unsigned,\N,MUL
+ps_supply_order_receipt_history,quantity,int(11) unsigned,\N,
+ps_supply_order_receipt_history,date_add,datetime,\N,
+ps_supply_order_state,id_supply_order_state,int(11) unsigned,\N,PRI
+ps_supply_order_state,delivery_note,tinyint(1),0,
+ps_supply_order_state,editable,tinyint(1),0,
+ps_supply_order_state,receipt_state,tinyint(1),0,
+ps_supply_order_state,pending_receipt,tinyint(1),0,
+ps_supply_order_state,enclosed,tinyint(1),0,
+ps_supply_order_state,color,varchar(32),\N,
+ps_supply_order_state_lang,id_supply_order_state,int(11) unsigned,\N,PRI
+ps_supply_order_state_lang,id_lang,int(11) unsigned,\N,PRI
+ps_supply_order_state_lang,name,varchar(128),\N,
+ps_tab,id_tab,int(10) unsigned,\N,PRI
+ps_tab,id_parent,int(11),\N,MUL
+ps_tab,class_name,varchar(64),\N,MUL
+ps_tab,module,varchar(64),\N,
+ps_tab,position,int(10) unsigned,\N,
+ps_tab,active,tinyint(1),1,
+ps_tab,hide_host_mode,tinyint(1),0,
+ps_tab_advice,id_tab,int(11),\N,PRI
+ps_tab_advice,id_advice,int(11),\N,PRI
+ps_tab_lang,id_tab,int(10) unsigned,\N,PRI
+ps_tab_lang,id_lang,int(10) unsigned,\N,PRI
+ps_tab_lang,name,varchar(64),\N,
+ps_tab_module_preference,id_tab_module_preference,int(11),\N,PRI
+ps_tab_module_preference,id_employee,int(11),\N,MUL
+ps_tab_module_preference,id_tab,int(11),\N,
+ps_tab_module_preference,module,varchar(255),\N,
+ps_tag,id_tag,int(10) unsigned,\N,PRI
+ps_tag,id_lang,int(10) unsigned,\N,MUL
+ps_tag,name,varchar(32),\N,MUL
+ps_tag_count,id_group,int(10) unsigned,0,PRI
+ps_tag_count,id_tag,int(10) unsigned,0,PRI
+ps_tag_count,id_lang,int(10) unsigned,0,
+ps_tag_count,id_shop,int(11) unsigned,0,
+ps_tag_count,counter,int(10) unsigned,0,
+ps_tax,id_tax,int(10) unsigned,\N,PRI
+ps_tax,rate,decimal(10\,3),\N,
+ps_tax,active,tinyint(1) unsigned,1,
+ps_tax,deleted,tinyint(1) unsigned,0,
+ps_tax_lang,id_tax,int(10) unsigned,\N,PRI
+ps_tax_lang,id_lang,int(10) unsigned,\N,PRI
+ps_tax_lang,name,varchar(32),\N,
+ps_tax_rule,id_tax_rule,int(11),\N,PRI
+ps_tax_rule,id_tax_rules_group,int(11),\N,MUL
+ps_tax_rule,id_country,int(11),\N,
+ps_tax_rule,id_state,int(11),\N,
+ps_tax_rule,zipcode_from,varchar(12),\N,
+ps_tax_rule,zipcode_to,varchar(12),\N,
+ps_tax_rule,id_tax,int(11),\N,MUL
+ps_tax_rule,behavior,int(11),\N,
+ps_tax_rule,description,varchar(100),\N,
+ps_tax_rules_group,id_tax_rules_group,int(11),\N,PRI
+ps_tax_rules_group,name,varchar(50),\N,
+ps_tax_rules_group,active,int(11),\N,
+ps_tax_rules_group,deleted,tinyint(1) unsigned,\N,
+ps_tax_rules_group,date_add,datetime,\N,
+ps_tax_rules_group,date_upd,datetime,\N,
+ps_tax_rules_group_shop,id_tax_rules_group,int(11) unsigned,\N,PRI
+ps_tax_rules_group_shop,id_shop,int(11) unsigned,\N,PRI
+ps_theme,id_theme,int(11),\N,PRI
+ps_theme,name,varchar(64),\N,
+ps_theme,directory,varchar(64),\N,
+ps_theme,responsive,tinyint(1),0,
+ps_theme,default_left_column,tinyint(1),0,
+ps_theme,default_right_column,tinyint(1),0,
+ps_theme,product_per_page,int(10) unsigned,\N,
+ps_themeconfigurator,id_item,int(10) unsigned,\N,PRI
+ps_themeconfigurator,id_shop,int(10) unsigned,\N,
+ps_themeconfigurator,id_lang,int(10) unsigned,\N,
+ps_themeconfigurator,item_order,int(10) unsigned,\N,
+ps_themeconfigurator,title,varchar(100),\N,
+ps_themeconfigurator,title_use,tinyint(1) unsigned,0,
+ps_themeconfigurator,hook,varchar(100),\N,
+ps_themeconfigurator,url,text,\N,
+ps_themeconfigurator,target,tinyint(1) unsigned,0,
+ps_themeconfigurator,image,varchar(100),\N,
+ps_themeconfigurator,image_w,varchar(10),\N,
+ps_themeconfigurator,image_h,varchar(10),\N,
+ps_themeconfigurator,html,text,\N,
+ps_themeconfigurator,active,tinyint(1) unsigned,1,
+ps_theme_meta,id_theme_meta,int(11),\N,PRI
+ps_theme_meta,id_theme,int(11),\N,MUL
+ps_theme_meta,id_meta,int(10) unsigned,\N,MUL
+ps_theme_meta,left_column,tinyint(1),1,
+ps_theme_meta,right_column,tinyint(1),1,
+ps_theme_specific,id_theme,int(11) unsigned,\N,PRI
+ps_theme_specific,id_shop,int(11) unsigned,\N,PRI
+ps_theme_specific,entity,int(11) unsigned,\N,PRI
+ps_theme_specific,id_object,int(11) unsigned,\N,PRI
+ps_timezone,id_timezone,int(10) unsigned,\N,PRI
+ps_timezone,name,varchar(32),\N,
+ps_warehouse,id_warehouse,int(11) unsigned,\N,PRI
+ps_warehouse,id_currency,int(11) unsigned,\N,
+ps_warehouse,id_address,int(11) unsigned,\N,
+ps_warehouse,id_employee,int(11) unsigned,\N,
+ps_warehouse,reference,varchar(32),\N,
+ps_warehouse,name,varchar(45),\N,
+ps_warehouse,management_type,enum('WA'\,'FIFO'\,'LIFO'),WA,
+ps_warehouse,deleted,tinyint(1) unsigned,0,
+ps_warehouse_carrier,id_carrier,int(11) unsigned,\N,PRI
+ps_warehouse_carrier,id_warehouse,int(11) unsigned,\N,PRI
+ps_warehouse_product_location,id_warehouse_product_location,int(11) unsigned,\N,PRI
+ps_warehouse_product_location,id_product,int(11) unsigned,\N,MUL
+ps_warehouse_product_location,id_product_attribute,int(11) unsigned,\N,
+ps_warehouse_product_location,id_warehouse,int(11) unsigned,\N,
+ps_warehouse_product_location,location,varchar(64),\N,
+ps_warehouse_shop,id_shop,int(11) unsigned,\N,PRI
+ps_warehouse_shop,id_warehouse,int(11) unsigned,\N,PRI
+ps_webservice_account,id_webservice_account,int(11),\N,PRI
+ps_webservice_account,key,varchar(32),\N,MUL
+ps_webservice_account,description,text,\N,
+ps_webservice_account,class_name,varchar(50),WebserviceRequest,
+ps_webservice_account,is_module,tinyint(2),0,
+ps_webservice_account,module_name,varchar(50),\N,
+ps_webservice_account,active,tinyint(2),\N,
+ps_webservice_account_shop,id_webservice_account,int(11) unsigned,\N,PRI
+ps_webservice_account_shop,id_shop,int(11) unsigned,\N,PRI
+ps_webservice_permission,id_webservice_permission,int(11),\N,PRI
+ps_webservice_permission,resource,varchar(50),\N,MUL
+ps_webservice_permission,method,enum('GET'\,'POST'\,'PUT'\,'DELETE'\,'HEAD'),\N,MUL
+ps_webservice_permission,id_webservice_account,int(11),\N,MUL
+ps_web_browser,id_web_browser,int(10) unsigned,\N,PRI
+ps_web_browser,name,varchar(64),\N,
+ps_zone,id_zone,int(10) unsigned,\N,PRI
+ps_zone,name,varchar(64),\N,
+ps_zone,active,tinyint(1) unsigned,0,
+ps_zone_shop,id_zone,int(11) unsigned,\N,PRI
+ps_zone_shop,id_shop,int(11) unsigned,\N,PRI

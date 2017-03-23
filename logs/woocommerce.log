@@ -1,0 +1,1082 @@
+161031 11:16:12	   50 Connect	root@localhost as anonymous on 
+		   50 Query	SET NAMES utf8mb4
+		   50 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   50 Query	SELECT @@SESSION.sql_mode
+		   50 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   50 Init DB	wordpress
+		   50 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+161031 11:16:13	   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   50 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   50 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   50 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   50 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   50 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = 'tp1' AND wp_posts.post_type = 'product'  ORDER BY wp_posts.post_date DESC
+		   50 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type', 'product_cat', 'product_tag', 'product_shipping_class') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   50 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_review_rating_required' LIMIT 1
+		   50 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+		   50 Query	SELECT p.ID FROM wp_posts AS p  WHERE p.post_date < '2016-10-25 18:21:52' AND p.post_type = 'product'  AND ( p.post_status = 'publish' OR (p.post_author = 2 AND p.post_status = 'private') ) ORDER BY p.post_date DESC LIMIT 1
+		   50 Query	SELECT p.ID FROM wp_posts AS p  WHERE p.post_date > '2016-10-25 18:21:52' AND p.post_type = 'product'  AND ( p.post_status = 'publish' OR (p.post_author = 2 AND p.post_status = 'private') ) ORDER BY p.post_date ASC LIMIT 1
+		   50 Query	SELECT * FROM wp_posts WHERE ID = 22 LIMIT 1
+		   50 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_cat') AND tr.object_id IN (9) ORDER BY t.name DESC
+		   50 Query	SELECT * FROM wp_users WHERE ID = '1'
+		   50 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   50 Query	SELECT SQL_CALC_FOUND_ROWS wp_comments.comment_ID FROM wp_comments  LEFT JOIN wp_posts ON comment_post_ID = wp_posts.ID  WHERE ( ( comment_approved = '1' ) OR ( user_id = 2 AND comment_approved = '0' ) ) AND comment_post_ID = 9 AND comment_parent = 0 AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_review_rating_verification_required' LIMIT 1
+		   50 Query	SELECT * FROM wp_posts WHERE ID = 7 LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_related_9' LIMIT 1
+		   50 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_related_9' LIMIT 1
+		   50 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_tag') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   50 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_cat') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   50 Query	SHOW FULL COLUMNS FROM `wp_options`
+		   50 Query	UPDATE `wp_options` SET `option_value` = '1478024173' WHERE `option_name` = '_transient_timeout_wc_related_9'
+		   50 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5
+		   50 Query	SELECT wp_posts.* FROM wp_posts WHERE ID IN (1)
+		   50 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC
+		   50 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1) ORDER BY meta_id ASC
+		   50 Query	SELECT  wp_comments.comment_ID FROM wp_comments JOIN wp_posts ON wp_posts.ID = wp_comments.comment_post_ID WHERE ( comment_approved = '1' ) AND  wp_posts.post_status IN ('publish') AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt DESC LIMIT 5
+		   50 Query	SELECT wp_comments.* FROM wp_comments WHERE comment_ID IN (1)
+		   50 Query	SELECT comment_id, meta_key, meta_value FROM wp_commentmeta WHERE comment_id IN (1) ORDER BY meta_id ASC
+		   50 Query	SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM wp_posts  WHERE post_type = 'post' AND post_status = 'publish' GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC
+		   50 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC
+		   50 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (1) ORDER BY meta_id ASC
+		   50 Quit	
+161031 11:16:34	   51 Connect	root@localhost as anonymous on 
+		   51 Query	SET NAMES utf8mb4
+		   51 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   51 Query	SELECT @@SESSION.sql_mode
+		   51 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   51 Init DB	wordpress
+		   51 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   51 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   51 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   51 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   51 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   51 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   51 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   51 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   51 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+161031 11:16:37	   51 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_woocommerce_persistent_cart' AND user_id = 2
+		   51 Query	SHOW FULL COLUMNS FROM `wp_usermeta`
+		   51 Query	UPDATE `wp_usermeta` SET `meta_value` = 'a:1:{s:4:\"cart\";a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}}' WHERE `user_id` = 2 AND `meta_key` = '_woocommerce_persistent_cart'
+		   51 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   51 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = 'tp1' AND wp_posts.post_type = 'product'  ORDER BY wp_posts.post_date DESC
+		   51 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type', 'product_cat', 'product_tag', 'product_shipping_class') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   51 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_review_rating_required' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+		   51 Query	SELECT p.ID FROM wp_posts AS p  WHERE p.post_date < '2016-10-25 18:21:52' AND p.post_type = 'product'  AND ( p.post_status = 'publish' OR (p.post_author = 2 AND p.post_status = 'private') ) ORDER BY p.post_date DESC LIMIT 1
+		   51 Query	SELECT p.ID FROM wp_posts AS p  WHERE p.post_date > '2016-10-25 18:21:52' AND p.post_type = 'product'  AND ( p.post_status = 'publish' OR (p.post_author = 2 AND p.post_status = 'private') ) ORDER BY p.post_date ASC LIMIT 1
+		   51 Query	SELECT * FROM wp_posts WHERE ID = 22 LIMIT 1
+		   51 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_cat') AND tr.object_id IN (9) ORDER BY t.name DESC
+		   51 Query	SELECT * FROM wp_users WHERE ID = '1'
+		   51 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   51 Query	SELECT SQL_CALC_FOUND_ROWS wp_comments.comment_ID FROM wp_comments  LEFT JOIN wp_posts ON comment_post_ID = wp_posts.ID  WHERE ( ( comment_approved = '1' ) OR ( user_id = 2 AND comment_approved = '0' ) ) AND comment_post_ID = 9 AND comment_parent = 0 AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt ASC, wp_comments.comment_ID ASC
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_review_rating_verification_required' LIMIT 1
+		   51 Query	SELECT * FROM wp_posts WHERE ID = 7 LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_related_9' LIMIT 1
+		   51 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_related_9' LIMIT 1
+		   51 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_tag') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   51 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_cat') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   51 Query	SHOW FULL COLUMNS FROM `wp_options`
+		   51 Query	UPDATE `wp_options` SET `option_value` = '1478024197' WHERE `option_name` = '_transient_timeout_wc_related_9'
+		   51 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5
+		   51 Query	SELECT wp_posts.* FROM wp_posts WHERE ID IN (1)
+		   51 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC
+		   51 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1) ORDER BY meta_id ASC
+		   51 Query	SELECT  wp_comments.comment_ID FROM wp_comments JOIN wp_posts ON wp_posts.ID = wp_comments.comment_post_ID WHERE ( comment_approved = '1' ) AND  wp_posts.post_status IN ('publish') AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt DESC LIMIT 5
+		   51 Query	SELECT wp_comments.* FROM wp_comments WHERE comment_ID IN (1)
+		   51 Query	SELECT comment_id, meta_key, meta_value FROM wp_commentmeta WHERE comment_id IN (1) ORDER BY meta_id ASC
+		   51 Query	SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM wp_posts  WHERE post_type = 'post' AND post_status = 'publish' GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC
+		   51 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC
+		   51 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (1) ORDER BY meta_id ASC
+		   51 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_sessions`
+		   51 Query	REPLACE INTO `wp_woocommerce_sessions` (`session_key`, `session_value`, `session_expiry`) VALUES ('2', 'a:22:{s:4:\"cart\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:6:\"a:0:{}\";s:23:\"coupon_discount_amounts\";s:6:\"a:0:{}\";s:27:\"coupon_discount_tax_amounts\";s:6:\"a:0:{}\";s:21:\"removed_cart_contents\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:19:\"cart_contents_total\";d:100;s:5:\"total\";i:0;s:8:\"subtotal\";d:100;s:15:\"subtotal_ex_tax\";d:100;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";i:0;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";i:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";s:10:\"wc_notices\";N;s:22:\"shipping_for_package_0\";s:359:\"a:2:{s:12:\"package_hash\";s:40:\"wc_ship_285b961d06d26599451d162e2e0b4d63\";s:5:\"rates\";a:1:{s:15:\"free_shipping:1\";O:16:\"WC_Shipping_Rate\":6:{s:2:\"id\";s:15:\"free_shipping:1\";s:5:\"label\";s:13:\"Free Shipping\";s:4:\"cost\";s:4:\"0.00\";s:5:\"taxes\";a:0:{}s:9:\"method_id\";s:13:\"free_shipping\";s:27:\"\0WC_Shipping_Rate\0meta_data\";a:1:{s:5:\"Items\";s:13:\"tp1 &times; 1\";}}}}\";s:23:\"chosen_shipping_methods\";s:33:\"a:1:{i:0;s:15:\"free_shipping:1\";}\";s:22:\"shipping_method_counts\";s:14:\"a:1:{i:0;i:1;}\";}', 1478110305)
+		   51 Quit	
+		   52 Connect	root@localhost as anonymous on 
+		   52 Query	SET NAMES utf8mb4
+		   52 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   52 Query	SELECT @@SESSION.sql_mode
+		   52 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   52 Init DB	wordpress
+		   52 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+161031 11:16:38	   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   52 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   52 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   52 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   52 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   52 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   52 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   52 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   52 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   52 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = 'tp1' AND wp_posts.post_type = 'product'  ORDER BY wp_posts.post_date DESC
+		   52 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type', 'product_cat', 'product_tag', 'product_shipping_class') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   52 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   52 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   52 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   52 Quit	
+161031 11:16:43	   53 Connect	root@localhost as anonymous on 
+		   53 Query	SET NAMES utf8mb4
+		   53 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   53 Query	SELECT @@SESSION.sql_mode
+		   53 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   53 Init DB	wordpress
+		   53 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   53 Query	SELECT * FROM wp_users WHERE user_login = 'admin'
+		   53 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   53 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '1'
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_external_ip_address_127.0.0.1' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_external_ip_address_127.0.0.1' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   53 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   53 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   53 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   53 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   53 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout__wc_activation_redirect' LIMIT 1
+		   53 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient__wc_activation_redirect' LIMIT 1
+		   53 Query	SELECT * FROM wp_posts WHERE ID = 38 LIMIT 1
+		   53 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (38) ORDER BY meta_id ASC
+		   53 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_edit_lock' AND post_id = 38
+		   53 Query	SHOW FULL COLUMNS FROM `wp_postmeta`
+		   53 Query	UPDATE `wp_postmeta` SET `meta_value` = '1477937803:1' WHERE `post_id` = 38 AND `meta_key` = '_edit_lock'
+		   53 Quit	
+161031 11:16:58	   54 Connect	root@localhost as anonymous on 
+		   54 Query	SET NAMES utf8mb4
+		   54 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   54 Query	SELECT @@SESSION.sql_mode
+		   54 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   54 Init DB	wordpress
+		   54 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+161031 11:16:59	   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   54 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   54 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   54 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   54 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   54 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   54 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   54 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   54 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   54 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('cart')
+		AND post_type IN ('page','attachment')
+		   54 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   54 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '5') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   54 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (5) ORDER BY meta_id ASC
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+		   54 Query	SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')    AND post_parent = 5   ORDER BY wp_posts.post_title ASC LIMIT 0,1
+		   54 Query	SELECT * FROM wp_users WHERE ID = '1'
+		   54 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_hold_stock_minutes' LIMIT 1
+		   54 Query	SELECT SUM( order_item_meta.meta_value ) AS held_qty
+							FROM wp_posts AS posts
+							LEFT JOIN wp_woocommerce_order_items as order_items ON posts.ID = order_items.order_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta2 ON order_items.order_item_id = order_item_meta2.order_item_id
+							WHERE 	order_item_meta.meta_key   = '_qty'
+							AND 	order_item_meta2.meta_key  = '_product_id' AND order_item_meta2.meta_value  = 9
+							AND 	posts.post_type            IN ( 'shop_order','shop_order_refund' )
+							AND 	posts.post_status          = 'wc-pending'
+							AND		posts.ID                   != 0
+161031 11:17:02	   54 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   54 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_shipping_calc' LIMIT 1
+		   54 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   54 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5
+		   54 Query	SELECT wp_posts.* FROM wp_posts WHERE ID IN (1)
+		   54 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC
+		   54 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1) ORDER BY meta_id ASC
+		   54 Query	SELECT  wp_comments.comment_ID FROM wp_comments JOIN wp_posts ON wp_posts.ID = wp_comments.comment_post_ID WHERE ( comment_approved = '1' ) AND  wp_posts.post_status IN ('publish') AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt DESC LIMIT 5
+		   54 Query	SELECT wp_comments.* FROM wp_comments WHERE comment_ID IN (1)
+		   54 Query	SELECT comment_id, meta_key, meta_value FROM wp_commentmeta WHERE comment_id IN (1) ORDER BY meta_id ASC
+		   54 Query	SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM wp_posts  WHERE post_type = 'post' AND post_status = 'publish' GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC
+		   54 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC
+		   54 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (1) ORDER BY meta_id ASC
+		   54 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_sessions`
+		   54 Query	REPLACE INTO `wp_woocommerce_sessions` (`session_key`, `session_value`, `session_expiry`) VALUES ('2', 'a:22:{s:4:\"cart\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:6:\"a:0:{}\";s:23:\"coupon_discount_amounts\";s:6:\"a:0:{}\";s:27:\"coupon_discount_tax_amounts\";s:6:\"a:0:{}\";s:21:\"removed_cart_contents\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:19:\"cart_contents_total\";d:100;s:5:\"total\";d:100;s:8:\"subtotal\";d:100;s:15:\"subtotal_ex_tax\";d:100;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";i:0;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";d:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";s:10:\"wc_notices\";N;s:22:\"shipping_for_package_0\";s:359:\"a:2:{s:12:\"package_hash\";s:40:\"wc_ship_285b961d06d26599451d162e2e0b4d63\";s:5:\"rates\";a:1:{s:15:\"free_shipping:1\";O:16:\"WC_Shipping_Rate\":6:{s:2:\"id\";s:15:\"free_shipping:1\";s:5:\"label\";s:13:\"Free Shipping\";s:4:\"cost\";s:4:\"0.00\";s:5:\"taxes\";a:0:{}s:9:\"method_id\";s:13:\"free_shipping\";s:27:\"\0WC_Shipping_Rate\0meta_data\";a:1:{s:5:\"Items\";s:13:\"tp1 &times; 1\";}}}}\";s:23:\"chosen_shipping_methods\";s:33:\"a:1:{i:0;s:15:\"free_shipping:1\";}\";s:22:\"shipping_method_counts\";s:14:\"a:1:{i:0;i:1;}\";}', 1478110305)
+		   54 Quit	
+161031 11:17:24	   55 Connect	root@localhost as anonymous on 
+		   55 Query	SET NAMES utf8mb4
+		   55 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   55 Query	SELECT @@SESSION.sql_mode
+		   55 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   55 Init DB	wordpress
+		   55 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   55 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   55 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   55 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   55 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   55 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   55 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   55 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   55 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   55 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   55 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   55 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   55 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_simplify_commerce_settings' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_gateway_order' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_bacs_accounts' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_password' LIMIT 1
+		   55 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_guest_checkout' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+		   55 Query	SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')    AND post_parent = 6   ORDER BY wp_posts.post_title ASC LIMIT 0,1
+		   55 Query	SELECT * FROM wp_users WHERE ID = '1'
+		   55 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_hold_stock_minutes' LIMIT 1
+		   55 Query	SELECT SUM( order_item_meta.meta_value ) AS held_qty
+							FROM wp_posts AS posts
+							LEFT JOIN wp_woocommerce_order_items as order_items ON posts.ID = order_items.order_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta2 ON order_items.order_item_id = order_item_meta2.order_item_id
+							WHERE 	order_item_meta.meta_key   = '_qty'
+							AND 	order_item_meta2.meta_key  = '_product_id' AND order_item_meta2.meta_value  = 9
+							AND 	posts.post_type            IN ( 'shop_order','shop_order_refund' )
+							AND 	posts.post_status          = 'wc-pending'
+							AND		posts.ID                   != 0
+161031 11:17:27	   55 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_signup_and_login_from_checkout' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_username' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_ship_to_destination' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_order_comments' LIMIT 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   55 Query	SELECT * FROM wp_woocommerce_payment_tokens WHERE user_id = 2 AND is_default = 1
+		   55 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_terms_page_id' LIMIT 1
+		   55 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5
+		   55 Query	SELECT wp_posts.* FROM wp_posts WHERE ID IN (1)
+		   55 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC
+		   55 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1) ORDER BY meta_id ASC
+		   55 Query	SELECT  wp_comments.comment_ID FROM wp_comments JOIN wp_posts ON wp_posts.ID = wp_comments.comment_post_ID WHERE ( comment_approved = '1' ) AND  wp_posts.post_status IN ('publish') AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt DESC LIMIT 5
+		   55 Query	SELECT wp_comments.* FROM wp_comments WHERE comment_ID IN (1)
+		   55 Query	SELECT comment_id, meta_key, meta_value FROM wp_commentmeta WHERE comment_id IN (1) ORDER BY meta_id ASC
+		   55 Query	SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM wp_posts  WHERE post_type = 'post' AND post_status = 'publish' GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC
+		   55 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC
+		   55 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (1) ORDER BY meta_id ASC
+		   55 Quit	
+161031 11:17:28	   56 Connect	root@localhost as anonymous on 
+		   56 Query	SET NAMES utf8mb4
+		   56 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   56 Query	SELECT @@SESSION.sql_mode
+		   56 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   56 Init DB	wordpress
+		   56 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   56 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   56 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   56 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   56 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   56 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   56 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   56 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   56 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   56 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   56 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   56 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   56 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_ship_to_destination' LIMIT 1
+161031 11:17:31	   56 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   56 Query	SELECT zone_id, location_code FROM wp_woocommerce_shipping_zone_locations WHERE location_type = 'postcode'
+		   56 Query	SELECT zones.zone_id FROM wp_woocommerce_shipping_zones as zones
+				LEFT OUTER JOIN wp_woocommerce_shipping_zone_locations as locations ON zones.zone_id = locations.zone_id AND location_type != 'postcode'
+				WHERE ( ( location_type = 'country' AND location_code = 'US' ) OR ( location_type = 'state' AND location_code = 'US:CA' ) OR ( location_type = 'continent' AND location_code = 'NA' ) OR ( location_type IS NULL ) )
+				ORDER BY zone_order ASC LIMIT 1
+		   56 Query	SELECT * FROM wp_woocommerce_shipping_zones WHERE zone_id = 1 LIMIT 1
+		   56 Query	SELECT * FROM wp_woocommerce_shipping_zone_locations WHERE zone_id = 1
+		   56 Query	SELECT method_id, method_order, instance_id, is_enabled FROM wp_woocommerce_shipping_zone_methods WHERE zone_id = 1 AND is_enabled = 1 order by method_order ASC
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_flat_rate_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_free_shipping_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_international_delivery_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_local_delivery_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_local_pickup_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_free_shipping_1_settings' LIMIT 1
+		   56 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('product_shipping_class') ORDER BY t.name ASC
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_signup_and_login_from_checkout' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_guest_checkout' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_username' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_password' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_simplify_commerce_settings' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_gateway_order' LIMIT 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_bacs_accounts' LIMIT 1
+		   56 Query	SELECT * FROM wp_woocommerce_payment_tokens WHERE user_id = 2 AND is_default = 1
+		   56 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_terms_page_id' LIMIT 1
+		   56 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_sessions`
+		   56 Query	REPLACE INTO `wp_woocommerce_sessions` (`session_key`, `session_value`, `session_expiry`) VALUES ('2', 'a:24:{s:4:\"cart\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:6:\"a:0:{}\";s:23:\"coupon_discount_amounts\";s:6:\"a:0:{}\";s:27:\"coupon_discount_tax_amounts\";s:6:\"a:0:{}\";s:21:\"removed_cart_contents\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:19:\"cart_contents_total\";d:100;s:5:\"total\";d:100;s:8:\"subtotal\";d:100;s:15:\"subtotal_ex_tax\";d:100;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";i:0;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";d:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";s:10:\"wc_notices\";N;s:22:\"shipping_for_package_0\";s:359:\"a:2:{s:12:\"package_hash\";s:40:\"wc_ship_ea9bd1c548b256f4d621ed14dd4d7417\";s:5:\"rates\";a:1:{s:15:\"free_shipping:1\";O:16:\"WC_Shipping_Rate\":6:{s:2:\"id\";s:15:\"free_shipping:1\";s:5:\"label\";s:13:\"Free Shipping\";s:4:\"cost\";s:4:\"0.00\";s:5:\"taxes\";a:0:{}s:9:\"method_id\";s:13:\"free_shipping\";s:27:\"\0WC_Shipping_Rate\0meta_data\";a:1:{s:5:\"Items\";s:13:\"tp1 &times; 1\";}}}}\";s:23:\"chosen_shipping_methods\";s:33:\"a:1:{i:0;s:15:\"free_shipping:1\";}\";s:22:\"shipping_method_counts\";s:14:\"a:1:{i:0;i:1;}\";s:21:\"chosen_payment_method\";s:6:\"cheque\";s:8:\"customer\";s:479:\"a:14:{s:8:\"postcode\";s:5:\"94025\";s:4:\"city\";s:10:\"Menlo park\";s:9:\"address_1\";s:31:\"350 Sharon park drive appt i003\";s:9:\"address_2\";s:0:\"\";s:5:\"state\";s:2:\"CA\";s:7:\"country\";s:2:\"US\";s:17:\"shipping_postcode\";s:5:\"94025\";s:13:\"shipping_city\";s:10:\"Menlo park\";s:18:\"shipping_address_1\";s:31:\"350 Sharon park drive appt i003\";s:18:\"shipping_address_2\";s:0:\"\";s:14:\"shipping_state\";s:2:\"CA\";s:16:\"shipping_country\";s:2:\"US\";s:13:\"is_vat_exempt\";b:0;s:19:\"calculated_shipping\";b:1;}\";}', 1478110305)
+		   56 Quit	
+161031 11:17:52	   57 Connect	root@localhost as anonymous on 
+		   57 Query	SET NAMES utf8mb4
+		   57 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   57 Query	SELECT @@SESSION.sql_mode
+		   57 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   57 Init DB	wordpress
+		   57 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   57 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   57 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   57 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+161031 11:17:53	   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   57 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   57 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   57 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   57 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   57 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   57 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   57 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   57 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   57 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   57 Query	SELECT ID FROM wp_posts WHERE post_title = 'v3' AND post_type = 'shop_coupon' AND post_status = 'publish' ORDER BY post_date DESC LIMIT 1
+		   57 Query	SELECT * FROM wp_posts WHERE ID = 38 LIMIT 1
+		   57 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (38) ORDER BY meta_id ASC
+161031 11:17:56	   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_calc_discounts_sequentially' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   57 Query	SELECT zone_id, location_code FROM wp_woocommerce_shipping_zone_locations WHERE location_type = 'postcode'
+		   57 Query	SELECT zones.zone_id FROM wp_woocommerce_shipping_zones as zones
+				LEFT OUTER JOIN wp_woocommerce_shipping_zone_locations as locations ON zones.zone_id = locations.zone_id AND location_type != 'postcode'
+				WHERE ( ( location_type = 'country' AND location_code = 'US' ) OR ( location_type = 'state' AND location_code = 'US:CA' ) OR ( location_type = 'continent' AND location_code = 'NA' ) OR ( location_type IS NULL ) )
+				ORDER BY zone_order ASC LIMIT 1
+		   57 Query	SELECT * FROM wp_woocommerce_shipping_zones WHERE zone_id = 1 LIMIT 1
+		   57 Query	SELECT * FROM wp_woocommerce_shipping_zone_locations WHERE zone_id = 1
+		   57 Query	SELECT method_id, method_order, instance_id, is_enabled FROM wp_woocommerce_shipping_zone_methods WHERE zone_id = 1 AND is_enabled = 1 order by method_order ASC
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_flat_rate_settings' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_free_shipping_settings' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_international_delivery_settings' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_local_delivery_settings' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_local_pickup_settings' LIMIT 1
+		   57 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_free_shipping_1_settings' LIMIT 1
+		   57 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('product_shipping_class') ORDER BY t.name ASC
+		   57 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_woocommerce_persistent_cart' AND user_id = 2
+		   57 Query	SHOW FULL COLUMNS FROM `wp_usermeta`
+		   57 Query	UPDATE `wp_usermeta` SET `meta_value` = 'a:1:{s:4:\"cart\";a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:88;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}}' WHERE `user_id` = 2 AND `meta_key` = '_woocommerce_persistent_cart'
+		   57 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_sessions`
+		   57 Query	REPLACE INTO `wp_woocommerce_sessions` (`session_key`, `session_value`, `session_expiry`) VALUES ('2', 'a:24:{s:4:\"cart\";s:303:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:88;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:15:\"applied_coupons\";s:19:\"a:1:{i:0;s:2:\"v3\";}\";s:23:\"coupon_discount_amounts\";s:20:\"a:1:{s:2:\"v3\";d:12;}\";s:27:\"coupon_discount_tax_amounts\";s:19:\"a:1:{s:2:\"v3\";i:0;}\";s:21:\"removed_cart_contents\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:19:\"cart_contents_total\";d:88;s:5:\"total\";d:88;s:8:\"subtotal\";d:100;s:15:\"subtotal_ex_tax\";d:100;s:9:\"tax_total\";i:0;s:5:\"taxes\";s:6:\"a:0:{}\";s:14:\"shipping_taxes\";s:6:\"a:0:{}\";s:13:\"discount_cart\";d:12;s:17:\"discount_cart_tax\";i:0;s:14:\"shipping_total\";d:0;s:18:\"shipping_tax_total\";i:0;s:9:\"fee_total\";i:0;s:4:\"fees\";s:6:\"a:0:{}\";s:10:\"wc_notices\";N;s:22:\"shipping_for_package_0\";s:359:\"a:2:{s:12:\"package_hash\";s:40:\"wc_ship_e97c9317c7c713b0cc377096babe8fea\";s:5:\"rates\";a:1:{s:15:\"free_shipping:1\";O:16:\"WC_Shipping_Rate\":6:{s:2:\"id\";s:15:\"free_shipping:1\";s:5:\"label\";s:13:\"Free Shipping\";s:4:\"cost\";s:4:\"0.00\";s:5:\"taxes\";a:0:{}s:9:\"method_id\";s:13:\"free_shipping\";s:27:\"\0WC_Shipping_Rate\0meta_data\";a:1:{s:5:\"Items\";s:13:\"tp1 &times; 1\";}}}}\";s:23:\"chosen_shipping_methods\";s:33:\"a:1:{i:0;s:15:\"free_shipping:1\";}\";s:22:\"shipping_method_counts\";s:14:\"a:1:{i:0;i:1;}\";s:21:\"chosen_payment_method\";s:6:\"cheque\";s:8:\"customer\";s:479:\"a:14:{s:8:\"postcode\";s:5:\"94025\";s:4:\"city\";s:10:\"Menlo park\";s:9:\"address_1\";s:31:\"350 Sharon park drive appt i003\";s:9:\"address_2\";s:0:\"\";s:5:\"state\";s:2:\"CA\";s:7:\"country\";s:2:\"US\";s:17:\"shipping_postcode\";s:5:\"94025\";s:13:\"shipping_city\";s:10:\"Menlo park\";s:18:\"shipping_address_1\";s:31:\"350 Sharon park drive appt i003\";s:18:\"shipping_address_2\";s:0:\"\";s:14:\"shipping_state\";s:2:\"CA\";s:16:\"shipping_country\";s:2:\"US\";s:13:\"is_vat_exempt\";b:0;s:19:\"calculated_shipping\";b:1;}\";}', 1478110305)
+		   57 Quit	
+		   58 Connect	root@localhost as anonymous on 
+		   58 Query	SET NAMES utf8mb4
+		   58 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   58 Query	SELECT @@SESSION.sql_mode
+		   58 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   58 Init DB	wordpress
+		   58 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   58 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   58 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   58 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   58 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   58 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   58 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   58 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   58 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   58 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   58 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   58 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   58 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_ship_to_destination' LIMIT 1
+		   58 Query	SELECT ID FROM wp_posts WHERE post_title = 'v3' AND post_type = 'shop_coupon' AND post_status = 'publish' ORDER BY post_date DESC LIMIT 1
+		   58 Query	SELECT * FROM wp_posts WHERE ID = 38 LIMIT 1
+		   58 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (38) ORDER BY meta_id ASC
+161031 11:17:59	   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_calc_discounts_sequentially' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_signup_and_login_from_checkout' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_guest_checkout' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_username' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_password' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_simplify_commerce_settings' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_gateway_order' LIMIT 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_bacs_accounts' LIMIT 1
+		   58 Query	SELECT * FROM wp_woocommerce_payment_tokens WHERE user_id = 2 AND is_default = 1
+		   58 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_terms_page_id' LIMIT 1
+		   58 Quit	
+161031 11:18:20	   59 Connect	root@localhost as anonymous on 
+		   59 Query	SET NAMES utf8mb4
+		   59 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   59 Query	SELECT @@SESSION.sql_mode
+		   59 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   59 Init DB	wordpress
+		   59 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   59 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   59 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   59 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   59 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   59 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   59 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   59 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_signup_and_login_from_checkout' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_guest_checkout' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_username' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_password' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_ship_to_destination' LIMIT 1
+		   59 Query	SELECT ID FROM wp_posts WHERE post_title = 'v3' AND post_type = 'shop_coupon' AND post_status = 'publish' ORDER BY post_date DESC LIMIT 1
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 38 LIMIT 1
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (38) ORDER BY meta_id ASC
+161031 11:18:23	   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_calc_discounts_sequentially' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_wc_shipping_method_count_1_1477419772' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_shipping_cost_requires_address' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_terms_page_id' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_simplify_commerce_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_gateway_order' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_bacs_accounts' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_hold_stock_minutes' LIMIT 1
+		   59 Query	SELECT SUM( order_item_meta.meta_value ) AS held_qty
+							FROM wp_posts AS posts
+							LEFT JOIN wp_woocommerce_order_items as order_items ON posts.ID = order_items.order_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta ON order_items.order_item_id = order_item_meta.order_item_id
+							LEFT JOIN wp_woocommerce_order_itemmeta as order_item_meta2 ON order_items.order_item_id = order_item_meta2.order_item_id
+							WHERE 	order_item_meta.meta_key   = '_qty'
+							AND 	order_item_meta2.meta_key  = '_product_id' AND order_item_meta2.meta_value  = 9
+							AND 	posts.post_type            IN ( 'shop_order','shop_order_refund' )
+							AND 	posts.post_status          = 'wc-pending'
+							AND		posts.ID                   != 0
+		   59 Query	START TRANSACTION
+		   59 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = 'order-oct-31-2016-0618-pm' AND wp_posts.ID NOT IN (0) AND wp_posts.post_type IN ('post', 'page', 'attachment', 'product') AND ((wp_posts.post_status = 'trash'))  ORDER BY wp_posts.post_date DESC
+		   59 Query	SELECT post_name FROM wp_posts WHERE post_name = 'order-oct-31-2016-0618-pm' AND post_type = 'shop_order' AND ID != 0 LIMIT 1
+		   59 Query	SHOW FULL COLUMNS FROM `wp_posts`
+		   59 Query	INSERT INTO `wp_posts` (`post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_content_filtered`, `post_title`, `post_excerpt`, `post_status`, `post_type`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_parent`, `menu_order`, `post_mime_type`, `guid`) VALUES (1, '2016-10-31 18:18:23', '2016-10-31 18:18:23', '', '', 'Order &ndash; October 31, 2016 @ 06:18 PM', '', 'wc-pending', 'shop_order', 'open', 'closed', 'order_58178aef5e0bf', 'order-oct-31-2016-0618-pm', '', '', '2016-10-31 18:18:23', '2016-10-31 18:18:23', 0, 0, '', '')
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   59 Query	UPDATE `wp_posts` SET `guid` = 'http://localhost/wordpress/?post_type=shop_order&p=39' WHERE `ID` = 39
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_is_multi_author'
+		   59 Query	SHOW FULL COLUMNS FROM `wp_options`
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_is_multi_author'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_is_multi_author'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_twentysixteen_categories'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_twentysixteen_categories'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_twentysixteen_categories'
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_key' AND post_id = 39
+		   59 Query	SHOW FULL COLUMNS FROM `wp_postmeta`
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_key', 'wc_order_58178aef66032')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_currency' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_currency', 'USD')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_prices_include_tax' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_prices_include_tax', 'no')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_customer_ip_address' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_customer_ip_address', '127.0.0.1')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_customer_user_agent' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_customer_user_agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.71 Safari/537.36')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_customer_user' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_customer_user', '0')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_created_via' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_created_via', 'checkout')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_cart_hash' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_cart_hash', '4454e6c38959c0ee723dcdc28a0e75bb')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_customer_user' AND post_id = 39
+		   59 Query	UPDATE `wp_postmeta` SET `meta_value` = '2' WHERE `post_id` = 39 AND `meta_key` = '_customer_user'
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_version' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_version', '2.6.6')
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_order_items`
+		   59 Query	INSERT INTO `wp_woocommerce_order_items` (`order_item_name`, `order_item_type`, `order_id`) VALUES ('tp1', 'line_item', 39)
+		   59 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_order_itemmeta`
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_qty', '1')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_tax_class', '')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_product_id', '9')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_variation_id', '0')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_line_subtotal', '100')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_line_total', '88')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_line_subtotal_tax', '0')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_line_tax', '0')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('50', '_line_tax_data', 'a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}')
+		   59 Query	INSERT INTO `wp_woocommerce_order_items` (`order_item_name`, `order_item_type`, `order_id`) VALUES ('Free Shipping', 'shipping', 39)
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('51', 'method_id', 'free_shipping:1')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('51', 'cost', '0.00')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('51', 'taxes', 'a:0:{}')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('51', 'Items', 'tp1 &times; 1')
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_shipping' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_shipping', '0')
+		   59 Query	INSERT INTO `wp_woocommerce_order_items` (`order_item_name`, `order_item_type`, `order_id`) VALUES ('v3', 'coupon', 39)
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('52', 'discount_amount', '12')
+		   59 Query	INSERT INTO `wp_woocommerce_order_itemmeta` (`order_item_id`, `meta_key`, `meta_value`) VALUES ('52', 'discount_amount_tax', '0')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_first_name' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_first_name', 'db')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_last_name' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_last_name', 'test')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_company' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_company', '')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_email' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_email', 'twarsz1414@gmail.com')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_phone' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_phone', '2674413738')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_country' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_country', 'US')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_address_1' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_address_1', '350 Sharon park drive appt i003')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_address_2' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_address_2', '')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_city' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_city', 'Menlo park')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_state' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_state', 'CA')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_billing_postcode' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_billing_postcode', '94025')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_first_name' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_first_name', 'db')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_last_name' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_last_name', 'test')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_company' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_company', '')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_country' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_country', 'US')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_address_1' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_address_1', '350 Sharon park drive appt i003')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_address_2' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_address_2', '')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_city' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_city', 'Menlo park')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_state' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_state', 'CA')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_shipping_postcode' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_shipping_postcode', '94025')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_payment_method' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_payment_method', 'cheque')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_payment_method_title' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_payment_method_title', 'Check Payments')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_cart_discount' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_cart_discount', '12')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_cart_discount_tax' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_cart_discount_tax', '0')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_tax' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_tax', '0')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_shipping_tax' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_shipping_tax', '0')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_order_total' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_total', '88.00')
+		   59 Query	COMMIT
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND wp_posts.post_name = 'order-oct-31-2016-0618-pm' AND wp_posts.ID NOT IN (39) AND wp_posts.post_type IN ('post', 'page', 'attachment', 'product') AND ((wp_posts.post_status = 'trash'))  ORDER BY wp_posts.post_date DESC
+		   59 Query	SELECT post_name FROM wp_posts WHERE post_name = 'order-oct-31-2016-0618-pm' AND post_type = 'shop_order' AND ID != 39 LIMIT 1
+		   59 Query	UPDATE `wp_posts` SET `post_author` = 1, `post_date` = '2016-10-31 18:18:23', `post_date_gmt` = '2016-10-31 18:18:23', `post_content` = '', `post_content_filtered` = '', `post_title` = 'Order &ndash; October 31, 2016 @ 06:18 PM', `post_excerpt` = '', `post_status` = 'wc-on-hold', `post_type` = 'shop_order', `comment_status` = 'open', `ping_status` = 'closed', `post_password` = 'order_58178aef5e0bf', `post_name` = 'order-oct-31-2016-0618-pm', `to_ping` = '', `pinged` = '', `post_modified` = '2016-10-31 18:18:23', `post_modified_gmt` = '2016-10-31 18:18:23', `post_parent` = 0, `menu_order` = 0, `post_mime_type` = '', `guid` = 'http://localhost/wordpress/?post_type=shop_order&#038;p=39' WHERE `ID` = 39
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_is_multi_author'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_twentysixteen_categories'
+		   59 Query	SHOW FULL COLUMNS FROM `wp_comments`
+		   59 Query	INSERT INTO `wp_comments` (`comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES (39, 'WooCommerce', '', '', '', '2016-10-31 18:18:23', '2016-10-31 18:18:23', 'Awaiting check payment Order status changed from Pending Payment to On Hold.', 0, '1', 'WooCommerce', 'order_note', 0, 0)
+		   59 Query	SELECT COUNT(*) FROM wp_comments WHERE comment_post_ID = 39 AND comment_approved = '1'
+		   59 Query	UPDATE `wp_posts` SET `comment_count` = 1 WHERE `ID` = 39
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_average_rating' AND post_id = 39
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_rating_count' AND post_id = 39
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_review_count' AND post_id = 39
+		   59 Query	SELECT * FROM wp_comments WHERE comment_ID = 49 LIMIT 1
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_count_comments'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_count_comments'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_wc_count_comments'
+161031 11:18:24	   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_new_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_cancelled_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_failed_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_on_hold_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_processing_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_completed_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce__settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_refunded_order_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_invoice_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_note_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_reset_password_settings' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_customer_new_account_settings' LIMIT 1
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_header_image' LIMIT 1
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, meta_key, meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id IN (50) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 50 ORDER BY meta_id
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_downloads_grant_access_after_payment' LIMIT 1
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, meta_key, meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id IN (51) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 51 ORDER BY meta_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'fee' ) ORDER BY order_item_id
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_total_display' LIMIT 1
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'tax' ) ORDER BY order_item_id
+		   59 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_parent = 39  AND wp_posts.post_type = 'shop_order_refund' AND ((wp_posts.post_status = 'wc-pending' OR wp_posts.post_status = 'wc-processing' OR wp_posts.post_status = 'wc-on-hold' OR wp_posts.post_status = 'wc-completed' OR wp_posts.post_status = 'wc-cancelled' OR wp_posts.post_status = 'wc-refunded' OR wp_posts.post_status = 'wc-failed'))  ORDER BY wp_posts.post_date DESC
+		   59 Query	SELECT SUM( postmeta.meta_value )
+			FROM wp_postmeta AS postmeta
+			INNER JOIN wp_posts AS posts ON ( posts.post_type = 'shop_order_refund' AND posts.post_parent = 39 )
+			WHERE postmeta.meta_key = '_refund_amount'
+			AND postmeta.post_id = posts.ID
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT * FROM wp_posts WHERE ID = 7 LIMIT 1
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_footer_text' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_background_color' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_body_background_color' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_base_color' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_text_color' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_from_address' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_email_from_name' LIMIT 1
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'fee' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'tax' ) ORDER BY order_item_id
+		   59 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_parent = 39  AND wp_posts.post_type = 'shop_order_refund' AND ((wp_posts.post_status = 'wc-pending' OR wp_posts.post_status = 'wc-processing' OR wp_posts.post_status = 'wc-on-hold' OR wp_posts.post_status = 'wc-completed' OR wp_posts.post_status = 'wc-cancelled' OR wp_posts.post_status = 'wc-refunded' OR wp_posts.post_status = 'wc-failed'))  ORDER BY wp_posts.post_date DESC
+		   59 Query	SELECT SUM( postmeta.meta_value )
+			FROM wp_postmeta AS postmeta
+			INNER JOIN wp_posts AS posts ON ( posts.post_type = 'shop_order_refund' AND posts.post_parent = 39 )
+			WHERE postmeta.meta_key = '_refund_amount'
+			AND postmeta.post_id = posts.ID
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = 'total_sales' AND post_id = 9
+		   59 Query	UPDATE `wp_postmeta` SET `meta_value` = '21' WHERE `post_id` = 9 AND `meta_key` = 'total_sales'
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_recorded_sales' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_recorded_sales', 'yes')
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'coupon' ) ORDER BY order_item_id
+		   59 Query	SELECT order_item_id, meta_key, meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id IN (52) ORDER BY meta_id ASC
+		   59 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 52 ORDER BY meta_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'coupon' ) ORDER BY order_item_id
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = 'usage_count' AND post_id = 38
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (38, 'usage_count', '1')
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (38, '_used_by', '2')
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_recorded_coupon_usage_counts' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_recorded_coupon_usage_counts', 'yes')
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_sales_by_date'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_report_sales_by_date'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_wc_report_sales_by_date'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_timeout_wc_report_sales_by_date'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_sales_by_product'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_sales_by_category'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_coupon_usage'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_customers'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_customer_list'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_low_in_stock'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_out_of_stock'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_report_most_stocked'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_admin_report'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_admin_report'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_wc_admin_report'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_timeout_wc_admin_report'
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_money_spent' AND user_id = 2
+		   59 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_order_count' AND user_id = 2
+		   59 Query	DELETE FROM wp_options WHERE option_name LIKE '\\_transient\\_%1477687338' ORDER BY option_id LIMIT 1000
+		   59 Query	UPDATE `wp_options` SET `option_value` = '1477937904' WHERE `option_name` = '_transient_orders-transient-version'
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 50 ORDER BY meta_id
+		   59 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   59 Query	SELECT COUNT(*) FROM wp_postmeta WHERE meta_key = '_stock' AND post_id = 9
+		   59 Query	UPDATE wp_postmeta SET meta_value = meta_value - 1.000000 WHERE post_id = 9 AND meta_key='_stock'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_low_stock_count'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_low_stock_count'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_wc_low_stock_count'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_timeout_wc_low_stock_count'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_outofstock_count'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_wc_outofstock_count'
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_timeout_wc_outofstock_count'
+		   59 Query	DELETE FROM `wp_options` WHERE `option_name` = '_transient_timeout_wc_outofstock_count'
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   59 Query	INSERT INTO `wp_comments` (`comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES (39, 'WooCommerce', '', '', '', '2016-10-31 18:18:24', '2016-10-31 18:18:24', 'Item 9 stock reduced from 77 to 76.', 0, '1', 'WooCommerce', 'order_note', 0, 0)
+		   59 Query	SELECT COUNT(*) FROM wp_comments WHERE comment_post_ID = 39 AND comment_approved = '1'
+		   59 Query	UPDATE `wp_posts` SET `comment_count` = 2 WHERE `ID` = 39
+161031 11:18:25	   59 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_average_rating' AND post_id = 39
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_rating_count' AND post_id = 39
+		   59 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_wc_review_count' AND post_id = 39
+		   59 Query	SELECT * FROM wp_comments WHERE comment_ID = 50 LIMIT 1
+		   59 Query	SELECT autoload FROM wp_options WHERE option_name = '_transient_wc_count_comments'
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_notify_no_stock' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_notify_low_stock' LIMIT 1
+		   59 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_notify_low_stock_amount' LIMIT 1
+		   59 Query	SELECT COUNT(*) FROM wp_postmeta WHERE meta_key = '_order_stock_reduced' AND post_id = 39
+		   59 Query	INSERT INTO `wp_postmeta` (`post_id`, `meta_key`, `meta_value`) VALUES (39, '_order_stock_reduced', '1')
+		   59 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_woocommerce_persistent_cart' AND user_id = 2
+		   59 Query	DELETE FROM wp_usermeta WHERE umeta_id IN( 110 )
+		   59 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+		   59 Query	SHOW FULL COLUMNS FROM `wp_woocommerce_sessions`
+		   59 Query	REPLACE INTO `wp_woocommerce_sessions` (`session_key`, `session_value`, `session_expiry`) VALUES ('2', 'a:7:{s:21:\"removed_cart_contents\";s:304:\"a:1:{s:32:\"45c48cce2e2d7fbdea1afc51c7c6ad26\";a:9:{s:10:\"product_id\";i:9;s:12:\"variation_id\";i:0;s:9:\"variation\";a:0:{}s:8:\"quantity\";i:1;s:10:\"line_total\";d:100;s:8:\"line_tax\";i:0;s:13:\"line_subtotal\";d:100;s:17:\"line_subtotal_tax\";i:0;s:13:\"line_tax_data\";a:2:{s:5:\"total\";a:0:{}s:8:\"subtotal\";a:0:{}}}}\";s:10:\"wc_notices\";N;s:22:\"shipping_for_package_0\";s:359:\"a:2:{s:12:\"package_hash\";s:40:\"wc_ship_e97c9317c7c713b0cc377096babe8fea\";s:5:\"rates\";a:1:{s:15:\"free_shipping:1\";O:16:\"WC_Shipping_Rate\":6:{s:2:\"id\";s:15:\"free_shipping:1\";s:5:\"label\";s:13:\"Free Shipping\";s:4:\"cost\";s:4:\"0.00\";s:5:\"taxes\";a:0:{}s:9:\"method_id\";s:13:\"free_shipping\";s:27:\"\0WC_Shipping_Rate\0meta_data\";a:1:{s:5:\"Items\";s:13:\"tp1 &times; 1\";}}}}\";s:23:\"chosen_shipping_methods\";s:33:\"a:1:{i:0;s:15:\"free_shipping:1\";}\";s:22:\"shipping_method_counts\";s:14:\"a:1:{i:0;i:1;}\";s:21:\"chosen_payment_method\";s:6:\"cheque\";s:8:\"customer\";s:479:\"a:14:{s:8:\"postcode\";s:5:\"94025\";s:4:\"city\";s:10:\"Menlo park\";s:9:\"address_1\";s:31:\"350 Sharon park drive appt i003\";s:9:\"address_2\";s:0:\"\";s:5:\"state\";s:2:\"CA\";s:7:\"country\";s:2:\"US\";s:17:\"shipping_postcode\";s:5:\"94025\";s:13:\"shipping_city\";s:10:\"Menlo park\";s:18:\"shipping_address_1\";s:31:\"350 Sharon park drive appt i003\";s:18:\"shipping_address_2\";s:0:\"\";s:14:\"shipping_state\";s:2:\"CA\";s:16:\"shipping_country\";s:2:\"US\";s:13:\"is_vat_exempt\";b:0;s:19:\"calculated_shipping\";b:1;}\";}', 1478110305)
+		   59 Quit	
+		   60 Connect	root@localhost as anonymous on 
+		   60 Query	SET NAMES utf8mb4
+		   60 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   60 Query	SELECT @@SESSION.sql_mode
+		   60 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   60 Init DB	wordpress
+		   60 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   60 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   60 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   60 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   60 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   60 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   60 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   60 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   60 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   60 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   60 Quit	
+		   61 Connect	root@localhost as anonymous on 
+		   61 Query	SET NAMES utf8mb4
+		   61 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   61 Query	SELECT @@SESSION.sql_mode
+		   61 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   61 Init DB	wordpress
+		   61 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   61 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   61 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   61 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   61 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   61 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   61 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   61 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   61 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_simplify_commerce_settings' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_gateway_order' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_bacs_accounts' LIMIT 1
+		   61 Query	SELECT * FROM wp_posts WHERE ID = 39 LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_display_cart' LIMIT 1
+		   61 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (39) ORDER BY meta_id ASC
+161031 11:18:26	   61 Query	SELECT umeta_id FROM wp_usermeta WHERE meta_key = '_woocommerce_persistent_cart' AND user_id = 2
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_registration_generate_password' LIMIT 1
+		   61 Query	SELECT * FROM wp_posts WHERE ID = 5 LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_enable_guest_checkout' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'can_compress_scripts' LIMIT 1
+		   61 Query	SELECT * FROM wp_posts  WHERE (post_type = 'page' AND post_status = 'publish')    AND post_parent = 6   ORDER BY wp_posts.post_title ASC LIMIT 0,1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_is_multi_author' LIMIT 1
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_is_multi_author' LIMIT 1
+		   61 Query	SELECT DISTINCT post_author FROM wp_posts WHERE post_type = 'post' AND post_status = 'publish' LIMIT 2
+		   61 Query	INSERT INTO `wp_options` (`option_name`, `option_value`, `autoload`) VALUES ('_transient_is_multi_author', '0', 'yes') ON DUPLICATE KEY UPDATE `option_name` = VALUES(`option_name`), `option_value` = VALUES(`option_value`), `autoload` = VALUES(`autoload`)
+		   61 Query	SELECT * FROM wp_users WHERE ID = '1'
+		   61 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   61 Query	SELECT SUM( postmeta.meta_value )
+			FROM wp_postmeta AS postmeta
+			INNER JOIN wp_posts AS posts ON ( posts.post_type = 'shop_order_refund' AND posts.post_parent = 39 )
+			WHERE postmeta.meta_key = '_refund_amount'
+			AND postmeta.post_id = posts.ID
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, meta_key, meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id IN (50) ORDER BY meta_id ASC
+		   61 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 50 ORDER BY meta_id
+		   61 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   61 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   61 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   61 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'line_item' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, meta_key, meta_value FROM wp_woocommerce_order_itemmeta WHERE order_item_id IN (51) ORDER BY meta_id ASC
+		   61 Query	SELECT meta_key, meta_value, meta_id FROM wp_woocommerce_order_itemmeta WHERE order_item_id = 51 ORDER BY meta_id
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'fee' ) ORDER BY order_item_id
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_tax_total_display' LIMIT 1
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'tax' ) ORDER BY order_item_id
+		   61 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_parent = 39  AND wp_posts.post_type = 'shop_order_refund' AND ((wp_posts.post_status = 'wc-pending' OR wp_posts.post_status = 'wc-processing' OR wp_posts.post_status = 'wc-on-hold' OR wp_posts.post_status = 'wc-completed' OR wp_posts.post_status = 'wc-cancelled' OR wp_posts.post_status = 'wc-refunded' OR wp_posts.post_status = 'wc-failed'))  ORDER BY wp_posts.post_date DESC
+		   61 Query	SELECT SUM( postmeta.meta_value )
+			FROM wp_postmeta AS postmeta
+			INNER JOIN wp_posts AS posts ON ( posts.post_type = 'shop_order_refund' AND posts.post_parent = 39 )
+			WHERE postmeta.meta_key = '_refund_amount'
+			AND postmeta.post_id = posts.ID
+		   61 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_ship_to_destination' LIMIT 1
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   61 Query	SELECT order_item_id, order_item_name, order_item_type FROM wp_woocommerce_order_items WHERE order_id = 39 AND order_item_type IN ( 'shipping' ) ORDER BY order_item_id
+		   61 Query	SELECT   wp_posts.ID FROM wp_posts  WHERE 1=1  AND wp_posts.post_type = 'post' AND ((wp_posts.post_status = 'publish'))  ORDER BY wp_posts.post_date DESC LIMIT 0, 5
+		   61 Query	SELECT wp_posts.* FROM wp_posts WHERE ID IN (1)
+		   61 Query	SELECT t.*, tt.*, tr.object_id FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('category', 'post_tag', 'post_format') AND tr.object_id IN (1) ORDER BY t.name ASC
+		   61 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (1) ORDER BY meta_id ASC
+		   61 Query	SELECT  wp_comments.comment_ID FROM wp_comments JOIN wp_posts ON wp_posts.ID = wp_comments.comment_post_ID WHERE ( comment_approved = '1' ) AND  wp_posts.post_status IN ('publish') AND  wp_posts.post_type NOT IN ('shop_order','shop_order_refund')  AND  wp_posts.post_type <> 'shop_webhook'   ORDER BY wp_comments.comment_date_gmt DESC LIMIT 5
+		   61 Query	SELECT wp_comments.* FROM wp_comments WHERE comment_ID IN (1)
+		   61 Query	SELECT comment_id, meta_key, meta_value FROM wp_commentmeta WHERE comment_id IN (1) ORDER BY meta_id ASC
+		   61 Query	SELECT YEAR(post_date) AS `year`, MONTH(post_date) AS `month`, count(ID) as posts FROM wp_posts  WHERE post_type = 'post' AND post_status = 'publish' GROUP BY YEAR(post_date), MONTH(post_date) ORDER BY post_date DESC
+		   61 Query	SELECT  t.*, tt.* FROM wp_terms AS t  INNER JOIN wp_term_taxonomy AS tt ON t.term_id = tt.term_id WHERE tt.taxonomy IN ('category') AND tt.count > 0 ORDER BY t.name ASC
+		   61 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (1) ORDER BY meta_id ASC
+		   61 Quit	
+		   62 Connect	root@localhost as anonymous on 
+		   62 Query	SET NAMES utf8mb4
+		   62 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   62 Query	SELECT @@SESSION.sql_mode
+		   62 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   62 Init DB	wordpress
+		   62 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+161031 11:18:27	   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   62 Query	SELECT * FROM wp_users WHERE user_login = 'twarsz1414'
+		   62 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (2) ORDER BY umeta_id ASC
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_key' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'logged_in_salt' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   62 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '2'
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   62 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   62 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   62 Query	SELECT ID, post_name, post_parent, post_type
+		FROM wp_posts
+		WHERE post_name IN ('checkout')
+		AND post_type IN ('page','attachment')
+		   62 Query	SELECT * FROM wp_posts WHERE ID = 6 LIMIT 1
+		   62 Query	SELECT   wp_posts.* FROM wp_posts  WHERE 1=1  AND (wp_posts.ID = '6') AND wp_posts.post_type = 'page'  ORDER BY wp_posts.post_date DESC
+		   62 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (6) ORDER BY meta_id ASC
+		   62 Quit	
+161031 11:18:43	   63 Connect	root@localhost as anonymous on 
+		   63 Query	SET NAMES utf8mb4
+		   63 Query	SET NAMES 'utf8mb4' COLLATE 'utf8mb4_unicode_ci'
+		   63 Query	SELECT @@SESSION.sql_mode
+		   63 Query	SET SESSION sql_mode='NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
+		   63 Init DB	wordpress
+		   63 Query	SELECT option_name, option_value FROM wp_options WHERE autoload = 'yes'
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'WPLANG' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_mods_twentysixteen' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'current_theme' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'mods_Twenty Sixteen' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_status_options' LIMIT 1
+		   63 Query	SELECT * FROM wp_users WHERE user_login = 'admin'
+		   63 Query	SELECT user_id, meta_key, meta_value FROM wp_usermeta WHERE user_id IN (1) ORDER BY umeta_id ASC
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_key' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'auth_salt' LIMIT 1
+		   63 Query	SELECT session_value FROM wp_woocommerce_sessions WHERE session_key = '1'
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout_external_ip_address_127.0.0.1' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_external_ip_address_127.0.0.1' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_key' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'nonce_salt' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_permalinks' LIMIT 1
+		   63 Query	SELECT * FROM wp_posts WHERE ID = 4 LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'theme_switched' LIMIT 1
+		   63 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (9) ORDER BY meta_id ASC
+		   63 Query	SELECT * FROM wp_posts WHERE ID = 9 LIMIT 1
+		   63 Query	SELECT t.*, tt.* FROM wp_terms AS t INNER JOIN wp_term_taxonomy AS tt ON tt.term_id = t.term_id INNER JOIN wp_term_relationships AS tr ON tr.term_taxonomy_id = tt.term_taxonomy_id  WHERE tt.taxonomy IN ('product_type') AND tr.object_id IN (9) ORDER BY t.name ASC
+		   63 Query	SELECT term_id, meta_key, meta_value FROM wp_termmeta WHERE term_id IN (2) ORDER BY meta_id ASC
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = 'woocommerce_lock_down_admin' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient_timeout__wc_activation_redirect' LIMIT 1
+		   63 Query	SELECT option_value FROM wp_options WHERE option_name = '_transient__wc_activation_redirect' LIMIT 1
+		   63 Query	SELECT * FROM wp_posts WHERE ID = 38 LIMIT 1
+		   63 Query	SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (38) ORDER BY meta_id ASC
+		   63 Query	SELECT meta_id FROM wp_postmeta WHERE meta_key = '_edit_lock' AND post_id = 38
+		   63 Query	SHOW FULL COLUMNS FROM `wp_postmeta`
+		   63 Query	UPDATE `wp_postmeta` SET `meta_value` = '1477937923:1' WHERE `post_id` = 38 AND `meta_key` = '_edit_lock'
+		   63 Quit	

@@ -1,0 +1,768 @@
+161106  1:45:33	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL  ORDER BY created_at DESC LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` INNER JOIN `spree_variants` ON `spree_variants`.`product_id` = `spree_products`.`id` AND `spree_variants`.`is_master` = 1 AND `spree_variants`.`deleted_at` IS NULL INNER JOIN `spree_prices` ON `spree_prices`.`variant_id` = `spree_variants`.`id` AND `spree_prices`.`deleted_at` IS NULL WHERE `spree_products`.`deleted_at` IS NULL AND (`spree_products`.deleted_at IS NULL or `spree_products`.deleted_at >= '2016-11-06 09:45:33.742452') AND (`spree_products`.available_on <= '2016-11-06 09:45:33.743314') AND `spree_products`.`slug` = 'tp1'  ORDER BY `spree_products`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_promotion_rules`.* FROM `spree_promotion_rules` INNER JOIN `spree_products_promotion_rules` ON `spree_promotion_rules`.`id` = `spree_products_promotion_rules`.`promotion_rule_id` WHERE `spree_products_promotion_rules`.`product_id` = 17
+		  284 Query	SELECT `spree_promotions`.* FROM `spree_promotions` WHERE `spree_promotions`.`advertise` = 1 AND 1=0
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_variants`.`product_id` = 17 AND `spree_variants`.`is_master` = 1 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` INNER JOIN `spree_variants` ON `spree_assets`.`viewable_id` = `spree_variants`.`id` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_variants`.`product_id` = 17 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT `spree_assets`.* FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image')  ORDER BY `spree_assets`.`position` ASC
+		  284 Query	SELECT `spree_assets`.* FROM `spree_assets` INNER JOIN `spree_variants` ON `spree_assets`.`viewable_id` = `spree_variants`.`id` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_variants`.`product_id` = 17 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`type` IN ('Spree::Image')  ORDER BY `spree_assets`.`position` ASC, `spree_variants`.position ASC
+		  284 Query	SELECT COUNT(*) FROM `spree_product_properties` WHERE `spree_product_properties`.`product_id` = 17
+		  284 Query	SELECT `spree_variants`.* FROM `spree_variants` INNER JOIN `spree_prices` ON `spree_prices`.`variant_id` = `spree_variants`.`id` AND `spree_prices`.`deleted_at` IS NULL WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_variants`.`product_id` = 17 AND `spree_variants`.`is_master` = 0 AND `spree_variants`.`deleted_at` IS NULL AND `spree_prices`.`currency` = 'USD' AND (spree_prices.amount IS NOT NULL)  ORDER BY `spree_variants`.position ASC
+		  284 Query	SELECT `spree_prices`.* FROM `spree_prices` WHERE `spree_prices`.`deleted_at` IS NULL AND `spree_prices`.`variant_id` = 27
+		  284 Query	SELECT  `spree_prices`.* FROM `spree_prices` WHERE `spree_prices`.`variant_id` = 27 AND `spree_prices`.`currency` = 'USD' LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` INNER JOIN `spree_products_taxons` ON `spree_taxons`.`id` = `spree_products_taxons`.`taxon_id` WHERE `spree_products_taxons`.`product_id` = 17
+161106  1:45:34	  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL  ORDER BY created_at DESC LIMIT 1
+161106  1:45:54	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL  ORDER BY created_at DESC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` IS NULL LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE `spree_orders`.`number` = 'R356780053' LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE `spree_orders`.`number` = BINARY 'R356780053' LIMIT 1
+		  284 Query	INSERT INTO `spree_orders` (`currency`, `guest_token`, `store_id`, `user_id`, `state`, `created_by_id`, `number`, `created_at`, `updated_at`, `email`) VALUES ('USD', '2oWYCSWLu0CX2vPriQO5VA1478425410433', 1, 2, 'cart', 2, 'R356780053', '2016-11-06 09:45:54', '2016-11-06 09:45:54', 'dbtestfds@gmail.com')
+		  284 Query	COMMIT
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT `spree_prices`.* FROM `spree_prices` WHERE `spree_prices`.`deleted_at` IS NULL AND `spree_prices`.`variant_id` = 27
+		  284 Query	BEGIN
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT  `spree_tax_categories`.* FROM `spree_tax_categories` WHERE `spree_tax_categories`.`deleted_at` IS NULL AND `spree_tax_categories`.`is_default` = 1  ORDER BY `spree_tax_categories`.`id` ASC LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	INSERT INTO `spree_line_items` (`quantity`, `variant_id`, `currency`, `price`, `order_id`, `created_at`, `updated_at`) VALUES (1, 27, 'USD', 31.42, 37, '2016-11-06 09:45:54', '2016-11-06 09:45:54')
+		  284 Query	SELECT  `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`default_tax` = 1  ORDER BY `spree_zones`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE 1=0 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:45:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction'
+		  284 Query	SELECT  `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1  ORDER BY amount ASC, created_at DESC, id DESC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_line_items` SET `spree_line_items`.`promo_total` = 0.0, `spree_line_items`.`included_tax_total` = 0, `spree_line_items`.`additional_tax_total` = 0, `spree_line_items`.`adjustment_total` = 0.0, `spree_line_items`.`updated_at` = '2016-11-06 09:45:54' WHERE `spree_line_items`.`id` = 38
+		  284 Query	SELECT  `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`default_tax` = 1  ORDER BY `spree_zones`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE 1=0 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	COMMIT
+		  284 Query	SELECT SUM(`spree_line_items`.`quantity`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 0.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 31.42, `spree_orders`.`updated_at` = '2016-11-06 09:45:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT * FROM ( SELECT `spree_promotions`.* FROM `spree_promotions` INNER JOIN `spree_orders_promotions` ON `spree_promotions`.`id` = `spree_orders_promotions`.`promotion_id` WHERE `spree_orders_promotions`.`order_id` = 37 AND (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:45:54.657946') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:45:54.658384') UNION SELECT `spree_promotions`.* FROM `spree_promotions` WHERE (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:45:54.658579') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:45:54.658768') AND `spree_promotions`.`code` IS NULL AND `spree_promotions`.`path` IS NULL ) `spree_promotions`
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction'
+		  284 Query	SELECT  `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1  ORDER BY amount ASC, created_at DESC, id DESC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_line_items` SET `spree_line_items`.`promo_total` = 0.0, `spree_line_items`.`included_tax_total` = 0, `spree_line_items`.`additional_tax_total` = 0, `spree_line_items`.`adjustment_total` = 0.0, `spree_line_items`.`updated_at` = '2016-11-06 09:45:54' WHERE `spree_line_items`.`id` = 38
+		  284 Query	SELECT  `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`default_tax` = 1  ORDER BY `spree_zones`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE 1=0 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT SUM(`spree_line_items`.`quantity`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 0.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 31.42, `spree_orders`.`updated_at` = '2016-11-06 09:45:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` IS NULL LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37 LIMIT 1
+161106  1:45:55	  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT `spree_assets`.* FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image')  ORDER BY `spree_assets`.`position` ASC
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_variants`.`product_id` = 17 AND `spree_variants`.`is_master` = 1 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` INNER JOIN `spree_variants` ON `spree_assets`.`viewable_id` = `spree_variants`.`id` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_variants`.`product_id` = 17 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT `spree_option_values`.* FROM `spree_option_values` INNER JOIN `spree_option_values_variants` ON `spree_option_values`.`id` = `spree_option_values_variants`.`option_value_id` WHERE `spree_option_values_variants`.`variant_id` = 27
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_shipments` ON `spree_adjustments`.`adjustable_id` = `spree_shipments`.`id` WHERE `spree_shipments`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+161106  1:46:14	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` IS NULL LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_line_items`.`id` FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	BEGIN
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37 AND `spree_line_items`.`id` = 38  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	UPDATE `spree_orders` SET `last_ip_address` = '127.0.0.1', `updated_at` = '2016-11-06 09:46:14' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT SUM(`spree_line_items`.`quantity`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 0.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 31.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:14' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT * FROM ( SELECT `spree_promotions`.* FROM `spree_promotions` INNER JOIN `spree_orders_promotions` ON `spree_promotions`.`id` = `spree_orders_promotions`.`promotion_id` WHERE `spree_orders_promotions`.`order_id` = 37 AND (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:46:14.188525') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:46:14.188900') UNION SELECT `spree_promotions`.* FROM `spree_promotions` WHERE (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:46:14.189016') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:46:14.189151') AND `spree_promotions`.`code` IS NULL AND `spree_promotions`.`path` IS NULL ) `spree_promotions`
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT SUM(`spree_line_items`.`quantity`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 0.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 31.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:14' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 5 LIMIT 1
+		  284 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  284 Query	SELECT  `spree_states`.* FROM `spree_states` WHERE `spree_states`.`id` = 3529 LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 6 LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	INSERT INTO `spree_addresses` (`firstname`, `lastname`, `address1`, `address2`, `city`, `zipcode`, `phone`, `state_id`, `country_id`, `created_at`, `updated_at`) VALUES ('Db', 'Test', '350 Sharon Park Drive', '', 'Menlo Park', '94025', '2674413738', 3529, 232, '2016-11-06 09:46:14', '2016-11-06 09:46:14')
+		  284 Query	INSERT INTO `spree_addresses` (`firstname`, `lastname`, `address1`, `address2`, `city`, `zipcode`, `phone`, `state_id`, `country_id`, `created_at`, `updated_at`) VALUES ('Db', 'Test', '350 Sharon Park Drive', '', 'Menlo Park', '94025', '2674413738', 3529, 232, '2016-11-06 09:46:14', '2016-11-06 09:46:14')
+		  284 Query	UPDATE `spree_orders` SET `state` = 'address', `bill_address_id` = 71, `ship_address_id` = 72, `updated_at` = '2016-11-06 09:46:14' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`previous_state`, `next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('cart', 'address', 'order', 2, 37, 'Spree::Order', '2016-11-06 09:46:14', '2016-11-06 09:46:14')
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	COMMIT
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 71 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 72 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/app_configuration/checkout_zone' LIMIT 1
+		  284 Query	SELECT  `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`name` IS NULL LIMIT 1
+		  284 Query	SELECT `spree_countries`.* FROM `spree_countries`
+		  284 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_states` WHERE `spree_states`.`country_id` = 232 LIMIT 1
+		  284 Query	SELECT `spree_states`.* FROM `spree_states` WHERE `spree_states`.`country_id` = 232  ORDER BY name ASC
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`eligible` = 1 LIMIT 1
+161106  1:46:15	  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  285 Query	SHOW FULL FIELDS FROM `spree_users`
+		  285 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`spree_api_key` = '' LIMIT 1
+		  285 Query	SHOW CREATE TABLE `spree_users`
+161106  1:46:16	  285 Query	SHOW FULL FIELDS FROM `spree_roles_users`
+		  285 Query	SHOW CREATE TABLE `spree_roles`
+		  285 Query	SHOW FULL FIELDS FROM `spree_roles`
+		  285 Query	SHOW CREATE TABLE `spree_countries`
+		  285 Query	SHOW FULL FIELDS FROM `spree_countries`
+		  285 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  285 Query	SHOW FULL FIELDS FROM `spree_states`
+		  285 Query	SELECT  `spree_states`.* FROM `spree_states` WHERE `spree_states`.`country_id` = 232  ORDER BY name DESC LIMIT 1
+		  285 Query	SHOW CREATE TABLE `spree_states`
+		  285 Query	SELECT `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` IN (232)
+		  285 Query	SELECT `spree_states`.* FROM `spree_states` WHERE `spree_states`.`country_id` = 232  ORDER BY name ASC
+161106  1:46:34	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	BEGIN
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1 FOR UPDATE
+		  284 Query	UPDATE `spree_orders` SET `state_lock_version` = 1, `updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 71 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 72 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  284 Query	SELECT  `spree_states`.* FROM `spree_states` WHERE `spree_states`.`id` = 3529 LIMIT 1
+		  284 Query	COMMIT
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT `spree_zones`.`id` AS t0_r0, `spree_zones`.`name` AS t0_r1, `spree_zones`.`description` AS t0_r2, `spree_zones`.`default_tax` AS t0_r3, `spree_zones`.`zone_members_count` AS t0_r4, `spree_zones`.`created_at` AS t0_r5, `spree_zones`.`updated_at` AS t0_r6, `spree_zones`.`kind` AS t0_r7, `spree_zone_members`.`id` AS t1_r0, `spree_zone_members`.`zoneable_id` AS t1_r1, `spree_zone_members`.`zoneable_type` AS t1_r2, `spree_zone_members`.`zone_id` AS t1_r3, `spree_zone_members`.`created_at` AS t1_r4, `spree_zone_members`.`updated_at` AS t1_r5 FROM `spree_zones` LEFT OUTER JOIN `spree_zone_members` ON `spree_zone_members`.`zone_id` = `spree_zones`.`id` WHERE ((spree_zone_members.zoneable_type = 'Spree::Country' AND spree_zone_members.zoneable_id = 232) OR (spree_zone_members.zoneable_type = 'Spree::State' AND spree_zone_members.zoneable_id = 3529))  ORDER BY spree_zones.zone_members_count, spree_zones.created_at
+		  284 Query	SELECT `spree_zone_members`.`zoneable_type` FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` = 2 AND (`spree_zone_members`.`zoneable_type` IS NOT NULL)  ORDER BY created_at ASC
+		  284 Query	SELECT DISTINCT spree_tax_rates.*, spree_zones.default_tax FROM `spree_tax_rates` INNER JOIN `spree_zones` ON `spree_zones`.`id` = `spree_tax_rates`.`zone_id` LEFT OUTER JOIN `spree_zone_members` ON `spree_zone_members`.`zone_id` = `spree_zones`.`id` AND `spree_zone_members`.`zoneable_type` = 'Spree::Country' LEFT OUTER JOIN `spree_countries` ON `spree_countries`.`id` = `spree_zone_members`.`zoneable_id` LEFT OUTER JOIN `spree_zone_members` `zone_members_spree_countries_join` ON `zone_members_spree_countries_join`.`zoneable_id` = `spree_countries`.`id` AND `zone_members_spree_countries_join`.`zoneable_type` = 'Spree::Country' LEFT OUTER JOIN `spree_zones` `zones_spree_countries` ON `zones_spree_countries`.`id` = `zone_members_spree_countries_join`.`zone_id` WHERE `spree_tax_rates`.`deleted_at` IS NULL AND (zone_members_spree_countries_join.zone_id = 2 OR spree_zones.default_tax = 1)  ORDER BY spree_zones.default_tax DESC
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`id` IN (2)
+		  284 Query	SELECT `spree_zone_members`.* FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` IN (2)
+		  284 Query	SELECT `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` IN (232, 38)
+		  284 Query	SELECT  `spree_tax_categories`.* FROM `spree_tax_categories` WHERE `spree_tax_categories`.`deleted_at` IS NULL AND `spree_tax_categories`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE 1=0 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 5 LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	COMMIT
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 6 LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	COMMIT
+		  284 Query	DELETE FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment'
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_stock_items` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`stock_location_id` = 1 AND `spree_stock_items`.`variant_id` = 27 LIMIT 1
+		  284 Query	SELECT  `spree_stock_items`.* FROM `spree_stock_items` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`stock_location_id` = 1 AND `spree_stock_items`.`variant_id` = 27  ORDER BY `spree_stock_items`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT  `spree_shipping_categories`.* FROM `spree_shipping_categories` WHERE `spree_shipping_categories`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_shipping_methods`.* FROM `spree_shipping_methods` INNER JOIN `spree_shipping_method_categories` ON `spree_shipping_methods`.`id` = `spree_shipping_method_categories`.`shipping_method_id` WHERE `spree_shipping_methods`.`deleted_at` IS NULL AND `spree_shipping_method_categories`.`shipping_category_id` = 1
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 1 AND `spree_calculators`.`calculable_type` = 'Spree::ShippingMethod' LIMIT 1
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` INNER JOIN `spree_shipping_methods_zones` ON `spree_zones`.`id` = `spree_shipping_methods_zones`.`zone_id` WHERE `spree_shipping_methods_zones`.`shipping_method_id` = 1
+		  284 Query	SELECT `spree_zone_members`.* FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` = 2
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 2 AND `spree_calculators`.`calculable_type` = 'Spree::ShippingMethod' LIMIT 1
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` INNER JOIN `spree_shipping_methods_zones` ON `spree_zones`.`id` = `spree_shipping_methods_zones`.`zone_id` WHERE `spree_shipping_methods_zones`.`shipping_method_id` = 2
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 3 AND `spree_calculators`.`calculable_type` = 'Spree::ShippingMethod' LIMIT 1
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` INNER JOIN `spree_shipping_methods_zones` ON `spree_zones`.`id` = `spree_shipping_methods_zones`.`zone_id` WHERE `spree_shipping_methods_zones`.`shipping_method_id` = 3
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 4 AND `spree_calculators`.`calculable_type` = 'Spree::ShippingMethod' LIMIT 1
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` INNER JOIN `spree_shipping_methods_zones` ON `spree_zones`.`id` = `spree_shipping_methods_zones`.`zone_id` WHERE `spree_shipping_methods_zones`.`shipping_method_id` = 4
+		  284 Query	SELECT `spree_zone_members`.* FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` = 1
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 5 AND `spree_calculators`.`calculable_type` = 'Spree::ShippingMethod' LIMIT 1
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` INNER JOIN `spree_shipping_methods_zones` ON `spree_zones`.`id` = `spree_shipping_methods_zones`.`zone_id` WHERE `spree_shipping_methods_zones`.`shipping_method_id` = 5
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`number` = 'H31055174544' LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE `spree_shipments`.`number` = BINARY 'H31055174544' LIMIT 1
+		  284 Query	INSERT INTO `spree_shipments` (`stock_location_id`, `state`, `address_id`, `order_id`, `number`, `created_at`, `updated_at`) VALUES (1, 'pending', 72, 37, 'H31055174544', '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	INSERT INTO `spree_inventory_units` (`order_id`, `variant_id`, `line_item_id`, `state`, `shipment_id`, `created_at`, `updated_at`) VALUES (37, 27, 38, 'on_hand', 35, '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_shipments`.`id` = 35
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+		  284 Query	INSERT INTO `spree_shipping_rates` (`cost`, `shipping_method_id`, `selected`, `shipment_id`, `created_at`, `updated_at`) VALUES (5.0, 1, 1, 35, '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	INSERT INTO `spree_shipping_rates` (`cost`, `shipping_method_id`, `shipment_id`, `created_at`, `updated_at`) VALUES (10.0, 2, 35, '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	INSERT INTO `spree_shipping_rates` (`cost`, `shipping_method_id`, `shipment_id`, `created_at`, `updated_at`) VALUES (15.0, 3, 35, '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`cost` = 5.0, `spree_shipments`.`adjustment_total` = 0, `spree_shipments`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_shipments`.`id` = 35
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	UPDATE `spree_orders` SET `shipment_total` = 5.0, `total` = 36.42, `state` = 'delivery', `updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`previous_state`, `next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('address', 'delivery', 'order', 2, 37, 'Spree::Order', '2016-11-06 09:46:34', '2016-11-06 09:46:34')
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:34' WHERE `spree_orders`.`id` = 37
+161106  1:46:35	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_inventory_units`.`id` AS t0_r0, `spree_inventory_units`.`state` AS t0_r1, `spree_inventory_units`.`variant_id` AS t0_r2, `spree_inventory_units`.`order_id` AS t0_r3, `spree_inventory_units`.`shipment_id` AS t0_r4, `spree_inventory_units`.`created_at` AS t0_r5, `spree_inventory_units`.`updated_at` AS t0_r6, `spree_inventory_units`.`pending` AS t0_r7, `spree_inventory_units`.`line_item_id` AS t0_r8, `spree_variants`.`id` AS t1_r0, `spree_variants`.`sku` AS t1_r1, `spree_variants`.`weight` AS t1_r2, `spree_variants`.`height` AS t1_r3, `spree_variants`.`width` AS t1_r4, `spree_variants`.`depth` AS t1_r5, `spree_variants`.`deleted_at` AS t1_r6, `spree_variants`.`is_master` AS t1_r7, `spree_variants`.`product_id` AS t1_r8, `spree_variants`.`cost_price` AS t1_r9, `spree_variants`.`cost_currency` AS t1_r10, `spree_variants`.`position` AS t1_r11, `spree_variants`.`track_inventory` AS t1_r12, `spree_variants`.`tax_category_id` AS t1_r13, `spree_variants`.`updated_at` AS t1_r14, `spree_variants`.`stock_items_count` AS t1_r15 FROM `spree_inventory_units` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_inventory_units`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL WHERE `spree_inventory_units`.`shipment_id` = 35
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT `spree_inventory_units`.* FROM `spree_inventory_units` WHERE `spree_inventory_units`.`shipment_id` = 35
+		  284 Query	SELECT  `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`id` = 38 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` INNER JOIN `spree_variants` ON `spree_assets`.`viewable_id` = `spree_variants`.`id` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_variants`.`product_id` = 17 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT `spree_prices`.* FROM `spree_prices` WHERE `spree_prices`.`deleted_at` IS NULL AND `spree_prices`.`variant_id` = 27
+		  284 Query	SELECT `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35  ORDER BY cost ASC
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT  `spree_shipping_methods`.* FROM `spree_shipping_methods` WHERE `spree_shipping_methods`.`id` = 1 LIMIT 1
+		  284 Query	SELECT  `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`id` = 35 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1
+		  284 Query	SELECT  `spree_shipping_methods`.* FROM `spree_shipping_methods` WHERE `spree_shipping_methods`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_shipping_methods`.* FROM `spree_shipping_methods` WHERE `spree_shipping_methods`.`id` = 3 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`eligible` = 1 LIMIT 1
+		  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+161106  1:46:53	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	BEGIN
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1 FOR UPDATE
+		  284 Query	UPDATE `spree_orders` SET `state_lock_version` = 2, `updated_at` = '2016-11-06 09:46:53' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+161106  1:46:54	  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	BEGIN
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37 AND `spree_shipments`.`id` = 35
+		  284 Query	UPDATE `spree_shipping_rates` SET `spree_shipping_rates`.`selected` = 0 WHERE `spree_shipping_rates`.`shipment_id` = 35 ORDER BY cost ASC
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`id` = 115  ORDER BY cost ASC LIMIT 1
+		  284 Query	UPDATE `spree_shipping_rates` SET `selected` = 1, `updated_at` = '2016-11-06 09:46:54' WHERE `spree_shipping_rates`.`id` = 115
+		  284 Query	SELECT  1 AS one FROM `spree_shipments` WHERE (`spree_shipments`.`number` = BINARY 'H31055174544' AND `spree_shipments`.`id` != 35) LIMIT 1
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`cost` = 5.0, `spree_shipments`.`adjustment_total` = 0, `spree_shipments`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_shipments`.`id` = 35
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`cost` = 5.0, `spree_shipments`.`adjustment_total` = 0, `spree_shipments`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_shipments`.`id` = 35
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 72 LIMIT 1
+		  284 Query	SELECT `spree_zones`.`id` AS t0_r0, `spree_zones`.`name` AS t0_r1, `spree_zones`.`description` AS t0_r2, `spree_zones`.`default_tax` AS t0_r3, `spree_zones`.`zone_members_count` AS t0_r4, `spree_zones`.`created_at` AS t0_r5, `spree_zones`.`updated_at` AS t0_r6, `spree_zones`.`kind` AS t0_r7, `spree_zone_members`.`id` AS t1_r0, `spree_zone_members`.`zoneable_id` AS t1_r1, `spree_zone_members`.`zoneable_type` AS t1_r2, `spree_zone_members`.`zone_id` AS t1_r3, `spree_zone_members`.`created_at` AS t1_r4, `spree_zone_members`.`updated_at` AS t1_r5 FROM `spree_zones` LEFT OUTER JOIN `spree_zone_members` ON `spree_zone_members`.`zone_id` = `spree_zones`.`id` WHERE ((spree_zone_members.zoneable_type = 'Spree::Country' AND spree_zone_members.zoneable_id = 232) OR (spree_zone_members.zoneable_type = 'Spree::State' AND spree_zone_members.zoneable_id = 3529))  ORDER BY spree_zones.zone_members_count, spree_zones.created_at
+		  284 Query	SELECT `spree_zone_members`.`zoneable_type` FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` = 2 AND (`spree_zone_members`.`zoneable_type` IS NOT NULL)  ORDER BY created_at ASC
+		  284 Query	SELECT DISTINCT spree_tax_rates.*, spree_zones.default_tax FROM `spree_tax_rates` INNER JOIN `spree_zones` ON `spree_zones`.`id` = `spree_tax_rates`.`zone_id` LEFT OUTER JOIN `spree_zone_members` ON `spree_zone_members`.`zone_id` = `spree_zones`.`id` AND `spree_zone_members`.`zoneable_type` = 'Spree::Country' LEFT OUTER JOIN `spree_countries` ON `spree_countries`.`id` = `spree_zone_members`.`zoneable_id` LEFT OUTER JOIN `spree_zone_members` `zone_members_spree_countries_join` ON `zone_members_spree_countries_join`.`zoneable_id` = `spree_countries`.`id` AND `zone_members_spree_countries_join`.`zoneable_type` = 'Spree::Country' LEFT OUTER JOIN `spree_zones` `zones_spree_countries` ON `zones_spree_countries`.`id` = `zone_members_spree_countries_join`.`zone_id` WHERE `spree_tax_rates`.`deleted_at` IS NULL AND (zone_members_spree_countries_join.zone_id = 2 OR spree_zones.default_tax = 1)  ORDER BY spree_zones.default_tax DESC
+		  284 Query	SELECT `spree_zones`.* FROM `spree_zones` WHERE `spree_zones`.`id` IN (2)
+		  284 Query	SELECT `spree_zone_members`.* FROM `spree_zone_members` WHERE `spree_zone_members`.`zone_id` IN (2)
+		  284 Query	SELECT `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` IN (232, 38)
+		  284 Query	SELECT  `spree_tax_categories`.* FROM `spree_tax_categories` WHERE `spree_tax_categories`.`deleted_at` IS NULL AND `spree_tax_categories`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE 1=0 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 38 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate'
+		  284 Query	SELECT COUNT(*) FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`source_type` = 'Spree::CreditCard'
+		  284 Query	SELECT  `spree_credit_cards`.* FROM `spree_credit_cards` WHERE `spree_credit_cards`.`user_id` = 2 AND `spree_credit_cards`.`default` = 1  ORDER BY `spree_credit_cards`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_promotions`.`id` FROM `spree_promotions` INNER JOIN `spree_orders_promotions` ON `spree_promotions`.`id` = `spree_orders_promotions`.`promotion_id` WHERE `spree_orders_promotions`.`order_id` = 37
+		  284 Query	SELECT `spree_promotion_actions`.`promotion_id` FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`type` IN ('Spree::Promotion::Actions::FreeShipping') AND `spree_promotion_actions`.`deleted_at` IS NULL
+		  284 Query	SELECT `spree_promotions`.* FROM `spree_promotions` WHERE (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:46:54.805338') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:46:54.805644') AND 1=0 AND `spree_promotions`.`path` IS NULL
+		  284 Query	SELECT  `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`id` = 35 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction'
+		  284 Query	SELECT  `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1  ORDER BY amount ASC, created_at DESC, id DESC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`promo_total` = 0.0, `spree_shipments`.`included_tax_total` = 0, `spree_shipments`.`additional_tax_total` = 0, `spree_shipments`.`adjustment_total` = 0.0, `spree_shipments`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_shipments`.`id` = 35
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  284 Query	SELECT  `spree_states`.* FROM `spree_states` WHERE `spree_states`.`id` = 3529 LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	UPDATE `spree_orders` SET `state` = 'payment', `updated_at` = '2016-11-06 09:46:54' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`previous_state`, `next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('delivery', 'payment', 'order', 2, 37, 'Spree::Order', '2016-11-06 09:46:54', '2016-11-06 09:46:54')
+161106  1:46:55	  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = 0.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = 0.0, `spree_orders`.`total` = 36.42, `spree_orders`.`updated_at` = '2016-11-06 09:46:55' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_inventory_units`.`id` AS t0_r0, `spree_inventory_units`.`state` AS t0_r1, `spree_inventory_units`.`variant_id` AS t0_r2, `spree_inventory_units`.`order_id` AS t0_r3, `spree_inventory_units`.`shipment_id` AS t0_r4, `spree_inventory_units`.`created_at` AS t0_r5, `spree_inventory_units`.`updated_at` AS t0_r6, `spree_inventory_units`.`pending` AS t0_r7, `spree_inventory_units`.`line_item_id` AS t0_r8, `spree_variants`.`id` AS t1_r0, `spree_variants`.`sku` AS t1_r1, `spree_variants`.`weight` AS t1_r2, `spree_variants`.`height` AS t1_r3, `spree_variants`.`width` AS t1_r4, `spree_variants`.`depth` AS t1_r5, `spree_variants`.`deleted_at` AS t1_r6, `spree_variants`.`is_master` AS t1_r7, `spree_variants`.`product_id` AS t1_r8, `spree_variants`.`cost_price` AS t1_r9, `spree_variants`.`cost_currency` AS t1_r10, `spree_variants`.`position` AS t1_r11, `spree_variants`.`track_inventory` AS t1_r12, `spree_variants`.`tax_category_id` AS t1_r13, `spree_variants`.`updated_at` AS t1_r14, `spree_variants`.`stock_items_count` AS t1_r15 FROM `spree_inventory_units` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_inventory_units`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL WHERE `spree_inventory_units`.`shipment_id` = 35
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT `spree_credit_cards`.* FROM `spree_credit_cards` WHERE `spree_credit_cards`.`user_id` = 2 AND (gateway_customer_profile_id IS NOT NULL)
+		  284 Query	SELECT `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 71 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_shipments` ON `spree_adjustments`.`adjustable_id` = `spree_shipments`.`id` WHERE `spree_shipments`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND (`spree_adjustments`.amount != 0) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND (`spree_adjustments`.amount != 0) AND `spree_adjustments`.`eligible` = 1 LIMIT 1
+		  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+161106  1:46:57	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+161106  1:47:17	  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`spree_api_key` = '' LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` = 'R356780053' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` = 'R356780053'  ORDER BY `spree_orders`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_promotions`.* FROM `spree_promotions` WHERE (spree_promotions.starts_at IS NULL OR spree_promotions.starts_at < '2016-11-06 09:47:17.068547') AND (spree_promotions.expires_at IS NULL OR spree_promotions.expires_at > '2016-11-06 09:47:17.068941') AND (lower(spree_promotions.code) = 'p2')  ORDER BY `spree_promotions`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_promotion_rules`.* FROM `spree_promotion_rules` WHERE `spree_promotion_rules`.`promotion_id` IN (2)
+		  284 Query	SELECT `spree_promotion_actions`.* FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` IN (2)
+		  284 Query	SELECT  1 AS one FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`eligible` = 1 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT `spree_promotion_actions`.`id` FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT  1 AS one FROM `spree_promotions` INNER JOIN `spree_orders_promotions` ON `spree_promotions`.`id` = `spree_orders_promotions`.`promotion_id` WHERE `spree_orders_promotions`.`order_id` = 37 AND `spree_promotions`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_line_items`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL INNER JOIN `spree_products` ON `spree_products`.`id` = `spree_variants`.`product_id` AND `spree_products`.`deleted_at` IS NULL WHERE `spree_line_items`.`order_id` = 37 AND `spree_products`.`promotionable` = 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`source_id` = 3 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` = 37 LIMIT 1
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 3 AND `spree_calculators`.`calculable_type` = 'Spree::PromotionAction' LIMIT 1
+		  284 Query	SELECT  `spree_promotions`.* FROM `spree_promotions` WHERE `spree_promotions`.`id` = 2 LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_adjustments` (`order_id`, `adjustable_id`, `adjustable_type`, `label`, `amount`, `included`, `state`, `source_id`, `source_type`, `created_at`, `updated_at`) VALUES (37, 37, 'Spree::Order', 'Promotion (p2)', -10.0, NULL, 'open', 3, 'Spree::PromotionAction', '2016-11-06 09:47:17', '2016-11-06 09:47:17')
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction'  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT  `spree_promotion_actions`.* FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`id` = 3 LIMIT 1
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 3 AND `spree_calculators`.`calculable_type` = 'Spree::PromotionAction' LIMIT 1
+		  284 Query	SELECT  `spree_promotions`.* FROM `spree_promotions` WHERE `spree_promotions`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_promotion_actions`.* FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`eligible` = 1 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT `spree_promotion_actions`.`id` FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT  1 AS one FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_line_items`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL INNER JOIN `spree_products` ON `spree_products`.`id` = `spree_variants`.`product_id` AND `spree_products`.`deleted_at` IS NULL WHERE `spree_line_items`.`order_id` = 37 AND `spree_products`.`promotionable` = 1
+		  284 Query	SELECT `spree_promotion_rules`.* FROM `spree_promotion_rules` WHERE `spree_promotion_rules`.`promotion_id` = 2
+		  284 Query	UPDATE `spree_adjustments` SET `spree_adjustments`.`amount` = -10.0, `spree_adjustments`.`updated_at` = '2016-11-06 09:47:17', `spree_adjustments`.`eligible` = 1 WHERE `spree_adjustments`.`id` = 33
+		  284 Query	SELECT  `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1  ORDER BY amount ASC, created_at DESC, id DESC LIMIT 1
+		  284 Query	UPDATE `spree_adjustments` SET `spree_adjustments`.`eligible` = 0 WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND (`spree_adjustments`.`id` != 33) ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`promo_total` = -10.0, `spree_orders`.`included_tax_total` = 0, `spree_orders`.`additional_tax_total` = 0, `spree_orders`.`adjustment_total` = -10.0, `spree_orders`.`updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_orders_promotions` (`promotion_id`, `order_id`) VALUES (2, 37)
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT  `spree_promotion_actions`.* FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`id` = 3 LIMIT 1
+		  284 Query	SELECT  `spree_promotions`.* FROM `spree_promotions` WHERE `spree_promotions`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'completed'  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(price * quantity) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` IN (37)
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction'  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT  `spree_calculators`.* FROM `spree_calculators` WHERE `spree_calculators`.`deleted_at` IS NULL AND `spree_calculators`.`calculable_id` = 3 AND `spree_calculators`.`calculable_type` = 'Spree::PromotionAction' LIMIT 1
+		  284 Query	SELECT `spree_promotion_actions`.* FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`eligible` = 1 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT `spree_promotion_actions`.`id` FROM `spree_promotion_actions` WHERE `spree_promotion_actions`.`deleted_at` IS NULL AND `spree_promotion_actions`.`promotion_id` = 2
+		  284 Query	SELECT COUNT(*) FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`source_id` = 3
+		  284 Query	SELECT  1 AS one FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_line_items`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL INNER JOIN `spree_products` ON `spree_products`.`id` = `spree_variants`.`product_id` AND `spree_products`.`deleted_at` IS NULL WHERE `spree_line_items`.`order_id` = 37 AND `spree_products`.`promotionable` = 1
+		  284 Query	SELECT `spree_promotion_rules`.* FROM `spree_promotion_rules` WHERE `spree_promotion_rules`.`promotion_id` = 2
+		  284 Query	UPDATE `spree_adjustments` SET `spree_adjustments`.`amount` = -10.0, `spree_adjustments`.`updated_at` = '2016-11-06 09:47:17', `spree_adjustments`.`eligible` = 1 WHERE `spree_adjustments`.`id` = 33
+		  284 Query	SELECT  `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1  ORDER BY amount ASC, created_at DESC, id DESC LIMIT 1
+		  284 Query	UPDATE `spree_adjustments` SET `spree_adjustments`.`eligible` = 0 WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND (`spree_adjustments`.`id` != 33) ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`promo_total` = -10.0, `spree_orders`.`included_tax_total` = 0, `spree_orders`.`additional_tax_total` = 0, `spree_orders`.`adjustment_total` = -10.0, `spree_orders`.`updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`adjustment_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`adjustment_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	SELECT SUM(`spree_line_items`.`included_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`included_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`additional_tax_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`additional_tax_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_line_items`.`promo_total`) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_shipments`.`promo_total`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT SUM(`spree_adjustments`.`amount`) FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`source_type` = 'Spree::PromotionAction' AND `spree_adjustments`.`eligible` = 1
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = -10.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = -10.0, `spree_orders`.`total` = 26.42, `spree_orders`.`updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`adjustable_id` IN (37)  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL AND (id != 37)
+		  284 Query	BEGIN
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1 FOR UPDATE
+		  284 Query	UPDATE `spree_orders` SET `state_lock_version` = 3, `updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT COUNT(*) FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_inventory_units`.`id` AS t0_r0, `spree_inventory_units`.`state` AS t0_r1, `spree_inventory_units`.`variant_id` AS t0_r2, `spree_inventory_units`.`order_id` AS t0_r3, `spree_inventory_units`.`shipment_id` AS t0_r4, `spree_inventory_units`.`created_at` AS t0_r5, `spree_inventory_units`.`updated_at` AS t0_r6, `spree_inventory_units`.`pending` AS t0_r7, `spree_inventory_units`.`line_item_id` AS t0_r8, `spree_variants`.`id` AS t1_r0, `spree_variants`.`sku` AS t1_r1, `spree_variants`.`weight` AS t1_r2, `spree_variants`.`height` AS t1_r3, `spree_variants`.`width` AS t1_r4, `spree_variants`.`depth` AS t1_r5, `spree_variants`.`deleted_at` AS t1_r6, `spree_variants`.`is_master` AS t1_r7, `spree_variants`.`product_id` AS t1_r8, `spree_variants`.`cost_price` AS t1_r9, `spree_variants`.`cost_currency` AS t1_r10, `spree_variants`.`position` AS t1_r11, `spree_variants`.`track_inventory` AS t1_r12, `spree_variants`.`tax_category_id` AS t1_r13, `spree_variants`.`updated_at` AS t1_r14, `spree_variants`.`stock_items_count` AS t1_r15 FROM `spree_inventory_units` INNER JOIN `spree_variants` ON `spree_variants`.`id` = `spree_inventory_units`.`variant_id` AND `spree_variants`.`deleted_at` IS NULL WHERE `spree_inventory_units`.`shipment_id` = 35
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_payments` WHERE `spree_payments`.`number` = 'PGQVH9LM' LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_payments` WHERE `spree_payments`.`number` = BINARY 'PGQVH9LM' LIMIT 1
+		  284 Query	SELECT  `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL AND `spree_payment_methods`.`id` = 2 LIMIT 1
+		  284 Query	INSERT INTO `spree_payments` (`amount`, `payment_method_id`, `state`, `order_id`, `number`, `created_at`, `updated_at`) VALUES (26.42, 2, 'checkout', 37, 'PGQVH9LM', '2016-11-06 09:47:17', '2016-11-06 09:47:17')
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`state` = 'checkout' AND (id != 35)  ORDER BY spree_payments.created_at
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:47:17' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+161106  1:47:18	  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 35 AND `spree_adjustments`.`adjustable_type` = 'Spree::Shipment' AND `spree_adjustments`.`included` = 0
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`cost` = 5.0, `spree_shipments`.`adjustment_total` = 0, `spree_shipments`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_shipments`.`id` = 35
+		  284 Query	SELECT SUM(`spree_shipments`.`cost`) FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`payment_state` = NULL, `spree_orders`.`shipment_state` = NULL, `spree_orders`.`item_total` = 31.42, `spree_orders`.`item_count` = 1, `spree_orders`.`adjustment_total` = -10.0, `spree_orders`.`included_tax_total` = 0.0, `spree_orders`.`additional_tax_total` = 0.0, `spree_orders`.`payment_total` = 0.0, `spree_orders`.`shipment_total` = 5.0, `spree_orders`.`promo_total` = -10.0, `spree_orders`.`total` = 26.42, `spree_orders`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT  `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL AND `spree_payment_methods`.`id` = 2 LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37  ORDER BY spree_payments.created_at
+		  284 Query	SELECT SUM(`spree_stock_items`.`count_on_hand`) FROM `spree_stock_items` INNER JOIN `spree_stock_locations` ON `spree_stock_locations`.`id` = `spree_stock_items`.`stock_location_id` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`variant_id` = 27 AND `spree_stock_locations`.`active` = 1
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_payments` WHERE (`spree_payments`.`number` = BINARY 'PGQVH9LM' AND `spree_payments`.`id` != 35) LIMIT 1
+		  284 Query	UPDATE `spree_orders` SET `state` = 'complete', `updated_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	UPDATE `spree_payments` SET `created_at` = '2016-11-06 09:47:17', `updated_at` = '2016-11-06 09:47:17' WHERE `spree_payments`.`id` = 35
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`previous_state`, `next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('payment', 'complete', 'order', 2, 37, 'Spree::Order', '2016-11-06 09:47:18', '2016-11-06 09:47:18')
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT  `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL AND `spree_payment_methods`.`id` = 2 LIMIT 1
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_payments`.`source_id` FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND `spree_payments`.`source_type` = 'Spree::CreditCard' AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT `spree_credit_cards`.* FROM `spree_credit_cards` WHERE 1=0
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37
+		  284 Query	BEGIN
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1
+		  284 Query	UPDATE `spree_adjustments` SET `state` = 'closed', `updated_at` = '2016-11-06 09:47:18' WHERE `spree_adjustments`.`id` = 33
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT COUNT(*) FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))
+		  284 Query	SELECT COUNT(*) FROM `spree_reimbursements` WHERE `spree_reimbursements`.`order_id` = 37
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('balance_due', 'payment', 2, 37, 'Spree::Order', '2016-11-06 09:47:18', '2016-11-06 09:47:18')
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_inventory_units`.* FROM `spree_inventory_units` WHERE `spree_inventory_units`.`shipment_id` = 35
+		  284 Query	UPDATE `spree_shipments` SET `spree_shipments`.`state` = 'pending', `spree_shipments`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_shipments`.`id` = 35
+		  284 Query	UPDATE `spree_inventory_units` SET `spree_inventory_units`.`pending` = 0, `spree_inventory_units`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_inventory_units`.`id` = 36
+		  284 Query	SELECT  `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`id` = 38 LIMIT 1
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT  `spree_stock_items`.* FROM `spree_stock_items` WHERE `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`stock_location_id` = 1 AND `spree_stock_items`.`variant_id` = 27  ORDER BY `spree_stock_items`.`id` ASC LIMIT 1
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_stock_movements` (`quantity`, `originator_id`, `originator_type`, `stock_item_id`, `created_at`, `updated_at`) VALUES (-1, 35, 'Spree::Shipment', 27, '2016-11-06 09:47:18', '2016-11-06 09:47:18')
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT  `spree_stock_items`.* FROM `spree_stock_items` WHERE `spree_stock_items`.`id` = 27 LIMIT 1 FOR UPDATE
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_stock_items` WHERE (`spree_stock_items`.`variant_id` = BINARY 27 AND `spree_stock_items`.`deleted_at` IS NULL AND `spree_stock_items`.`id` != 27 AND `spree_stock_items`.`stock_location_id` = 1 AND `spree_stock_items`.`deleted_at` IS NULL) LIMIT 1
+		  284 Query	UPDATE `spree_stock_items` SET `count_on_hand` = 967, `updated_at` = '2016-11-06 09:47:18' WHERE `spree_stock_items`.`id` = 27
+		  284 Query	UPDATE `spree_variants` SET `spree_variants`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_variants`.`id` = 27
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	UPDATE `spree_products` SET `spree_products`.`updated_at` = '2016-11-06 09:47:18' WHERE `spree_products`.`id` = 17
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` INNER JOIN `spree_products_taxons` ON `spree_taxons`.`id` = `spree_products_taxons`.`taxon_id` WHERE `spree_products_taxons`.`product_id` = 17
+		  284 Query	UPDATE `spree_taxons` SET `spree_taxons`.`updated_at` = '2016-11-06 09:47:18' WHERE 1=0
+		  284 Query	UPDATE `spree_taxonomies` SET `spree_taxonomies`.`updated_at` = '2016-11-06 09:47:18' WHERE 1=0 ORDER BY spree_taxonomies.position, spree_taxonomies.created_at
+		  284 Query	COMMIT
+		  284 Query	SELECT `spree_shipments`.`state` FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	BEGIN
+		  284 Query	INSERT INTO `spree_state_changes` (`next_state`, `name`, `user_id`, `stateful_id`, `stateful_type`, `created_at`, `updated_at`) VALUES ('pending', 'shipment', 2, 37, 'Spree::Order', '2016-11-06 09:47:18', '2016-11-06 09:47:18')
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	SELECT  1 AS one FROM `spree_orders` WHERE (`spree_orders`.`number` = BINARY 'R356780053' AND `spree_orders`.`id` != 37) LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT  `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL AND `spree_payment_methods`.`id` = 2 LIMIT 1
+		  284 Query	UPDATE `spree_orders` SET `payment_state` = 'balance_due', `shipment_state` = 'pending', `updated_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	BEGIN
+		  284 Query	UPDATE `spree_orders` SET `spree_orders`.`updated_at` = '2016-11-06 09:47:18', `spree_orders`.`completed_at` = '2016-11-06 09:47:18' WHERE `spree_orders`.`id` = 37
+		  284 Query	COMMIT
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT `spree_option_values`.* FROM `spree_option_values` INNER JOIN `spree_option_values_variants` ON `spree_option_values`.`id` = `spree_option_values_variants`.`option_value_id` WHERE `spree_option_values_variants`.`variant_id` = 27
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' LIMIT 1
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT  `spree_shipping_methods`.* FROM `spree_shipping_methods` WHERE `spree_shipping_methods`.`id` = 1 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`eligible` = 1 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1  ORDER BY spree_adjustments.created_at ASC
+161106  1:47:19	  284 Query	UPDATE `spree_orders` SET `spree_orders`.`confirmation_delivered` = 1 WHERE `spree_orders`.`id` = 37
+		  284 Query	SELECT COUNT(*) FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (avs_response IN ('A','C','E','F','G','I','K','L','N','O','P','R','S','U','W','Z') OR (cvv_response_code IS NOT NULL and cvv_response_code != 'M') OR state = 'failed')
+		  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL  ORDER BY created_at DESC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`number` = 'R356780053' LIMIT 1
+		  284 Query	SELECT COUNT(*) FROM `spree_roles` INNER JOIN `spree_roles_users` ON `spree_roles`.`id` = `spree_roles_users`.`role_id` WHERE `spree_roles_users`.`user_id` = 2 AND `spree_roles`.`name` = 'admin'
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2 LIMIT 1
+		  284 Query	SELECT `spree_line_items`.* FROM `spree_line_items` WHERE `spree_line_items`.`order_id` = 37  ORDER BY spree_line_items.created_at ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`id` = 27 LIMIT 1
+		  284 Query	SELECT  `spree_products`.* FROM `spree_products` WHERE `spree_products`.`id` = 17 LIMIT 1
+		  284 Query	SELECT `spree_payments`.* FROM `spree_payments` WHERE `spree_payments`.`order_id` = 37 AND (`spree_payments`.`state` NOT IN ('failed', 'invalid'))  ORDER BY spree_payments.created_at
+		  284 Query	SELECT  `spree_payment_methods`.* FROM `spree_payment_methods` WHERE `spree_payment_methods`.`deleted_at` IS NULL AND `spree_payment_methods`.`id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 71 LIMIT 1
+		  284 Query	SELECT  `spree_states`.* FROM `spree_states` WHERE `spree_states`.`id` = 3529 LIMIT 1
+		  284 Query	SELECT  `spree_countries`.* FROM `spree_countries` WHERE `spree_countries`.`id` = 232 LIMIT 1
+		  284 Query	SELECT  `spree_addresses`.* FROM `spree_addresses` WHERE `spree_addresses`.`id` = 72 LIMIT 1
+		  284 Query	SELECT `spree_shipments`.* FROM `spree_shipments` WHERE `spree_shipments`.`order_id` = 37
+		  284 Query	SELECT  `spree_stock_locations`.* FROM `spree_stock_locations` WHERE `spree_stock_locations`.`id` = 1 LIMIT 1
+		  284 Query	SELECT  `spree_shipping_rates`.* FROM `spree_shipping_rates` WHERE `spree_shipping_rates`.`shipment_id` = 35 AND `spree_shipping_rates`.`selected` = 1  ORDER BY cost ASC LIMIT 1
+		  284 Query	SELECT  `spree_shipping_methods`.* FROM `spree_shipping_methods` WHERE `spree_shipping_methods`.`id` = 1 LIMIT 1
+		  284 Query	SELECT `spree_assets`.* FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image')  ORDER BY `spree_assets`.`position` ASC
+		  284 Query	SELECT  `spree_variants`.* FROM `spree_variants` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_variants`.`product_id` = 17 AND `spree_variants`.`is_master` = 1 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` WHERE `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`viewable_id` = 27 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_assets` INNER JOIN `spree_variants` ON `spree_assets`.`viewable_id` = `spree_variants`.`id` WHERE `spree_variants`.`deleted_at` IS NULL AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_variants`.`product_id` = 17 AND `spree_assets`.`viewable_type` = 'Spree::Variant' AND `spree_assets`.`type` IN ('Spree::Image') AND `spree_assets`.`type` IN ('Spree::Image') LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_option_values` INNER JOIN `spree_option_values_variants` ON `spree_option_values`.`id` = `spree_option_values_variants`.`option_value_id` WHERE `spree_option_values_variants`.`variant_id` = 27 LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` INNER JOIN `spree_line_items` ON `spree_adjustments`.`adjustable_id` = `spree_line_items`.`id` WHERE `spree_line_items`.`order_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::LineItem' LIMIT 1
+		  284 Query	SELECT  1 AS one FROM `spree_adjustments` WHERE `spree_adjustments`.`order_id` = 37 AND `spree_adjustments`.`source_type` = 'Spree::TaxRate' LIMIT 1
+		  284 Query	SELECT `spree_adjustments`.* FROM `spree_adjustments` WHERE `spree_adjustments`.`adjustable_id` = 37 AND `spree_adjustments`.`adjustable_type` = 'Spree::Order' AND `spree_adjustments`.`eligible` = 1  ORDER BY spree_adjustments.created_at ASC
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`id` = 37 LIMIT 1
+		  284 Query	SELECT  `spree_trackers`.* FROM `spree_trackers` WHERE `spree_trackers`.`active` = 1  ORDER BY `spree_trackers`.`id` ASC LIMIT 1
+		  284 Query	SELECT MAX(`spree_taxons`.`updated_at`) FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL
+		  284 Query	SELECT `spree_taxons`.* FROM `spree_taxons` WHERE `spree_taxons`.`parent_id` IS NULL  ORDER BY `spree_taxons`.`lft`
+161106  1:47:21	  284 Query	SELECT  `spree_preferences`.* FROM `spree_preferences` WHERE `spree_preferences`.`key` = 'spree/frontend_configuration/locale' LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE (url like '%localhost%')  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_stores`.* FROM `spree_stores` WHERE `spree_stores`.`default` = 1  ORDER BY `spree_stores`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_users`.* FROM `spree_users` WHERE `spree_users`.`deleted_at` IS NULL AND `spree_users`.`id` = 2  ORDER BY `spree_users`.`id` ASC LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`completed_at` IS NULL AND `spree_orders`.`currency` = 'USD' AND `spree_orders`.`guest_token` = '2oWYCSWLu0CX2vPriQO5VA1478425410433' AND `spree_orders`.`store_id` = 1 AND `spree_orders`.`user_id` = 2 LIMIT 1
+		  284 Query	SELECT  `spree_orders`.* FROM `spree_orders` WHERE `spree_orders`.`user_id` = 2 AND `spree_orders`.`completed_at` IS NULL  ORDER BY created_at DESC LIMIT 1
